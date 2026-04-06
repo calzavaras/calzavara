@@ -1,0 +1,252 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://laborium.ch/loesungen#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://laborium.ch/" },
+        { "@type": "ListItem", "position": 2, "name": "Lösungen", "item": "https://laborium.ch/loesungen" }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://laborium.ch/loesungen#webpage",
+      "url": "https://laborium.ch/loesungen",
+      "name": "Websites, KI-Lösungen & Texte – Fixpreis | Calzavara Schweiz",
+      "description": "Websites, die ihren Job kennen. KI, die nicht nervt. Texte und Bilder, denen Form fehlt. Alles aus einer Hand, Fixpreis, kein Baukastensystem. Marco Calzavara, St. Gallen.",
+      "inLanguage": "de-CH",
+      "datePublished": "2025-06-01",
+      "dateModified": "2026-03-19",
+      "isPartOf": { "@id": "https://laborium.ch/#website" },
+      "breadcrumb": { "@id": "https://laborium.ch/loesungen#breadcrumb" },
+      "isAccessibleForFree": true,
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", ".accordion-content"]
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Digitale Lösungen aus einer Hand",
+      "url": "https://laborium.ch/loesungen",
+      "serviceType": "Digital Services",
+      "provider": {
+        "@type": "Organization",
+        "name": "Calzavara",
+        "@id": "https://laborium.ch/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Switzerland"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Lösungen",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Texte, Bilder & Logos",
+              "description": "Blogtexte, Produktbeschreibungen, Newsletter, KI-generierte Bilder und Logodesign – auf Wunsch mehrsprachig."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Software & Webseiten",
+              "description": "Individuelle Business-Software und moderne Firmenwebseiten für KMU. Kein Baukastensystem, kein Abo."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Tabellen, Daten & Dokumente",
+              "description": "Excel-Vorlagen, Datenaufbereitung und automatisierte Berichte. Ordnung in bestehenden Daten."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Kleine Tools & Automatisierung",
+              "description": "Massgeschneiderte Tools und einfache Automatisierungen für wiederkehrende Aufgaben im Arbeitsalltag."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Was kostet eine digitale Lösung bei Calzavara?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Calzavara arbeitet ausschliesslich mit Fixpreisen – keine Stundenzähler, keine bösen Überraschungen. Vor jedem Projekt gibt es ein unverbindliches Gespräch und ein klares Angebot."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Für wen sind die Lösungen von Calzavara geeignet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Für Schweizer KMU, Selbständige und Unternehmen, die massgeschneiderte digitale Lösungen ohne Agentur-Overhead suchen. Ob Einzelprojekt oder laufende Zusammenarbeit – alles ist möglich."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann Calzavara auch kleinere Aufgaben übernehmen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, von einem einzelnen Logo oder Text bis zur kompletten Webanwendung. Es gibt keine Mindestauftragsgrösse."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie schnell werden Projekte bei Calzavara umgesetzt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Je nach Projektgrösse in Tagen bis wenigen Wochen. Kurze Wege, direkte Kommunikation und keine Bürokratie sorgen für schnelle Resultate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Setzt Calzavara KI-Tools ein?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, KI-Tools werden gezielt eingesetzt – für Texte, Bilder, Code und Automatisierungen. Die Qualitätskontrolle und persönliche Betreuung liegen immer bei Marco Calzavara."
+          }
+        }
+      ]
+    }
+  ]
+});
+---
+
+<Layout
+  title="Websites, KI-Lösungen & Texte – Fixpreis | Calzavara Schweiz"
+  description="Websites, die ihren Job kennen. KI, die nicht nervt. Texte und Bilder, denen Form fehlt. Alles aus einer Hand, Fixpreis, kein Baukastensystem. Marco Calzavara, St. Gallen."
+  keywords="Website erstellen lassen Schweiz, Webseite Fixpreis, KI-Lösungen KMU, Webdesign Freelancer Schweiz, Texterstellung, Bildgenerierung, Logo-Design Schweiz, Softwareentwicklung KMU, Excel-Lösungen, Automatisierung, Freelancer St. Gallen"
+  canonical="https://laborium.ch/loesungen"
+  ogTitle="Fertig. Klar. Deins."
+  ogDescription="Websites, die ihren Job kennen. KI, die nicht nervt. Alles, dem Form fehlt. Fixpreis, kein Baukastensystem, persönlich betreut."
+  ogImageAlt="Calzavara Lösungen: Websites, KI und Texte aus einer Hand"
+  twitterTitle="Fertig. Klar. Deins."
+  twitterDescription="Websites, die ihren Job kennen. KI, die nicht nervt. Alles, dem Form fehlt. Fixpreis."
+  schema={schema}
+>
+  <section class="section pt-sub">
+    <div class="container">
+      <div class="hero-glow" style="top: -200px; opacity: 0.5;"></div>
+
+      <Breadcrumb items={[
+        { label: 'Start', href: '/' },
+        { label: 'Lösungen' }
+      ]} />
+
+      <div class="fade-up" style="text-align: left; max-width: 850px;">
+        <span class="badge badge--cyan">WOMIT ES AUFHÖRT</span>
+
+        <h1 style="margin-top: 15px;">
+          Fertig. Klar.<br>
+          <span class="gradient-text">Deins.</span>
+        </h1>
+        <p>
+          Fertig heisst hier nicht „abgeliefert". Es heisst: kein Detail, das stört, kein Satz, der falsch sitzt, kein Klick, der nicht funktioniert. Erst dann ist ein Projekt wirklich fertig, und das weisst du, bevor wir anfangen.
+        </p>
+      </div>
+
+      <div class="fade-up delay-100 mt-80" style="max-width: 900px; margin-left: auto; margin-right: auto;">
+
+        <div class="accordion">
+
+          <div class="accordion-item active">
+            <button class="accordion-header" aria-expanded="true" aria-controls="acc-1">
+              <div class="accordion-title-wrapper">
+                <span class="acc-icon-title" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="acc-grad-1" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#FFC700"/><stop offset="1" stop-color="#FF4D80"/></linearGradient></defs><rect x="2" y="3" width="20" height="14" rx="2" stroke="url(#acc-grad-1)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="8" y1="21" x2="16" y2="21" stroke="url(#acc-grad-1)" stroke-width="1.8" stroke-linecap="round"/><line x1="12" y1="17" x2="12" y2="21" stroke="url(#acc-grad-1)" stroke-width="1.8"/><line x1="7" y1="11" x2="7" y2="13" stroke="url(#acc-grad-1)" stroke-width="1.5" stroke-linecap="round"/><line x1="10" y1="9" x2="10" y2="13" stroke="url(#acc-grad-1)" stroke-width="1.5" stroke-linecap="round"/><line x1="13" y1="7" x2="13" y2="13" stroke="url(#acc-grad-1)" stroke-width="1.5" stroke-linecap="round"/><line x1="16" y1="9" x2="16" y2="13" stroke="url(#acc-grad-1)" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+                <span>Websites, die wirken.</span>
+              </div>
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <div id="acc-1" class="accordion-content" role="region" aria-hidden="false" style="max-height: 300px;">
+              <p>
+                Eine Website hat keine Öffnungszeiten, braucht keine Pause und erklärt sich nicht mit „eigentlich". Sie tut genau das, wofür sie gebaut wurde, oder sie tut es nicht. Ich baue Websites, die wissen, wer sie sind, wen sie ansprechen und was sie wollen. Ohne Vorlage, ohne Kompromiss, ohne Monatsabo.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false" aria-controls="acc-2">
+              <div class="accordion-title-wrapper">
+                <span class="acc-icon-title" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="acc-grad-2" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#FF4D80"/><stop offset="1" stop-color="#A64DFF"/></linearGradient></defs><circle cx="12" cy="12" r="2" stroke="url(#acc-grad-2)" stroke-width="1.8"/><circle cx="4.5" cy="8" r="1.5" stroke="url(#acc-grad-2)" stroke-width="1.5"/><circle cx="4.5" cy="16" r="1.5" stroke="url(#acc-grad-2)" stroke-width="1.5"/><circle cx="19.5" cy="8" r="1.5" stroke="url(#acc-grad-2)" stroke-width="1.5"/><circle cx="19.5" cy="16" r="1.5" stroke="url(#acc-grad-2)" stroke-width="1.5"/><circle cx="12" cy="3" r="1.5" stroke="url(#acc-grad-2)" stroke-width="1.5"/><line x1="10.3" y1="11" x2="6" y2="8.7" stroke="url(#acc-grad-2)" stroke-width="1.2"/><line x1="10.3" y1="13" x2="6" y2="15.3" stroke="url(#acc-grad-2)" stroke-width="1.2"/><line x1="13.7" y1="11" x2="18" y2="8.7" stroke="url(#acc-grad-2)" stroke-width="1.2"/><line x1="13.7" y1="13" x2="18" y2="15.3" stroke="url(#acc-grad-2)" stroke-width="1.2"/><line x1="12" y1="10" x2="12" y2="4.5" stroke="url(#acc-grad-2)" stroke-width="1.2"/></svg></span>
+                <span>KI, die nicht nervt.</span>
+              </div>
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <div id="acc-2" class="accordion-content" role="region" aria-hidden="true">
+              <p>
+                Viele KI-Lösungen beeindrucken in der Demo und verschwinden im Alltag. Die interessante Frage ist nicht, was KI kann, sondern was sie in deinem Kontext konkret tun soll. Ich entwickle Lösungen mit einer klaren Aufgabe, die dein Problem kennen, deine Sprache sprechen und funktionieren, wenn es darauf ankommt.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false" aria-controls="acc-3">
+              <div class="accordion-title-wrapper">
+                <span class="acc-icon-title" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="acc-grad-3" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#A64DFF"/><stop offset="1" stop-color="#00D2FF"/></linearGradient></defs><polygon points="12 2 22 8.5 12 15 2 8.5" stroke="url(#acc-grad-3)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><polyline points="2 13 12 19.5 22 13" stroke="url(#acc-grad-3)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <span>Alles, dem Form fehlt.</span>
+              </div>
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+            <div id="acc-3" class="accordion-content" role="region" aria-hidden="true">
+              <p>
+                Manchmal braucht es kein neues System. Nur einen Text, der endlich trifft. Ein Bild, das statt tausend Worten spricht. Eine Struktur, die aus Daten etwas Lesbares macht. Ich schaue, was fehlt, und ich fülle es. Präzise, passend, ohne Umwege.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="fade-up delay-200" style="text-align: center; max-width: 640px; margin: 100px auto 0;">
+        <span class="cta-label">Bereit?</span>
+        <h2 style="margin-bottom: 20px;">Weniger planen.<br><span class="gradient-text">Einfach anfangen.</span></h2>
+        <div class="hero-cta-group" style="justify-content: center;">
+          <a href="/kontakt" class="btn btn-primary">Unverbindlich anfragen</a>
+          <a href="/referenzen" class="btn btn-ghost">Referenzprojekte ansehen</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Responsive: Accordion-Bereich */
+  @media (max-width: 768px) {
+    /* CTA-Block Abstände */
+    .hero-cta-group {
+      flex-direction: column;
+      align-items: center;
+    }
+    .hero-cta-group .btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cta-label {
+      font-size: 0.6rem;
+    }
+  }
+</style>

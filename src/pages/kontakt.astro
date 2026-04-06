@@ -1,0 +1,156 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://laborium.ch/kontakt#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://laborium.ch/" },
+        { "@type": "ListItem", "position": 2, "name": "Kontakt", "item": "https://laborium.ch/kontakt" }
+      ]
+    },
+    {
+      "@type": "ContactPage",
+      "@id": "https://laborium.ch/kontakt#webpage",
+      "name": "Kontakt & Projektanfrage | Calzavara St. Gallen",
+      "url": "https://laborium.ch/kontakt",
+      "description": "Direkter Kontakt zu Marco Calzavara, Calzavara St. Gallen. Projektanfragen für Software, Webseiten, Texte, Bilder und KI-Lösungen.",
+      "inLanguage": "de-CH",
+      "datePublished": "2025-06-01",
+      "dateModified": "2026-03-19",
+      "isPartOf": { "@id": "https://laborium.ch/#website" },
+      "breadcrumb": { "@id": "https://laborium.ch/kontakt#breadcrumb" },
+      "isAccessibleForFree": true,
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", ".contact-text"]
+      },
+      "mainEntity": {
+        "@type": "Organization",
+        "@id": "https://laborium.ch/#organization",
+        "name": "Calzavara",
+        "email": "calzavara3830@gmail.com",
+        "url": "https://laborium.ch",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Wildeggstrasse 37",
+          "addressLocality": "St. Gallen",
+          "postalCode": "9000",
+          "addressRegion": "SG",
+          "addressCountry": "CH"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "email": "calzavara3830@gmail.com",
+          "areaServed": "CH",
+          "availableLanguage": ["German", "English"]
+        }
+      }
+    }
+  ]
+});
+---
+
+<Layout
+  title="Kontakt & Projektanfrage | Calzavara St. Gallen"
+  description="Keine KI, kein Assistent, kein Ticketsystem. Direkt Marco Calzavara schreiben – er liest, er denkt, er antwortet. Meistens noch am selben Tag."
+  keywords="Kontakt Calzavara, Website anfragen Schweiz, Webseite erstellen lassen Anfrage, Marco Calzavara, Freelancer St. Gallen, Projektanfrage digitale Lösungen KMU"
+  canonical="https://laborium.ch/kontakt"
+  ogTitle="Gute Arbeit braucht kein Business-Theater."
+  ogDescription="Keine KI, kein Assistent. Nur Marco. Schreib, was dich beschäftigt – er antwortet persönlich, meistens noch am selben Tag."
+  ogImageAlt="Calzavara Kontakt - Direkter Draht zu Marco Calzavara"
+  twitterTitle="Gute Arbeit braucht kein Business-Theater."
+  twitterDescription="Keine KI, kein Assistent. Nur Marco. Er liest jede Nachricht selbst."
+  schema={schema}
+>
+  <section class="section pt-sub">
+    <div class="container">
+      <div class="hero-glow" style="background: radial-gradient(circle, rgba(0, 210, 255, 0.12) 0%, transparent 70%);"></div>
+
+      <Breadcrumb items={[
+        { label: 'Start', href: '/' },
+        { label: 'Kontakt' }
+      ]} />
+
+      <div class="kontakt-grid">
+
+        <div class="fade-up">
+          <span class="badge badge--cyan">DIREKT. KEIN UMWEG.</span>
+          <h1 class="kontakt-headline">
+            Gute Arbeit<br>
+            braucht kein<br>
+            <span class="gradient-text">Business-Theater.</span>
+          </h1>
+          <p class="kontakt-lead">
+            Kein Briefing-Marathon, kein Kick-off, das als E-Mail ausgereicht hätte. Schreib, was du im Kopf hast. Den Rest bringe ich mit.
+          </p>
+          <p class="kontakt-sub">
+            Ich sage dir, was machbar ist, was es kostet und wann es losgeht.
+          </p>
+        </div>
+
+        <div class="contact-card fade-up delay-100">
+          <div class="contact-top-stripe"></div>
+
+          <div class="contact-icon-wrapper">
+            <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+              <defs>
+                <linearGradient id="mailGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FFC700"/>
+                  <stop offset="50%" stop-color="#FF4D80"/>
+                  <stop offset="100%" stop-color="#A64DFF"/>
+                </linearGradient>
+              </defs>
+              <rect x="4" y="10" width="40" height="28" rx="4" stroke="url(#mailGrad)" stroke-width="2" fill="none"/>
+              <path d="M4 15l20 14 20-14" stroke="url(#mailGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+          </div>
+
+          <h2 class="contact-title">Schreib mir.</h2>
+          <p class="contact-text">Keine KI, kein Assistent, kein Ticketsystem, das vergisst zu atmen. Nur ich. Ich lese, denke, antworte. Meistens noch am selben Tag.</p>
+
+          <button id="mailBtn" class="btn btn-primary contact-btn">Jetzt schreiben</button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .kontakt-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .kontakt-headline {
+    margin-top: 15px;
+    margin-bottom: 24px;
+    line-height: 1.08;
+  }
+
+  /* Top gradient accent stripe */
+  .contact-top-stripe {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #FFC700, #FF4D80, #A64DFF, #00D2FF);
+    border-radius: 2px 2px 0 0;
+  }
+
+  @media (max-width: 768px) {
+    .kontakt-grid { grid-template-columns: 1fr; gap: 40px; }
+  }
+
+  @media (max-width: 480px) {
+    .kontakt-grid { gap: 28px; }
+  }
+</style>

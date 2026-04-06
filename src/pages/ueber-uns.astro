@@ -1,0 +1,354 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://laborium.ch/ueber-uns#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://laborium.ch/" },
+        { "@type": "ListItem", "position": 2, "name": "Über mich", "item": "https://laborium.ch/ueber-uns" }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://laborium.ch/#person",
+      "name": "Marco Calzavara",
+      "givenName": "Marco",
+      "familyName": "Calzavara",
+      "jobTitle": "Gründer",
+      "description": "Gründer von Calzavara. Baut mit KI-Agenten digitale Lösungen – Websites, Tools, Texte, Bilder. Einer, der liefert was sonst Teams brauchen.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://laborium.ch/assets/marco-calzavara-gruender-laborium-st-gallen.webp",
+        "width": 768,
+        "height": 1024
+      },
+      "url": "https://laborium.ch/ueber-uns",
+      "worksFor": { "@id": "https://laborium.ch/#organization" },
+      "knowsAbout": ["Content-Erstellung", "Bildgenerierung", "Logo-Design", "Software Development", "Web Development", "UX Design", "Datenaufbereitung", "KI-Lösungen"],
+      "sameAs": [
+        "https://ch.linkedin.com/in/calzavara-marco",
+        "https://github.com/calza"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "St. Gallen",
+        "postalCode": "9000",
+        "addressCountry": "CH"
+      }
+    },
+    {
+      "@type": "AboutPage",
+      "@id": "https://laborium.ch/ueber-uns#webpage",
+      "name": "Über mich | Marco Calzavara | Calzavara",
+      "url": "https://laborium.ch/ueber-uns",
+      "isPartOf": { "@id": "https://laborium.ch/#website" },
+      "breadcrumb": { "@id": "https://laborium.ch/ueber-uns#breadcrumb" },
+      "inLanguage": "de-CH",
+      "datePublished": "2025-06-01",
+      "dateModified": "2026-03-21",
+      "isAccessibleForFree": true,
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", ".profile-card h2", ".belief-title"]
+      },
+      "mainEntity": { "@id": "https://laborium.ch/#person" }
+    }
+  ]
+});
+---
+
+<Layout
+  title="Über mich | Marco Calzavara | Calzavara"
+  description="Marco Calzavara – 15 Jahre Führung, 3 Firmen gegründet und verkauft. Baut mit KI-Agenten, liefert was sonst Teams brauchen. Direkt, persönlich, aus St. Gallen."
+  keywords="Marco Calzavara, Calzavara Gründer, Website Freelancer St. Gallen, Webdesign Schweiz, KI-Lösungen Schweiz, persönliche Betreuung, Softwareentwicklung KMU"
+  canonical="https://laborium.ch/ueber-uns"
+  ogTitle="Ein Mensch. 1001 Ideen."
+  ogDescription="15 Jahre Sozialversicherung, 3 Firmen gegründet und verkauft. Baut heute mit KI-Agenten, was sonst Teams brauchen. Ein Mensch. 1001 Ideen."
+  ogType="profile"
+  ogImage="https://laborium.ch/assets/marco-calzavara-gruender-laborium-st-gallen.webp"
+  ogImageAlt="Marco Calzavara - Gründer von Calzavara"
+  ogImageWidth="768"
+  ogImageHeight="1024"
+  twitterTitle="Ein Mensch. 1001 Ideen."
+  twitterDescription="15 Jahre Sozialversicherung, 3 Firmen gegründet. Baut mit KI-Agenten, was sonst Teams brauchen. Ein Mensch. 1001 Ideen."
+  schema={schema}
+>
+  <section class="section pt-sub">
+    <div class="container">
+      <div class="hero-glow hero-glow--pink"></div>
+
+      <Breadcrumb items={[
+        { label: 'Start', href: '/' },
+        { label: 'Über mich' }
+      ]} />
+
+      <div class="fade-up" style="text-align: left; max-width: 850px; margin-bottom: 64px;">
+        <span class="badge badge--pink">WER ICH BIN</span>
+
+        <h1 style="margin-top: 15px;">
+          Ein Mensch. <br>
+          <span class="gradient-text">1001 Ideen.</span>
+        </h1>
+        <p>
+          Technik und das Umsetzen von Ideen haben mich fasziniert, solange ich denken kann. Was genau mich in die Sozialversicherung geführt hat, ist eine andere Geschichte. Geblieben bin ich, weil echtes Fachwissen zählt, und weil das Naheliegende irgendwann unausweichlich wurde: beides verbinden. Seit 2021 entwickle und lizenziere ich Software, die Sozialversicherungen täglich einsetzen. Kein Prototyp, kein Pilotprojekt. Ein echtes Produkt, das seinen Job kennt. 15 Jahre Führungserfahrung, drei Firmen gegründet und verkauft, und eine Ader für Perfektion, die erst aufhört, wenn es wirklich stimmt. Ich habe mehr Ideen als Stunden am Tag, und ich setze die um, die keine Ruhe geben. Mit KI-Agenten kann ich heute allein liefern, wofür früher ein ganzes Team gebraucht wurde. Das war der Moment, auf den ich gewartet hatte.
+        </p>
+      </div>
+
+      <article class="card profile-card fade-up delay-100" style="max-width: 850px; margin-bottom: 30px;">
+        <div class="profile-card-glow"></div>
+        <div class="profile-header" style="align-items: flex-start;">
+          <div class="profile-img-wrapper profile-img-pink" style="flex-shrink: 0;">
+            <img src="/assets/marco-calzavara-gruender-laborium-st-gallen.webp"
+                 alt="Marco Calzavara - Gründer von Calzavara"
+                 class="profile-img lightbox-trigger"
+                 title="Marco Calzavara"
+                 width="180"
+                 height="180"
+                 loading="lazy">
+          </div>
+          <div style="flex: 1;">
+            <h2 style="font-size: 1.8rem; margin-bottom: 14px;">Marco Calzavara</h2>
+            <p style="margin: 0;">
+              Ideen interessieren mich erst, wenn sie irgendwo in der Welt landen. Ungelöste Probleme ziehen mich an, und ich lasse erst los, wenn das Ergebnis wirklich glänzt.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <div class="about-stats fade-up delay-200" style="max-width: 850px; margin-bottom: 80px;">
+        <div class="about-stat">
+          <span class="about-stat-num">15</span>
+          <span class="about-stat-label">Jahre Führung im Sozialversicherungswesen. Man gewöhnt sich an alles, ausser an die Formulare.</span>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat-num">3×</span>
+          <span class="about-stat-label">Firmen gegründet und verkauft. Nicht aus Langeweile, sondern weil die nächste Herausforderung schon wartete.</span>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat-num">1</span>
+          <span class="about-stat-label">Ansprechpartner, Entwickler und Qualitätskontrolle in einer Person. Ohne stille Post.</span>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat-num">∞</span>
+          <span class="about-stat-label">KI-Agenten, die nicht schlafen. Und ich, der weiss, wohin.</span>
+        </div>
+      </div>
+
+      <div class="beliefs-section fade-up delay-300">
+        <span class="badge badge--pink" style="margin-bottom: 30px; display: inline-block;">WORAN ICH GLAUBE</span>
+        <div class="beliefs-list">
+          <div class="belief-item">
+            <span class="belief-num">01</span>
+            <div class="belief-content">
+              <p class="belief-title"><em>Fertig</em> ist kein Datum.</p>
+              <p class="belief-body">Sondern der Moment, in dem das Ergebnis für sich spricht. Deadlines respektiere ich. «Gut genug» nicht.</p>
+            </div>
+          </div>
+          <div class="belief-item">
+            <span class="belief-num">02</span>
+            <div class="belief-content">
+              <p class="belief-title">Weniger ist <em>Substanz</em>.</p>
+              <p class="belief-body">Ich baue keine Denkmäler, die nach einem Jahr niemand mehr versteht. Was nicht gebraucht wird, kommt nicht rein. Was drin ist, hat einen Grund.</p>
+            </div>
+          </div>
+          <div class="belief-item">
+            <span class="belief-num">03</span>
+            <div class="belief-content">
+              <p class="belief-title">Ehrlichkeit <em>spart Nerven</em>.</p>
+              <p class="belief-body">Wenn eine Idee keinen Sinn ergibt, sage ich das. Auch wenn es unbequem ist. Ein klares «Nein» zur richtigen Zeit ist mehr wert als jedes höfliche «Ja».</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-cta fade-up">
+        <span class="cta-label">Und jetzt?</span>
+        <h2>Noch kein Plan?<br><span class="gradient-text">Perfekter Zeitpunkt.</span></h2>
+        <div class="hero-cta-group" style="justify-content: center;">
+          <a href="/kontakt" class="btn btn-primary">Direkt schreiben</a>
+          <a href="/referenzen" class="btn btn-ghost">Projekte ansehen</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* ── Profile card ── */
+  .profile-card { position: relative; overflow: hidden; }
+
+  .profile-card-glow {
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 320px; height: 320px;
+    background: radial-gradient(circle, rgba(255, 77, 128, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+    border-radius: 50%;
+  }
+
+  .profile-img-pink {
+    border-color: rgba(255, 77, 128, 0.4) !important;
+    box-shadow: 0 0 24px rgba(255, 77, 128, 0.18) !important;
+  }
+
+  /* ── Stats ── */
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .about-stat {
+    padding: 30px 34px;
+    border-right: 1px solid rgba(255,255,255,0.07);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    transition: background 0.3s ease;
+  }
+
+  .about-stat:nth-child(even)  { border-right: none; }
+  .about-stat:nth-child(3),
+  .about-stat:nth-child(4)     { border-bottom: none; }
+
+  @media (hover: hover) {
+    .about-stat:hover { background: rgba(255,255,255,0.03); }
+    .about-stat:hover .about-stat-num {
+      background: linear-gradient(135deg, #FFC700 0%, #FF4D80 50%, #A64DFF 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: stat-bounce 0.9s ease forwards;
+    }
+  }
+
+  .about-stat-num {
+    display: block;
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #FFC700 0%, #FF4D80 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: transform 0.4s ease;
+  }
+
+  .about-stat-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* ── Beliefs ── */
+  .beliefs-section {
+    max-width: 850px;
+    margin-bottom: 80px;
+  }
+
+  .beliefs-list {
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .belief-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+    padding: 28px 32px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    position: relative;
+    transition: background 0.3s ease;
+  }
+
+  .belief-item:last-child { border-bottom: none; }
+
+  .belief-item::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, #FF4D80, #A64DFF);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  @media (hover: hover) {
+    .belief-item:hover { background: rgba(255,255,255,0.025); }
+    .belief-item:hover::before { opacity: 1; }
+  }
+
+  .belief-num {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    background: linear-gradient(135deg, #FF4D80, #A64DFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    flex-shrink: 0;
+    padding-top: 4px;
+    min-width: 22px;
+  }
+
+  .belief-content { flex: 1; }
+
+  .belief-title {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.4;
+  }
+
+  .belief-body {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .beliefs-list em { color: #FF4D80; font-style: italic; }
+
+  @keyframes stat-bounce {
+    0%   { transform: translateY(0)   rotate(0deg)  scale(1);    }
+    30%  { transform: translateY(-7px) rotate(-3deg) scale(1.06); }
+    55%  { transform: translateY(-2px) rotate(2deg)  scale(1.02); }
+    80%  { transform: translateY(-5px) rotate(-1deg) scale(1.04); }
+    100% { transform: translateY(-4px) rotate(0deg)  scale(1.03); }
+  }
+
+  /* ── CTA ── */
+  .about-cta {
+    text-align: center;
+    padding-top: 64px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .about-cta h2 { margin-bottom: 16px; }
+
+  .about-cta p {
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 36px;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    .about-stats { grid-template-columns: 1fr; }
+    .about-stat:nth-child(even)  { border-right: none; }
+    .about-stat:nth-child(odd)   { border-right: none; }
+    .about-stat:nth-child(3)     { border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .about-stat:last-child       { border-bottom: none; }
+    .belief-item { gap: 18px; padding: 22px 22px; }
+  }
+</style>

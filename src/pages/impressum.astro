@@ -1,0 +1,182 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://laborium.ch/impressum#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://laborium.ch/" },
+        { "@type": "ListItem", "position": 2, "name": "Impressum", "item": "https://laborium.ch/impressum" }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://laborium.ch/impressum#webpage",
+      "name": "Impressum | Calzavara",
+      "url": "https://laborium.ch/impressum",
+      "isPartOf": { "@id": "https://laborium.ch/#website" },
+      "breadcrumb": { "@id": "https://laborium.ch/impressum#breadcrumb" },
+      "inLanguage": "de-CH",
+      "datePublished": "2025-06-01",
+      "dateModified": "2026-03-21",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Calzavara",
+        "url": "https://laborium.ch",
+        "logo": "https://laborium.ch/assets/laborium-logo.svg",
+        "email": "calzavara3830@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Wildeggstrasse 37",
+          "addressLocality": "St. Gallen",
+          "postalCode": "9000",
+          "addressCountry": "CH"
+        },
+        "founder": { "@type": "Person", "name": "Marco Calzavara" },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "email": "calzavara3830@gmail.com"
+        }
+      }
+    }
+  ]
+});
+---
+
+<Layout
+  title="Impressum | Calzavara"
+  description="Impressum und rechtliche Hinweise von Calzavara. Kontaktadresse und verantwortliche Person."
+  keywords="Impressum Calzavara, Kontaktadresse, Marco Calzavara"
+  canonical="https://laborium.ch/impressum"
+  robots="noindex, follow"
+  schema={schema}
+>
+  <section class="section pt-sub">
+    <div class="container">
+      <div class="hero-glow" style="top: -200px; background: radial-gradient(circle, rgba(0, 210, 255, 0.1) 0%, rgba(166, 77, 255, 0.06) 50%, transparent 70%); opacity: 0.7;"></div>
+
+      <Breadcrumb items={[
+        { label: 'Start', href: '/' },
+        { label: 'Impressum' }
+      ]} />
+
+      <div class="fade-up" style="text-align: left; max-width: 850px; margin-bottom: 64px;">
+        <span class="badge" style="color: #00D2FF; border-color: rgba(0, 210, 255, 0.3);">IMPRESSUM</span>
+        <h1 style="margin-top: 15px;">
+          Impressum.<br>
+          <span class="gradient-text">Wer dahintersteht.</span>
+        </h1>
+        <p>Alle Angaben auf einen Blick.</p>
+      </div>
+
+      <div class="impr-card fade-up delay-100">
+        <div class="impr-row">
+          <div class="impr-block">
+            <span class="impr-label">Unternehmen</span>
+            <p class="impr-value">
+              <strong>Calzavara</strong><br>
+              Marco Calzavara<br>
+              Wildeggstrasse 37<br>
+              9000 St. Gallen<br>
+              Schweiz
+            </p>
+          </div>
+          <div class="impr-block">
+            <span class="impr-label">Verantwortlich</span>
+            <p class="impr-value"><strong>Marco Calzavara</strong></p>
+            <span class="impr-label" style="margin-top: 28px;">Kontakt</span>
+            <div style="margin-top: 10px;">
+              <span class="reveal-mail btn btn-ghost legal-btn" role="button" tabindex="0">Nachricht schreiben →</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="legal-sections fade-up delay-200">
+
+        <div class="legal-item">
+          <span class="legal-num">—</span>
+          <div class="legal-content">
+            <h2 class="legal-title">Haftungsausschluss</h2>
+            <p>Der Autor übernimmt keinerlei Gewähr hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit der Informationen. Haftungsansprüche gegen den Autor wegen Schäden materieller oder immaterieller Art, welche aus dem Zugriff oder der Nutzung bzw. Nichtnutzung der veröffentlichten Informationen entstanden sind, werden ausgeschlossen.</p>
+            <p>Alle Angebote sind unverbindlich. Der Autor behält es sich ausdrücklich vor, Teile der Seiten oder das gesamte Angebot ohne gesonderte Ankündigung zu verändern, zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen.</p>
+          </div>
+        </div>
+
+        <div class="legal-item">
+          <span class="legal-num">—</span>
+          <div class="legal-content">
+            <h2 class="legal-title">Haftung für Links</h2>
+            <p>Verweise und Links auf Webseiten Dritter liegen ausserhalb meines Verantwortungsbereichs. Es wird jegliche Verantwortung für solche Webseiten abgelehnt. Der Zugriff und die Nutzung solcher Webseiten erfolgen auf eigene Gefahr.</p>
+          </div>
+        </div>
+
+        <div class="legal-item">
+          <span class="legal-num">—</span>
+          <div class="legal-content">
+            <h2 class="legal-title">Urheberrechte</h2>
+            <p>Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf der Website gehören ausschliesslich <strong>Calzavara / Marco Calzavara</strong> oder den speziell genannten Rechtsinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung der Urheberrechtsträger im Voraus einzuholen.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Info card */
+  .impr-card {
+    max-width: 850px;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px;
+    padding: 36px 40px;
+    margin-bottom: 64px;
+    background: rgba(255,255,255,0.015);
+  }
+
+  .impr-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .impr-label {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(0, 210, 255, 0.6);
+    margin-bottom: 10px;
+  }
+
+  .impr-value {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.85;
+    margin: 0;
+    max-width: none;
+  }
+
+  .impr-value strong { color: rgba(255,255,255,0.8); font-weight: 600; }
+
+  .legal-num {
+    font-size: 0.9rem;
+    font-weight: 300;
+    padding-top: 3px;
+    min-width: 22px;
+    flex-shrink: 0;
+    color: rgba(0, 210, 255, 0.35);
+  }
+
+  @media (max-width: 600px) {
+    .impr-row { grid-template-columns: 1fr; gap: 28px; }
+    .impr-card { padding: 26px 22px; }
+  }
+</style>

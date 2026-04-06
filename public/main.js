@@ -1,0 +1,425 @@
+/**
+ * laborium.ch - Main Script
+ * Handles Navigation, Animations, Lightbox Gallery, and Spam Protection.
+ */
+
+const TIMING = {
+  LIGHTBOX_INIT_DELAY:  100,
+  MODAL_FOCUS_DELAY:    350,
+  MODAL_CLOSE_DELAY:    380,
+  CLOSE_OVERLAY_DELAY:  300,
+  FILTER_HIDE_DELAY:    350,
+  AUTO_CLOSE_DELAY:    5000,
+  HERO_GLOW_DELAY:     1000,
+  LIGHTBOX_FADE:        150,
+  LIGHTBOX_OPEN_DELAY:   10,
+};
+
+// iOS Safari: body.overflow='hidden' verhindert Scrollen nicht zuverlässig.
+// Lock-Depth-Counter macht die Funktionen re-entrant-safe (z.B. Nav + Modal gleichzeitig offen).
+// Auf Desktop wird unlockScroll() zu einem No-op, da lockScroll() nie aufgerufen wird.
+let _scrollLockY = 0;
+let _lockDepth = 0;
+function lockScroll() {
+  if (_lockDepth === 0) {
+    _scrollLockY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${_scrollLockY}px`;
+  }
+  _lockDepth++;
+}
+function unlockScroll() {
+  if (_lockDepth <= 0) return;
+  _lockDepth--;
+  if (_lockDepth === 0) {
+    document.body.style.position = '';
+    document.body.style.top = '';
+    window.scrollTo(0, _scrollLockY);
+  }
+}
+
+let _closeModalTimer = 0;
+
+document.addEventListener('DOMContentLoaded', () => {
+  initNavigation();
+  initScrollAnimations();
+  initSpamProtection();
+  initContactModal();
+  initAccordions();
+  setTimeout(initLightbox, TIMING.LIGHTBOX_INIT_DELAY);
+  setTimeout(() => {
+    document.querySelectorAll('.hero-glow').forEach(el => el.classList.add('animated'));
+  }, TIMING.HERO_GLOW_DELAY);
+});
+
+function initNavigation() {
+  const menuBtn = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  const header = document.querySelector('header');
+
+  if (menuBtn && navLinks) {
+    function closeNav() {
+      navLinks.classList.remove('mobile-active');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      unlockScroll();
+      header.classList.remove('menu-open');
+    }
+
+    menuBtn.addEventListener('click', () => {
+      if (navLinks.classList.contains('mobile-active')) {
+        closeNav();
+      } else {
+        navLinks.classList.add('mobile-active');
+        menuBtn.setAttribute('aria-expanded', 'true');
+        lockScroll();
+        header.classList.add('menu-open');
+      }
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeNav);
+    });
+  }
+}
+
+function initScrollAnimations() {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!prefersReducedMotion) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  } else {
+    document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
+  }
+}
+
+function initSpamProtection() {
+  document.querySelectorAll('#mailBtn, .reveal-mail').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      openContactModal();
+    });
+    el.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openContactModal();
+      }
+    });
+  });
+}
+
+function openContactModal() {
+  const modal = document.getElementById('contact-modal');
+  if (!modal) return;
+  clearTimeout(_closeModalTimer);
+  modal.style.display = 'block';
+  modal.setAttribute('aria-hidden', 'false');
+  lockScroll();
+  requestAnimationFrame(() => modal.classList.add('active'));
+  setTimeout(() => {
+    const firstInput = modal.querySelector('.cmodal-input');
+    if (firstInput) firstInput.focus();
+  }, TIMING.MODAL_FOCUS_DELAY);
+}
+
+function closeContactModal() {
+  const modal = document.getElementById('contact-modal');
+  if (!modal) return;
+  modal.classList.remove('active');
+  modal.setAttribute('aria-hidden', 'true');
+  _closeModalTimer = setTimeout(() => {
+    modal.style.display = 'none';
+    unlockScroll();
+    const successEl = document.getElementById('cmodal-success');
+    const form = document.getElementById('contact-form');
+    const header = modal.querySelector('.cmodal-header');
+    if (successEl) successEl.classList.remove('visible');
+    if (form) form.style.display = '';
+    if (header) header.style.display = '';
+  }, TIMING.MODAL_CLOSE_DELAY);
+}
+
+function getCsrfToken() {
+  const existing = document.cookie.match(/(?:^|;\s*)_csrf=([^;]+)/)?.[1];
+  if (existing) return existing;
+  let token;
+  if (window.crypto && window.crypto.getRandomValues) {
+    const arr = new Uint8Array(16);
+    window.crypto.getRandomValues(arr);
+    token = Array.from(arr, x => x.toString(16).padStart(2, '0')).join('');
+  } else {
+    token = Math.random().toString(36).slice(2) + Date.now().toString(36);
+  }
+  const expires = new Date(Date.now() + 3600000).toUTCString();
+  document.cookie = `_csrf=${token}; path=/; SameSite=Strict; Secure; Expires=${expires}`;
+  return token;
+}
+
+function initContactModal() {
+  const modal = document.getElementById('contact-modal');
+  if (!modal) return;
+
+  modal.querySelector('.cmodal-close').addEventListener('click', closeContactModal);
+  modal.querySelector('.cmodal-backdrop').addEventListener('click', closeContactModal);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) closeContactModal();
+  });
+
+  const form = document.getElementById('contact-form');
+  const submitBtn = document.getElementById('cmodal-submit');
+  const feedback = document.getElementById('cmodal-feedback');
+
+  function showError(msg) {
+    feedback.textContent = msg;
+    feedback.className = 'cmodal-feedback error';
+    feedback.style.display = 'block';
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    feedback.style.display = 'none';
+    feedback.className = 'cmodal-feedback';
+    form.querySelectorAll('.cmodal-input').forEach(f => f.classList.remove('has-error'));
+
+    let valid = true;
+    ['name', 'email', 'message'].forEach(fieldName => {
+      const field = form.querySelector(`[name="${fieldName}"]`);
+      if (!field.value.trim()) {
+        field.classList.add('has-error');
+        valid = false;
+      }
+    });
+
+    const emailField = form.querySelector('[name="email"]');
+    if (emailField.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value)) {
+      emailField.classList.add('has-error');
+      valid = false;
+    }
+
+    if (!valid) {
+      showError('Bitte alle Pflichtfelder korrekt ausfüllen.');
+      return;
+    }
+
+    submitBtn.dataset.loading = 'true';
+
+    try {
+      const formData = new FormData(form);
+      formData.set('_csrf', getCsrfToken());
+      const res = await fetch('/send-mail.php', { method: 'POST', body: formData });
+      const data = await res.json();
+
+      if (data.success) {
+        form.reset();
+        const header = modal.querySelector('.cmodal-header');
+        if (header) header.style.display = 'none';
+        form.style.display = 'none';
+        const successEl = document.getElementById('cmodal-success');
+        if (successEl) {
+          successEl.classList.add('visible');
+          successEl.querySelector('.cmodal-success-close').onclick = closeContactModal;
+        }
+        setTimeout(closeContactModal, TIMING.AUTO_CLOSE_DELAY);
+      } else {
+        showError(data.message || 'Fehler beim Senden. Bitte erneut versuchen.');
+      }
+    } catch (err) {
+      console.error('Contact form error:', err);
+      showError('Verbindungsfehler. Bitte erneut versuchen.');
+    } finally {
+      submitBtn.removeAttribute('data-loading');
+    }
+  });
+}
+
+function initAccordions() {
+  const accItems = document.querySelectorAll('.accordion-item');
+  const accHeaders = document.querySelectorAll('.accordion-header');
+  accHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+      const item = header.parentElement;
+      const isOpen = item.classList.contains('active');
+      const content = item.querySelector('.accordion-content');
+      const targetHeight = content ? content.scrollHeight : 0; // Read layout before any DOM writes
+      accItems.forEach(otherItem => {
+        if (otherItem !== item) {
+          otherItem.classList.remove('active');
+          const otherContent = otherItem.querySelector('.accordion-content');
+          if (otherContent) otherContent.style.maxHeight = 0;
+          otherItem.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+        }
+      });
+      if (!isOpen) {
+        item.classList.add('active');
+        if (content) content.style.maxHeight = targetHeight + "px";
+        header.setAttribute('aria-expanded', 'true');
+      } else {
+        item.classList.remove('active');
+        if (content) content.style.maxHeight = 0;
+        header.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+}
+
+
+function initLightbox() {
+  const triggers = document.querySelectorAll('.lightbox-trigger');
+  if (triggers.length === 0) return;
+
+  let currentGallery = [];
+  let currentIndex = 0;
+  let modal, modalImg, prevBtn, nextBtn, closeBtn, counter;
+
+  if (!document.getElementById('lightbox-modal')) {
+    const lightbox = document.createElement('div');
+    lightbox.id = 'lightbox-modal';
+    lightbox.className = 'lightbox';
+    lightbox.innerHTML = `
+      <button class="lightbox-close" aria-label="Schliessen">&times;</button>
+      <button class="lightbox-nav lightbox-prev" aria-label="Vorheriges Bild">&lsaquo;</button>
+      <button class="lightbox-nav lightbox-next" aria-label="Nächstes Bild">&rsaquo;</button>
+      <div class="lightbox-image-container">
+        <img class="lightbox-content" id="lightbox-img" src="" alt="Grossansicht">
+        <div class="lightbox-counter" id="lightbox-counter"></div>
+      </div>
+    `;
+    document.body.appendChild(lightbox);
+  }
+
+  modal = document.getElementById('lightbox-modal');
+  modalImg = document.getElementById('lightbox-img');
+  prevBtn = modal.querySelector('.lightbox-prev');
+  nextBtn = modal.querySelector('.lightbox-next');
+  closeBtn = modal.querySelector('.lightbox-close');
+  counter = document.getElementById('lightbox-counter');
+
+  function updateImage() {
+    if (currentGallery.length === 0 || currentIndex < 0 || currentIndex >= currentGallery.length) return;
+    modalImg.style.opacity = 0;
+    setTimeout(() => {
+      modalImg.src = currentGallery[currentIndex];
+      modalImg.style.opacity = 1;
+    }, TIMING.LIGHTBOX_FADE);
+    if (currentGallery.length > 1) {
+      prevBtn.style.display = 'flex';
+      nextBtn.style.display = 'flex';
+      counter.style.display = 'block';
+      counter.textContent = `${currentIndex + 1} / ${currentGallery.length}`;
+    } else {
+      prevBtn.style.display = 'none';
+      nextBtn.style.display = 'none';
+      counter.style.display = 'none';
+    }
+  }
+
+  function closeLightbox() {
+    modal.classList.remove('active');
+    setTimeout(() => {
+      modal.style.display = 'none';
+      currentGallery = [];
+      currentIndex = 0;
+    }, TIMING.CLOSE_OVERLAY_DELAY);
+  }
+
+  function showNext() {
+    if (currentGallery.length <= 1) return;
+    currentIndex = (currentIndex + 1) % currentGallery.length;
+    updateImage();
+  }
+
+  function showPrev() {
+    if (currentGallery.length <= 1) return;
+    currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+    updateImage();
+  }
+
+  function openLightbox(trigger) {
+    currentGallery = [];
+    currentIndex = 0;
+
+    if (trigger.dataset.gallery) {
+      try {
+        const parsed = JSON.parse(trigger.dataset.gallery);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          currentGallery = parsed;
+        } else {
+          console.warn('[Lightbox] data-gallery parsed but is empty or not an array:', trigger);
+          return;
+        }
+      } catch (e) {
+        console.warn('[Lightbox] Failed to parse data-gallery JSON:', e, trigger);
+        return;
+      }
+    } else {
+      const src = trigger.dataset.src || trigger.src;
+      if (src) {
+        currentGallery = [src];
+      } else {
+        console.warn('[Lightbox] Trigger has no data-src, data-gallery, or src attribute:', trigger);
+        return;
+      }
+    }
+
+    if (currentGallery.length > 0) {
+      currentIndex = parseInt(trigger.dataset.galleryIndex, 10) || 0;
+      modal.style.display = 'flex';
+      updateImage();
+      setTimeout(() => modal.classList.add('active'), TIMING.LIGHTBOX_OPEN_DELAY);
+    }
+  }
+
+  triggers.forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      openLightbox(trigger);
+    });
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeLightbox();
+  });
+
+  nextBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showNext();
+  });
+
+  prevBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showPrev();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (modal.classList.contains('active')) {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') showNext();
+      if (e.key === 'ArrowLeft') showPrev();
+    }
+  });
+
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  modal.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  modal.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    const swipeThreshold = 50;
+    if (touchEndX < touchStartX - swipeThreshold) showNext();
+    if (touchEndX > touchStartX + swipeThreshold) showPrev();
+  }, { passive: true });
+}

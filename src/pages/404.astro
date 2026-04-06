@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="404 | Calzavara"
+  description="Diese Seite gibt es nicht. Aber alles andere schon. Zurück zu Calzavara."
+  canonical="https://laborium.ch/404"
+  robots="noindex, follow"
+>
+  <section class="section pt-hero" style="min-height: 70vh; display: flex; align-items: center; justify-content: center;">
+    <div class="container fade-up" style="text-align: center;">
+      <div class="hero-glow" style="background: radial-gradient(circle, rgba(255, 77, 128, 0.15) 0%, transparent 60%);"></div>
+
+      <h1 style="font-size: clamp(6rem, 15vw, 10rem); line-height: 1; margin-bottom: 20px; color: var(--text-muted); opacity: 0.1; font-weight: 800;">404</h1>
+
+      <h2 style="margin-bottom: 20px; font-size: 2rem;">
+        <span class="gradient-text">Hier baut gerade niemand.</span>
+      </h2>
+
+      <p class="m-auto-b40" style="max-width: 500px; color: var(--text-muted);">
+        Diese Seite existiert nicht. Aber alles andere schon. Vielleicht findest du hier, was du suchst.
+      </p>
+
+      <div class="hero-cta-group" style="justify-content: center;">
+        <a href="/" class="btn btn-primary">Zurück zum Start</a>
+        <a href="/kontakt" class="btn btn-ghost">Kontakt aufnehmen</a>
+      </div>
+
+      <div class="mt-60" style="font-size: 0.9rem; color: var(--text-muted);">
+        <p style="margin-bottom: 10px;">Oder suchtest du nach:</p>
+        <nav style="display: inline-flex; gap: 20px; justify-content: center;">
+          <a href="/loesungen" style="color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.2);">Lösungen</a>
+          <a href="/referenzen" style="color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.2);">Referenzen</a>
+          <a href="/ueber-uns" style="color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.2);">Über mich</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+</Layout>

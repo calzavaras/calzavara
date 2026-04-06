@@ -1,0 +1,40 @@
+---
+const pathname = Astro.url.pathname;
+
+const navLinks = [
+  { href: '/', label: 'Start' },
+  { href: '/loesungen', label: 'Lösungen' },
+  { href: '/referenzen', label: 'Referenzen' },
+  { href: '/ueber-uns', label: 'Über mich' },
+  { href: '/kontakt', label: 'Kontakt' },
+];
+
+function isActive(href: string): boolean {
+  if (href === '/') return pathname === '/' || pathname === '';
+  return pathname === href || pathname.startsWith(href + '/');
+}
+---
+
+<header class="floating-header">
+  <div class="nav-container">
+    <nav aria-label="Hauptnavigation">
+      <a href="/" class="logo font-logo" aria-label="Calzavara Startseite">
+        calza<span class="gradient-vara">vara</span>
+      </a>
+      <div class="nav-links" id="primary-navigation">
+        {navLinks.map(link => (
+          <a
+            href={link.href}
+            class:list={[{ active: isActive(link.href) }]}
+            aria-current={isActive(link.href) ? 'page' : undefined}
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+      <button class="menu-toggle" aria-label="Menü öffnen" aria-controls="primary-navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>

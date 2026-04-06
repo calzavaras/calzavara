@@ -1,0 +1,273 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://laborium.ch/#website",
+      "name": "Calzavara",
+      "url": "https://laborium.ch",
+      "inLanguage": "de-CH",
+      "publisher": { "@id": "https://laborium.ch/#organization" },
+      "potentialAction": {
+        "@type": "CommunicateAction",
+        "target": "https://laborium.ch/kontakt",
+        "name": "Kontaktanfrage senden"
+      }
+    },
+    {
+      "@type": ["ProfessionalService", "Organization"],
+      "@id": "https://laborium.ch/#organization",
+      "name": "Calzavara",
+      "url": "https://laborium.ch",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://laborium.ch/assets/laborium-logo.svg"
+      },
+      "image": "https://laborium.ch/assets/laborium-logo.svg",
+      "description": "Was auch immer du digital vorhast, ich setze es um. Software, Texte, Branding, kleine Tools oder alles zusammen. KI-gestützt, persönlich betreut, aus St. Gallen.",
+      "founder": { "@id": "https://laborium.ch/#person" },
+      "foundingDate": "2025",
+      "knowsAbout": ["KI-Lösungen", "Softwareentwicklung", "Webentwicklung", "Content-Erstellung", "Bildgenerierung", "Logo-Design", "Datenaufbereitung", "Automatisierung", "UX Design"],
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "value": 1
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Wildeggstrasse 37",
+        "addressLocality": "St. Gallen",
+        "postalCode": "9000",
+        "addressRegion": "SG",
+        "addressCountry": "CH"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "47.4245",
+        "longitude": "9.3767"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "calzavara3830@gmail.com",
+        "areaServed": "CH",
+        "availableLanguage": ["German", "English"]
+      },
+      "priceRange": "$$",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Switzerland"
+      },
+      "sameAs": [
+        "https://ch.linkedin.com/in/calzavara-marco",
+        "https://github.com/calza"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://laborium.ch/#person",
+      "name": "Marco Calzavara",
+      "givenName": "Marco",
+      "familyName": "Calzavara",
+      "jobTitle": "Gründer",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://laborium.ch/assets/marco-calzavara-gruender-laborium-st-gallen.webp",
+        "width": 768,
+        "height": 1024
+      },
+      "url": "https://laborium.ch/ueber-uns",
+      "sameAs": [
+        "https://ch.linkedin.com/in/calzavara-marco",
+        "https://github.com/calza"
+      ],
+      "worksFor": { "@id": "https://laborium.ch/#organization" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://laborium.ch/#webpage",
+      "url": "https://laborium.ch/",
+      "name": "Digitale Lösungen aus der Schweiz | Calzavara",
+      "isPartOf": { "@id": "https://laborium.ch/#website" },
+      "about": { "@id": "https://laborium.ch/#organization" },
+      "inLanguage": "de-CH",
+      "datePublished": "2025-06-01",
+      "dateModified": "2026-03-19",
+      "description": "Was auch immer du digital vorhast, ich setze es um. Software, Texte, Branding, kleine Tools oder alles zusammen. KI-gestützt, persönlich betreut, echte Resultate.",
+      "isAccessibleForFree": true,
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["#hero-title", ".hero-content p", ".card h3"]
+      }
+    }
+  ]
+});
+---
+
+<Layout
+  title="Digitale Lösungen aus der Schweiz | Calzavara"
+  description="Website erstellen lassen in der Schweiz – persönlich, Fixpreis, kein Baukastensystem. Marco Calzavara baut Websites, die für dich arbeiten. Aus St. Gallen, für die ganze Schweiz."
+  keywords="Website erstellen lassen Schweiz, Webseite erstellen St. Gallen, Freelancer Website Schweiz, Webdesign KMU Schweiz, digitale Lösungen Schweiz, Softwareentwicklung, KI-Lösungen, Branding, Fixpreis Website"
+  canonical="https://laborium.ch/"
+  ogTitle="Was gut gemacht ist, braucht keine Erklärung."
+  ogDescription="Websites und digitale Lösungen, die wirklich zu dir passen. Persönlich. Fixpreis. Aus St. Gallen."
+  ogImageAlt="Calzavara - Websites und digitale Lösungen aus der Schweiz"
+  twitterTitle="Was gut gemacht ist, braucht keine Erklärung."
+  twitterDescription="Websites und digitale Lösungen, die wirklich zu dir passen. Persönlich. Fixpreis. Aus St. Gallen."
+  schema={schema}
+>
+  <section class="section pt-hero" aria-labelledby="hero-title">
+    <div class="container fade-up">
+      <div class="hero-glow"></div>
+
+      <span class="badge badge--yellow">DIGITALE PRODUKTE. IM MASSANZUG.</span>
+
+      <h1 id="hero-title" style="margin-top: 15px;">
+        Ich arbeite weiter,<br>
+        <span class="gradient-text">wo andere aufhören.</span>
+      </h1>
+
+      <p class="hero-lead">
+        Digitale Produkte, Websites, Tools und Texte mit Charakter. Durchdacht bis in die Tiefe und gemacht, um zu bleiben.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="/kontakt" class="btn btn-primary" title="Projekt starten">Projekt starten</a>
+        <a href="/referenzen" class="btn btn-ghost" title="Arbeiten ansehen">Arbeiten ansehen</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-cards pt-compact" aria-labelledby="values-title">
+    <div class="container">
+      <h2 id="values-title" class="visually-hidden">So arbeite ich</h2>
+      <div class="grid-3 values-grid">
+
+        <article class="card fade-up">
+          <div class="card-icon" aria-hidden="true"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icon-grad-1" x1="-12" y1="12" x2="36" y2="12" gradientUnits="userSpaceOnUse"><animate attributeName="x1" values="-12;-36;-12" dur="20s" calcMode="ease" repeatCount="indefinite"/><animate attributeName="x2" values="36;12;36" dur="20s" calcMode="ease" repeatCount="indefinite"/><stop offset="0%" stop-color="#FFC700"/><stop offset="33%" stop-color="#FF4D80"/><stop offset="66%" stop-color="#A64DFF"/><stop offset="100%" stop-color="#00D2FF"/></linearGradient></defs><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="url(#icon-grad-1)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" stroke="url(#icon-grad-1)" stroke-width="1.3"/></svg></div>
+          <span class="cta-label">VERSTÄNDNIS</span>
+          <h3>Erst verstehen. Dann veredeln.</h3>
+          <p>Ich denke mich in dein Vorhaben ein, erkenne, worauf es wirklich ankommt, und forme daraus eine Lösung mit Richtung, Tiefe und Substanz.</p>
+        </article>
+
+        <article class="card fade-up delay-100">
+          <div class="card-icon" aria-hidden="true"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icon-grad-2" x1="-12" y1="12" x2="36" y2="12" gradientUnits="userSpaceOnUse"><animate attributeName="x1" values="-12;-36;-12" dur="20s" calcMode="ease" repeatCount="indefinite"/><animate attributeName="x2" values="36;12;36" dur="20s" calcMode="ease" repeatCount="indefinite"/><stop offset="0%" stop-color="#FFC700"/><stop offset="33%" stop-color="#FF4D80"/><stop offset="66%" stop-color="#A64DFF"/><stop offset="100%" stop-color="#00D2FF"/></linearGradient></defs><circle cx="12" cy="12" r="10" stroke="url(#icon-grad-2)" stroke-width="1.3"/><circle cx="12" cy="12" r="6" stroke="url(#icon-grad-2)" stroke-width="1.3"/><circle cx="12" cy="12" r="2" stroke="url(#icon-grad-2)" stroke-width="1.3"/></svg></div>
+          <span class="cta-label">ANSPRUCH</span>
+          <h3>Gut genug ist nie das Ziel.</h3>
+          <p>Ich arbeite nicht für halbe Ergebnisse. Ich arbeite, bis Form, Funktion und Wirkung zusammenfinden und etwas entsteht, das wirklich trägt.</p>
+        </article>
+
+        <article class="card fade-up delay-200">
+          <div class="card-icon" aria-hidden="true"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="icon-grad-3" x1="-12" y1="12" x2="36" y2="12" gradientUnits="userSpaceOnUse"><animate attributeName="x1" values="-12;-36;-12" dur="20s" calcMode="ease" repeatCount="indefinite"/><animate attributeName="x2" values="36;12;36" dur="20s" calcMode="ease" repeatCount="indefinite"/><stop offset="0%" stop-color="#FFC700"/><stop offset="33%" stop-color="#FF4D80"/><stop offset="66%" stop-color="#A64DFF"/><stop offset="100%" stop-color="#00D2FF"/></linearGradient></defs><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" stroke="url(#icon-grad-3)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="cta-label">ZUSAMMENARBEIT</span>
+          <h3>Klar im Denken. Direkt im Tun.</h3>
+          <p>Keine Umwege, kein leeres Theater. Ich schätze klare Abmachungen, ehrlichen Austausch und eine Zusammenarbeit, die einfach ist und trotzdem Tiefe hat.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+<section class="section section-cta" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="fade-up" style="text-align: center; max-width: 600px; margin: 0 auto;">
+        <span class="cta-label">GENUG GELESEN?</span>
+        <h2 id="cta-title">Lass uns etwas bauen,<br><span class="gradient-text">das bleibt.</span></h2>
+<div class="hero-cta-group" style="justify-content: center;">
+          <span class="reveal-mail btn btn-primary" role="button" tabindex="0" aria-label="E-Mail-Adresse anzeigen">Gespräch starten</span>
+          <a href="/referenzen" class="btn btn-ghost">Arbeiten ansehen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+/* Index-spezifische Abstände */
+  .section-cards {
+    padding-top: 140px;
+    padding-bottom: 120px;
+  }
+
+  .values-grid {
+    max-width: 880px; /* Even narrower to keep them "schmal" */
+    gap: 32px;
+  }
+
+  .values-grid .card {
+    min-height: auto !important; /* Force override of global min-height */
+    height: auto; /* Allow natural height */
+    padding: 32px 28px;
+  }
+
+  .values-grid .card h3 {
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+  }
+  
+  .values-grid .card p {
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.7;
+  }
+
+  .values-grid .card-icon {
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+  }
+
+.section-cta {
+    padding-top: 80px;
+    padding-bottom: 150px;
+  }
+
+  /* Hero: mehr Luft zum Text */
+  .hero-lead {
+    max-width: 52ch;
+    font-size: 1.1rem;
+    line-height: 1.75;
+    margin-bottom: 0;
+  }
+
+  /* Card Icons: Leuchteffekt passend zum Gradient */
+  .values-grid .card-icon svg {
+    filter: drop-shadow(0 0 6px rgba(166, 77, 255, 0.5)) drop-shadow(0 0 12px rgba(255, 77, 128, 0.2));
+  }
+
+  /* CTA-Block: Label enger zum Titel */
+  .cta-label {
+    margin-bottom: 8px;
+  }
+
+  /* Tablet: 2 Spalten statt 3 bei mittlerer Breite */
+  @media (max-width: 860px) and (min-width: 641px) {
+    .values-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Mobile: Hero-Text etwas kleiner */
+  @media (max-width: 768px) {
+    .hero-lead {
+      font-size: 1rem;
+    }
+    .section-cards {
+      padding-top: 40px;
+      padding-bottom: 50px;
+    }
+    .section-cta {
+      padding-top: 40px;
+      padding-bottom: 70px;
+    }
+    .cta-mail {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cta-mail {
+      font-size: 0.95rem;
+    }
+  }
+</style>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFC700"/>
+      <stop offset="33%" stop-color="#FF4D80"/>
+      <stop offset="66%" stop-color="#A64DFF"/>
+      <stop offset="100%" stop-color="#00D2FF"/>
+    </linearGradient>
+    <filter id="iconGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+      <feFlood flood-color="#A64DFF" flood-opacity="0.35" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Black background -->
+  <rect width="100" height="100" fill="#050505"/>
+
+  <g transform="translate(8.9, -2.7) scale(0.514)">
+    <!-- Flask outline -->
+    <path d="M 65 15 L 65 65 L 25 170 Q 20 185 35 190 L 125 190 Q 140 185 135 170 L 95 65 L 95 15"
+          fill="none" stroke="url(#grad)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" filter="url(#iconGlow)"/>
+    <!-- Flask rim -->
+    <line x1="58" y1="15" x2="102" y2="15" stroke="url(#grad)" stroke-width="10" stroke-linecap="round"/>
+    <!-- Left neck stub -->
+    <line x1="38" y1="32" x2="62" y2="32" stroke="url(#grad)" stroke-width="8" stroke-linecap="round"/>
+    <!-- Right neck stub -->
+    <line x1="98" y1="32" x2="122" y2="32" stroke="url(#grad)" stroke-width="8" stroke-linecap="round"/>
+    <!-- Tilted liquid fill -->
+    <path d="M 45 143 L 27 170 Q 22 183 35 188 L 125 188 Q 138 183 133 170 L 115 136 Z"
+          fill="url(#grad)" opacity="0.42"/>
+    <!-- Liquid surface highlight -->
+    <line x1="51" y1="141" x2="109" y2="135" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-opacity="0.28"/>
+  </g>
+</svg>

@@ -1,0 +1,27 @@
+{
+  "name": "Calzavara – Digitale Lösungen aus der Schweiz",
+  "short_name": "Calzavara",
+  "description": "Massgeschneiderte Websites, KI-Lösungen und Software für Schweizer KMU. Fixpreis. Persönlich. Aus St. Gallen.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "lang": "de-CH",
+  "dir": "ltr",
+  "scope": "/",
+  "categories": ["business", "productivity"],
+  "icons": [
+    {
+      "src": "/assets/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

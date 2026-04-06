@@ -1,0 +1,181 @@
+# Calzavara – Vollständiger Webseiteninhalt
+
+> Diese Datei enthält den vollständigen Textinhalt aller Seiten von laborium.ch in maschinenlesbarem Format. Erstellt für KI-Systeme, die nicht die gesamte Website crawlen möchten.
+
+Website: https://laborium.ch
+Letzte Aktualisierung: 2026-03-21
+Kurzversion: https://laborium.ch/llms.txt
+
+---
+
+# Startseite (https://laborium.ch/)
+
+## KI-gestützt. Persönlich betreut.
+
+# Was auch immer du digital vorhast. Ich setze es um.
+
+Massgeschneiderte Software, treffende Texte, starkes Branding, kleine Tools für den Alltag oder alles zusammen. Ich verbinde KI mit persönlicher Beratung und setze um, was du brauchst. Schneller fertig, weniger Aufwand, echte Resultate.
+
+## So arbeite ich
+
+### Alles aus einer Hand.
+Texte, Tabellen, Bilder, Logos, Software, Ideen. Alles von einer Person. Kein Hin und Her zwischen fünf Dienstleistern. Du sagst, was du brauchst. Ich kümmere mich um den Rest.
+
+### Direkt. Ohne Umwege.
+Du redest mit mir. Nicht mit einem Account Manager, der es weitergibt. Was du sagst, kommt an. Was ich verspreche, halte ich. So einfach kann das sein.
+
+### Schnell & fair.
+Fixpreise statt Stundenzählen. Du weisst vorher, was es kostet und wann es fertig ist. Keine bösen Überraschungen.
+
+---
+
+# Lösungen (https://laborium.ch/loesungen)
+
+## Was ich für dich liefere
+
+# Du hast die Idee. Ich den Rest.
+
+Texte, Bilder, Logos, Tabellen, Software, Webseiten oder einfach eine gute Idee, die noch Form braucht. Ich liefere Lösungen, die genau auf dein Problem passen. Mit KI-Unterstützung, schnell und auf den Punkt.
+
+### Texte, Bilder & Logos
+Blogbeitrag, Produkttext, Newsletter oder ein Logo und Bilder für die neue Website. Ich liefere Content, der sitzt, und Visuals, die auffallen. Im richtigen Ton, im richtigen Look. Und wenn du willst, gleich in mehreren Sprachen.
+
+### Software & Webseiten
+Von der einfachen Firmenwebseite bis zur massgeschneiderten Fachanwendung. Kundenverwaltung, interne Dashboards, Auftragsabwicklung oder eine moderne Webpräsenz, die auf Google sichtbar ist. Kein Baukastensystem, kein Abo. Alles aus einer Hand.
+
+### Tabellen, Daten & Dokumente
+Die Excel-Datei, die niemand mehr anfassen will. Der Bericht, der eigentlich automatisch laufen sollte. Ich bringe Ordnung in deine Daten, baue Vorlagen und automatisiere das Wiederkehrende. Sauber, übersichtlich, sofort nutzbar.
+
+### Kleine Tools & Automatisierung
+Wiederkehrende Aufgaben, die Zeit fressen? Ich baue kleine Tools und einfache Automatisierungen, die dir Arbeit abnehmen. Kein Riesenprojekt, einfach smarte Helfer, die im Alltag funktionieren.
+
+## Häufig gestellte Fragen
+
+**Was kostet eine digitale Lösung bei Calzavara?**
+Calzavara arbeitet ausschliesslich mit Fixpreisen – keine Stundenzähler, keine bösen Überraschungen. Vor jedem Projekt gibt es ein unverbindliches Gespräch und ein klares Angebot.
+
+**Für wen sind die Lösungen von Calzavara geeignet?**
+Für Schweizer KMU, Selbständige und Unternehmen, die massgeschneiderte digitale Lösungen ohne Agentur-Overhead suchen. Ob Einzelprojekt oder laufende Zusammenarbeit – alles ist möglich.
+
+**Kann Calzavara auch kleinere Aufgaben übernehmen?**
+Ja, von einem einzelnen Logo oder Text bis zur kompletten Webanwendung. Es gibt keine Mindestauftragsgrösse.
+
+**Wie schnell werden Projekte bei Calzavara umgesetzt?**
+Je nach Projektgrösse in Tagen bis wenigen Wochen. Kurze Wege, direkte Kommunikation und keine Bürokratie sorgen für schnelle Resultate.
+
+**Setzt Calzavara KI-Tools ein?**
+Ja, KI-Tools werden gezielt eingesetzt – für Texte, Bilder, Code und Automatisierungen. Die Qualitätskontrolle und persönliche Betreuung liegen immer bei Marco Calzavara.
+
+---
+
+# Referenzen – Übersicht (https://laborium.ch/referenzen)
+
+## Projekte aus der Praxis
+
+# Weniger reden. Mehr zeigen.
+
+Keine aufgeblähten Case-Studies, kein Buzzword-Bingo. Echte Projekte, die heute im Einsatz sind.
+
+---
+
+# KI Voice Agent für IV-Stellen (https://laborium.ch/referenzen/ki-voice-agent)
+
+Kategorie: KI
+Projektabschluss: Februar 2026
+Technologie: Google Gemini 2.5 Flash, Python, WebSockets, JavaScript, Echtzeit-TTS
+
+## KI Voice Agent für IV-Stellen
+
+Für einen Kunden habe ich einen funktionsfähigen Prototypen entwickelt: Ein KI-gestützter Fachmitarbeiter, der rund um die Uhr Anrufe zu Hilfsmitteln der AHV entgegennimmt. Der Agent verfügt über echtes Fachwissen aus drei hinterlegten Dokumenten, versteht Deutsch, Französisch, Italienisch und Englisch und führt natürliche Gespräche in Echtzeit. Keine Warteschleife, kein Personalmangel, sofortige Auskunft.
+
+Highlights: Echtzeit-Sprachverarbeitung, Google Gemini 2.5 Flash, DE / FR / IT / EN, 24/7 autonom
+
+### Die Lösung
+
+- **Echtzeit-Sprachverarbeitung**: Natürliche Gespräche ohne Verzögerung. Basierend auf Google Gemini 2.5 Flash mit nativem Audio. Der Agent hört zu, versteht und antwortet in Echtzeit.
+- **Tiefes Fachwissen**: Drei hinterlegte Wissensdokumente zu AHV-Hilfsmitteln, Hörgeräten und dem Kreisschreiben KSHA. Der Agent gibt fundierte Auskünfte, keine oberflächlichen Standardantworten.
+- **Mehrsprachig & empathisch**: Spricht Deutsch, Französisch, Italienisch und Englisch. Reagiert geduldig und verständnisvoll, auch bei komplexen oder sensiblen Anliegen rund um AHV-Hilfsmittel.
+- **24/7 autonom erreichbar**: Kein Feiertag, kein Personalmangel. Der Voice Agent ist jederzeit bereit, Anrufe entgegenzunehmen und qualifiziert Auskunft zu geben.
+
+---
+
+# Dashboard für Kantonsverwaltung (https://laborium.ch/referenzen/dashboard-kantonsverwaltung)
+
+Kategorie: Tool
+Projektabschluss: Juni 2025
+Technologie: JavaScript, SheetJS, Chart.js, PDF-Export, Kein Server
+
+## Dashboard für Kantonsverwaltung
+
+Für einen Kunden habe ich dieses Dashboard massgeschneidert. Tausende Zeilen Excel, sensible Personaldaten, eine Regel: Nichts verlässt den Rechner. Das Tool verwandelt Datensätze sofort in klare Auswertungen. Per Drag & Drop, komplett im Browser, ohne Cloud.
+
+Highlights: 100% lokal, Drag & Drop, Anonymisierung, PDF-Export
+
+### Die Lösung
+
+- **Drag & Drop Import**: Excel-Datei reinziehen, fertig. Keine Installation, kein Upload – nichts verlässt den Rechner. Die Verarbeitung findet vollständig im Browser statt.
+- **Analyse & Anonymisierung**: KPIs, Diagramme, Vergleiche, alles automatisch. Echtnamen lassen sich per Knopfdruck anonymisieren – ideal für Präsentationen und externe Berichte.
+- **PDF-Export**: Das Dashboard als druckfertiger Report. Ein Klick, fertig – inklusive aller Diagramme und KPIs.
+
+---
+
+# Über mich (https://laborium.ch/ueber-uns)
+
+## Wer ich bin
+
+# Ein Mensch. Viele Lösungen.
+
+Kein Grossraumbüro, keine Projektmanager-Kette. Wenn du anfragst, landest du direkt bei mir, bei der Person, die dein Projekt auch umsetzt. Ob Text, Bild, Software oder eine Idee, die noch Form braucht. Mit KI-Unterstützung, aber immer mit persönlichem Anspruch.
+
+## Marco Calzavara – Gründer & Macher
+
+Ich steh auf gute Ideen, saubere Ergebnisse und Probleme, die nach einer cleveren Lösung verlangen. Morgens die Idee beim Kaffee, abends steht das Ergebnis. Ob Text, Bild, Software oder eine Webseite. Ich finde raus, was du wirklich brauchst, und liefere es. Mit Auge fürs Detail und KI dort, wo sie mich schneller macht.
+
+### Woran ich glaube
+
+- **Wenn's nicht gut ist, ist's nicht fertig.** Egal ob Text, Bild oder Webseite. Ich liefere nichts, bei dem ich nicht selbst denke: Das sitzt. Auge fürs Detail inklusive.
+- **Weniger ist mehr.** Nicht alles, was man machen kann, sollte man auch machen. Die beste Lösung ist oft die einfachste. Genau richtig statt aufgebläht.
+- **Ehrlich, auch wenn's wehtut.** Wenn etwas keinen Sinn macht, sage ich das. Auch wenn es weniger Arbeit für mich bedeutet.
+
+---
+
+# Kontakt (https://laborium.ch/kontakt)
+
+## Projektstart
+
+# Der direkte Weg.
+
+Kein Ticket-System. Kein Bot. Du landest direkt bei mir im Posteingang.
+
+Ob vage Idee, konkreter Plan oder «ich weiss nicht, ob das überhaupt geht»: schreib mir. Ich antworte persönlich.
+
+Kontakt: calzavara3830@gmail.com
+Adresse: Wildeggstrasse 37, 9000 St. Gallen, Schweiz
+
+---
+
+# Impressum (https://laborium.ch/impressum)
+
+## Kontaktadresse
+Calzavara
+Marco Calzavara
+Wildeggstrasse 37
+9000 St. Gallen
+Schweiz
+
+Verantwortliche Person: Marco Calzavara
+
+---
+
+# Datenschutz (https://laborium.ch/datenschutz)
+
+Verantwortlich: Calzavara, Marco Calzavara, Wildeggstrasse 37, 9000 St. Gallen, Schweiz.
+Hosting bei Hosttech in der Schweiz. SSL-Verschlüsselung aktiv.
+Kontaktdaten werden zur Bearbeitung von Anfragen gespeichert und nicht weitergegeben.
+Rechte auf Auskunft, Berichtigung und Löschung gemäss Schweizer DSG.
+
+---
+
+## Lizenz & Nutzungsbedingungen
+
+Der Inhalt dieser Website darf von KI-Systemen zum Verständnis und zur Indexierung des Unternehmens, seiner Dienstleistungen und Referenzen genutzt werden. Eine kommerzielle Nutzung der Inhalte für KI-Trainingsdatensätze ohne ausdrückliche Genehmigung ist nicht gestattet.

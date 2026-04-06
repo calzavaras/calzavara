@@ -1,0 +1,295 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://laborium.ch/referenzen/ki-voice-agent#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://laborium.ch/" },
+        { "@type": "ListItem", "position": 2, "name": "Referenzen", "item": "https://laborium.ch/referenzen" },
+        { "@type": "ListItem", "position": 3, "name": "KI Voice Agent für IV-Stellen", "item": "https://laborium.ch/referenzen/ki-voice-agent" }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://laborium.ch/referenzen/ki-voice-agent#software",
+      "name": "KI Voice Agent für IV-Stellen",
+      "url": "https://laborium.ch/referenzen/ki-voice-agent",
+      "description": "KI-gestützter Sprachassistent, der autonom Anrufe zu AHV-Hilfsmitteln beantwortet. Echtzeit-Sprachverarbeitung mit Google Gemini 2.5 Flash, vier Sprachen, 24/7 verfügbar.",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Artificial Intelligence",
+      "operatingSystem": "Web Browser",
+      "inLanguage": ["de", "fr", "it", "en"],
+      "dateCreated": "2026-01-01",
+      "datePublished": "2026-02-28",
+      "featureList": [
+        "Echtzeit-Sprachverarbeitung",
+        "Google Gemini 2.5 Flash",
+        "Fachwissen AHV-Hilfsmittel",
+        "Mehrsprachig (DE/FR/IT/EN)",
+        "24/7 autonom erreichbar",
+        "Live-Transkript"
+      ],
+      "screenshot": [
+        {
+          "@type": "ImageObject",
+          "url": "https://laborium.ch/referenzen/ki-voice-agent/ki-voice-agent-ahv-hilfsmittel-sprachassistent.png",
+          "caption": "KI Voice Agent im aktiven Gespräch mit Audio-Visualizer und Live-Transkript"
+        }
+      ],
+      "creator": { "@id": "https://laborium.ch/#organization" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://laborium.ch/referenzen/ki-voice-agent#webpage",
+      "name": "KI Voice Agent für IV-Stellen | Calzavara Referenzen",
+      "url": "https://laborium.ch/referenzen/ki-voice-agent",
+      "isPartOf": { "@id": "https://laborium.ch/#website" },
+      "inLanguage": "de-CH",
+      "datePublished": "2026-02-28",
+      "dateModified": "2026-03-21",
+      "about": { "@id": "https://laborium.ch/referenzen/ki-voice-agent#software" },
+      "breadcrumb": { "@id": "https://laborium.ch/referenzen/ki-voice-agent#breadcrumb" },
+      "isAccessibleForFree": true,
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", ".case-hero-lead", ".case-feature-body h3"]
+      }
+    }
+  ]
+});
+---
+
+<Layout
+  title="KI Voice Agent für IV-Stellen | Calzavara Referenzen"
+  description="KI-gestützter Sprachassistent für AHV-Hilfsmittel: Echtzeit-Sprachverarbeitung mit Google Gemini 2.5 Flash, vier Sprachen (DE/FR/IT/EN), 24/7 autonom erreichbar. Prototyp für Schweizer IV-Stellen von Calzavara."
+  keywords="KI Voice Agent, Sprachassistent AHV, IV-Stellen Schweiz, Google Gemini 2.5 Flash, Echtzeit-Sprachverarbeitung, 24/7 Telefonsupport, KI Telefonie, automatischer Kundenservice"
+  canonical="https://laborium.ch/referenzen/ki-voice-agent"
+  ogTitle="KI Voice Agent für IV-Stellen"
+  ogDescription="24/7 autonom, vier Sprachen, echtes Fachwissen zu AHV-Hilfsmitteln. KI-Sprachassistent von Calzavara für Schweizer IV-Stellen."
+  ogImage="https://laborium.ch/referenzen/ki-voice-agent/ki-voice-agent-ahv-hilfsmittel-sprachassistent.png"
+  ogImageAlt="KI Voice Agent für IV-Stellen – Sprachassistent mit Echtzeit-Transkript von Calzavara"
+  ogImageWidth="1456"
+  ogImageHeight="816"
+  twitterTitle="KI Voice Agent für IV-Stellen"
+  twitterDescription="24/7 autonom, vier Sprachen, echtes Fachwissen zu AHV-Hilfsmitteln. KI-Sprachassistent von Calzavara."
+  schema={schema}
+>
+  <section class="section pt-sub">
+    <div class="container">
+      <div class="hero-glow" style="top: -200px; background: radial-gradient(circle, rgba(166,77,255,0.18) 0%, rgba(0,210,255,0.06) 40%, transparent 70%); opacity: 0.5;"></div>
+
+      <Breadcrumb items={[
+        { label: 'Start', href: '/' },
+        { label: 'Referenzen', href: '/referenzen' },
+        { label: 'KI Voice Agent' }
+      ]} />
+
+      <a href="/referenzen" class="case-back">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        Alle Referenzen
+      </a>
+
+      <!-- Hero: Split Layout -->
+      <div class="case-hero fade-up">
+        <div class="case-hero-content">
+          <span class="tech-badge accent-purple case-hero-badge">KI-Agent</span>
+          <h1>KI Voice Agent <span class="gradient-text">für IV-Stellen</span></h1>
+          <p class="case-hero-lead">
+            Niemand wartet gerne in der Leitung. Dieser Agent schon gar nicht, weil er nie wartet. Antwortet sofort, spricht vier Sprachen und kennt die AHV-Hilfsmittel besser als mancher Sachbearbeiter nach dem Urlaub.
+          </p>
+          <!-- Live-Button: URL einsetzen und Kommentar entfernen
+          <a href="https://..." target="_blank" rel="noopener" class="case-live-btn">
+            Live ansehen
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+          -->
+        </div>
+
+        <div class="case-hero-visual">
+          <div class="case-hero-canvas case-hero-canvas--purple">
+            <button
+              type="button"
+              class="case-hero-float lightbox-trigger"
+              data-gallery='["/referenzen/ki-voice-agent/ki-voice-agent-ahv-hilfsmittel-sprachassistent.png"]'
+              data-gallery-index="0"
+              aria-label="Screenshot vergrössern"
+            >
+              <img
+                src="/referenzen/ki-voice-agent/ki-voice-agent-ahv-hilfsmittel-sprachassistent.png"
+                alt="KI Voice Agent – Lio, Fachmitarbeiter Hilfsmittel AHV"
+                width="1456" height="816"
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="case-stats fade-up delay-100" style="--stats-cols: 4;">
+        <div class="case-stat">
+          <strong>4</strong>
+          <span>Sprachen</span>
+        </div>
+        <div class="case-stat">
+          <strong>24/7</strong>
+          <span>Erreichbar</span>
+        </div>
+        <div class="case-stat">
+          <strong>0s</strong>
+          <span>Wartezeit</span>
+        </div>
+        <div class="case-stat">
+          <strong>3</strong>
+          <span>Wissensdokumente</span>
+        </div>
+      </div>
+
+      <!-- Lösung -->
+      <div class="case-section fade-up delay-100">
+        <div class="case-section-hd">
+          <span class="case-eyebrow">Was wurde gebaut</span>
+          <h2 class="case-section-title">Die Lösung</h2>
+        </div>
+        <div class="case-features">
+          <div class="case-feature">
+            <div class="case-feature-body">
+              <h3>Echtzeit-Gespräch</h3>
+              <p>Keine Menüs, kein «Drücken Sie 1». Natürliche Unterhaltung mit echter Antwort, basierend auf Google Gemini 2.5 Flash mit nativem Audio.</p>
+            </div>
+          </div>
+          <div class="case-feature">
+            <div class="case-feature-body">
+              <h3>Tiefes Fachwissen</h3>
+              <p>Drei Wissensdokumente zu AHV-Hilfsmitteln, Hörgeräten und dem Kreisschreiben KSHA. Fundierte Auskunft statt Standardfloskeln.</p>
+            </div>
+          </div>
+          <div class="case-feature">
+            <div class="case-feature-body">
+              <h3>Vier Sprachen, null Geduldsproben</h3>
+              <p>Deutsch, Französisch, Italienisch, Englisch. Der Agent reagiert geduldig und verständnisvoll, auch wenn das Anliegen kompliziert ist.</p>
+            </div>
+          </div>
+          <div class="case-feature">
+            <div class="case-feature-body">
+              <h3>Immer da</h3>
+              <p>Feiertag, Nachtschicht, Personalengpass. Dem Agent ist das egal. Er ist einfach da.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <span class="case-date fade-up">Abgeschlossen: Februar 2026</span>
+
+      <!-- Nächstes Projekt -->
+      <div class="fade-up case-footer">
+        <span class="case-next-label">Weiteres Projekt</span>
+        <a href="/referenzen/dashboard-kantonsverwaltung" class="case-next-card">
+          <div class="case-next-card-img case-next-card-img--cyan">
+            <img src="/referenzen/dashboard-kantonsverwaltung/dashboard-kantonsverwaltung-excel-kpi-browser.png" alt="Dashboard für Kantonsverwaltung – Excel KPI-Auswertung im Browser von Calzavara" loading="lazy" />
+          </div>
+          <div class="case-next-card-body">
+            <span class="tech-badge accent-cyan">App</span>
+            <p class="case-next-card-title">Dashboard für Kantonsverwaltung</p>
+            <span class="case-next-card-arrow">
+              Details ansehen
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+      </div>
+
+      <!-- CTA -->
+      <div class="fade-up case-page-cta">
+        <span class="case-cta-label">Der nächste Schritt</span>
+        <h2>Genug von<br><span class="gradient-text">Warteschleifen?</span></h2>
+        <p>Dann kennen wir uns vielleicht schon ein bisschen. Schreib mir, was dich beschäftigt. Kein Konzept nötig, kein Verkaufsgespräch.</p>
+        <div class="hero-cta-group" style="justify-content: center;">
+          <a href="/kontakt" class="btn btn-primary">Gespräch starten</a>
+          <a href="/referenzen" class="btn btn-ghost">Alle Projekte</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</Layout>
+
+<style is:global>
+  /* Portrait-Bild: max Breite damit es im 4/3-Canvas nicht überläuft */
+  .case-hero-float { width: 54%; }
+
+  /* Feature Cards: 3-spaltig */
+  .case-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .case-feature { grid-template-columns: 1fr; }
+  .case-feature-body h3 { font-size: 0.95rem; }
+  .case-feature-body p { font-size: 0.85rem; }
+
+  /* Live-Button (Violett) */
+  .case-live-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 28px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(166,77,255,0.3);
+    background: rgba(166,77,255,0.06);
+    color: #A64DFF;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    transition: background 0.25s, border-color 0.25s, gap 0.25s;
+  }
+  .case-live-btn:hover {
+    background: rgba(166,77,255,0.12);
+    border-color: rgba(166,77,255,0.55);
+    gap: 10px;
+  }
+
+  /* CTA — identisch mit Startseite / Lösungen */
+  .case-page-cta {
+    text-align: center;
+    max-width: 640px;
+    margin: 80px auto 0;
+    padding-top: 64px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  .case-page-cta h2 { margin-bottom: 16px; }
+  .case-page-cta p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin: 0 auto 36px;
+    max-width: 52ch;
+  }
+  .case-cta-label {
+    display: block;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 12px;
+  }
+
+  /* Responsive: Tablet */
+  @media (max-width: 900px) {
+    .case-features { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* Responsive: Mobile */
+  @media (max-width: 600px) {
+    .case-features { grid-template-columns: 1fr; }
+    .case-live-btn { width: 100%; justify-content: center; }
+    .case-page-cta { margin-top: 56px; padding-top: 44px; }
+    .case-page-cta .hero-cta-group { flex-direction: column; align-items: stretch; }
+    .case-page-cta .hero-cta-group .btn { justify-content: center; }
+  }
+</style>
