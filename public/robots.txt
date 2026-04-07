@@ -1,15 +1,17 @@
 # ======================================================================
-# laborium.ch - robots.txt
+# calzavara.ch - robots.txt
 # ======================================================================
 
+
+# GO-LIVE TOGGLE: "Disallow: /" unten ändern zu "Allow: /"
 User-agent: *
-Allow: /
+Disallow: /
 Disallow: /.htpasswd
 Disallow: /.htaccess
 Disallow: /.claude/
 
-Sitemap: https://laborium.ch/sitemap-index.xml
-LLMs: https://laborium.ch/llms.txt
+Sitemap: https://calzavara.ch/sitemap-index.xml
+LLMs: https://calzavara.ch/llms.txt
 
 # Suchmaschinen-Crawler
 User-agent: Googlebot

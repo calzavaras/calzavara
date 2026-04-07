@@ -7,29 +7,29 @@ const schema = JSON.stringify({
   "@graph": [
     {
       "@type": "BreadcrumbList",
-      "@id": "https://laborium.ch/referenzen#breadcrumb",
+      "@id": "https://calzavara.ch/referenzen#breadcrumb",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://laborium.ch/" },
-        { "@type": "ListItem", "position": 2, "name": "Referenzen", "item": "https://laborium.ch/referenzen" }
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://calzavara.ch/" },
+        { "@type": "ListItem", "position": 2, "name": "Referenzen", "item": "https://calzavara.ch/referenzen" }
       ]
     },
     {
       "@type": "CollectionPage",
-      "@id": "https://laborium.ch/referenzen#webpage",
-      "url": "https://laborium.ch/referenzen",
+      "@id": "https://calzavara.ch/referenzen#webpage",
+      "url": "https://calzavara.ch/referenzen",
       "name": "Referenzprojekte – KI & Software für Schweizer KMU | Calzavara",
       "description": "Echte Projekte: KI Voice Agent für IV-Stellen, lokales Excel-Dashboard für Kantonsverwaltung. Massgeschneiderte digitale Lösungen von Calzavara, St. Gallen.",
       "inLanguage": "de-CH",
       "datePublished": "2025-06-01",
       "dateModified": "2026-03-21",
-      "isPartOf": { "@id": "https://laborium.ch/#website" },
-      "breadcrumb": { "@id": "https://laborium.ch/referenzen#breadcrumb" },
+      "isPartOf": { "@id": "https://calzavara.ch/#website" },
+      "breadcrumb": { "@id": "https://calzavara.ch/referenzen#breadcrumb" },
       "isAccessibleForFree": true,
       "mainEntity": {
         "@type": "ItemList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "url": "https://laborium.ch/referenzen/ki-voice-agent", "name": "KI Voice Agent für IV-Stellen" },
-          { "@type": "ListItem", "position": 2, "url": "https://laborium.ch/referenzen/dashboard-kantonsverwaltung", "name": "Dashboard für Kantonsverwaltung" }
+          { "@type": "ListItem", "position": 1, "url": "https://calzavara.ch/referenzen/ki-voice-agent", "name": "KI Voice Agent für IV-Stellen" },
+          { "@type": "ListItem", "position": 2, "url": "https://calzavara.ch/referenzen/dashboard-kantonsverwaltung", "name": "Dashboard für Kantonsverwaltung" }
         ]
       }
     }
@@ -41,7 +41,7 @@ const schema = JSON.stringify({
   title="Referenzprojekte – KI & Software für Schweizer KMU | Calzavara"
   description="Echte Projekte: KI Voice Agent für IV-Stellen, lokales Excel-Dashboard für Kantonsverwaltung. Massgeschneiderte digitale Lösungen von Calzavara, St. Gallen."
   keywords="Referenzen Calzavara, KI Voice Agent Schweiz, Excel Dashboard Kantonsverwaltung, digitale Lösungen Schweiz, Softwareentwicklung Referenzen, KI-Projekte St. Gallen, Website Referenzen KMU"
-  canonical="https://laborium.ch/referenzen"
+  canonical="https://calzavara.ch/referenzen"
   ogTitle="Gebaut. Nicht gepitcht. | Calzavara"
   ogDescription="Keine Demos, keine Konzeptpapiere. Projekte, die raus sind und arbeiten. KI Voice Agent, Excel-Dashboard und mehr."
   ogImageAlt="Calzavara Referenzen – Echte Projekte, keine Demos"
@@ -50,8 +50,8 @@ const schema = JSON.stringify({
   schema={schema}
 >
   <section class="section pt-sub">
+    <div class="hero-glow" style="top: -200px; background: radial-gradient(circle, rgba(255,77,128,0.12) 0%, rgba(166,77,255,0.08) 40%, transparent 70%); opacity: 0.6;"></div>
     <div class="container">
-      <div class="hero-glow" style="top: -200px; background: radial-gradient(circle, rgba(255,77,128,0.12) 0%, rgba(166,77,255,0.08) 40%, transparent 70%); opacity: 0.6;"></div>
 
       <Breadcrumb items={[
         { label: 'Start', href: '/' },

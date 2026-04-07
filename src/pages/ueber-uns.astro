@@ -7,15 +7,15 @@ const schema = JSON.stringify({
   "@graph": [
     {
       "@type": "BreadcrumbList",
-      "@id": "https://laborium.ch/ueber-uns#breadcrumb",
+      "@id": "https://calzavara.ch/ueber-uns#breadcrumb",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://laborium.ch/" },
-        { "@type": "ListItem", "position": 2, "name": "Über mich", "item": "https://laborium.ch/ueber-uns" }
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://calzavara.ch/" },
+        { "@type": "ListItem", "position": 2, "name": "Über mich", "item": "https://calzavara.ch/ueber-uns" }
       ]
     },
     {
       "@type": "Person",
-      "@id": "https://laborium.ch/#person",
+      "@id": "https://calzavara.ch/#person",
       "name": "Marco Calzavara",
       "givenName": "Marco",
       "familyName": "Calzavara",
@@ -23,12 +23,12 @@ const schema = JSON.stringify({
       "description": "Gründer von Calzavara. Baut mit KI-Agenten digitale Lösungen – Websites, Tools, Texte, Bilder. Einer, der liefert was sonst Teams brauchen.",
       "image": {
         "@type": "ImageObject",
-        "url": "https://laborium.ch/assets/marco-calzavara-gruender-laborium-st-gallen.webp",
+        "url": "https://calzavara.ch/assets/marco-calzavara-gruender-calzavara-st-gallen.webp",
         "width": 768,
         "height": 1024
       },
-      "url": "https://laborium.ch/ueber-uns",
-      "worksFor": { "@id": "https://laborium.ch/#organization" },
+      "url": "https://calzavara.ch/ueber-uns",
+      "worksFor": { "@id": "https://calzavara.ch/#organization" },
       "knowsAbout": ["Content-Erstellung", "Bildgenerierung", "Logo-Design", "Software Development", "Web Development", "UX Design", "Datenaufbereitung", "KI-Lösungen"],
       "sameAs": [
         "https://ch.linkedin.com/in/calzavara-marco",
@@ -43,11 +43,11 @@ const schema = JSON.stringify({
     },
     {
       "@type": "AboutPage",
-      "@id": "https://laborium.ch/ueber-uns#webpage",
+      "@id": "https://calzavara.ch/ueber-uns#webpage",
       "name": "Über mich | Marco Calzavara | Calzavara",
-      "url": "https://laborium.ch/ueber-uns",
-      "isPartOf": { "@id": "https://laborium.ch/#website" },
-      "breadcrumb": { "@id": "https://laborium.ch/ueber-uns#breadcrumb" },
+      "url": "https://calzavara.ch/ueber-uns",
+      "isPartOf": { "@id": "https://calzavara.ch/#website" },
+      "breadcrumb": { "@id": "https://calzavara.ch/ueber-uns#breadcrumb" },
       "inLanguage": "de-CH",
       "datePublished": "2025-06-01",
       "dateModified": "2026-03-21",
@@ -56,7 +56,7 @@ const schema = JSON.stringify({
         "@type": "SpeakableSpecification",
         "cssSelector": ["h1", ".profile-card h2", ".belief-title"]
       },
-      "mainEntity": { "@id": "https://laborium.ch/#person" }
+      "mainEntity": { "@id": "https://calzavara.ch/#person" }
     }
   ]
 });
@@ -66,11 +66,11 @@ const schema = JSON.stringify({
   title="Über mich | Marco Calzavara | Calzavara"
   description="Marco Calzavara – 15 Jahre Führung, 3 Firmen gegründet und verkauft. Baut mit KI-Agenten, liefert was sonst Teams brauchen. Direkt, persönlich, aus St. Gallen."
   keywords="Marco Calzavara, Calzavara Gründer, Website Freelancer St. Gallen, Webdesign Schweiz, KI-Lösungen Schweiz, persönliche Betreuung, Softwareentwicklung KMU"
-  canonical="https://laborium.ch/ueber-uns"
+  canonical="https://calzavara.ch/ueber-uns"
   ogTitle="Ein Mensch. 1001 Ideen."
   ogDescription="15 Jahre Sozialversicherung, 3 Firmen gegründet und verkauft. Baut heute mit KI-Agenten, was sonst Teams brauchen. Ein Mensch. 1001 Ideen."
   ogType="profile"
-  ogImage="https://laborium.ch/assets/marco-calzavara-gruender-laborium-st-gallen.webp"
+  ogImage="https://calzavara.ch/assets/marco-calzavara-gruender-calzavara-st-gallen.webp"
   ogImageAlt="Marco Calzavara - Gründer von Calzavara"
   ogImageWidth="768"
   ogImageHeight="1024"
@@ -79,8 +79,8 @@ const schema = JSON.stringify({
   schema={schema}
 >
   <section class="section pt-sub">
+    <div class="hero-glow hero-glow--pink"></div>
     <div class="container">
-      <div class="hero-glow hero-glow--pink"></div>
 
       <Breadcrumb items={[
         { label: 'Start', href: '/' },
@@ -103,7 +103,7 @@ const schema = JSON.stringify({
         <div class="profile-card-glow"></div>
         <div class="profile-header" style="align-items: flex-start;">
           <div class="profile-img-wrapper profile-img-pink" style="flex-shrink: 0;">
-            <img src="/assets/marco-calzavara-gruender-laborium-st-gallen.webp"
+            <img src="/assets/marco-calzavara-gruender-calzavara-st-gallen.webp"
                  alt="Marco Calzavara - Gründer von Calzavara"
                  class="profile-img lightbox-trigger"
                  title="Marco Calzavara"

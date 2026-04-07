@@ -1,14 +1,14 @@
 # Calzavara – Vollständiger Webseiteninhalt
 
-> Diese Datei enthält den vollständigen Textinhalt aller Seiten von laborium.ch in maschinenlesbarem Format. Erstellt für KI-Systeme, die nicht die gesamte Website crawlen möchten.
+> Diese Datei enthält den vollständigen Textinhalt aller Seiten von calzavara.ch in maschinenlesbarem Format. Erstellt für KI-Systeme, die nicht die gesamte Website crawlen möchten.
 
-Website: https://laborium.ch
+Website: https://calzavara.ch
 Letzte Aktualisierung: 2026-03-21
-Kurzversion: https://laborium.ch/llms.txt
+Kurzversion: https://calzavara.ch/llms.txt
 
 ---
 
-# Startseite (https://laborium.ch/)
+# Startseite (https://calzavara.ch/)
 
 ## KI-gestützt. Persönlich betreut.
 
@@ -29,7 +29,7 @@ Fixpreise statt Stundenzählen. Du weisst vorher, was es kostet und wann es fert
 
 ---
 
-# Lösungen (https://laborium.ch/loesungen)
+# Lösungen (https://calzavara.ch/loesungen)
 
 ## Was ich für dich liefere
 
@@ -68,7 +68,7 @@ Ja, KI-Tools werden gezielt eingesetzt – für Texte, Bilder, Code und Automati
 
 ---
 
-# Referenzen – Übersicht (https://laborium.ch/referenzen)
+# Referenzen – Übersicht (https://calzavara.ch/referenzen)
 
 ## Projekte aus der Praxis
 
@@ -78,7 +78,7 @@ Keine aufgeblähten Case-Studies, kein Buzzword-Bingo. Echte Projekte, die heute
 
 ---
 
-# KI Voice Agent für IV-Stellen (https://laborium.ch/referenzen/ki-voice-agent)
+# KI Voice Agent für IV-Stellen (https://calzavara.ch/referenzen/ki-voice-agent)
 
 Kategorie: KI
 Projektabschluss: Februar 2026
@@ -99,7 +99,7 @@ Highlights: Echtzeit-Sprachverarbeitung, Google Gemini 2.5 Flash, DE / FR / IT /
 
 ---
 
-# Dashboard für Kantonsverwaltung (https://laborium.ch/referenzen/dashboard-kantonsverwaltung)
+# Dashboard für Kantonsverwaltung (https://calzavara.ch/referenzen/dashboard-kantonsverwaltung)
 
 Kategorie: Tool
 Projektabschluss: Juni 2025
@@ -119,7 +119,7 @@ Highlights: 100% lokal, Drag & Drop, Anonymisierung, PDF-Export
 
 ---
 
-# Über mich (https://laborium.ch/ueber-uns)
+# Über mich (https://calzavara.ch/ueber-uns)
 
 ## Wer ich bin
 
@@ -139,7 +139,7 @@ Ich steh auf gute Ideen, saubere Ergebnisse und Probleme, die nach einer clevere
 
 ---
 
-# Kontakt (https://laborium.ch/kontakt)
+# Kontakt (https://calzavara.ch/kontakt)
 
 ## Projektstart
 
@@ -154,7 +154,7 @@ Adresse: Wildeggstrasse 37, 9000 St. Gallen, Schweiz
 
 ---
 
-# Impressum (https://laborium.ch/impressum)
+# Impressum (https://calzavara.ch/impressum)
 
 ## Kontaktadresse
 Calzavara
@@ -167,7 +167,7 @@ Verantwortliche Person: Marco Calzavara
 
 ---
 
-# Datenschutz (https://laborium.ch/datenschutz)
+# Datenschutz (https://calzavara.ch/datenschutz)
 
 Verantwortlich: Calzavara, Marco Calzavara, Wildeggstrasse 37, 9000 St. Gallen, Schweiz.
 Hosting bei Hosttech in der Schweiz. SSL-Verschlüsselung aktiv.

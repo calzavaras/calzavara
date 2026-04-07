@@ -6,7 +6,6 @@ const navLinks = [
   { href: '/loesungen', label: 'Lösungen' },
   { href: '/referenzen', label: 'Referenzen' },
   { href: '/ueber-uns', label: 'Über mich' },
-  { href: '/kontakt', label: 'Kontakt' },
 ];
 
 function isActive(href: string): boolean {
@@ -19,7 +18,7 @@ function isActive(href: string): boolean {
   <div class="nav-container">
     <nav aria-label="Hauptnavigation">
       <a href="/" class="logo" aria-label="Calzavara Startseite">
-        <img src="/assets/calzavara-logo.webp" alt="Calzavara" loading="eager" decoding="async">
+        <img src="/assets/calzavara-logo.webp" alt="Calzavara" loading="eager" decoding="async" fetchpriority="high">
       </a>
       <div class="nav-links" id="primary-navigation">
         {navLinks.map(link => (
@@ -31,10 +30,14 @@ function isActive(href: string): boolean {
             {link.label}
           </a>
         ))}
+        <a href="/kontakt" class="mobile-cta" class:list={[{ active: isActive('/kontakt') }]}>Kontakt</a>
       </div>
-      <button class="menu-toggle" aria-label="Menü öffnen" aria-controls="primary-navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="header-actions">
+        <a href="/kontakt" class="btn btn-primary header-cta">Kontakt</a>
+        <button class="menu-toggle" aria-label="Menü öffnen" aria-controls="primary-navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </nav>
   </div>
 </header>

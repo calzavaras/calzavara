@@ -1,5 +1,5 @@
 /**
- * laborium.ch - Main Script
+ * calzavara.ch - Main Script
  * Handles Navigation, Animations, Lightbox Gallery, and Spam Protection.
  */
 
@@ -43,6 +43,7 @@ let _closeModalTimer = 0;
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initScrollAnimations();
+  initGradientIcons();
   initSpamProtection();
   initContactModal();
   initAccordions();
@@ -245,7 +246,7 @@ function initAccordions() {
   const accHeaders = document.querySelectorAll('.accordion-header');
   accHeaders.forEach(header => {
     header.addEventListener('click', () => {
-      const item = header.parentElement;
+      const item = header.closest('.accordion-item');
       const isOpen = item.classList.contains('active');
       const content = item.querySelector('.accordion-content');
       const targetHeight = content ? content.scrollHeight : 0; // Read layout before any DOM writes
@@ -253,17 +254,26 @@ function initAccordions() {
         if (otherItem !== item) {
           otherItem.classList.remove('active');
           const otherContent = otherItem.querySelector('.accordion-content');
-          if (otherContent) otherContent.style.maxHeight = 0;
+          if (otherContent) {
+            otherContent.style.maxHeight = 0;
+            otherContent.setAttribute('aria-hidden', 'true');
+          }
           otherItem.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
         }
       });
       if (!isOpen) {
         item.classList.add('active');
-        if (content) content.style.maxHeight = targetHeight + "px";
+        if (content) {
+          content.style.maxHeight = targetHeight + "px";
+          content.setAttribute('aria-hidden', 'false');
+        }
         header.setAttribute('aria-expanded', 'true');
       } else {
         item.classList.remove('active');
-        if (content) content.style.maxHeight = 0;
+        if (content) {
+          content.style.maxHeight = 0;
+          content.setAttribute('aria-hidden', 'true');
+        }
         header.setAttribute('aria-expanded', 'false');
       }
     });
@@ -422,4 +432,23 @@ function initLightbox() {
     if (touchEndX < touchStartX - swipeThreshold) showNext();
     if (touchEndX > touchStartX + swipeThreshold) showPrev();
   }, { passive: true });
+}
+
+function initGradientIcons() {
+  const colors = ['#FFC700', '#FF4D80', '#A64DFF', '#00D2FF'];
+
+  function getRandomPair() {
+    const color1 = colors[Math.floor(Math.random() * colors.length)];
+    let color2 = colors[Math.floor(Math.random() * colors.length)];
+    while (color2 === color1) {
+      color2 = colors[Math.floor(Math.random() * colors.length)];
+    }
+    return [color1, color2];
+  }
+
+  document.querySelectorAll('.gradient-icon').forEach((icon) => {
+    const [color1, color2] = getRandomPair();
+    icon.style.setProperty('--gradient-color-1', color1);
+    icon.style.setProperty('--gradient-color-2', color2);
+  });
 }

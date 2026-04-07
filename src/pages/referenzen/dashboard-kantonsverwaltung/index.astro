@@ -7,18 +7,18 @@ const schema = JSON.stringify({
   "@graph": [
     {
       "@type": "BreadcrumbList",
-      "@id": "https://laborium.ch/referenzen/dashboard-kantonsverwaltung#breadcrumb",
+      "@id": "https://calzavara.ch/referenzen/dashboard-kantonsverwaltung#breadcrumb",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://laborium.ch/" },
-        { "@type": "ListItem", "position": 2, "name": "Referenzen", "item": "https://laborium.ch/referenzen" },
-        { "@type": "ListItem", "position": 3, "name": "Dashboard für Kantonsverwaltung", "item": "https://laborium.ch/referenzen/dashboard-kantonsverwaltung" }
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://calzavara.ch/" },
+        { "@type": "ListItem", "position": 2, "name": "Referenzen", "item": "https://calzavara.ch/referenzen" },
+        { "@type": "ListItem", "position": 3, "name": "Dashboard für Kantonsverwaltung", "item": "https://calzavara.ch/referenzen/dashboard-kantonsverwaltung" }
       ]
     },
     {
       "@type": "SoftwareApplication",
-      "@id": "https://laborium.ch/referenzen/dashboard-kantonsverwaltung#software",
+      "@id": "https://calzavara.ch/referenzen/dashboard-kantonsverwaltung#software",
       "name": "Dashboard für Kantonsverwaltung",
-      "url": "https://laborium.ch/referenzen/dashboard-kantonsverwaltung",
+      "url": "https://calzavara.ch/referenzen/dashboard-kantonsverwaltung",
       "description": "Lokales Excel-Analyse-Dashboard für eine Schweizer Kantonsverwaltung. Drag & Drop Import, KPIs, Diagramme, Anonymisierung und PDF-Export. 100% lokal – keine Daten verlassen den Rechner.",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Web Browser",
@@ -36,23 +36,23 @@ const schema = JSON.stringify({
       "screenshot": [
         {
           "@type": "ImageObject",
-          "url": "https://laborium.ch/referenzen/dashboard-kantonsverwaltung/dashboard-kantonsverwaltung-excel-kpi-browser.png",
+          "url": "https://calzavara.ch/referenzen/dashboard-kantonsverwaltung/dashboard-kantonsverwaltung-excel-kpi-browser.png",
           "caption": "Dashboard für Kantonsverwaltung – KPI-Übersicht mit Diagrammen und Auswertungen"
         }
       ],
-      "creator": { "@id": "https://laborium.ch/#organization" }
+      "creator": { "@id": "https://calzavara.ch/#organization" }
     },
     {
       "@type": "WebPage",
-      "@id": "https://laborium.ch/referenzen/dashboard-kantonsverwaltung#webpage",
+      "@id": "https://calzavara.ch/referenzen/dashboard-kantonsverwaltung#webpage",
       "name": "Dashboard für Kantonsverwaltung | Calzavara Referenzen",
-      "url": "https://laborium.ch/referenzen/dashboard-kantonsverwaltung",
-      "isPartOf": { "@id": "https://laborium.ch/#website" },
+      "url": "https://calzavara.ch/referenzen/dashboard-kantonsverwaltung",
+      "isPartOf": { "@id": "https://calzavara.ch/#website" },
       "inLanguage": "de-CH",
       "datePublished": "2025-06-01",
       "dateModified": "2026-03-21",
-      "about": { "@id": "https://laborium.ch/referenzen/dashboard-kantonsverwaltung#software" },
-      "breadcrumb": { "@id": "https://laborium.ch/referenzen/dashboard-kantonsverwaltung#breadcrumb" },
+      "about": { "@id": "https://calzavara.ch/referenzen/dashboard-kantonsverwaltung#software" },
+      "breadcrumb": { "@id": "https://calzavara.ch/referenzen/dashboard-kantonsverwaltung#breadcrumb" },
       "isAccessibleForFree": true,
       "speakable": {
         "@type": "SpeakableSpecification",
@@ -67,10 +67,10 @@ const schema = JSON.stringify({
   title="Dashboard für Kantonsverwaltung | Calzavara Referenzen"
   description="Lokales Excel-Analyse-Dashboard für eine Schweizer Kantonsverwaltung: Drag & Drop Import, KPIs, Diagramme, Anonymisierung, PDF-Export. Sensible Personaldaten bleiben 100% lokal im Browser. Von Calzavara, St. Gallen."
   keywords="Excel Dashboard Browser, lokale Datenanalyse, Personaldaten Analyse Tool, Anonymisierung Excel, KPI Dashboard Kantonsverwaltung, datenschutzkonformes Dashboard Schweiz, Offline Excel Auswertung"
-  canonical="https://laborium.ch/referenzen/dashboard-kantonsverwaltung"
+  canonical="https://calzavara.ch/referenzen/dashboard-kantonsverwaltung"
   ogTitle="Dashboard für Kantonsverwaltung"
   ogDescription="Excel-Analyse ohne Cloud: KPIs, Diagramme, Anonymisierung und PDF-Export – alles lokal im Browser. Massgeschneidert von Calzavara."
-  ogImage="https://laborium.ch/referenzen/dashboard-kantonsverwaltung/dashboard-kantonsverwaltung-excel-kpi-browser.png"
+  ogImage="https://calzavara.ch/referenzen/dashboard-kantonsverwaltung/dashboard-kantonsverwaltung-excel-kpi-browser.png"
   ogImageAlt="Lokales Excel-Dashboard für Kantonsverwaltung – KPI-Auswertung ohne Cloud von Calzavara"
   ogImageWidth="1534"
   ogImageHeight="860"
@@ -79,8 +79,8 @@ const schema = JSON.stringify({
   schema={schema}
 >
   <section class="section pt-sub">
+    <div class="hero-glow" style="top: -200px; background: radial-gradient(circle, rgba(0,210,255,0.15) 0%, transparent 70%); opacity: 0.5;"></div>
     <div class="container">
-      <div class="hero-glow" style="top: -200px; background: radial-gradient(circle, rgba(0,210,255,0.15) 0%, transparent 70%); opacity: 0.5;"></div>
 
       <Breadcrumb items={[
         { label: 'Start', href: '/' },

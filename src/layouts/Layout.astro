@@ -32,7 +32,7 @@ const {
   ogTitle,
   ogDescription,
   ogType = 'website',
-  ogImage = 'https://laborium.ch/assets/marco-calzavara-gruender-laborium-st-gallen.webp',
+  ogImage = 'https://calzavara.ch/assets/marco-calzavara-gruender-calzavara-st-gallen.webp',
   ogImageAlt = 'Calzavara - Digitale Lösungen aus der Schweiz',
   ogImageWidth = '768',
   ogImageHeight = '1024',
@@ -50,28 +50,28 @@ const siteNavSchema = JSON.stringify({
       "position": 1,
       "name": "Lösungen",
       "description": "Texte, Bilder, Logos, Software, Webseiten – KI-Lösungen aus einer Hand",
-      "url": "https://laborium.ch/loesungen"
+      "url": "https://calzavara.ch/loesungen"
     },
     {
       "@type": "SiteNavigationElement",
       "position": 2,
       "name": "Referenzen",
       "description": "Echte Projekte: KI Voice Agent, Wissensdatenbanken, Design-Tools, Dashboards",
-      "url": "https://laborium.ch/referenzen"
+      "url": "https://calzavara.ch/referenzen"
     },
     {
       "@type": "SiteNavigationElement",
       "position": 3,
       "name": "Über mich",
       "description": "Marco Calzavara – Gründer und Macher von Calzavara, St. Gallen",
-      "url": "https://laborium.ch/ueber-uns"
+      "url": "https://calzavara.ch/ueber-uns"
     },
     {
       "@type": "SiteNavigationElement",
       "position": 4,
       "name": "Kontakt",
       "description": "Direkter Kontakt zu Marco Calzavara – Projektanfragen und Ideen",
-      "url": "https://laborium.ch/kontakt"
+      "url": "https://calzavara.ch/kontakt"
     }
   ]
 });
@@ -122,10 +122,19 @@ const siteNavSchema = JSON.stringify({
   <link rel="preconnect" href="https://cloud.umami.is">
   <link rel="dns-prefetch" href="https://cloud.umami.is">
 
-  <!-- Google Fonts: Plus Jakarta Sans (Display + Body) -->
+  <!-- LCP: Logo-Preload -->
+  <link rel="preload" href="/assets/calzavara-logo.webp" as="image" type="image/webp" fetchpriority="high">
+
+  <!-- Hreflang: Sprache deklarieren -->
+  <link rel="alternate" hreflang="de-CH" href={canonical}>
+  <link rel="alternate" hreflang="x-default" href={canonical}>
+
+  <!-- Google Fonts: Plus Jakarta Sans (non-render-blocking) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"></noscript>
 
   <script defer src="https://cloud.umami.is/script.js" data-website-id="84118d46-7fdb-4f47-be37-3914e0dad55f"></script>
 
@@ -233,14 +242,14 @@ const siteNavSchema = JSON.stringify({
   <script is:inline>
     // System for Premium Spotlight & Random offset
     document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('.card, .contact-card, .case-feature').forEach(function(card) {
+      document.querySelectorAll('.card, .contact-card, .case-feature, .accordion-item').forEach(function(card) {
         var randomAngle = Math.floor(Math.random() * 360) + 'deg';
         card.style.setProperty('--start-angle', randomAngle);
       });
     });
 
     document.addEventListener('mousemove', function(e) {
-      document.querySelectorAll('.card, .contact-card, .case-feature').forEach(function(card) {
+      document.querySelectorAll('.card, .contact-card, .case-feature, .accordion-item').forEach(function(card) {
         var rect = card.getBoundingClientRect();
         var x = e.clientX - rect.left;
         var y = e.clientY - rect.top;

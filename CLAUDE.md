@@ -21,7 +21,7 @@ npx esbuild public/main.js --minify --outfile=public/main.min.js
 
 ### Static site (Astro v5)
 - Output: fully static (`output: 'static'`, `build.format: 'directory'`)
-- Production URL: `https://laborium.ch`
+- Production URL: `https://calzavara.ch`
 - Language: German (Swiss), `lang="de-CH"`, `og:locale="de_CH"`
 - No trailing slashes (`trailingSlash: 'never'`)
 

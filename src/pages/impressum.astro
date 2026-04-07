@@ -7,27 +7,27 @@ const schema = JSON.stringify({
   "@graph": [
     {
       "@type": "BreadcrumbList",
-      "@id": "https://laborium.ch/impressum#breadcrumb",
+      "@id": "https://calzavara.ch/impressum#breadcrumb",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://laborium.ch/" },
-        { "@type": "ListItem", "position": 2, "name": "Impressum", "item": "https://laborium.ch/impressum" }
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://calzavara.ch/" },
+        { "@type": "ListItem", "position": 2, "name": "Impressum", "item": "https://calzavara.ch/impressum" }
       ]
     },
     {
       "@type": "WebPage",
-      "@id": "https://laborium.ch/impressum#webpage",
+      "@id": "https://calzavara.ch/impressum#webpage",
       "name": "Impressum | Calzavara",
-      "url": "https://laborium.ch/impressum",
-      "isPartOf": { "@id": "https://laborium.ch/#website" },
-      "breadcrumb": { "@id": "https://laborium.ch/impressum#breadcrumb" },
+      "url": "https://calzavara.ch/impressum",
+      "isPartOf": { "@id": "https://calzavara.ch/#website" },
+      "breadcrumb": { "@id": "https://calzavara.ch/impressum#breadcrumb" },
       "inLanguage": "de-CH",
       "datePublished": "2025-06-01",
       "dateModified": "2026-03-21",
       "mainEntity": {
         "@type": "Organization",
         "name": "Calzavara",
-        "url": "https://laborium.ch",
-        "logo": "https://laborium.ch/assets/calzavara-logo.svg",
+        "url": "https://calzavara.ch",
+        "logo": "https://calzavara.ch/assets/calzavara-logo.svg",
         "email": "calzavara3830@gmail.com",
         "address": {
           "@type": "PostalAddress",
@@ -52,13 +52,13 @@ const schema = JSON.stringify({
   title="Impressum | Calzavara"
   description="Impressum und rechtliche Hinweise von Calzavara. Kontaktadresse und verantwortliche Person."
   keywords="Impressum Calzavara, Kontaktadresse, Marco Calzavara"
-  canonical="https://laborium.ch/impressum"
+  canonical="https://calzavara.ch/impressum"
   robots="noindex, follow"
   schema={schema}
 >
   <section class="section pt-sub">
+    <div class="hero-glow" style="top: -200px; background: radial-gradient(circle, rgba(0, 210, 255, 0.1) 0%, rgba(166, 77, 255, 0.06) 50%, transparent 70%); opacity: 0.7;"></div>
     <div class="container">
-      <div class="hero-glow" style="top: -200px; background: radial-gradient(circle, rgba(0, 210, 255, 0.1) 0%, rgba(166, 77, 255, 0.06) 50%, transparent 70%); opacity: 0.7;"></div>
 
       <Breadcrumb items={[
         { label: 'Start', href: '/' },

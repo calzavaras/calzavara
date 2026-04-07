@@ -7,18 +7,18 @@ const schema = JSON.stringify({
   "@graph": [
     {
       "@type": "BreadcrumbList",
-      "@id": "https://laborium.ch/referenzen/ki-voice-agent#breadcrumb",
+      "@id": "https://calzavara.ch/referenzen/ki-voice-agent#breadcrumb",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://laborium.ch/" },
-        { "@type": "ListItem", "position": 2, "name": "Referenzen", "item": "https://laborium.ch/referenzen" },
-        { "@type": "ListItem", "position": 3, "name": "KI Voice Agent für IV-Stellen", "item": "https://laborium.ch/referenzen/ki-voice-agent" }
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://calzavara.ch/" },
+        { "@type": "ListItem", "position": 2, "name": "Referenzen", "item": "https://calzavara.ch/referenzen" },
+        { "@type": "ListItem", "position": 3, "name": "KI Voice Agent für IV-Stellen", "item": "https://calzavara.ch/referenzen/ki-voice-agent" }
       ]
     },
     {
       "@type": "SoftwareApplication",
-      "@id": "https://laborium.ch/referenzen/ki-voice-agent#software",
+      "@id": "https://calzavara.ch/referenzen/ki-voice-agent#software",
       "name": "KI Voice Agent für IV-Stellen",
-      "url": "https://laborium.ch/referenzen/ki-voice-agent",
+      "url": "https://calzavara.ch/referenzen/ki-voice-agent",
       "description": "KI-gestützter Sprachassistent, der autonom Anrufe zu AHV-Hilfsmitteln beantwortet. Echtzeit-Sprachverarbeitung mit Google Gemini 2.5 Flash, vier Sprachen, 24/7 verfügbar.",
       "applicationCategory": "BusinessApplication",
       "applicationSubCategory": "Artificial Intelligence",
@@ -37,23 +37,23 @@ const schema = JSON.stringify({
       "screenshot": [
         {
           "@type": "ImageObject",
-          "url": "https://laborium.ch/referenzen/ki-voice-agent/ki-voice-agent-ahv-hilfsmittel-sprachassistent.png",
+          "url": "https://calzavara.ch/referenzen/ki-voice-agent/ki-voice-agent-ahv-hilfsmittel-sprachassistent.png",
           "caption": "KI Voice Agent im aktiven Gespräch mit Audio-Visualizer und Live-Transkript"
         }
       ],
-      "creator": { "@id": "https://laborium.ch/#organization" }
+      "creator": { "@id": "https://calzavara.ch/#organization" }
     },
     {
       "@type": "WebPage",
-      "@id": "https://laborium.ch/referenzen/ki-voice-agent#webpage",
+      "@id": "https://calzavara.ch/referenzen/ki-voice-agent#webpage",
       "name": "KI Voice Agent für IV-Stellen | Calzavara Referenzen",
-      "url": "https://laborium.ch/referenzen/ki-voice-agent",
-      "isPartOf": { "@id": "https://laborium.ch/#website" },
+      "url": "https://calzavara.ch/referenzen/ki-voice-agent",
+      "isPartOf": { "@id": "https://calzavara.ch/#website" },
       "inLanguage": "de-CH",
       "datePublished": "2026-02-28",
       "dateModified": "2026-03-21",
-      "about": { "@id": "https://laborium.ch/referenzen/ki-voice-agent#software" },
-      "breadcrumb": { "@id": "https://laborium.ch/referenzen/ki-voice-agent#breadcrumb" },
+      "about": { "@id": "https://calzavara.ch/referenzen/ki-voice-agent#software" },
+      "breadcrumb": { "@id": "https://calzavara.ch/referenzen/ki-voice-agent#breadcrumb" },
       "isAccessibleForFree": true,
       "speakable": {
         "@type": "SpeakableSpecification",
@@ -68,10 +68,10 @@ const schema = JSON.stringify({
   title="KI Voice Agent für IV-Stellen | Calzavara Referenzen"
   description="KI-gestützter Sprachassistent für AHV-Hilfsmittel: Echtzeit-Sprachverarbeitung mit Google Gemini 2.5 Flash, vier Sprachen (DE/FR/IT/EN), 24/7 autonom erreichbar. Prototyp für Schweizer IV-Stellen von Calzavara."
   keywords="KI Voice Agent, Sprachassistent AHV, IV-Stellen Schweiz, Google Gemini 2.5 Flash, Echtzeit-Sprachverarbeitung, 24/7 Telefonsupport, KI Telefonie, automatischer Kundenservice"
-  canonical="https://laborium.ch/referenzen/ki-voice-agent"
+  canonical="https://calzavara.ch/referenzen/ki-voice-agent"
   ogTitle="KI Voice Agent für IV-Stellen"
   ogDescription="24/7 autonom, vier Sprachen, echtes Fachwissen zu AHV-Hilfsmitteln. KI-Sprachassistent von Calzavara für Schweizer IV-Stellen."
-  ogImage="https://laborium.ch/referenzen/ki-voice-agent/ki-voice-agent-ahv-hilfsmittel-sprachassistent.png"
+  ogImage="https://calzavara.ch/referenzen/ki-voice-agent/ki-voice-agent-ahv-hilfsmittel-sprachassistent.png"
   ogImageAlt="KI Voice Agent für IV-Stellen – Sprachassistent mit Echtzeit-Transkript von Calzavara"
   ogImageWidth="1456"
   ogImageHeight="816"
@@ -80,8 +80,8 @@ const schema = JSON.stringify({
   schema={schema}
 >
   <section class="section pt-sub">
+    <div class="hero-glow" style="top: -200px; background: radial-gradient(circle, rgba(166,77,255,0.18) 0%, rgba(0,210,255,0.06) 40%, transparent 70%); opacity: 0.5;"></div>
     <div class="container">
-      <div class="hero-glow" style="top: -200px; background: radial-gradient(circle, rgba(166,77,255,0.18) 0%, rgba(0,210,255,0.06) 40%, transparent 70%); opacity: 0.5;"></div>
 
       <Breadcrumb items={[
         { label: 'Start', href: '/' },
