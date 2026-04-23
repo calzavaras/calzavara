@@ -559,12 +559,12 @@ nav { display: flex; width: 100%; align-items: center; }
 .footer-logo {
   display: inline-flex;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   text-decoration: none;
 }
 .footer-logo-img {
   display: block;
-  width: min(180px, 60vw);
+  width: min(126px, 43vw);
   height: auto;
   opacity: 0.82;
   transition: opacity 0.3s ease, filter 0.3s ease;
@@ -573,7 +573,7 @@ nav { display: flex; width: 100%; align-items: center; }
   opacity: 1;
   filter: brightness(1.08);
 }
-.footer-address { font-style: normal; color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; }
+.footer-address { font-style: normal; color: var(--text-muted); font-size: 0.85rem; line-height: 1.55; margin: 0; }
 .footer-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #fff; font-weight: 600; margin-bottom: 8px; display: block; }
 .footer-menu { display: flex; flex-direction: column; gap: 4px; align-items: flex-end; }
 .footer-menu a { color: rgba(255,255,255,0.6); font-size: 0.9rem; transition: color 0.2s; }

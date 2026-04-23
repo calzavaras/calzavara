@@ -100,32 +100,32 @@ const schema = JSON.stringify({
   twitterDescription="Websites, die ihren Job kennen. KI, die nicht nervt. Alles, dem Form fehlt. Fixpreis."
   schema={schema}
 >
-  <section class="section pt-sub" aria-labelledby="loesungen-title">
+  <section class="section pt-sub solutions-hero" aria-labelledby="loesungen-title">
     <div class="hero-glow"></div>
-    <div class="container">
+    <div class="container solutions-hero__container">
 
       <Breadcrumb items={[
         { label: 'Start', href: '/' },
         { label: 'Lösungen' }
       ]} />
 
-      <div class="fade-up">
+      <div class="fade-up home-hero__inner solutions-hero__content">
         <span class="badge badge--cyan">WOMIT ES AUFHÖRT</span>
 
-        <h1 id="loesungen-title">
-          Wenn es fertig ist,<br>
+        <h1 id="loesungen-title" class="home-hero__title solutions-hero__title">
+          Wenn es fertig ist, <br class="hidden-mobile">
           <span class="gradient-text">fühlt es sich richtig an.</span>
         </h1>
-        <p class="hero-lead">
+        <p class="hero-lead solutions-hero__lead">
           Fertig heisst hier nicht einfach abgeschlossen. Es heisst: kein Detail, das stört, kein Satz, der danebenliegt, kein Klick, der ins Leere führt. Erst wenn alles stimmt, ist ein Projekt wirklich fertig.
         </p>
       </div>
 
-      <div class="fade-up delay-100 mt-80">
+      <div class="fade-up delay-100 mt-80 solutions-accordion-wrap">
 
-        <div class="accordion" role="list">
+        <div class="accordion solutions-accordion" role="list">
 
-          <div class="accordion-item" role="listitem">
+          <div class="accordion-item solutions-accordion__item" role="listitem">
             <h3 class="accordion-h3">
               <button id="acc-btn-1" class="accordion-header" aria-expanded="false" aria-controls="acc-1">
                 <div class="accordion-title-wrapper">
@@ -158,7 +158,7 @@ const schema = JSON.stringify({
             </div>
           </div>
 
-          <div class="accordion-item" role="listitem">
+          <div class="accordion-item solutions-accordion__item" role="listitem">
             <h3 class="accordion-h3">
               <button id="acc-btn-2" class="accordion-header" aria-expanded="false" aria-controls="acc-2">
                 <div class="accordion-title-wrapper">
@@ -191,7 +191,7 @@ const schema = JSON.stringify({
             </div>
           </div>
 
-          <div class="accordion-item" role="listitem">
+          <div class="accordion-item solutions-accordion__item" role="listitem">
             <h3 class="accordion-h3">
               <button id="acc-btn-3" class="accordion-header" aria-expanded="false" aria-controls="acc-3">
                 <div class="accordion-title-wrapper">
@@ -224,11 +224,11 @@ const schema = JSON.stringify({
     </div>
   </section>
 
-  <section class="section" aria-labelledby="loesungen-cta-title">
+  <section class="section solutions-final-section" aria-labelledby="loesungen-cta-title">
     <div class="container">
-      <div class="section-cta fade-up">
+      <div class="section-cta solutions-final-cta fade-up">
         <span class="cta-label">BEREIT?</span>
-        <h2 id="loesungen-cta-title">Weniger planen.<br><span class="gradient-text">Einfach anfangen.</span></h2>
+        <h2 id="loesungen-cta-title">Weniger planen.<br><span>Einfach anfangen.</span></h2>
         <div class="hero-cta-group" style="justify-content: center;">
           <span class="reveal-mail btn btn-primary" role="button" tabindex="0" aria-label="Kontaktformular öffnen">Unverbindlich anfragen</span>
           <a href="/referenzen" class="btn btn-ghost">Referenzprojekte ansehen</a>
@@ -239,18 +239,340 @@ const schema = JSON.stringify({
 </Layout>
 
 <style>
+  .solutions-hero {
+    min-height: min(570px, 64vh);
+    display: flex;
+    align-items: center;
+    padding-top: 150px;
+    padding-bottom: 48px;
+  }
+
+  .solutions-hero__container {
+    position: relative;
+    width: 100%;
+  }
+
+  .solutions-hero__content {
+    max-width: 940px;
+  }
+
+  .solutions-hero .home-hero__inner {
+    width: 100%;
+  }
+
+  .solutions-hero :global(.breadcrumb) {
+    margin-bottom: 28px;
+  }
+
+  .solutions-hero .badge {
+    margin-bottom: 1rem;
+  }
+
+  .solutions-hero__title {
+    max-width: 940px;
+    font-size: clamp(2.9rem, 5.35vw, 4.85rem);
+    line-height: 1.06;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+  }
+
+  .solutions-hero__lead {
+    max-width: 620px;
+    font-size: clamp(1.03rem, 1.15vw, 1.2rem);
+    line-height: 1.65;
+  }
+
+  .solutions-accordion-wrap {
+    margin-top: 72px;
+  }
+
+  .solutions-accordion {
+    position: relative;
+  }
+
   .accordion-h3 {
     margin: 0;
   }
+
+  .solutions-accordion__item {
+    position: relative;
+    border-bottom-color: rgba(255, 255, 255, 0.07);
+    transition:
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.35s ease,
+      box-shadow 0.35s ease,
+      background-color 0.35s ease;
+  }
+
+  .solutions-accordion__item::before {
+    content: '';
+    position: absolute;
+    inset: 8px -18px;
+    border-radius: 28px;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015)),
+      radial-gradient(420px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(166, 77, 255, 0.08), transparent 48%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .solutions-accordion__item:hover::before,
+  .solutions-accordion__item.active::before {
+    opacity: 1;
+  }
+
+  .solutions-accordion :global(.accordion-header) {
+    position: relative;
+    z-index: 1;
+    padding: 28px 4px;
+    color: rgba(245, 245, 247, 0.92);
+    transition:
+      color 0.25s ease,
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .solutions-accordion__item:hover :global(.accordion-header) {
+    color: #ffffff;
+  }
+
+  .solutions-accordion__item.active :global(.accordion-header) {
+    color: #f5f5f7;
+  }
+
+  .solutions-accordion :global(.accordion-title-wrapper) {
+    gap: 18px;
+  }
+
+  .solutions-accordion :global(.accordion-title-wrapper > span:last-child) {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  .solutions-accordion :global(.acc-icon-title) {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    border-color: rgba(255, 255, 255, 0.1);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02)),
+      rgba(255, 255, 255, 0.02);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    transition:
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.35s ease,
+      background 0.35s ease,
+      box-shadow 0.35s ease;
+  }
+
+  .solutions-accordion__item:hover :global(.acc-icon-title),
+  .solutions-accordion__item.active :global(.acc-icon-title) {
+    transform: translateY(-1px);
+    border-color: rgba(255, 255, 255, 0.16);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.025)),
+      rgba(255, 255, 255, 0.035);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.05),
+      0 0 26px rgba(166, 77, 255, 0.12);
+  }
+
+  .solutions-accordion :global(.accordion-icon) {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    color: rgba(255, 255, 255, 0.46);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition:
+      transform 0.3s ease,
+      color 0.25s ease,
+      border-color 0.25s ease,
+      background-color 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .solutions-accordion__item:hover :global(.accordion-icon) {
+    color: rgba(255, 255, 255, 0.82);
+    border-color: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .solutions-accordion__item.active :global(.accordion-icon) {
+    color: #ff4d80;
+    border-color: rgba(255, 77, 128, 0.28);
+    background: rgba(255, 77, 128, 0.08);
+    box-shadow: 0 0 22px rgba(255, 77, 128, 0.14);
+  }
+
+  .solutions-accordion :global(.accordion-content) {
+    position: relative;
+    z-index: 1;
+  }
+
   .accordion-content p {
-    padding: 0 32px 32px 92px;
-    color: var(--text-muted);
-    line-height: 1.6;
+    padding: 0 36px 34px 78px;
+    color: rgba(255, 255, 255, 0.58);
+    line-height: 1.72;
     margin: 0;
   }
+
+  .solutions-final-section {
+    padding-top: 52px;
+    padding-bottom: 118px;
+  }
+
+  .solutions-final-cta {
+    max-width: 660px;
+  }
+
+  .solutions-final-cta .cta-label {
+    color: rgba(255, 255, 255, 0.42);
+  }
+
+  .solutions-final-cta h2 {
+    color: #f5f5f7;
+    font-size: clamp(2.25rem, 4.5vw, 3.7rem);
+    line-height: 1.04;
+    letter-spacing: 0;
+    margin-bottom: 0;
+  }
+
+  .solutions-final-cta h2 span {
+    color: rgba(255, 255, 255, 0.62);
+  }
+
+  .solutions-final-cta .hero-cta-group {
+    margin-top: 34px;
+  }
+
+  .solutions-final-cta .btn-ghost {
+    background-image:
+      linear-gradient(#050505, #050505),
+      linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+  }
+
+  .solutions-final-cta .btn-ghost:hover {
+    animation: none;
+    transform: translateY(-2px);
+    background-image:
+      linear-gradient(#0a0a0c, #0a0a0c),
+      linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
+    box-shadow: 0 10px 26px rgba(255, 255, 255, 0.08);
+  }
+
+  .solutions-final-cta .btn-primary:hover {
+    box-shadow:
+      inset 0 2px 4px rgba(255, 255, 255, 1),
+      0 10px 26px rgba(255, 255, 255, 0.14);
+  }
+
+  @media (max-width: 860px) {
+    .solutions-hero {
+      min-height: auto;
+      padding-top: 132px;
+      padding-bottom: 42px;
+    }
+
+    .solutions-hero__title {
+      font-size: clamp(2.55rem, 10vw, 3.8rem);
+      line-height: 1.1;
+    }
+
+    .solutions-accordion-wrap {
+      margin-top: 52px;
+    }
+
+    .solutions-accordion :global(.accordion-header) {
+      padding: 24px 0;
+    }
+
+    .accordion-content p {
+      padding: 0 24px 30px 0;
+    }
+  }
+
   @media (max-width: 768px) {
+    .solutions-accordion :global(.accordion-title-wrapper) {
+      align-items: flex-start;
+    }
+
+    .solutions-accordion :global(.accordion-title-wrapper > span:last-child) {
+      font-size: 1.14rem;
+      line-height: 1.22;
+    }
+
     .accordion-content p {
       padding: 0 20px 24px 20px;
     }
   }
+
+  @media (max-width: 520px) {
+    .solutions-hero__lead {
+      font-size: 1.02rem;
+      line-height: 1.6;
+    }
+
+    .solutions-hero__title {
+      font-size: clamp(2.35rem, 13vw, 3.25rem);
+      line-height: 1.1;
+    }
+
+    .solutions-accordion-wrap {
+      margin-top: 42px;
+    }
+
+    .solutions-accordion__item::before {
+      inset: 6px -10px;
+      border-radius: 24px;
+    }
+
+    .solutions-accordion :global(.accordion-header) {
+      align-items: flex-start;
+      gap: 14px;
+      padding: 22px 0;
+    }
+
+    .solutions-accordion :global(.accordion-title-wrapper) {
+      gap: 14px;
+    }
+
+    .solutions-accordion :global(.acc-icon-title) {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      flex-shrink: 0;
+    }
+
+    .solutions-accordion :global(.accordion-icon) {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+    }
+
+    .accordion-content p {
+      padding: 0 0 22px 0;
+      font-size: 0.98rem;
+      line-height: 1.68;
+    }
+
+    .solutions-final-section {
+      padding-top: 40px;
+      padding-bottom: 88px;
+    }
+
+    .solutions-final-cta h2 {
+      font-size: clamp(1.8rem, 11vw, 2.5rem);
+    }
+  }
+
+  /* Utility Breakpoint Helpers */
+  .hidden-mobile { display: inline; }
+  @media (max-width: 640px) { .hidden-mobile { display: none; } }
+  
+  .hidden-tablet { display: inline; }
+  @media (max-width: 1024px) { .hidden-tablet { display: none; } }
 </style>

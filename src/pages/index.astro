@@ -202,10 +202,11 @@ const schema = JSON.stringify({
   .home-hero__title {
     max-width: 940px;
     font-size: clamp(2.9rem, 5.35vw, 4.85rem);
-    line-height: 1;
-    letter-spacing: 0;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
     margin-bottom: 24px;
   }
+
 
   .home-hero .hero-lead {
     max-width: 620px;
@@ -366,13 +367,14 @@ const schema = JSON.stringify({
 
     .home-hero__title {
       font-size: clamp(2.55rem, 10vw, 3.8rem);
+      line-height: 1.04;
     }
   }
 
   @media (max-width: 520px) {
     .home-hero__title {
       font-size: clamp(2.35rem, 13vw, 3.25rem);
-      line-height: 1.05;
+      line-height: 1.04;
     }
 
     .home-hero .hero-lead {
