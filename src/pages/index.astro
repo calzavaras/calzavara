@@ -123,7 +123,7 @@ const schema = JSON.stringify({
 
       <p class="hero-lead">
         Websites, digitale Lösungen, Tools und Texte mit Charakter. <br class="hidden-tablet">
-        Durchdacht bis ins Detail und gemacht, um zu bleiben.
+        Durchdacht bis ins Detail und gemacht, um langfristig zu tragen.
       </p>
 
       <div class="hero-cta-group">
@@ -142,14 +142,14 @@ const schema = JSON.stringify({
           <div class="card-icon" aria-hidden="true"><div class="gradient-icon" style="-webkit-mask-image: url('/assets/icons/icon-verstaendnis.svg'); mask-image: url('/assets/icons/icon-verstaendnis.svg');"></div></div>
           <span class="cta-label">VERSTÄNDNIS</span>
           <h3>Erst verstehen. Dann veredeln.</h3>
-          <p>Ich denke mich in dein Vorhaben ein, erkenne, worauf es wirklich ankommt, und entwickle daraus eine Lösung mit Richtung, Tiefe und Substanz.</p>
+          <p>Ich denke mich in dein Vorhaben ein, erkenne, worauf es wirklich ankommt, und entwickle daraus eine Lösung mit klarer Richtung, Tiefe und Substanz.</p>
         </article>
 
         <article class="card value-card fade-up delay-100" style="--icon-gradient: linear-gradient(135deg, #ffc700 0%, #ff4d80 100%); --icon-shadow: rgba(196, 77, 255, 0.34);">
           <div class="card-icon" aria-hidden="true"><div class="gradient-icon" style="-webkit-mask-image: url('/assets/icons/icon-anspruch.svg'); mask-image: url('/assets/icons/icon-anspruch.svg');"></div></div>
           <span class="cta-label">ANSPRUCH</span>
-          <h3>Gut genug ist nie das Ziel.</h3>
-          <p>Ich arbeite nicht für halbe Ergebnisse. Ich arbeite, bis Form, Funktion und Wirkung zusammenfinden und etwas entsteht, das langfristig trägt.</p>
+          <h3>Gut genug ist nicht das Ziel.</h3>
+          <p>Ich arbeite nicht für halbe Ergebnisse. Ich arbeite, bis Form, Funktion und Wirkung zusammenpassen und etwas entsteht, das langfristig trägt.</p>
         </article>
 
         <article class="card value-card fade-up delay-200" style="--icon-gradient: linear-gradient(135deg, #a64dff 0%, #ff4d80 100%); --icon-shadow: rgba(255, 77, 128, 0.32);">
@@ -187,7 +187,7 @@ const schema = JSON.stringify({
     min-height: min(570px, 64vh);
     display: flex;
     align-items: center;
-    padding-top: 150px;
+    padding-top: 100px;
     padding-bottom: 48px;
   }
 
@@ -202,7 +202,7 @@ const schema = JSON.stringify({
   .home-hero__title {
     max-width: 940px;
     font-size: clamp(2.9rem, 5.35vw, 4.85rem);
-    line-height: 1.0;
+    line-height: var(--hero-title-line-height);
     letter-spacing: -0.02em;
     margin-bottom: 24px;
   }
@@ -361,20 +361,20 @@ const schema = JSON.stringify({
 
     .home-hero {
       min-height: auto;
-      padding-top: 132px;
+      padding-top: 96px;
       padding-bottom: 42px;
     }
 
     .home-hero__title {
       font-size: clamp(2.55rem, 10vw, 3.8rem);
-      line-height: 1.04;
+      line-height: var(--hero-title-line-height-mobile);
     }
   }
 
   @media (max-width: 520px) {
     .home-hero__title {
       font-size: clamp(2.35rem, 13vw, 3.25rem);
-      line-height: 1.04;
+      line-height: var(--hero-title-line-height-mobile);
     }
 
     .home-hero .hero-lead {

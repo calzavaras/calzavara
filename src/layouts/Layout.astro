@@ -175,8 +175,7 @@ const siteNavSchema = JSON.stringify({
               <defs>
                 <linearGradient id="cmodal-grad" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stop-color="#FFC700"/>
-                  <stop offset="50%" stop-color="#FF4D80"/>
-                  <stop offset="100%" stop-color="#A64DFF"/>
+                  <stop offset="100%" stop-color="#FF4D80"/>
                 </linearGradient>
               </defs>
               <rect x="3" y="7" width="26" height="18" rx="3" stroke="url(#cmodal-grad)" stroke-width="1.8" fill="none"/>
@@ -230,8 +229,7 @@ const siteNavSchema = JSON.stringify({
               <defs>
                 <linearGradient id="check-grad" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stop-color="#FFC700"/>
-                  <stop offset="40%" stop-color="#FF4D80"/>
-                  <stop offset="100%" stop-color="#A64DFF"/>
+                  <stop offset="100%" stop-color="#FF4D80"/>
                 </linearGradient>
               </defs>
               <circle class="cmodal-check-circle" cx="32" cy="32" r="29" stroke="url(#check-grad)" stroke-width="1.5" fill="none"/>
@@ -249,14 +247,14 @@ const siteNavSchema = JSON.stringify({
   <script is:inline>
     // System for Premium Spotlight & Random offset
     document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('.card, .contact-card, .case-feature, .accordion-item').forEach(function(card) {
+      document.querySelectorAll('.card, .contact-card, .case-feature').forEach(function(card) {
         var randomAngle = Math.floor(Math.random() * 360) + 'deg';
         card.style.setProperty('--start-angle', randomAngle);
       });
     });
 
     document.addEventListener('mousemove', function(e) {
-      document.querySelectorAll('.card, .contact-card, .case-feature, .accordion-item').forEach(function(card) {
+      document.querySelectorAll('.card, .contact-card, .case-feature').forEach(function(card) {
         var rect = card.getBoundingClientRect();
         var x = e.clientX - rect.left;
         var y = e.clientY - rect.top;

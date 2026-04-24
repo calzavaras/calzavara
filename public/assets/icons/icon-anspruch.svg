@@ -4,9 +4,7 @@
       <animate attributeName="x1" values="-12;-36;-12" dur="20s" calcMode="ease" repeatCount="indefinite"/>
       <animate attributeName="x2" values="36;12;36" dur="20s" calcMode="ease" repeatCount="indefinite"/>
       <stop offset="0%" stop-color="#FFC700"/>
-      <stop offset="33%" stop-color="#FF4D80"/>
-      <stop offset="66%" stop-color="#A64DFF"/>
-      <stop offset="100%" stop-color="#00D2FF"/>
+      <stop offset="100%" stop-color="#FF4D80"/>
     </linearGradient>
     <filter id="f" x="-40%" y="-40%" width="180%" height="180%">
       <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#A64DFF" flood-opacity="0.5"/>

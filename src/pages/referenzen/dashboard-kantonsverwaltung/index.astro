@@ -152,7 +152,7 @@ const schema = JSON.stringify({
           <div class="case-feature">
             <div class="case-feature-body">
               <div class="case-feature-icon case-feature-icon--cyan">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#dashboard-feature-grad-1)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><defs><linearGradient id="dashboard-feature-grad-1" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#00D2FF"/><stop offset="1" stop-color="#A64DFF"/></linearGradient></defs><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
               </div>
               <div class="case-feature-text">
                 <h3>Drag & Drop Import</h3>
@@ -163,7 +163,7 @@ const schema = JSON.stringify({
           <div class="case-feature">
             <div class="case-feature-body">
               <div class="case-feature-icon case-feature-icon--purple">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#dashboard-feature-grad-2)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><defs><linearGradient id="dashboard-feature-grad-2" x1="4" y1="2" x2="20" y2="22" gradientUnits="userSpaceOnUse"><stop stop-color="#A64DFF"/><stop offset="1" stop-color="#FF4D80"/></linearGradient></defs><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
               </div>
               <div class="case-feature-text">
                 <h3>Anonymisierung auf Knopfdruck</h3>
@@ -174,7 +174,7 @@ const schema = JSON.stringify({
           <div class="case-feature">
             <div class="case-feature-body">
               <div class="case-feature-icon case-feature-icon--cyan">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="12" x2="12" y2="18"/><polyline points="9 15 12 18 15 15"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#dashboard-feature-grad-3)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><defs><linearGradient id="dashboard-feature-grad-3" x1="4" y1="2" x2="20" y2="22" gradientUnits="userSpaceOnUse"><stop stop-color="#00D2FF"/><stop offset="1" stop-color="#A64DFF"/></linearGradient></defs><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="12" x2="12" y2="18"/><polyline points="9 15 12 18 15 15"/></svg>
               </div>
               <div class="case-feature-text">
                 <h3>PDF-Export</h3>
@@ -228,15 +228,46 @@ const schema = JSON.stringify({
   .case-feature-icon {
     width: 48px;
     height: 48px;
-    border-radius: 14px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
     margin-top: 2px;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.045),
+      0 0 14px rgba(166, 77, 255, 0.14);
+    transition:
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.35s ease,
+      background 0.35s ease,
+      box-shadow 0.35s ease;
   }
   .case-feature-icon--cyan { background: rgba(0,210,255,0.08); border: 1px solid rgba(0,210,255,0.2); color: #00D2FF; }
   .case-feature-icon--purple { background: rgba(166,77,255,0.08); border: 1px solid rgba(166,77,255,0.2); color: #A64DFF; }
+  .case-feature-icon svg {
+    filter:
+      brightness(1.12)
+      saturate(1.18)
+      drop-shadow(0 0 8px rgba(166, 77, 255, 0.26));
+    transition: filter 0.45s ease;
+  }
+  .case-feature:hover .case-feature-icon {
+    transform: translateY(-1px);
+    border-color: rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.05),
+      0 0 22px rgba(166, 77, 255, 0.24),
+      0 0 48px rgba(0, 210, 255, 0.12);
+  }
+  .case-feature:hover .case-feature-icon svg {
+    filter:
+      brightness(1.18)
+      saturate(1.35)
+      drop-shadow(0 0 12px rgba(166, 77, 255, 0.46))
+      drop-shadow(0 0 24px rgba(0, 210, 255, 0.2));
+  }
   
   .case-feature-text h3 { font-size: 1rem; margin-bottom: 6px; }
   .case-feature-text p { font-size: 0.875rem; line-height: 1.65; margin: 0; color: var(--text-muted); }

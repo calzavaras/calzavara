@@ -102,8 +102,7 @@ const schema = JSON.stringify({
               <defs>
                 <linearGradient id="mailGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stop-color="#FFC700"/>
-                  <stop offset="50%" stop-color="#FF4D80"/>
-                  <stop offset="100%" stop-color="#A64DFF"/>
+                  <stop offset="100%" stop-color="#FF4D80"/>
                 </linearGradient>
               </defs>
               <rect x="4" y="10" width="40" height="28" rx="4" stroke="url(#mailGrad)" stroke-width="2" fill="none"/>
@@ -149,6 +148,57 @@ const schema = JSON.stringify({
     color: var(--text-muted);
     margin-bottom: 32px;
     line-height: 1.6;
+  }
+
+  .contact-card .card-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.024)),
+      rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.045),
+      0 0 14px rgba(255, 77, 128, 0.14);
+    transition:
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.35s ease,
+      background 0.35s ease,
+      box-shadow 0.35s ease;
+  }
+
+  .contact-card .card-icon svg {
+    width: 30px;
+    height: 30px;
+    filter:
+      brightness(1.12)
+      saturate(1.18)
+      drop-shadow(0 0 8px rgba(255, 77, 128, 0.26));
+    transition: filter 0.45s ease;
+  }
+
+  .contact-card:hover .card-icon {
+    transform: translateY(-1px);
+    border-color: rgba(255, 255, 255, 0.16);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.025)),
+      rgba(255, 255, 255, 0.035);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.05),
+      0 0 22px rgba(255, 77, 128, 0.24),
+      0 0 48px rgba(255, 199, 0, 0.1);
+  }
+
+  .contact-card:hover .card-icon svg {
+    filter:
+      brightness(1.18)
+      saturate(1.35)
+      drop-shadow(0 0 12px rgba(255, 77, 128, 0.46))
+      drop-shadow(0 0 24px rgba(255, 199, 0, 0.18));
   }
 
   @media (max-width: 860px) {
