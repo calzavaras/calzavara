@@ -21,7 +21,7 @@ const schema = JSON.stringify({
       "description": "Direkter Kontakt zu Marco Calzavara, Nigredo St. Gallen. Projektanfragen für Software, Webseiten, Texte, Bilder und KI-Lösungen.",
       "inLanguage": "de-CH",
       "datePublished": "2025-06-01",
-      "dateModified": "2026-03-19",
+      "dateModified": "2026-04-26",
       "isPartOf": { "@id": "https://www.nigredo.ch/#website" },
       "breadcrumb": { "@id": "https://www.nigredo.ch/kontakt#breadcrumb" },
       "isAccessibleForFree": true,
@@ -58,17 +58,17 @@ const schema = JSON.stringify({
 
 <Layout
   title="Kontakt & Projektanfrage | Nigredo St. Gallen"
-  description="Keine KI, kein Assistent, kein Ticketsystem. Direkt Marco Calzavara schreiben – er liest, er denkt, er antwortet. Meistens noch am selben Tag."
+  description="Direkt Marco Calzavara schreiben. Keine Umwege, kein Ticketsystem, kein Agenturtheater. Projektidee schildern und eine persönliche Einschätzung erhalten."
   keywords="Kontakt Nigredo, Website anfragen Schweiz, Webseite erstellen lassen Anfrage, Marco Calzavara, Freelancer St. Gallen, Projektanfrage digitale Lösungen KMU"
   canonical="https://www.nigredo.ch/kontakt"
-  ogTitle="Gute Arbeit braucht kein Business-Theater."
-  ogDescription="Keine KI, kein Assistent. Nur Marco. Schreib, was dich beschäftigt – er antwortet persönlich, meistens noch am selben Tag."
+  ogTitle="Erzähl mir kurz, was du vorhast."
+  ogDescription="Direkter Kontakt zu Marco Calzavara. Keine Umwege, kein Ticketsystem, kein Agenturtheater."
   ogImageAlt="Nigredo Kontakt - Direkter Draht zu Marco Calzavara"
-  twitterTitle="Gute Arbeit braucht kein Business-Theater."
-  twitterDescription="Keine KI, kein Assistent. Nur Marco. Er liest jede Nachricht selbst."
+  twitterTitle="Erzähl mir kurz, was du vorhast."
+  twitterDescription="Direkter Kontakt zu Marco Calzavara. Persönlich, klar und ohne Umwege."
   schema={schema}
 >
-  <section class="section pt-sub">
+  <section class="section pt-sub contact-hero" aria-labelledby="kontakt-title">
     <div class="hero-glow"></div>
     <div class="container">
 
@@ -79,29 +79,29 @@ const schema = JSON.stringify({
 
       <div class="kontakt-grid">
 
-        <div class="fade-up">
-          <span class="badge badge--cyan">DIREKT. KEIN UMWEG.</span>
-          <h1>
-            Gute Arbeit<br>
-            braucht kein<br>
-            <span class="gradient-text">Business-Theater.</span>
+        <div class="fade-up contact-hero__content">
+          <span class="badge badge--cyan">PROJEKTANFRAGE</span>
+          <h1 id="kontakt-title" class="contact-hero__title">
+            Erzähl mir kurz,<br>
+            <span class="gradient-text">was du vorhast.</span>
           </h1>
-          <p class="hero-lead">
-            Kein Briefing-Marathon, kein Kick-off, das als E-Mail ausgereicht hätte. Schreib, was du im Kopf hast. Den Rest bringe ich mit.
+          <p class="hero-lead contact-hero__lead">
+            Ob erste Idee, konkreter Auftrag oder offene Frage: beschreib kurz, wo du stehst. Ich ordne ein, was sinnvoll ist, was es braucht und wie der nächste Schritt aussehen kann.
           </p>
           <p class="kontakt-sub">
-            Ich sage dir, was machbar ist, was es kostet und wann es losgeht.
+            Wenn es passt, wird daraus ein klares Vorgehen mit Fixpreis, Tempo und einem Ergebnis, das zu dir und deinem Anspruch passt.
           </p>
         </div>
 
-        <div class="contact-card fade-up delay-100">
+        <div class="contact-card contact-panel fade-up delay-100">
           <div class="contact-top-stripe"></div>
 
           <div class="card-icon">
             <svg width="48" height="48" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
               <defs>
                 <linearGradient id="mailGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#FFC700"/>
+                  <stop offset="0%" stop-color="#00D2FF"/>
+                  <stop offset="50%" stop-color="#A64DFF"/>
                   <stop offset="100%" stop-color="#FF4D80"/>
                 </linearGradient>
               </defs>
@@ -110,8 +110,9 @@ const schema = JSON.stringify({
             </svg>
           </div>
 
-          <h3>Schreib mir.</h3>
-          <p class="contact-text">Keine KI, kein Assistent, kein Ticketsystem, das vergisst zu atmen. Nur ich. Ich lese, denke, antworte. Meistens noch am selben Tag.</p>
+          <span class="cta-label">Direkter Kontakt</span>
+          <h3>Persönlich statt Prozess.</h3>
+          <p class="contact-text">Deine Anfrage landet ohne Umweg bei mir. Ich lese sie selbst und melde mich mit einer ehrlichen Einschätzung zurück.</p>
 
           <button id="mailBtn" class="btn btn-primary">Jetzt schreiben</button>
         </div>
@@ -123,16 +124,79 @@ const schema = JSON.stringify({
 </Layout>
 
 <style>
+  .contact-hero {
+    padding-top: 150px;
+    padding-bottom: 118px;
+  }
+
+  .contact-hero :global(.breadcrumb) {
+    margin-bottom: 28px;
+  }
+
+  .contact-hero .badge {
+    margin-bottom: 1rem;
+  }
+
   .kontakt-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.72fr);
+    gap: clamp(44px, 6vw, 80px);
     align-items: center;
   }
 
+  .contact-hero__content {
+    max-width: 940px;
+  }
+
+  .contact-hero__title {
+    max-width: 940px;
+    font-size: clamp(2.9rem, 5.35vw, 4.85rem);
+    line-height: var(--hero-title-line-height);
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+  }
+
+  .contact-hero__lead {
+    max-width: 620px;
+    font-size: clamp(1.03rem, 1.15vw, 1.2rem);
+    line-height: 1.65;
+  }
+
   .kontakt-sub {
-    margin-top: 24px;
-    color: var(--text-muted);
+    max-width: 610px;
+    margin: 22px 0 0;
+    color: rgba(255, 255, 255, 0.48);
+    font-size: clamp(0.98rem, 1.08vw, 1.05rem);
+    line-height: 1.65;
+  }
+
+  .contact-panel {
+    position: relative;
+    align-self: center;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.018)),
+      #0a0a0c;
+    isolation: isolate;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.035),
+      0 18px 45px rgba(0, 0, 0, 0.22);
+  }
+
+  .contact-panel::before,
+  .contact-panel::after {
+    display: none;
+  }
+
+  .contact-panel:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.16);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.022)),
+      #0b0b0d;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.05),
+      0 28px 60px rgba(0, 0, 0, 0.32);
   }
 
   /* Top gradient accent stripe */
@@ -140,14 +204,27 @@ const schema = JSON.stringify({
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 2px;
-    background: linear-gradient(90deg, #FFC700, #FF4D80, #A64DFF, #00D2FF);
+    background: linear-gradient(90deg, #00D2FF, #A64DFF, #FF4D80);
     border-radius: 2px 2px 0 0;
   }
 
+  .contact-panel .cta-label {
+    margin-bottom: 12px;
+    color: rgba(255, 255, 255, 0.42);
+  }
+
+  .contact-panel h3 {
+    font-size: clamp(1.45rem, 2.4vw, 1.72rem);
+    line-height: 1.14;
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+  }
+
   .contact-text {
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.56);
     margin-bottom: 32px;
-    line-height: 1.6;
+    font-size: 0.98rem;
+    line-height: 1.68;
   }
 
   .contact-card .card-icon {
@@ -163,7 +240,7 @@ const schema = JSON.stringify({
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.045),
-      0 0 14px rgba(255, 77, 128, 0.14);
+      0 0 14px rgba(166, 77, 255, 0.14);
     transition:
       transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
       border-color 0.35s ease,
@@ -189,8 +266,8 @@ const schema = JSON.stringify({
       rgba(255, 255, 255, 0.035);
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.05),
-      0 0 22px rgba(255, 77, 128, 0.24),
-      0 0 48px rgba(255, 199, 0, 0.1);
+      0 0 22px rgba(166, 77, 255, 0.24),
+      0 0 48px rgba(0, 210, 255, 0.1);
   }
 
   .contact-card:hover .card-icon svg {
@@ -198,10 +275,48 @@ const schema = JSON.stringify({
       brightness(1.18)
       saturate(1.35)
       drop-shadow(0 0 12px rgba(255, 77, 128, 0.46))
-      drop-shadow(0 0 24px rgba(255, 199, 0, 0.18));
+      drop-shadow(0 0 24px rgba(0, 210, 255, 0.18));
   }
 
   @media (max-width: 860px) {
-    .kontakt-grid { grid-template-columns: 1fr; gap: 40px; }
+    .contact-hero {
+      padding-top: 132px;
+      padding-bottom: 88px;
+    }
+
+    .kontakt-grid {
+      grid-template-columns: 1fr;
+      gap: 52px;
+    }
+
+    .contact-hero__title {
+      font-size: clamp(2.55rem, 10vw, 3.8rem);
+      line-height: var(--hero-title-line-height-mobile);
+    }
+  }
+
+  @media (max-width: 520px) {
+    .contact-hero {
+      padding-bottom: 72px;
+    }
+
+    .contact-hero__title {
+      font-size: clamp(2.35rem, 13vw, 3.25rem);
+      line-height: var(--hero-title-line-height-mobile);
+    }
+
+    .contact-hero__lead {
+      font-size: 1.02rem;
+      line-height: 1.6;
+    }
+
+    .kontakt-sub {
+      font-size: 0.96rem;
+      line-height: 1.62;
+    }
+
+    .contact-panel {
+      padding: 34px 26px;
+    }
   }
 </style>

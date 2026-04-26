@@ -8,33 +8,146 @@ import Layout from '../layouts/Layout.astro';
   canonical="https://www.nigredo.ch/404"
   robots="noindex, follow"
 >
-  <section class="section pt-hero" style="min-height: 70vh; display: flex; align-items: center; justify-content: center;">
-    <div class="hero-glow" style="background: radial-gradient(circle, rgba(255, 77, 128, 0.15) 0%, transparent 60%);"></div>
-    <div class="container fade-up" style="text-align: center;">
+  <section class="section pt-sub not-found-page" aria-labelledby="not-found-title">
+    <div class="hero-glow"></div>
+    <div class="container not-found-page__inner fade-up">
 
-      <h1 style="font-size: clamp(6rem, 15vw, 10rem); line-height: 1; margin-bottom: 20px; color: var(--text-muted); opacity: 0.1; font-weight: 800;">404</h1>
+      <span class="badge badge--pink">404</span>
 
-      <h2 style="margin-bottom: 20px; font-size: 2rem;">
-        <span class="gradient-text">Hier baut gerade niemand.</span>
-      </h2>
+      <h1 id="not-found-title" class="home-hero__title not-found-page__title">
+        Hier baut<br>
+        <span class="gradient-text">gerade niemand.</span>
+      </h1>
 
-      <p class="m-auto-b40" style="max-width: 500px; color: var(--text-muted);">
+      <p class="hero-lead not-found-page__lead">
         Diese Seite existiert nicht. Aber alles andere schon. Vielleicht findest du hier, was du suchst.
       </p>
 
-      <div class="hero-cta-group" style="justify-content: center;">
+      <div class="hero-cta-group">
         <a href="/" class="btn btn-primary">Zurück zum Start</a>
         <a href="/kontakt" class="btn btn-ghost">Kontakt aufnehmen</a>
       </div>
 
-      <div class="mt-60" style="font-size: 0.9rem; color: var(--text-muted);">
-        <p style="margin-bottom: 10px;">Oder suchtest du nach:</p>
-        <nav style="display: inline-flex; gap: 20px; justify-content: center;">
-          <a href="/loesungen" style="color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.2);">Lösungen</a>
-          <a href="/referenzen" style="color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.2);">Referenzen</a>
-          <a href="/ueber-uns" style="color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.2);">Über mich</a>
+      <div class="not-found-page__links" aria-label="Weitere Seiten">
+        <span class="cta-label">Vielleicht meintest du</span>
+        <nav>
+          <a href="/loesungen">Lösungen</a>
+          <a href="/referenzen">Referenzen</a>
+          <a href="/ueber-uns">Über mich</a>
         </nav>
       </div>
     </div>
   </section>
 </Layout>
+
+<style>
+  .not-found-page {
+    min-height: min(570px, 64vh);
+    display: flex;
+    align-items: center;
+    padding-top: 150px;
+    padding-bottom: 118px;
+  }
+
+  .not-found-page__inner {
+    width: 100%;
+  }
+
+  .not-found-page .badge {
+    margin-bottom: 1rem;
+  }
+
+  .not-found-page__title {
+    max-width: 940px;
+    font-size: clamp(2.9rem, 5.35vw, 4.85rem);
+    line-height: var(--hero-title-line-height);
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+  }
+
+  .not-found-page__lead {
+    max-width: 620px;
+    font-size: clamp(1.03rem, 1.15vw, 1.2rem);
+    line-height: 1.65;
+  }
+
+  .not-found-page__links {
+    margin-top: 56px;
+  }
+
+  .not-found-page__links nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .not-found-page__links a {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.4;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.18);
+    text-underline-offset: 5px;
+    transition: color 0.25s ease, text-decoration-color 0.25s ease;
+  }
+
+  .not-found-page__links a:hover {
+    color: #ffffff;
+    text-decoration-color: rgba(255, 77, 128, 0.65);
+  }
+
+  .not-found-page .btn-ghost {
+    background-image:
+      linear-gradient(#050505, #050505),
+      linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+  }
+
+  .not-found-page .btn-ghost:hover {
+    animation: none;
+    transform: translateY(-2px);
+    background-image:
+      linear-gradient(#0a0a0c, #0a0a0c),
+      linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
+    box-shadow: 0 10px 26px rgba(255, 255, 255, 0.08);
+  }
+
+  .not-found-page .btn-primary:hover {
+    box-shadow:
+      inset 0 2px 4px rgba(255, 255, 255, 1),
+      0 10px 26px rgba(255, 255, 255, 0.14);
+  }
+
+  @media (max-width: 860px) {
+    .not-found-page {
+      min-height: auto;
+      padding-top: 132px;
+      padding-bottom: 88px;
+    }
+
+    .not-found-page__title {
+      font-size: clamp(2.55rem, 10vw, 3.8rem);
+      line-height: var(--hero-title-line-height-mobile);
+    }
+  }
+
+  @media (max-width: 520px) {
+    .not-found-page {
+      padding-bottom: 72px;
+    }
+
+    .not-found-page__title {
+      font-size: clamp(2.35rem, 13vw, 3.25rem);
+      line-height: var(--hero-title-line-height-mobile);
+    }
+
+    .not-found-page__lead {
+      font-size: 1.02rem;
+      line-height: 1.6;
+    }
+
+    .not-found-page__links {
+      margin-top: 48px;
+    }
+  }
+</style>

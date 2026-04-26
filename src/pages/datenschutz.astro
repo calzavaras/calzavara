@@ -38,22 +38,23 @@ const schema = JSON.stringify({
   robots="noindex, follow"
   schema={schema}
 >
-  <section class="section pt-sub">
+  <section class="section pt-sub legal-page legal-page--privacy" aria-labelledby="datenschutz-title">
     <div class="hero-glow"></div>
-    <div class="container container--narrow">
+    <div class="container legal-page__container">
 
       <Breadcrumb items={[
         { label: 'Start', href: '/' },
         { label: 'Datenschutz' }
       ]} />
 
-      <div class="fade-up legal-container">
+      <div class="fade-up legal-hero">
         <span class="badge badge--cyan">DATENSCHUTZ</span>
-        <h1>Datenschutz</h1>
-        <p class="hero-lead">Kurz und klar: was gesammelt wird, warum und wer dafür verantwortlich ist.</p>
+        <h1 id="datenschutz-title" class="legal-hero__title">Datenschutz</h1>
+        <p class="hero-lead legal-hero__lead">Kurz und klar: was gesammelt wird, warum und wer dafür verantwortlich ist.</p>
+      </div>
 
-        <div class="mt-80 legal-text-block">
-          <div class="legal-item">
+        <div class="legal-text-block fade-up delay-100">
+          <section class="legal-item">
             <span class="legal-num">01</span>
             <div>
               <h3>Verantwortliche Stelle</h3>
@@ -64,90 +65,202 @@ const schema = JSON.stringify({
                 Wildeggstrasse 37<br>
                 9000 St. Gallen, Schweiz
               </div>
-              <span class="reveal-mail btn btn-ghost legal-btn" role="button" tabindex="0">Nachricht schreiben →</span>
+              <a class="btn btn-ghost legal-btn" href="/kontakt">Kontaktformular öffnen</a>
             </div>
-          </div>
+          </section>
 
-          <div class="legal-item mt-80">
+          <section class="legal-item">
             <span class="legal-num">02</span>
             <div>
               <h3>Hosting</h3>
               <p>Diese Website wird bei <strong>Hosttech</strong> in der Schweiz gehostet. Der Hosting-Provider speichert automatisch Server-Logs (IP-Adresse, Browsertyp, Betriebssystem, Datum und Uhrzeit). Diese Daten werden ausschliesslich zu technischen Zwecken erhoben und unterliegen dem schweizerischen Datenschutzgesetz (DSG).</p>
             </div>
-          </div>
+          </section>
 
-          <div class="legal-item mt-80">
+          <section class="legal-item">
             <span class="legal-num">03</span>
             <div>
               <h3>Analyse-Tools & Cookies</h3>
               <p>Diese Website nutzt <strong>Umami Analytics</strong>, ein datenschutzfreundliches, cookiefreies Analyse-Tool. Umami erfasst anonymisierte Nutzungsdaten (z.B. besuchte Seiten, Verweildauer) ohne persönlich identifizierbare Informationen zu speichern. Es werden keine Cookies gesetzt und keine Daten an Dritte weitergegeben. Die Verarbeitung erfolgt in Übereinstimmung mit dem Schweizer Datenschutzgesetz (DSG).</p>
             </div>
-          </div>
+          </section>
 
-          <div class="legal-item mt-80">
+          <section class="legal-item">
             <span class="legal-num">04</span>
             <div>
               <h3>Kontaktaufnahme</h3>
               <p>Wenn du mich per E-Mail kontaktierst, werden deine Angaben (E-Mail-Adresse, Name, Nachricht) gespeichert, um deine Anfrage zu bearbeiten. Diese Daten werden nicht ohne deine Einwilligung weitergegeben.</p>
             </div>
-          </div>
+          </section>
 
-          <div class="legal-item mt-80">
+          <section class="legal-item">
             <span class="legal-num">05</span>
             <div>
               <h3>Deine Rechte</h3>
               <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung deiner personenbezogenen Daten. Kontaktiere mich dafür einfach per E-Mail.</p>
             </div>
-          </div>
+          </section>
 
-          <div class="legal-item mt-80">
+          <section class="legal-item">
             <span class="legal-num">06</span>
             <div>
               <h3>SSL-Verschlüsselung</h3>
               <p>Diese Website nutzt SSL-Verschlüsselung für die sichere Übertragung von Daten. Verschlüsselte Seiten erkennst du am «https://» in der Adresszeile und am Schloss-Symbol im Browser.</p>
             </div>
-          </div>
+          </section>
         </div>
-      </div>
     </div>
   </section>
 </Layout>
 
 <style>
-  .legal-container {
-    max-width: 100%;
+  .legal-page {
+    padding-top: 150px;
+    padding-bottom: 108px;
   }
-  .legal-text-block p {
-    color: var(--text-muted);
-    max-width: var(--reading-width);
+
+  .legal-page__container {
+    max-width: 1080px;
+  }
+
+  .legal-page :global(.breadcrumb) {
+    margin-bottom: 28px;
+  }
+
+  .legal-hero {
+    max-width: 760px;
+  }
+
+  .legal-hero .badge {
+    margin-bottom: 1rem;
+  }
+
+  .legal-hero__title {
+    max-width: 940px;
+    font-size: clamp(2.9rem, 5.35vw, 4.85rem);
+    line-height: var(--hero-title-line-height);
+    letter-spacing: -0.02em;
     margin-bottom: 24px;
   }
+
+  .legal-hero__lead {
+    max-width: 620px;
+    font-size: clamp(1.03rem, 1.15vw, 1.2rem);
+    line-height: 1.65;
+  }
+
+  .legal-text-block {
+    max-width: 880px;
+    margin-top: 72px;
+  }
+
+  .legal-text-block p {
+    color: rgba(255, 255, 255, 0.56);
+    max-width: var(--reading-width);
+    margin-bottom: 0;
+    line-height: 1.72;
+  }
+
   .legal-item {
-    display: flex;
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr);
     gap: 24px;
     align-items: flex-start;
+    padding: 34px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    transition: border-color 0.25s ease;
   }
+
+  .legal-item:first-child {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .legal-item:hover {
+    border-color: rgba(255, 255, 255, 0.14);
+  }
+
+  .legal-item h3 {
+    font-size: clamp(1.32rem, 2vw, 1.64rem);
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+  }
+
   .legal-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     font-size: 0.75rem;
     font-weight: 800;
     color: var(--quaternary-accent);
-    padding-top: 6px;
     flex-shrink: 0;
+    box-sizing: border-box;
   }
+
   .legal-address {
     font-size: 0.95rem;
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.56);
     line-height: 1.7;
     margin-bottom: 24px;
   }
+
   .legal-btn {
-    padding: 10px 20px;
-    font-size: 0.85rem;
+    min-height: 46px;
+    padding: 0 22px;
+    font-size: 0.9rem;
+    background-image:
+      linear-gradient(#050505, #050505),
+      linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
   }
+
+  .legal-btn:hover {
+    animation: none;
+    transform: translateY(-2px);
+    background-image:
+      linear-gradient(#0a0a0c, #0a0a0c),
+      linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
+    box-shadow: 0 10px 26px rgba(255, 255, 255, 0.08);
+  }
+
+  @media (max-width: 860px) {
+    .legal-page {
+      padding-top: 132px;
+      padding-bottom: 88px;
+    }
+
+    .legal-text-block {
+      margin-top: 56px;
+    }
+
+    .legal-hero__title {
+      font-size: clamp(2.55rem, 10vw, 3.8rem);
+      line-height: var(--hero-title-line-height-mobile);
+    }
+  }
+
   @media (max-width: 600px) {
+    .legal-page {
+      padding-bottom: 72px;
+    }
+
+    .legal-hero__title {
+      font-size: clamp(2.35rem, 13vw, 3.25rem);
+    }
+
     .legal-item {
-      flex-direction: column;
-      gap: 12px;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      padding: 30px 0;
+    }
+
+    .legal-text-block {
+      margin-top: 52px;
     }
   }
 </style>

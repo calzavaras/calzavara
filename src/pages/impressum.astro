@@ -24,20 +24,22 @@ const schema = JSON.stringify({
   robots="noindex, follow"
   schema={schema}
 >
-  <section class="section pt-sub">
-    <div class="container container--narrow">
+  <section class="section pt-sub legal-page legal-page--impressum" aria-labelledby="impressum-title">
+    <div class="hero-glow"></div>
+    <div class="container legal-page__container">
 
       <Breadcrumb items={[
         { label: 'Start', href: '/' },
         { label: 'Impressum' }
       ]} />
 
-      <div class="fade-up legal-container">
+      <div class="fade-up legal-hero">
         <span class="badge badge--purple">RECHTLICHES</span>
-        <h1>Impressum</h1>
+        <h1 id="impressum-title" class="legal-hero__title">Impressum</h1>
+      </div>
 
-        <div class="grid-3 mt-80">
-          <div class="card">
+      <div class="legal-card-grid fade-up delay-100">
+          <div class="card legal-card">
             <span class="cta-label">ADRESSE</span>
             <h3>Sitz der Firma</h3>
             <p class="legal-p">
@@ -47,35 +49,32 @@ const schema = JSON.stringify({
               Schweiz
             </p>
           </div>
-          <div class="card">
+          <div class="card legal-card">
             <span class="cta-label">KONTAKT</span>
             <h3>Direkter Draht</h3>
             <p class="legal-p">
-              E-Mail: <span class="reveal-mail" role="button" tabindex="0" style="cursor: pointer; text-decoration: underline;">Anzeigen</span><br>
+              E-Mail: <a class="legal-link" href="/kontakt">Kontaktformular</a><br>
               Web: www.nigredo.ch
             </p>
           </div>
-          <div class="card">
-            <span class="cta-label">REGISTER</span>
-            <h3>Handelsregister</h3>
-            <p class="legal-p">
-              UID: CHE-212.981.879<br>
-              MwSt: CHE-212.981.879 MWST
-            </p>
-          </div>
-        </div>
+      </div>
 
-        <div class="mt-80 legal-text-block">
-          <h3>Haftungsausschluss</h3>
+      <div class="legal-text-block fade-up delay-200">
+          <section class="legal-section">
+          <h2>Haftungsausschluss</h2>
           <p>Der Autor übernimmt keinerlei Gewähr hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit der Informationen. Haftungsansprüche gegen den Autor wegen Schäden materieller oder immaterieller Art, welche aus dem Zugriff oder der Nutzung bzw. Nichtnutzung der veröffentlichten Informationen entstanden sind, werden ausgeschlossen.</p>
           <p>Alle Angebote sind unverbindlich. Der Autor behält es sich ausdrücklich vor, Teile der Seiten oder das gesamte Angebot ohne gesonderte Ankündigung zu verändern, zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen.</p>
-          
-          <h3 class="mt-80">Haftung für Links</h3>
+          </section>
+
+          <section class="legal-section">
+          <h2>Haftung für Links</h2>
           <p>Verweise und Links auf Webseiten Dritter liegen ausserhalb meines Verantwortungsbereichs. Es wird jegliche Verantwortung für solche Webseiten abgelehnt. Der Zugriff und die Nutzung solcher Webseiten erfolgen auf eigene Gefahr.</p>
-          
-          <h3 class="mt-80">Urheberrechte</h3>
+          </section>
+
+          <section class="legal-section">
+          <h2>Urheberrechte</h2>
           <p>Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf der Website gehören ausschliesslich Nigredo / Marco Calzavara oder den speziell genannten Rechtsinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung der Urheberrechtsträger im Voraus einzuholen.</p>
-        </div>
+          </section>
       </div>
 
     </div>
@@ -83,21 +82,168 @@ const schema = JSON.stringify({
 </Layout>
 
 <style>
-  .legal-container {
-    max-width: 100%;
+  .legal-page {
+    padding-top: 150px;
+    padding-bottom: 108px;
   }
+
+  .legal-page__container {
+    max-width: 1080px;
+  }
+
+  .legal-page :global(.breadcrumb) {
+    margin-bottom: 28px;
+  }
+
+  .legal-hero {
+    max-width: 760px;
+  }
+
+  .legal-hero .badge {
+    margin-bottom: 1rem;
+  }
+
+  .legal-hero__title {
+    max-width: 940px;
+    font-size: clamp(2.9rem, 5.35vw, 4.85rem);
+    line-height: var(--hero-title-line-height);
+    letter-spacing: -0.02em;
+    margin-bottom: 0;
+  }
+
+  .legal-hero__lead {
+    max-width: 620px;
+    font-size: clamp(1.03rem, 1.15vw, 1.2rem);
+    line-height: 1.65;
+  }
+
+  .legal-card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 76px;
+    align-items: stretch;
+  }
+
+  .legal-card {
+    min-height: 100%;
+    padding: 32px 28px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.018)),
+      #0a0a0c;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.035),
+      0 18px 45px rgba(0, 0, 0, 0.22);
+  }
+
+  .legal-card::before {
+    display: none;
+  }
+
+  .legal-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.16);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.022)),
+      #0b0b0d;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.05),
+      0 28px 60px rgba(0, 0, 0, 0.32);
+  }
+
+  .legal-card h3 {
+    font-size: clamp(1.25rem, 2vw, 1.48rem);
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+  }
+
   .legal-p {
     font-size: 0.95rem;
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.56);
     line-height: 1.7;
     margin: 0;
   }
-  .legal-text-block p {
-    color: var(--text-muted);
-    max-width: var(--reading-width);
-    margin-bottom: 24px;
+
+  .legal-link {
+    color: #ffffff;
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 210, 255, 0.45);
+    text-underline-offset: 4px;
+    transition: color 0.25s ease, text-decoration-color 0.25s ease;
   }
-  .legal-text-block h3 {
-    margin-bottom: 24px;
+
+  .legal-link:hover {
+    color: var(--quaternary-accent);
+    text-decoration-color: currentColor;
+  }
+
+  .legal-text-block {
+    max-width: 880px;
+    margin-top: 96px;
+  }
+
+  .legal-section {
+    padding: 34px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .legal-section:first-child {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .legal-text-block p {
+    color: rgba(255, 255, 255, 0.56);
+    max-width: var(--reading-width);
+    margin-bottom: 18px;
+    line-height: 1.72;
+  }
+
+  .legal-text-block p:last-child {
+    margin-bottom: 0;
+  }
+
+  .legal-text-block h2 {
+    font-size: clamp(1.32rem, 2vw, 1.64rem);
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    margin-bottom: 18px;
+  }
+
+  @media (max-width: 860px) {
+    .legal-page {
+      padding-top: 132px;
+      padding-bottom: 88px;
+    }
+
+    .legal-card-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 56px;
+    }
+
+    .legal-hero__title {
+      font-size: clamp(2.55rem, 10vw, 3.8rem);
+      line-height: var(--hero-title-line-height-mobile);
+    }
+  }
+
+  @media (max-width: 520px) {
+    .legal-page {
+      padding-bottom: 72px;
+    }
+
+    .legal-hero__title {
+      font-size: clamp(2.35rem, 13vw, 3.25rem);
+    }
+
+    .legal-card {
+      padding: 34px 26px;
+    }
+
+    .legal-text-block {
+      margin-top: 72px;
+    }
   }
 </style>

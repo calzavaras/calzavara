@@ -205,6 +205,12 @@ function initContactModal() {
       valid = false;
     }
 
+    const phoneField = form.querySelector('[name="phone"]');
+    if (phoneField.value && !/^[0-9+() .-]{7,32}$/.test(phoneField.value.trim())) {
+      phoneField.classList.add('has-error');
+      valid = false;
+    }
+
     if (!valid) {
       showError('Bitte alle Pflichtfelder korrekt ausfüllen.');
       return;

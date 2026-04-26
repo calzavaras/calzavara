@@ -245,7 +245,7 @@ const schema = JSON.stringify({
   }
 
   .case-page .case-back {
-    margin-bottom: 44px;
+    margin-bottom: 34px;
   }
 
   .case-page .case-back:hover {
@@ -329,15 +329,14 @@ const schema = JSON.stringify({
   .case-feature-icon--purple { background: rgba(166,77,255,0.08); border: 1px solid rgba(166,77,255,0.2); color: #A64DFF; }
   .case-feature-icon--cyan { background: rgba(0,210,255,0.08); border: 1px solid rgba(0,210,255,0.2); color: #00D2FF; }
   .case-page--ki .case-feature {
-    background-image:
-      linear-gradient(#0a0a0c, #0a0a0c),
-      conic-gradient(from var(--border-angle, 0turn), rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.05) 24%, rgba(166, 77, 255, 0.2) 42%, rgba(255, 77, 128, 0.26) 58%, rgba(255, 255, 255, 0.05) 78%, rgba(255, 255, 255, 0.05) 100%);
+    border-color: rgba(255, 255, 255, 0.08);
   }
   .case-page--ki .case-feature:hover {
-    box-shadow: 0 10px 30px rgba(166, 77, 255, 0.12);
-    background-image:
-      linear-gradient(#0a0a0c, #0a0a0c),
-      conic-gradient(from var(--border-angle, 0turn), rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.08) 22%, rgba(166, 77, 255, 0.52) 42%, rgba(255, 77, 128, 0.48) 58%, rgba(255, 255, 255, 0.08) 80%, rgba(255, 255, 255, 0.08) 100%);
+    border-color: rgba(255, 255, 255, 0.16);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.05),
+      0 28px 60px rgba(0, 0, 0, 0.32),
+      0 0 28px rgba(166, 77, 255, 0.08);
   }
   .case-feature-icon svg {
     filter:
@@ -363,8 +362,18 @@ const schema = JSON.stringify({
       drop-shadow(0 0 24px var(--case-accent-soft));
   }
   
-  .case-feature-text h3 { font-size: 1rem; margin-bottom: 6px; }
-  .case-feature-text p { font-size: 0.875rem; line-height: 1.65; margin: 0; color: var(--text-muted); }
+  .case-feature-text h3 {
+    font-size: clamp(1.23rem, 2.2vw, 1.48rem);
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+  }
+  .case-feature-text p {
+    font-size: 0.95rem;
+    line-height: 1.62;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.55);
+  }
 
   .case-final-section {
     padding-top: 52px;

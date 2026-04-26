@@ -174,7 +174,8 @@ const siteNavSchema = JSON.stringify({
             <svg class="cmodal-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
               <defs>
                 <linearGradient id="cmodal-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#FFC700"/>
+                  <stop offset="0%" stop-color="#00D2FF"/>
+                  <stop offset="50%" stop-color="#A64DFF"/>
                   <stop offset="100%" stop-color="#FF4D80"/>
                 </linearGradient>
               </defs>
@@ -201,6 +202,11 @@ const siteNavSchema = JSON.stringify({
               <label class="cmodal-label" for="cmodal-email">E-Mail <span class="cmodal-required">*</span></label>
               <input class="cmodal-input" type="email" id="cmodal-email" name="email" placeholder="deine@email.ch" required autocomplete="email">
             </div>
+          </div>
+
+          <div class="cmodal-field">
+            <label class="cmodal-label" for="cmodal-phone">Telefon</label>
+            <input class="cmodal-input" type="tel" id="cmodal-phone" name="phone" placeholder="+41 79 000 00 00" autocomplete="tel" inputmode="tel">
           </div>
 
           <div class="cmodal-field">

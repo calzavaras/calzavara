@@ -80,7 +80,7 @@ Ja, KI-Tools werden gezielt eingesetzt – für Texte, Bilder, Code und Automati
 
 ## Über Marco Calzavara
 
-Marco Calzavara ist Gründer und alleiniger Macher von Nigredo. Er vereint technisches Know-how (Softwareentwicklung, KI-Integration, Webentwicklung) mit direktem Kundenkontakt ohne Zwischenstufen. Fixpreise, klare Kommunikation und ehrliches Feedback sind zentrale Grundsätze.
+Marco Calzavara ist Gründer von Nigredo, Mitgründer der HappyPath GmbH und Teamleiter in der kantonalen Verwaltung mit Verantwortung für Abteilungsentwicklung. Er verbindet Führungserfahrung, mehrere gegründete und teils verkaufte Firmen, KI-Interesse, Gestaltung und ein starkes Netzwerk erfahrener Informatikfachleute. Sein Fokus: Möglichkeiten erkennen, die richtigen Menschen verbinden und Ideen schnell, direkt und ohne Theater in Ergebnisse bringen.
 
 - Profil: https://www.nigredo.ch/ueber-uns
 - LinkedIn: https://ch.linkedin.com/in/calzavara-marco
