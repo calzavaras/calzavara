@@ -8,7 +8,6 @@ const TIMING = {
   MODAL_FOCUS_DELAY:    350,
   MODAL_CLOSE_DELAY:    380,
   CLOSE_OVERLAY_DELAY:  300,
-  FILTER_HIDE_DELAY:    350,
   AUTO_CLOSE_DELAY:    5000,
   HERO_GLOW_DELAY:     1000,
   LIGHTBOX_FADE:        150,
@@ -39,15 +38,17 @@ function unlockScroll() {
 }
 
 let _closeModalTimer = 0;
+let _lastModalTrigger = null;
+const _modalBackground = [];
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initScrollAnimations();
-  initGradientIcons();
-  initSpamProtection();
-  initContactModal();
-  initAccordions();
-  setTimeout(initLightbox, TIMING.LIGHTBOX_INIT_DELAY);
+  if (document.querySelector('.gradient-icon')) initGradientIcons();
+  if (document.querySelector('#mailBtn, .reveal-mail')) initSpamProtection();
+  if (document.getElementById('contact-modal')) initContactModal();
+  if (document.querySelector('.accordion-header')) initAccordions();
+  if (document.querySelector('.lightbox-trigger')) setTimeout(initLightbox, TIMING.LIGHTBOX_INIT_DELAY);
   setTimeout(() => {
     document.querySelectorAll('.hero-glow').forEach(el => el.classList.add('animated'));
   }, TIMING.HERO_GLOW_DELAY);
@@ -58,7 +59,7 @@ function initNavigation() {
   const navLinks = document.querySelector('.nav-links');
   const header = document.querySelector('header');
 
-  if (menuBtn && navLinks) {
+  if (menuBtn && navLinks && header) {
     function closeNav() {
       navLinks.classList.remove('mobile-active');
       menuBtn.setAttribute('aria-expanded', 'false');
@@ -101,31 +102,64 @@ function initScrollAnimations() {
 }
 
 function initSpamProtection() {
-  document.querySelectorAll('#mailBtn, .reveal-mail').forEach(el => {
+  const triggers = document.querySelectorAll('#mailBtn, .reveal-mail');
+  triggers.forEach(el => {
     el.addEventListener('click', (e) => {
       e.preventDefault();
-      openContactModal();
+      openContactModal(e.currentTarget);
     });
     el.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        openContactModal();
+        openContactModal(e.currentTarget);
       }
     });
   });
 }
 
-function openContactModal() {
+function setModalBackgroundDisabled(disabled) {
+  const elements = document.querySelectorAll('header, main, footer');
+  if (disabled) {
+    _modalBackground.length = 0;
+    elements.forEach((el) => {
+      _modalBackground.push([el, el.getAttribute('aria-hidden'), el.inert]);
+      el.inert = true;
+      el.setAttribute('aria-hidden', 'true');
+    });
+    return;
+  }
+
+  _modalBackground.forEach(([el, ariaHidden, wasInert]) => {
+    el.inert = wasInert;
+    if (ariaHidden === null) {
+      el.removeAttribute('aria-hidden');
+    } else {
+      el.setAttribute('aria-hidden', ariaHidden);
+    }
+  });
+  _modalBackground.length = 0;
+}
+
+function getFocusableElements(container) {
+  return Array.from(container.querySelectorAll(
+    'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+  )).filter(el => el.offsetParent !== null);
+}
+
+function openContactModal(trigger = document.activeElement) {
   const modal = document.getElementById('contact-modal');
   if (!modal) return;
+  _lastModalTrigger = trigger instanceof HTMLElement ? trigger : null;
   clearTimeout(_closeModalTimer);
   modal.style.display = 'block';
   modal.setAttribute('aria-hidden', 'false');
+  setModalBackgroundDisabled(true);
   lockScroll();
   requestAnimationFrame(() => modal.classList.add('active'));
   setTimeout(() => {
     const firstInput = modal.querySelector('.cmodal-input');
-    if (firstInput) firstInput.focus();
+    const closeBtn = modal.querySelector('.cmodal-close');
+    (firstInput || closeBtn)?.focus();
   }, TIMING.MODAL_FOCUS_DELAY);
 }
 
@@ -136,6 +170,7 @@ function closeContactModal() {
   modal.setAttribute('aria-hidden', 'true');
   _closeModalTimer = setTimeout(() => {
     modal.style.display = 'none';
+    setModalBackgroundDisabled(false);
     unlockScroll();
     const successEl = document.getElementById('cmodal-success');
     const form = document.getElementById('contact-form');
@@ -143,6 +178,9 @@ function closeContactModal() {
     if (successEl) successEl.classList.remove('visible');
     if (form) form.style.display = '';
     if (header) header.style.display = '';
+    if (_lastModalTrigger && document.contains(_lastModalTrigger)) {
+      _lastModalTrigger.focus();
+    }
   }, TIMING.MODAL_CLOSE_DELAY);
 }
 
@@ -171,11 +209,26 @@ function initContactModal() {
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal.classList.contains('active')) closeContactModal();
+    if (e.key !== 'Tab' || !modal.classList.contains('active')) return;
+
+    const focusable = getFocusableElements(modal);
+    if (focusable.length === 0) return;
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
   });
 
   const form = document.getElementById('contact-form');
   const submitBtn = document.getElementById('cmodal-submit');
   const feedback = document.getElementById('cmodal-feedback');
+  if (!form || !submitBtn || !feedback) return;
 
   function showError(msg) {
     feedback.textContent = msg;
@@ -253,6 +306,7 @@ function initAccordions() {
   accHeaders.forEach(header => {
     header.addEventListener('click', () => {
       const item = header.closest('.accordion-item');
+      if (!item) return;
       const isOpen = item.classList.contains('active');
       const content = item.querySelector('.accordion-content');
       const targetHeight = content ? content.scrollHeight : 0; // Read layout before any DOM writes
@@ -260,11 +314,12 @@ function initAccordions() {
         if (otherItem !== item) {
           otherItem.classList.remove('active');
           const otherContent = otherItem.querySelector('.accordion-content');
+          const otherHeader = otherItem.querySelector('.accordion-header');
           if (otherContent) {
             otherContent.style.maxHeight = 0;
             otherContent.setAttribute('aria-hidden', 'true');
           }
-          otherItem.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+          if (otherHeader) otherHeader.setAttribute('aria-expanded', 'false');
         }
       });
       if (!isOpen) {

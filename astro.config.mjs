@@ -48,9 +48,6 @@ export default defineConfig({
       filter: (page) => !page.includes('/404'),
     }),
   ],
-  prefetch: {
-    prefetchAll: true,
-  },
   trailingSlash: 'never',
   build: {
     format: 'directory',

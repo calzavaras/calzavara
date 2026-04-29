@@ -1,6 +1,9 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
+import { references } from '../../data/references';
+
+const referencesJson = JSON.stringify(references);
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
@@ -41,7 +44,6 @@ const schema = JSON.stringify({
 <Layout
   title="Referenzprojekte – KI, Websites & Software für Schweizer KMU | Nigredo"
   description="Echte Projekte: KI Voice Agent für IV-Stellen, lokales Excel-Dashboard für Verwaltung und die Website von Therapie Ost. Massgeschneiderte digitale Lösungen von Nigredo, St. Gallen."
-  keywords="Referenzen Nigredo, KI Voice Agent Schweiz, Excel Dashboard Verwaltung, Praxis Website Referenz, digitale Lösungen Schweiz, Softwareentwicklung Referenzen, KI-Projekte St. Gallen, Website Referenzen KMU"
   canonical="https://www.nigredo.ch/referenzen"
   ogTitle="Gebaut. Nicht versprochen. | Nigredo"
   ogDescription="Keine Demos, keine Konzeptpapiere. Projekte, die raus sind und arbeiten. KI Voice Agent, Excel-Dashboard und mehr."
@@ -434,49 +436,8 @@ const schema = JSON.stringify({
   }
 </style>
 
-<script>
-  const REFS = [
-    {
-      href: '/referenzen/ki-voice-agent',
-      imgSrc: '/referenzen/ki-voice-agent/ki-voice-agent-ahv-hilfsmittel-sprachassistent.svg',
-      imgAlt: 'KI Voice Agent für IV-Stellen – AHV Hilfsmittel Sprachassistent von Nigredo',
-      imgCls: 'ref-main-card-img--purple',
-      badge: { text: 'KI-Agent', cls: 'accent-purple' },
-      linkCls: 'ref-main-link--ki',
-      year: 'Feb 2026',
-      title: 'KI Agent für IV-Stellen',
-      sub: 'Sprachassistent für AHV-Hilfsmittel',
-      desc: 'Ein Prototyp für Anfragen, die nicht warten sollten. Vier Sprachen, sofortige Antworten und Fachwissen, das zuverlässig verfügbar bleibt. Noch nicht im Einsatz, aber nah genug am Alltag gebaut, um zu zeigen, was möglich ist.',
-      ariaLabel: 'KI Agent für IV-Stellen – Details ansehen'
-    },
-    {
-      href: '/referenzen/dashboard-kantonsverwaltung',
-      imgSrc: '/referenzen/dashboard-kantonsverwaltung/dashboard-kantonsverwaltung-excel-kpi-browser.svg',
-      imgAlt: 'Dashboard für Verwaltung – Excel KPI-Auswertung im Browser ohne Cloud',
-      imgCls: 'ref-main-card-img--cyan',
-      badge: { text: 'App', cls: 'accent-cyan' },
-      linkCls: '',
-      year: 'Jun 2025',
-      title: 'Dashboard für Verwaltung',
-      sub: 'Excel KPI-Auswertung im Browser, ohne Cloud',
-      desc: 'Sensible Daten bleiben dort, wo sie hingehören: auf dem eigenen Rechner. Aus Excel wird mit einem Klick ein klarer Bericht. Ohne Cloud, ohne IT-Ticket, ohne den üblichen Umweg durch drei Abteilungen.',
-      ariaLabel: 'Dashboard für Verwaltung – Details ansehen'
-    },
-    {
-      href: '/referenzen/therapie-ost',
-      imgSrc: '/referenzen/therapie-ost/therapie-ost-website-illustration.svg',
-      imgAlt: 'Website für Therapie Ost – dunkle illustrativ nachgebaute Startseite',
-      imgCls: 'ref-main-card-img--coral',
-      badge: { text: 'Website', cls: 'accent-coral' },
-      linkCls: '',
-      year: 'Apr 2026',
-      title: 'Website für Therapie Ost',
-      sub: 'Praxisauftritt mit Vertrauen, Struktur und Online-Buchung',
-      desc: 'Ein ruhiger Webauftritt für eine Praxis in St. Gallen: klare Positionierung, echte Bilder, mobile Sauberkeit und ein direkter Weg zur Terminbuchung. Nicht laut, aber wirksam.',
-      ariaLabel: 'Website für Therapie Ost – Details ansehen'
-    }
-    // Weitere Referenzen hier einfach anhängen
-  ];
+<script define:vars={{ referencesJson }}>
+  const REFS = JSON.parse(referencesJson);
 
   const ARROW_SVG = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
 
@@ -492,17 +453,17 @@ const schema = JSON.stringify({
   function cardHTML(ref) {
     return `
       <a href="${ref.href}" class="ref-main-card" aria-label="${ref.ariaLabel}">
-        <div class="ref-main-card-img ${ref.imgCls}">
-          <img src="${ref.imgSrc}" alt="${ref.imgAlt}" width="800" height="450" loading="lazy">
+        <div class="ref-main-card-img ${ref.listImgCls}">
+          <img src="${ref.imgSrc}" alt="${ref.imgAlt}" width="800" height="450" loading="lazy" decoding="async">
           <span class="tech-badge ${ref.badge.cls} ref-main-badge">${ref.badge.text}</span>
         </div>
         <div class="ref-main-card-body">
           <div class="ref-main-card-header">
-            <h2 class="ref-main-card-title">${ref.title}</h2>
+            <h2 class="ref-main-card-title">${ref.listTitle}</h2>
             <span class="ref-main-card-year">${ref.year}</span>
           </div>
           ${ref.sub ? `<p class="ref-main-card-sub">${ref.sub}</p>` : ''}
-          <p class="ref-main-card-desc">${ref.desc}</p>
+          <p class="ref-main-card-desc">${ref.listDesc}</p>
           <div class="ref-main-card-footer">
             <span class="ref-main-link ${ref.linkCls}">Details ${ARROW_SVG}</span>
           </div>

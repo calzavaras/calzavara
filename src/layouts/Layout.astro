@@ -2,11 +2,11 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import ContactModal from '../components/ContactModal.astro';
 
 interface Props {
   title: string;
   description: string;
-  keywords?: string;
   canonical: string;
   robots?: string;
   ogTitle?: string;
@@ -26,7 +26,6 @@ const jsVersion = process.env.npm_package_version ?? '1';
 const {
   title,
   description,
-  keywords,
   canonical,
   robots = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
   ogTitle,
@@ -94,7 +93,6 @@ const siteNavSchema = JSON.stringify({
 
   <title>{title}</title>
   <meta name="description" content={description}>
-  {keywords && <meta name="keywords" content={keywords}>}
   <meta name="author" content="Nigredo">
   <meta name="robots" content={robots}>
   <link rel="canonical" href={canonical}>
@@ -161,116 +159,45 @@ const siteNavSchema = JSON.stringify({
 
   <script src={`/main.min.js?v=${jsVersion}`} defer></script>
 
-  <!-- Contact Form Modal -->
-  <div id="contact-modal" class="cmodal" role="dialog" aria-modal="true" aria-labelledby="cmodal-title" aria-hidden="true">
-    <div class="cmodal-backdrop"></div>
-    <div class="cmodal-scroll">
-      <div class="cmodal-panel">
-        <div class="cmodal-panel-glow"></div>
-        <button class="cmodal-close" aria-label="Schliessen">&times;</button>
-
-        <div class="cmodal-header">
-          <div class="cmodal-icon-wrap">
-            <svg class="cmodal-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-              <defs>
-                <linearGradient id="cmodal-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#00D2FF"/>
-                  <stop offset="50%" stop-color="#A64DFF"/>
-                  <stop offset="100%" stop-color="#FF4D80"/>
-                </linearGradient>
-              </defs>
-              <rect x="3" y="7" width="26" height="18" rx="3" stroke="url(#cmodal-grad)" stroke-width="1.8" fill="none"/>
-              <path d="M3 10l13 9 13-9" stroke="url(#cmodal-grad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            </svg>
-          </div>
-          <div>
-            <h2 id="cmodal-title" class="cmodal-title">Schreib mir.</h2>
-            <p class="cmodal-subtitle">Landet direkt bei mir. Antwort meist noch heute.</p>
-          </div>
-        </div>
-        <div class="cmodal-header-divider"></div>
-
-        <form id="contact-form" class="cmodal-form" novalidate>
-          <input type="text" name="website" class="cmodal-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-          <div class="cmodal-row">
-            <div class="cmodal-field">
-              <label class="cmodal-label" for="cmodal-name">Name <span class="cmodal-required">*</span></label>
-              <input class="cmodal-input" type="text" id="cmodal-name" name="name" placeholder="Dein Name" required autocomplete="name">
-            </div>
-            <div class="cmodal-field">
-              <label class="cmodal-label" for="cmodal-email">E-Mail <span class="cmodal-required">*</span></label>
-              <input class="cmodal-input" type="email" id="cmodal-email" name="email" placeholder="deine@email.ch" required autocomplete="email">
-            </div>
-          </div>
-
-          <div class="cmodal-field">
-            <label class="cmodal-label" for="cmodal-phone">Telefon</label>
-            <input class="cmodal-input" type="tel" id="cmodal-phone" name="phone" placeholder="+41 79 000 00 00" autocomplete="tel" inputmode="tel">
-          </div>
-
-          <div class="cmodal-field">
-            <label class="cmodal-label" for="cmodal-subject">Betreff</label>
-            <input class="cmodal-input" type="text" id="cmodal-subject" name="subject" placeholder="Worum geht es?">
-          </div>
-
-          <div class="cmodal-field">
-            <label class="cmodal-label" for="cmodal-message">Nachricht <span class="cmodal-required">*</span></label>
-            <textarea class="cmodal-input cmodal-textarea" id="cmodal-message" name="message" placeholder="Erzähl mir von deinem Projekt oder deiner Idee…" required rows="5"></textarea>
-          </div>
-
-          <button type="submit" id="cmodal-submit" class="btn btn-primary cmodal-submit-btn">
-            <span class="cmodal-btn-text">Nachricht senden</span>
-            <span class="cmodal-btn-loading" aria-hidden="true">Wird gesendet…</span>
-          </button>
-
-          <div id="cmodal-feedback" class="cmodal-feedback" role="alert" aria-live="polite"></div>
-        </form>
-
-        <!-- Success State (shown after successful send) -->
-        <div id="cmodal-success" class="cmodal-success" aria-live="polite">
-          <div class="cmodal-success-glow"></div>
-          <div class="cmodal-success-icon-wrap">
-            <svg class="cmodal-success-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <defs>
-                <linearGradient id="check-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#FFC700"/>
-                  <stop offset="100%" stop-color="#FF4D80"/>
-                </linearGradient>
-              </defs>
-              <circle class="cmodal-check-circle" cx="32" cy="32" r="29" stroke="url(#check-grad)" stroke-width="1.5" fill="none"/>
-              <path class="cmodal-check-mark" d="M20 32l9 9 16-16" stroke="url(#check-grad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            </svg>
-          </div>
-          <h3 class="cmodal-success-title"><span class="gradient-text">Nachricht gesendet.</span></h3>
-          <p class="cmodal-success-text">Deine Anfrage ist angekommen. Ich melde mich persönlich — meistens noch am selben Tag.</p>
-          <button class="btn btn-ghost cmodal-success-close">Schliessen</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  <ContactModal />
 
   <script is:inline>
-    // System for Premium Spotlight & Random offset
     document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('.card, .contact-card, .case-feature').forEach(function(card) {
+      var cards = Array.from(document.querySelectorAll('.card, .contact-card, .case-feature'));
+      if (cards.length === 0) return;
+
+      cards.forEach(function(card) {
         var randomAngle = Math.floor(Math.random() * 360) + 'deg';
         card.style.setProperty('--start-angle', randomAngle);
       });
-    });
 
-    var _rafPending = false;
-    document.addEventListener('mousemove', function(e) {
-      if (_rafPending) return;
-      _rafPending = true;
-      requestAnimationFrame(function() {
-        document.querySelectorAll('.card, .contact-card, .case-feature').forEach(function(card) {
-          var rect = card.getBoundingClientRect();
-          card.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px');
-          card.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px');
+      var supportsInteractiveSpotlight =
+        window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
+        !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (!supportsInteractiveSpotlight) return;
+
+      var _rafPending = false;
+      document.addEventListener('pointermove', function(e) {
+        if (_rafPending) return;
+        _rafPending = true;
+        requestAnimationFrame(function() {
+          cards.forEach(function(card) {
+            var rect = card.getBoundingClientRect();
+            if (
+              rect.bottom < 0 ||
+              rect.right < 0 ||
+              rect.top > window.innerHeight ||
+              rect.left > window.innerWidth
+            ) {
+              return;
+            }
+            card.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px');
+            card.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px');
+          });
+          _rafPending = false;
         });
-        _rafPending = false;
-      });
+      }, { passive: true });
     });
   </script>
 </body>

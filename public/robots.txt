@@ -3,9 +3,8 @@
 # ======================================================================
 
 
-# GO-LIVE TOGGLE: "Disallow: /" unten ändern zu "Allow: /"
 User-agent: *
-Disallow: /
+Allow: /
 Disallow: /.htpasswd
 Disallow: /.htaccess
 Disallow: /.claude/
