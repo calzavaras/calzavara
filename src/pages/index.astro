@@ -5,85 +5,13 @@ const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebSite",
-      "@id": "https://www.nigredo.ch/#website",
-      "name": "Nigredo",
-      "url": "https://www.nigredo.ch",
-      "inLanguage": "de-CH",
-      "publisher": { "@id": "https://www.nigredo.ch/#organization" }
-    },
-    {
-      "@type": ["LocalBusiness", "ProfessionalService", "Organization"],
-      "@id": "https://www.nigredo.ch/#organization",
-      "name": "Nigredo | Marco Calzavara",
-      "url": "https://www.nigredo.ch",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.nigredo.ch/assets/nigredo-logo.png",
-        "width": 831,
-        "height": 265
-      },
-      "image": "https://www.nigredo.ch/assets/nigredo-logo.png",
-      "description": "Exklusive Websites, KI-Lösungen und Softwareentwicklung aus St. Gallen. Marco Calzavara entwickelt digitale Produkte mit Substanz – persönlich, zum Fixpreis, ohne Baukasten.",
-      "founder": { "@id": "https://www.nigredo.ch/#person" },
-      "foundingDate": "2025",
-      "knowsAbout": ["Webdesign", "Softwareentwicklung", "KI-Lösungen", "Branding", "User Experience Design", "Automatisierung"],
-      "numberOfEmployees": { "@type": "QuantitativeValue", "value": 1 },
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Wildeggstrasse 37",
-        "addressLocality": "St. Gallen",
-        "postalCode": "9000",
-        "addressRegion": "SG",
-        "addressCountry": "CH"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "47.4245",
-        "longitude": "9.3767"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "customer service",
-        "email": "calzavara3830@gmail.com",
-        "areaServed": "CH",
-        "availableLanguage": ["German", "English"]
-      },
-      "priceRange": "$$",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Digitale Dienstleistungen",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": { "@type": "Service", "name": "Website Erstellung (Individualentwicklung)" }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": { "@type": "Service", "name": "KI-Integration & Automatisierung" }
-          }
-        ]
-      },
-      "sameAs": [
-        "https://ch.linkedin.com/in/calzavara-marco",
-        "https://github.com/calza"
-      ]
-    },
-    {
-      "@type": "Person",
-      "@id": "https://www.nigredo.ch/#person",
-      "name": "Marco Calzavara",
-      "jobTitle": "Full-Stack Developer & Gründer",
-      "worksFor": { "@id": "https://www.nigredo.ch/#organization" }
-    },
-    {
       "@type": "WebPage",
       "@id": "https://www.nigredo.ch/#webpage",
       "url": "https://www.nigredo.ch/",
-      "name": "Websites & Digitale Lösungen | Marco Calzavara – St. Gallen",
+      "name": "Websites & KI-Lösungen aus St. Gallen | Nigredo",
       "isPartOf": { "@id": "https://www.nigredo.ch/#website" },
       "about": { "@id": "https://www.nigredo.ch/#organization" },
-      "description": "Websites und digitale Lösungen zum Fixpreis. Marco Calzavara: Ihr Partner für Webentwicklung, KI-Integration und exklusives Design aus St. Gallen.",
+      "description": "Websites, KI-Lösungen und digitale Tools zum Fixpreis. Nigredo entwickelt aus St. Gallen für Schweizer KMU.",
       "inLanguage": "de-CH"
     }
   ]
@@ -91,14 +19,14 @@ const schema = JSON.stringify({
 ---
 
 <Layout
-  title="Websites & Digitale Lösungen | Nigredo"
-  description="Professionelle Websites & KI-Lösungen zum Fixpreis. Nigredo entwickelt digitale Produkte mit Substanz – persönlich, exklusiv, ohne Baukasten. Jetzt anfragen."
+  title="Websites & KI-Lösungen aus St. Gallen | Nigredo"
+  description="Websites, KI-Lösungen und digitale Tools zum Fixpreis. Nigredo entwickelt aus St. Gallen für Schweizer KMU: persönlich, klar, ohne Baukasten."
   canonical="https://www.nigredo.ch/"
-  ogTitle="Websites & Digitale Lösungen, die wirklich zu dir passen."
+  ogTitle="Websites, KI-Lösungen und digitale Tools aus St. Gallen."
   ogDescription="Kein Baukasten, keine Kompromisse. Nigredo entwickelt digitale Produkte mit Substanz. Persönlich. Fixpreis. Aus St. Gallen."
   ogImageAlt="Nigredo - Exklusive Websites & Digitale Lösungen"
-  twitterTitle="Websites & Digitale Lösungen | Nigredo"
-  twitterDescription="Was gut gemacht ist, braucht keine Erklärung. Websites und KI-Lösungen aus St. Gallen."
+  twitterTitle="Websites & KI-Lösungen aus St. Gallen | Nigredo"
+  twitterDescription="Websites, KI-Lösungen und digitale Tools für Schweizer KMU. Persönlich, klar und zum Fixpreis."
   schema={schema}
 >
   <section class="section pt-hero home-hero" aria-labelledby="hero-title">
@@ -108,17 +36,17 @@ const schema = JSON.stringify({
       <span class="badge badge--yellow">DIGITALE PRODUKTE. IM MASSANZUG.</span>
 
       <h1 id="hero-title" class="home-hero__title">
-        Ich arbeite dort weiter, <br class="hidden-mobile">
-        <span class="gradient-text">wo andere aufhören.</span>
+        Websites, KI-Lösungen<br class="hidden-mobile">
+        <span class="gradient-text">und digitale Tools.</span>
       </h1>
 
       <p class="hero-lead">
-        Websites, digitale Lösungen, Tools und Texte mit Charakter. <br class="hidden-tablet">
+        Aus St. Gallen für Schweizer KMU: Websites, Software, Tools und Texte mit Charakter. <br class="hidden-tablet">
         Durchdacht bis ins Detail und gemacht, um langfristig zu tragen.
       </p>
 
       <div class="hero-cta-group">
-        <button class="btn btn-primary reveal-mail" title="Projekt starten">Projekt starten</button>
+        <a href="/kontakt" class="btn btn-primary">Projekt starten</a>
         <a href="/referenzen" class="btn btn-ghost">Arbeiten ansehen</a>
       </div>
     </div>
@@ -160,7 +88,7 @@ const schema = JSON.stringify({
         <span class="cta-label">NÄCHSTER SCHRITT</span>
         <h2 id="cta-title">Erzähl mir kurz,<br><span>was du vorhast.</span></h2>
         <div class="hero-cta-group" style="justify-content: center;">
-          <span class="reveal-mail btn btn-primary" role="button" tabindex="0" aria-label="E-Mail-Adresse anzeigen">Gespräch starten</span>
+          <a href="/kontakt" class="btn btn-primary">Gespräch starten</a>
           <a href="/referenzen" class="btn btn-ghost">Arbeiten ansehen</a>
         </div>
       </div>

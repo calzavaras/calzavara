@@ -2,20 +2,23 @@
 header('Content-Type: application/json; charset=utf-8');
 header('X-Content-Type-Options: nosniff');
 
+function respond(int $status, array $payload): void
+{
+    http_response_code($status);
+    echo json_encode($payload);
+    exit;
+}
+
 // Only POST allowed
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    http_response_code(405);
-    echo json_encode(['success' => false, 'message' => 'Methode nicht erlaubt.']);
-    exit;
+    respond(405, ['success' => false, 'message' => 'Methode nicht erlaubt.']);
 }
 
 // CSRF validation (double-submit cookie pattern)
 $csrfPost   = $_POST['_csrf']   ?? '';
 $csrfCookie = $_COOKIE['_csrf'] ?? '';
 if (empty($csrfPost) || empty($csrfCookie) || !hash_equals($csrfCookie, $csrfPost)) {
-    http_response_code(403);
-    echo json_encode(['success' => false, 'message' => 'Ungültige Anfrage.']);
-    exit;
+    respond(403, ['success' => false, 'message' => 'Ungültige Anfrage.']);
 }
 
 // IP-based rate limiting (file-based, hashed IP — no raw IP stored)
@@ -26,16 +29,28 @@ $now      = time();
 $cooldown = 60;
 $rlHandle = fopen($rlFile, 'c+');
 
+function closeRateLimitHandle($handle): void
+{
+    if (!$handle) {
+        return;
+    }
+
+    flock($handle, LOCK_UN);
+    fclose($handle);
+}
+
 if ($rlHandle && flock($rlHandle, LOCK_EX)) {
     rewind($rlHandle);
     $lastTime = (int) stream_get_contents($rlHandle);
     if ($now - $lastTime < $cooldown) {
-        flock($rlHandle, LOCK_UN);
-        fclose($rlHandle);
-        http_response_code(429);
-        echo json_encode(['success' => false, 'message' => 'Bitte warte kurz vor dem nächsten Versuch.']);
-        exit;
+        closeRateLimitHandle($rlHandle);
+        respond(429, ['success' => false, 'message' => 'Bitte warte kurz vor dem nächsten Versuch.']);
     }
+
+    ftruncate($rlHandle, 0);
+    rewind($rlHandle);
+    fwrite($rlHandle, (string) $now);
+    fflush($rlHandle);
 }
 
 // Session-based rate limiting as additional layer
@@ -50,21 +65,18 @@ session_set_cookie_params([
     'path' => '/',
 ]);
 session_start();
-if (!isset($_SESSION['last_contact'])) {
-    $_SESSION['last_contact'] = 0;
+if (!isset($_SESSION['last_contact_attempt'])) {
+    $_SESSION['last_contact_attempt'] = 0;
 }
-if ($now - $_SESSION['last_contact'] < $cooldown) {
-    if ($rlHandle) {
-        flock($rlHandle, LOCK_UN);
-        fclose($rlHandle);
-    }
-    http_response_code(429);
-    echo json_encode(['success' => false, 'message' => 'Bitte warte kurz vor dem nächsten Versuch.']);
-    exit;
+if ($now - $_SESSION['last_contact_attempt'] < $cooldown) {
+    closeRateLimitHandle($rlHandle);
+    respond(429, ['success' => false, 'message' => 'Bitte warte kurz vor dem nächsten Versuch.']);
 }
+$_SESSION['last_contact_attempt'] = $now;
 
 // Honeypot: bots fill hidden fields — silent exit, no feedback to bot
 if (!empty($_POST['website'])) {
+    closeRateLimitHandle($rlHandle);
     http_response_code(200);
     exit;
 }
@@ -78,44 +90,24 @@ $message = strip_tags(trim($_POST['message'] ?? ''));
 
 // Validate required fields
 if (empty($name) || empty($email) || empty($message)) {
-    if ($rlHandle) {
-        flock($rlHandle, LOCK_UN);
-        fclose($rlHandle);
-    }
-    http_response_code(400);
-    echo json_encode(['success' => false, 'message' => 'Bitte alle Pflichtfelder ausfüllen.']);
-    exit;
+    closeRateLimitHandle($rlHandle);
+    respond(400, ['success' => false, 'message' => 'Bitte alle Pflichtfelder ausfüllen.']);
 }
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    if ($rlHandle) {
-        flock($rlHandle, LOCK_UN);
-        fclose($rlHandle);
-    }
-    http_response_code(400);
-    echo json_encode(['success' => false, 'message' => 'Ungültige E-Mail-Adresse.']);
-    exit;
+    closeRateLimitHandle($rlHandle);
+    respond(400, ['success' => false, 'message' => 'Ungültige E-Mail-Adresse.']);
 }
 
 if (!empty($phone) && !preg_match('/^[0-9+() .-]{7,32}$/', $phone)) {
-    if ($rlHandle) {
-        flock($rlHandle, LOCK_UN);
-        fclose($rlHandle);
-    }
-    http_response_code(400);
-    echo json_encode(['success' => false, 'message' => 'Ungültige Telefonnummer.']);
-    exit;
+    closeRateLimitHandle($rlHandle);
+    respond(400, ['success' => false, 'message' => 'Ungültige Telefonnummer.']);
 }
 
 // Length limits
 if (strlen($name) > 120 || strlen($phone) > 32 || strlen($message) > 6000 || strlen($subject) > 250) {
-    if ($rlHandle) {
-        flock($rlHandle, LOCK_UN);
-        fclose($rlHandle);
-    }
-    http_response_code(400);
-    echo json_encode(['success' => false, 'message' => 'Eingaben zu lang.']);
-    exit;
+    closeRateLimitHandle($rlHandle);
+    respond(400, ['success' => false, 'message' => 'Eingaben zu lang.']);
 }
 
 $emailTo    = 'calzavara3830@gmail.com';
@@ -208,26 +200,14 @@ $headers .= "X-Mailer: Nigredo Contact\r\n";
 $encodedSubject = '=?UTF-8?B?' . base64_encode($msgSubject) . '?=';
 
 if (mail($emailTo, $encodedSubject, $body, $headers)) {
-    $_SESSION['last_contact'] = $now;
-    if ($rlHandle) {
-        ftruncate($rlHandle, 0);
-        rewind($rlHandle);
-        fwrite($rlHandle, (string) $now);
-        fflush($rlHandle);
-        flock($rlHandle, LOCK_UN);
-        fclose($rlHandle);
-    }
+    closeRateLimitHandle($rlHandle);
     echo json_encode([
         'success' => true,
         'message' => 'Deine Nachricht ist angekommen! Ich melde mich persönlich.',
     ]);
 } else {
-    if ($rlHandle) {
-        flock($rlHandle, LOCK_UN);
-        fclose($rlHandle);
-    }
-    http_response_code(500);
-    echo json_encode([
+    closeRateLimitHandle($rlHandle);
+    respond(500, [
         'success' => false,
         'message' => 'Fehler beim Senden. Bitte versuche es erneut.',
     ]);

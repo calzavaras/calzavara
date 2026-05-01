@@ -5,6 +5,10 @@
 
 const TIMING = {
   LIGHTBOX_INIT_DELAY:  100,
+  IDLE_FALLBACK_DELAY:  200,
+  IDLE_TIMEOUT:        1500,
+  ANALYTICS_TIMEOUT:   3000,
+  ANALYTICS_FALLBACK_DELAY: 1500,
   MODAL_FOCUS_DELAY:    350,
   MODAL_CLOSE_DELAY:    380,
   CLOSE_OVERLAY_DELAY:  300,
@@ -44,17 +48,28 @@ const _modalBackground = [];
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initScrollAnimations();
-  initCardSpotlight();
   initReferencesPage();
-  if (document.querySelector('.gradient-icon')) initGradientIcons();
   if (document.querySelector('#mailBtn, .reveal-mail')) initSpamProtection();
   if (document.getElementById('contact-modal')) initContactModal();
   if (document.querySelector('.accordion-header')) initAccordions();
   if (document.querySelector('.lightbox-trigger')) setTimeout(initLightbox, TIMING.LIGHTBOX_INIT_DELAY);
+  runWhenIdle(() => {
+    initCardSpotlight();
+    if (document.querySelector('.gradient-icon')) initGradientIcons();
+    initAnalytics();
+  }, TIMING.IDLE_TIMEOUT);
   setTimeout(() => {
     document.querySelectorAll('.hero-glow').forEach(el => el.classList.add('animated'));
   }, TIMING.HERO_GLOW_DELAY);
 });
+
+function runWhenIdle(callback, timeout = TIMING.IDLE_TIMEOUT, fallbackDelay = TIMING.IDLE_FALLBACK_DELAY) {
+  if ('requestIdleCallback' in window) {
+    window.requestIdleCallback(callback, { timeout });
+    return;
+  }
+  setTimeout(callback, Math.min(timeout, fallbackDelay));
+}
 
 function initNavigation() {
   const menuBtn = document.querySelector('.menu-toggle');
@@ -118,27 +133,25 @@ function initCardSpotlight() {
 
   if (!supportsInteractiveSpotlight) return;
 
-  let rafPending = false;
-  document.addEventListener('pointermove', (e) => {
-    if (rafPending) return;
-    rafPending = true;
-    requestAnimationFrame(() => {
-      cards.forEach((card) => {
+  cards.forEach((card) => {
+    let rafPending = false;
+    let pointerX = 0;
+    let pointerY = 0;
+
+    card.addEventListener('pointermove', (e) => {
+      pointerX = e.clientX;
+      pointerY = e.clientY;
+      if (rafPending) return;
+      rafPending = true;
+
+      requestAnimationFrame(() => {
         const rect = card.getBoundingClientRect();
-        if (
-          rect.bottom < 0 ||
-          rect.right < 0 ||
-          rect.top > window.innerHeight ||
-          rect.left > window.innerWidth
-        ) {
-          return;
-        }
-        card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
-        card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+        card.style.setProperty('--mouse-x', `${pointerX - rect.left}px`);
+        card.style.setProperty('--mouse-y', `${pointerY - rect.top}px`);
+        rafPending = false;
       });
-      rafPending = false;
-    });
-  }, { passive: true });
+    }, { passive: true });
+  });
 }
 
 function initReferencesPage() {
@@ -377,7 +390,8 @@ function getCsrfToken() {
   window.crypto.getRandomValues(arr);
   const token = Array.from(arr, x => x.toString(16).padStart(2, '0')).join('');
   const expires = new Date(Date.now() + 3600000).toUTCString();
-  document.cookie = `_csrf=${token}; path=/; SameSite=Strict; Secure; Expires=${expires}`;
+  const secure = window.location.protocol === 'https:' ? '; Secure' : '';
+  document.cookie = `_csrf=${token}; path=/; SameSite=Strict${secure}; Expires=${expires}`;
   return token;
 }
 
@@ -462,9 +476,17 @@ function initContactModal() {
       const formData = new FormData(form);
       formData.set('_csrf', csrf);
       const res = await fetch('/send-mail.php', { method: 'POST', body: formData });
-      const data = await res.json();
+      const contentType = res.headers.get('content-type') || '';
+      let data = null;
 
-      if (data.success) {
+      if (contentType.includes('application/json')) {
+        data = await res.json();
+      } else {
+        const rawText = await res.text();
+        throw new Error(`Unexpected response type: ${contentType || 'unknown'}${rawText ? `; body starts with: ${rawText.slice(0, 120)}` : ''}`);
+      }
+
+      if (res.ok && data.success) {
         form.reset();
         const header = modal.querySelector('.cmodal-header');
         if (header) header.style.display = 'none';
@@ -711,4 +733,18 @@ function initGradientIcons() {
     icon.style.setProperty('--gradient-color-1', color1);
     icon.style.setProperty('--gradient-color-2', color2);
   });
+}
+
+function initAnalytics() {
+  const src = document.querySelector('meta[name="umami-src"]')?.content;
+  const websiteId = document.querySelector('meta[name="umami-website-id"]')?.content;
+  if (!src || !websiteId || document.querySelector(`script[src="${src}"]`)) return;
+
+  runWhenIdle(() => {
+    const script = document.createElement('script');
+    script.defer = true;
+    script.src = src;
+    script.dataset.websiteId = websiteId;
+    document.head.appendChild(script);
+  }, TIMING.ANALYTICS_TIMEOUT, TIMING.ANALYTICS_FALLBACK_DELAY);
 }

@@ -34,21 +34,37 @@ ErrorDocument 404 /404.html
     Header always set Cross-Origin-Opener-Policy "same-origin"
     Header always set Cross-Origin-Resource-Policy "same-origin"
     Header always set Content-Security-Policy "default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; script-src 'self' https://cloud.umami.is 'sha256-pN1H7gD7C05nLXOvNdc10D1wGmW8f+7kLDG+cHKyuiY=' 'sha256-CllnvanllJI9en7vooqh5AK159Daq56wpojN+27G+LQ=' 'sha256-L8/Cl9SOjH+YLeMlCcojbyCR1v9AbAXB7fc+xE2IA7Y=' 'sha256-5ytaKFQA8dC5Dk02kESBfRA3xPtO4KAknr6Ld7PBsr0=' 'sha256-v85WF/YrRNsbndh5ENh/ppRxwcIjkRTAVAonHuQ6wQk=' 'sha256-t+2coZbstWUK7wGcXYBPDC6jzZtjtkqTiW0xf/XNfKg=' 'sha256-Xof6HuqXQMhpAmV5dEIJgjAormEX7F5dMOvxMyOarBE=' 'sha256-x0hrKbjWgNcNT5qqStth838HoKTpt3rCnZryq3EfGvU=' 'sha256-ZJTfI9AE7cMeSJSVLEhvq2/N9/J7Kci9EeggV0q+twY=' 'sha256-cuQ92zuyuyjbvCLaBSWsazQjArgNs3p3hbWnLBr4RsQ=' 'sha256-j5kw4rDkkF7+JVSXNstPvyPgw+IXjQ5idA6DT7P0oN0='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://cloud.umami.is; frame-ancestors 'none'"
+    Header append Vary "Accept-Encoding"
+    <FilesMatch "\.(?:avif|css|gif|ico|jpe?g|js|mjs|png|svg|webp|woff2?|ttf)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    <FilesMatch "\.(?:html|php)$">
+        Header set Cache-Control "no-cache, must-revalidate"
+    </FilesMatch>
 </IfModule>
 
-# GZIP Kompression
+# Brotli/GZIP Kompression
+<IfModule mod_brotli.c>
+    AddOutputFilterByType BROTLI_COMPRESS text/html text/css application/javascript application/json image/svg+xml text/plain application/xml text/xml
+</IfModule>
+
 <IfModule mod_deflate.c>
-    AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml text/plain
+    AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml text/plain application/xml text/xml
 </IfModule>
 
 # Browser Caching für statische Assets
 <IfModule mod_expires.c>
     ExpiresActive On
+    ExpiresByType image/avif "access plus 1 year"
     ExpiresByType image/webp "access plus 1 year"
     ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
     ExpiresByType image/svg+xml "access plus 1 year"
     ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
     ExpiresByType font/woff2 "access plus 1 year"
-    ExpiresByType text/css "access plus 1 month"
-    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType text/html "access plus 0 seconds"
 </IfModule>

@@ -18,7 +18,10 @@ function isActive(href: string): boolean {
   <div class="nav-container">
     <nav aria-label="Hauptnavigation">
       <a href="/" class="logo" aria-label="Nigredo Startseite">
-        <img src="/assets/nigredo-logo.png" alt="Nigredo Logo" class="logo-img" width="831" height="265" loading="eager" decoding="async" fetchpriority="high">
+        <picture class="logo-picture">
+          <source srcset="/assets/nigredo-logo-header.webp" type="image/webp">
+          <img src="/assets/nigredo-logo-header.png" alt="Nigredo - Websites, KI-Lösungen und Software aus St. Gallen" class="logo-img" width="448" height="143" loading="eager" decoding="async" fetchpriority="high">
+        </picture>
       </a>
       <div class="nav-links" id="primary-navigation">
         {navLinks.map(link => (

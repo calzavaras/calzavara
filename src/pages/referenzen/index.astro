@@ -42,7 +42,7 @@ const schema = JSON.stringify({
 
 <Layout
   title="Referenzprojekte – KI, Websites & Software für Schweizer KMU | Nigredo"
-  description="Echte Projekte: KI Voice Agent für IV-Stellen, lokales Excel-Dashboard für Verwaltung und die Website von Therapie Ost. Massgeschneiderte digitale Lösungen von Nigredo, St. Gallen."
+  description="Referenzen von Nigredo: KI Voice Agent, lokales Excel-Dashboard und Website für Therapie Ost. Digitale Lösungen aus St. Gallen."
   canonical="https://www.nigredo.ch/referenzen"
   ogTitle="Gebaut. Nicht versprochen. | Nigredo"
   ogDescription="Keine Demos, keine Konzeptpapiere. Projekte, die raus sind und arbeiten. KI Voice Agent, Excel-Dashboard und mehr."
@@ -72,7 +72,27 @@ const schema = JSON.stringify({
         </p>
       </div>
 
-      <div id="refs-grid" class="refs-grid" aria-live="polite" data-references={referencesJson}></div>
+      <div id="refs-grid" class="refs-grid" aria-live="polite" data-references={referencesJson}>
+        {references.map((ref) => (
+          <a href={ref.href} class="ref-main-card" aria-label={ref.ariaLabel}>
+            <div class={`ref-main-card-img ${ref.listImgCls}`}>
+              <img src={ref.imgSrc} alt={ref.imgAlt} width="800" height="450" loading="lazy" decoding="async">
+              <span class={`tech-badge ${ref.badge.cls} ref-main-badge`}>{ref.badge.text}</span>
+            </div>
+            <div class="ref-main-card-body">
+              <div class="ref-main-card-header">
+                <h2 class="ref-main-card-title">{ref.listTitle}</h2>
+                <span class="ref-main-card-year">{ref.year}</span>
+              </div>
+              {ref.sub && <p class="ref-main-card-sub">{ref.sub}</p>}
+              <p class="ref-main-card-desc">{ref.listDesc}</p>
+              <div class="ref-main-card-footer">
+                <span class={`ref-main-link ${ref.linkCls || ''}`}>Details <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
 
       <div class="refs-controls" aria-label="Referenzen Navigation">
         <button
