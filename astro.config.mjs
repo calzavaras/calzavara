@@ -14,25 +14,25 @@ export default defineConfig({
         // Hauptseiten
         if (item.url === 'https://www.nigredo.ch/') {
           item.priority = 1.0;
-          item.lastmod = new Date('2026-04-28');
+          item.lastmod = new Date('2026-05-03');
         }
         // Kern-Seiten
         else if (item.url === 'https://www.nigredo.ch/loesungen' || item.url === 'https://www.nigredo.ch/referenzen') {
           item.priority = 0.9;
-          item.lastmod = new Date('2026-04-28');
+          item.lastmod = new Date('2026-05-03');
         }
         // Individuelle Referenzseiten
         else if (item.url === 'https://www.nigredo.ch/referenzen/ki-voice-agent') {
           item.priority = 0.8;
-          item.lastmod = new Date('2026-04-28');
+          item.lastmod = new Date('2026-05-03');
         }
         else if (item.url === 'https://www.nigredo.ch/referenzen/dashboard-kantonsverwaltung') {
           item.priority = 0.8;
-          item.lastmod = new Date('2026-04-28');
+          item.lastmod = new Date('2026-05-03');
         }
         else if (item.url === 'https://www.nigredo.ch/referenzen/therapie-ost') {
           item.priority = 0.8;
-          item.lastmod = new Date('2026-04-28');
+          item.lastmod = new Date('2026-05-03');
         }
         // Sekundärseiten
         else if (item.url === 'https://www.nigredo.ch/ueber-uns') {
@@ -41,7 +41,7 @@ export default defineConfig({
         }
         else if (item.url === 'https://www.nigredo.ch/kontakt') {
           item.priority = 0.8;
-          item.lastmod = new Date('2026-04-28');
+          item.lastmod = new Date('2026-05-03');
         }
         return item;
       },

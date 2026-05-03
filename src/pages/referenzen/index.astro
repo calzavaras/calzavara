@@ -21,7 +21,7 @@ const schema = JSON.stringify({
       "description": "Echte Projekte: KI Voice Agent für IV-Stellen, lokales Excel-Dashboard für Verwaltung und die Website von Therapie Ost. Massgeschneiderte digitale Lösungen von Nigredo, St. Gallen.",
       "inLanguage": "de-CH",
       "datePublished": "2025-06-01",
-      "dateModified": "2026-03-21",
+      "dateModified": "2026-05-03",
       "isPartOf": { "@id": "https://www.nigredo.ch/#website" },
       "breadcrumb": { "@id": "https://www.nigredo.ch/referenzen#breadcrumb" },
       "isAccessibleForFree": true,
@@ -493,7 +493,7 @@ const schema = JSON.stringify({
     return `
       <a href="${ref.href}" class="ref-main-card" aria-label="${ref.ariaLabel}">
         <div class="ref-main-card-img ${ref.imgCls}">
-          <img src="${ref.imgSrc}" alt="${ref.imgAlt}" width="800" height="450" loading="lazy">
+          <img src="${ref.imgSrc}" alt="${ref.imgAlt}" width="800" height="450" loading="lazy" decoding="async">
           <span class="tech-badge ${ref.badge.cls} ref-main-badge">${ref.badge.text}</span>
         </div>
         <div class="ref-main-card-body">
