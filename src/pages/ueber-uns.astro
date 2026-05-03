@@ -227,8 +227,8 @@ const schema = JSON.stringify({
           <span class="cta-label">Und jetzt?</span>
           <h2>Noch keine fertige Idee?<br><span>Genau richtig.</span></h2>
           <div class="hero-cta-group" style="justify-content: center;">
-            <a href="/kontakt" class="btn btn-primary">Direkt schreiben</a>
-            <a href="/referenzen" class="btn btn-ghost">Projekte ansehen</a>
+            <a href="/kontakt/" class="btn btn-primary">Direkt schreiben</a>
+            <a href="/referenzen/" class="btn btn-ghost">Projekte ansehen</a>
           </div>
         </div>
       </div>
@@ -278,8 +278,8 @@ const schema = JSON.stringify({
 
 <style>
   .about-hero {
-    padding-top: 150px;
-    padding-bottom: 48px;
+    padding-top: var(--hero-offset-top);
+    padding-bottom: var(--hero-offset-bottom);
   }
 
   .about-hero__container {
@@ -292,7 +292,7 @@ const schema = JSON.stringify({
   }
 
   .about-hero .badge {
-    margin-bottom: 1rem;
+    margin-bottom: 1.15rem;
   }
 
   .about-hero__intro {
@@ -302,7 +302,7 @@ const schema = JSON.stringify({
 
   .about-hero__title {
     max-width: 940px;
-    font-size: clamp(2.9rem, 5.35vw, 4.85rem);
+    font-size: var(--hero-title-size);
     line-height: var(--hero-title-line-height);
     letter-spacing: -0.02em;
     margin-bottom: 0;
@@ -324,7 +324,7 @@ const schema = JSON.stringify({
     grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
     gap: clamp(44px, 6vw, 80px);
     align-items: start;
-    margin-top: 72px;
+    margin-top: clamp(64px, 7vw, 82px);
   }
 
   /* Profile Column */
@@ -349,7 +349,7 @@ const schema = JSON.stringify({
     inset: -12px;
     background: linear-gradient(135deg, #FF4D80, #A64DFF);
     border-radius: 50%;
-    filter: blur(24px);
+    filter: blur(18px);
     opacity: 0.16;
     animation: aura-pulse 8s infinite alternate ease-in-out;
   }
@@ -409,7 +409,7 @@ const schema = JSON.stringify({
 
   .au-statement .about-statement__quote {
     max-width: 760px;
-    font-size: clamp(1.03rem, 1.15vw, 1.2rem);
+    font-size: var(--lead-size);
     line-height: 1.65;
     color: rgba(245, 245, 247, 0.92);
     font-style: italic;
@@ -427,7 +427,7 @@ const schema = JSON.stringify({
 
   .au-bio p {
     max-width: 760px;
-    font-size: clamp(1.03rem, 1.15vw, 1.2rem);
+    font-size: var(--lead-size);
     line-height: 1.65;
     color: var(--text-secondary);
     margin-bottom: 20px;
@@ -499,7 +499,7 @@ const schema = JSON.stringify({
 
   .au-bio-more__content p {
     max-width: 760px;
-    font-size: clamp(1.03rem, 1.15vw, 1.2rem);
+    font-size: var(--lead-size);
     line-height: 1.65;
     color: var(--text-secondary);
     margin-bottom: 20px;
@@ -514,7 +514,7 @@ const schema = JSON.stringify({
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 18px;
-    margin-top: 80px;
+    margin-top: clamp(68px, 7vw, 84px);
   }
 
   .au-stat-card {
@@ -638,9 +638,9 @@ const schema = JSON.stringify({
   }
 
   .about-final-section {
-    margin-top: 72px;
+    margin-top: clamp(60px, 7vw, 78px);
     padding-top: 0;
-    padding-bottom: 118px;
+    padding-bottom: clamp(92px, 9vw, 128px);
   }
 
   .about-final-cta {
@@ -702,17 +702,17 @@ const schema = JSON.stringify({
 
   @media (max-width: 860px) {
     .about-hero {
-      padding-top: 132px;
-      padding-bottom: 42px;
+      padding-top: var(--hero-offset-top-mobile);
+      padding-bottom: 50px;
     }
 
     .about-hero__title {
-      font-size: clamp(2.55rem, 10vw, 3.8rem);
+      font-size: var(--hero-title-size-tablet);
       line-height: var(--hero-title-line-height-mobile);
     }
 
     .au-main-grid {
-      margin-top: 52px;
+      margin-top: 58px;
     }
 
     .au-stats-grid {
@@ -726,7 +726,7 @@ const schema = JSON.stringify({
 
   @media (max-width: 600px) {
     .about-hero__title {
-      font-size: clamp(2.35rem, 13vw, 3.25rem);
+      font-size: var(--hero-title-size-mobile);
       line-height: var(--hero-title-line-height-mobile);
     }
 
@@ -737,7 +737,7 @@ const schema = JSON.stringify({
 
     .au-statement .about-statement__quote {
       padding: 24px;
-      font-size: 1.02rem;
+      font-size: var(--lead-size-mobile);
       line-height: 1.6;
     }
 
@@ -748,7 +748,7 @@ const schema = JSON.stringify({
     .about-final-section {
       margin-top: 56px;
       padding-top: 0;
-      padding-bottom: 88px;
+      padding-bottom: 92px;
     }
 
     .about-final-cta h2 {

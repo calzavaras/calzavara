@@ -1,7 +1,7 @@
 ---
 import { references } from '../data/references';
 
-const currentPath = Astro.url.pathname.replace(/\/$/, '');
+const currentPath = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
 const others = references.filter(r => r.href !== currentPath).slice(0, 2);
 ---
 

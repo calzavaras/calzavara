@@ -48,7 +48,7 @@ const _modalBackground = [];
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initScrollAnimations();
-  initReferencesPage();
+  if (document.querySelector('[data-refs-grid]')) initReferencesReveal();
   if (document.querySelector('#mailBtn, .reveal-mail')) initSpamProtection();
   if (document.getElementById('contact-modal')) initContactModal();
   if (document.querySelector('.accordion-header')) initAccordions();
@@ -62,6 +62,27 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.hero-glow').forEach(el => el.classList.add('animated'));
   }, TIMING.HERO_GLOW_DELAY);
 });
+
+function initReferencesReveal() {
+  const grid = document.querySelector('[data-refs-grid]');
+  const button = document.querySelector('[data-refs-more]');
+  if (!grid || !button) return;
+
+  const batchSize = Number(grid.getAttribute('data-reveal-batch')) || 2;
+  const hiddenCards = () => Array.from(grid.querySelectorAll('.ref-main-card[hidden]'));
+
+  button.addEventListener('click', (event) => {
+    event.preventDefault();
+    hiddenCards().slice(0, batchSize).forEach((card) => {
+      card.hidden = false;
+      card.classList.remove('is-hidden-ref');
+    });
+
+    if (hiddenCards().length === 0) {
+      button.hidden = true;
+    }
+  });
+}
 
 function runWhenIdle(callback, timeout = TIMING.IDLE_TIMEOUT, fallbackDelay = TIMING.IDLE_FALLBACK_DELAY) {
   if ('requestIdleCallback' in window) {
@@ -175,160 +196,6 @@ function initCardSpotlight() {
       });
     }, { passive: true });
   });
-}
-
-function escapeHtml(str) {
-  return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
-}
-
-function initReferencesPage() {
-  const gridEl = document.getElementById('refs-grid');
-  const loadMoreEl = document.getElementById('refs-load-more');
-  const paginationEl = document.getElementById('refs-pagination');
-
-  if (!gridEl || !loadMoreEl || !paginationEl) return;
-
-  let references;
-  try {
-    references = JSON.parse(gridEl.dataset.references || '[]');
-  } catch (err) {
-    console.error('References data parse error:', err);
-    return;
-  }
-
-  const PAGE_SIZE = 8;
-  const STEP_SIZE = 2;
-  let currentPage = 0;
-  let visibleCount = Math.min(STEP_SIZE, PAGE_SIZE);
-
-  function shuffleItems(items) {
-    const shuffled = [...items];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-    return shuffled;
-  }
-
-  const shuffledReferences = shuffleItems(references);
-
-  function getPageItems(pageIndex) {
-    const start = pageIndex * PAGE_SIZE;
-    return shuffledReferences.slice(start, start + PAGE_SIZE);
-  }
-
-  function renderCards() {
-    const pageItems = getPageItems(currentPage);
-    const itemsToShow = pageItems.slice(0, visibleCount);
-
-    gridEl.innerHTML = itemsToShow.map((ref) => `
-      <a href="${escapeHtml(ref.href)}" class="ref-main-card" aria-label="${escapeHtml(ref.ariaLabel)}">
-        <div class="ref-main-card-img ${ref.listImgCls}">
-          <img src="${escapeHtml(ref.imgSrc)}" alt="${escapeHtml(ref.imgAlt)}" width="800" height="450" loading="lazy" decoding="async">
-          <span class="tech-badge ${ref.badge.cls} ref-main-badge">${escapeHtml(ref.badge.text)}</span>
-        </div>
-        <div class="ref-main-card-body">
-          <div class="ref-main-card-header">
-            <h2 class="ref-main-card-title">${escapeHtml(ref.listTitle)}</h2>
-            <span class="ref-main-card-year">${escapeHtml(ref.year)}</span>
-          </div>
-          ${ref.sub ? `<p class="ref-main-card-sub">${escapeHtml(ref.sub)}</p>` : ''}
-          <p class="ref-main-card-desc">${escapeHtml(ref.listDesc)}</p>
-          <div class="ref-main-card-footer">
-            <span class="ref-main-link ${ref.linkCls || ''}">Details <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-          </div>
-        </div>
-      </a>
-    `).join('');
-
-    loadMoreEl.hidden = visibleCount >= pageItems.length;
-  }
-
-  function renderPagination() {
-    const totalPages = Math.ceil(shuffledReferences.length / PAGE_SIZE);
-    const pageItems = getPageItems(currentPage);
-
-    if (totalPages <= 1 || visibleCount < pageItems.length) {
-      paginationEl.hidden = true;
-      paginationEl.innerHTML = '';
-      return;
-    }
-
-    paginationEl.hidden = false;
-    const pageButtons = Array.from({ length: totalPages }, (_, index) => `
-      <button
-        type="button"
-        class="refs-page-btn${index === currentPage ? ' is-active' : ''}"
-        data-page="${index}"
-        aria-current="${index === currentPage ? 'page' : 'false'}"
-        aria-label="Seite ${index + 1}"
-      >
-        ${index + 1}
-      </button>
-    `).join('');
-
-    paginationEl.innerHTML = `
-      <button
-        type="button"
-        class="refs-page-arrow"
-        data-direction="prev"
-        aria-label="Vorherige Seite"
-        ${currentPage === 0 ? 'disabled' : ''}
-      >
-        <span aria-hidden="true">&larr;</span>
-      </button>
-      <div class="refs-page-list">${pageButtons}</div>
-      <button
-        type="button"
-        class="refs-page-arrow"
-        data-direction="next"
-        aria-label="Nächste Seite"
-        ${currentPage === totalPages - 1 ? 'disabled' : ''}
-      >
-        <span aria-hidden="true">&rarr;</span>
-      </button>
-    `;
-  }
-
-  function updateView() {
-    const pageItems = getPageItems(currentPage);
-    visibleCount = Math.min(Math.max(visibleCount, STEP_SIZE), pageItems.length);
-    renderCards();
-    renderPagination();
-  }
-
-  loadMoreEl.addEventListener('click', () => {
-    const pageItems = getPageItems(currentPage);
-    visibleCount = Math.min(visibleCount + STEP_SIZE, pageItems.length);
-    updateView();
-  });
-
-  paginationEl.addEventListener('click', (event) => {
-    const target = event.target instanceof Element ? event.target.closest('button') : null;
-    if (!(target instanceof HTMLButtonElement) || target.disabled) return;
-
-    const pageIndex = target.dataset.page;
-    const direction = target.dataset.direction;
-
-    if (pageIndex !== undefined) {
-      currentPage = Number(pageIndex);
-    } else if (direction === 'prev') {
-      currentPage = Math.max(currentPage - 1, 0);
-    } else if (direction === 'next') {
-      currentPage = Math.min(currentPage + 1, Math.ceil(shuffledReferences.length / PAGE_SIZE) - 1);
-    }
-
-    visibleCount = Math.min(STEP_SIZE, getPageItems(currentPage).length);
-    updateView();
-    gridEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-
-  updateView();
 }
 
 function initSpamProtection() {

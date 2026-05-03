@@ -54,6 +54,9 @@ function inferImageType(image: string | undefined): string | undefined {
 }
 
 const resolvedOgImageType = ogImageType ?? inferImageType(ogImage);
+const canonicalUrl = canonical === 'https://www.nigredo.ch'
+  ? 'https://www.nigredo.ch/'
+  : (canonical.endsWith('/') ? canonical : `${canonical}/`);
 
 // Globales Entitäts- und Navigationsschema für konsistente Seitengraphen.
 const siteIdentitySchema = JSON.stringify({
@@ -135,7 +138,7 @@ const siteIdentitySchema = JSON.stringify({
       "givenName": "Marco",
       "familyName": "Calzavara",
       "jobTitle": "Full-Stack Developer & Gründer",
-      "url": "https://www.nigredo.ch/ueber-uns",
+      "url": "https://www.nigredo.ch/ueber-uns/",
       "image": {
         "@type": "ImageObject",
         "url": "https://www.nigredo.ch/assets/marco-calzavara-portrait-nigredo-st-gallen.webp",
@@ -153,28 +156,28 @@ const siteIdentitySchema = JSON.stringify({
       "position": 1,
       "name": "Lösungen",
       "description": "Texte, Bilder, Logos, Software, Webseiten – KI-Lösungen aus einer Hand",
-      "url": "https://www.nigredo.ch/loesungen"
+      "url": "https://www.nigredo.ch/loesungen/"
     },
     {
       "@type": "SiteNavigationElement",
       "position": 2,
       "name": "Referenzen",
       "description": "Echte Projekte: KI Voice Agent, Wissensdatenbanken, Design-Tools, Dashboards",
-      "url": "https://www.nigredo.ch/referenzen"
+      "url": "https://www.nigredo.ch/referenzen/"
     },
     {
       "@type": "SiteNavigationElement",
       "position": 3,
       "name": "Über mich",
       "description": "Marco Calzavara – Gründer und Macher von Nigredo, St. Gallen",
-      "url": "https://www.nigredo.ch/ueber-uns"
+      "url": "https://www.nigredo.ch/ueber-uns/"
     },
     {
       "@type": "SiteNavigationElement",
       "position": 4,
       "name": "Kontakt",
       "description": "Direkter Kontakt zu Marco Calzavara – Projektanfragen und Ideen",
-      "url": "https://www.nigredo.ch/kontakt"
+      "url": "https://www.nigredo.ch/kontakt/"
     }
   ]
 });
@@ -201,7 +204,7 @@ const siteIdentitySchema = JSON.stringify({
   {keywords && <meta name="keywords" content={keywords}>}
   <meta name="author" content="Nigredo">
   <meta name="robots" content={robots}>
-  <link rel="canonical" href={canonical}>
+  <link rel="canonical" href={canonicalUrl}>
   <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt – Nigredo für KI-Bots">
   <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLMs-full.txt – Vollständige Inhalte für KI-Systeme">
 
@@ -214,7 +217,7 @@ const siteIdentitySchema = JSON.stringify({
   <meta property="og:title" content={ogTitle || title}>
   <meta property="og:description" content={ogDescription || description}>
   <meta property="og:type" content={ogType}>
-  <meta property="og:url" content={canonical}>
+  <meta property="og:url" content={canonicalUrl}>
   <meta property="og:locale" content="de_CH">
   <meta property="og:site_name" content="Nigredo">
   {ogImage && <meta property="og:image" content={ogImage}>}
@@ -234,15 +237,8 @@ const siteIdentitySchema = JSON.stringify({
   <meta name="umami-website-id" content="78dc26c9-7537-4816-a7e1-9acc31bf1402">
 
   <!-- Hreflang: Sprache deklarieren -->
-  <link rel="alternate" hreflang="de-CH" href={canonical}>
-  <link rel="alternate" hreflang="x-default" href={canonical}>
-
-  <!-- Google Fonts: Inter (non-render-blocking) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+  <link rel="alternate" hreflang="de-CH" href={canonicalUrl}>
+  <link rel="alternate" hreflang="x-default" href={canonicalUrl}>
 
   <!-- Globales Entitäts- und Navigationsschema -->
   <script type="application/ld+json" set:html={siteIdentitySchema} />

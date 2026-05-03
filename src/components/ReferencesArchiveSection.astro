@@ -1,0 +1,537 @@
+---
+import Breadcrumb from './Breadcrumb.astro';
+import {
+  REFERENCES_INITIAL_VISIBLE,
+  getReferencePageHref,
+  type ReferenceEntry,
+} from '../data/references';
+
+interface Props {
+  pageNumber: number;
+  pageCount: number;
+  pageItems: ReferenceEntry[];
+}
+
+const { pageNumber, pageCount, pageItems } = Astro.props;
+const prevHref = pageNumber > 1 ? getReferencePageHref(pageNumber - 1) : null;
+const nextHref = pageNumber < pageCount ? getReferencePageHref(pageNumber + 1) : null;
+const showRevealLink = pageItems.length > REFERENCES_INITIAL_VISIBLE;
+const breadcrumbItems = [
+  { label: 'Start', href: '/' },
+  { label: 'Referenzen', href: '/referenzen/' },
+];
+
+if (pageNumber > 1) {
+  breadcrumbItems.push({ label: `Seite ${pageNumber}` });
+}
+---
+
+<section class="section pt-sub refs-hero" aria-labelledby="referenzen-title">
+  <div class="hero-glow"></div>
+  <div class="container refs-hero__container">
+    <Breadcrumb items={breadcrumbItems} />
+
+    <div class="fade-up home-hero__inner refs-intro">
+      <span class="badge badge--purple">GEBAUT. NICHT VERSPROCHEN.</span>
+
+      <h1 id="referenzen-title" class="home-hero__title refs-hero__title">
+        Echte Aufgaben.<br>
+        <span class="gradient-text">Echte Ergebnisse.</span>
+      </h1>
+      <p class="hero-lead refs-hero__lead">
+        Hier stehen keine Demos und keine hübschen Attrappen. Hier stehen Projekte mit Auftrag, Kontext und Reibung. Dinge, die nicht nur gut aussehen mussten, sondern im Alltag funktionieren.
+      </p>
+      {pageCount > 1 && (
+        <p class="refs-page-kicker">Seite {pageNumber} von {pageCount}</p>
+      )}
+    </div>
+
+    <div
+      id="refs-grid"
+      class="refs-grid"
+      data-refs-grid
+      data-reveal-batch={REFERENCES_INITIAL_VISIBLE}
+    >
+      {pageItems.map((reference, index) => (
+        <a
+          href={reference.href}
+          class={`ref-main-card${index >= REFERENCES_INITIAL_VISIBLE ? ' is-hidden-ref' : ''}`}
+          aria-label={reference.ariaLabel}
+          hidden={index >= REFERENCES_INITIAL_VISIBLE}
+        >
+          <div class={`ref-main-card-img ${reference.listImgCls}`}>
+            <img src={reference.imgSrc} alt={reference.imgAlt} width="800" height="450" loading="lazy" decoding="async">
+            <span class={`tech-badge ${reference.badge.cls} ref-main-badge`}>{reference.badge.text}</span>
+          </div>
+          <div class="ref-main-card-body">
+            <div class="ref-main-card-header">
+              <h2 class="ref-main-card-title">{reference.listTitle}</h2>
+              <span class="ref-main-card-year">{reference.year}</span>
+            </div>
+            <p class="ref-main-card-sub">{reference.sub}</p>
+            <p class="ref-main-card-desc">{reference.listDesc}</p>
+            <div class="ref-main-card-footer">
+              <span class={`ref-main-link ${reference.linkCls}`.trim()}>Details <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    {showRevealLink && (
+      <div class="refs-actions">
+        <a href="#refs-grid" class="refs-more-link" data-refs-more>
+          Weitere Referenzen anzeigen
+        </a>
+      </div>
+    )}
+
+    {pageCount > 1 && (
+      <nav class="refs-pagination" aria-label="Referenzen Seiten">
+        {prevHref ? (
+          <a href={prevHref} class="refs-page-link refs-page-link--edge">Zurück</a>
+        ) : <span class="refs-page-link refs-page-link--edge is-disabled">Zurück</span>}
+
+        <div class="refs-page-list">
+          {Array.from({ length: pageCount }, (_, index) => {
+            const targetPage = index + 1;
+            const href = getReferencePageHref(targetPage);
+            const isCurrent = targetPage === pageNumber;
+
+            return isCurrent ? (
+              <span class="refs-page-link is-current" aria-current="page">{targetPage}</span>
+            ) : (
+              <a href={href} class="refs-page-link">{targetPage}</a>
+            );
+          })}
+        </div>
+
+        {nextHref ? (
+          <a href={nextHref} class="refs-page-link refs-page-link--edge">Weiter</a>
+        ) : <span class="refs-page-link refs-page-link--edge is-disabled">Weiter</span>}
+      </nav>
+    )}
+
+    <div class="section refs-final-section">
+      <div class="section-cta refs-final-cta fade-up">
+        <span class="cta-label">Der nächste Schritt</span>
+        <h2>Dein Projekt soll hier stehen?<br><span>Erzähl mir davon.</span></h2>
+        <div class="hero-cta-group" style="justify-content: center;">
+          <a href="/kontakt/" class="btn btn-primary">Kontakt aufnehmen</a>
+          <a href="/ueber-uns/" class="btn btn-ghost">Über mich</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .refs-hero {
+    min-height: min(620px, 68vh);
+    display: flex;
+    align-items: center;
+    padding-top: var(--hero-offset-top);
+    padding-bottom: var(--hero-offset-bottom);
+  }
+
+  .refs-hero__container {
+    position: relative;
+    width: 100%;
+  }
+
+  .refs-hero .home-hero__inner {
+    width: 100%;
+  }
+
+  .refs-hero .breadcrumb {
+    margin-bottom: 28px;
+  }
+
+  .refs-hero .badge {
+    margin-bottom: 1.15rem;
+  }
+
+  .refs-hero__title {
+    max-width: 940px;
+    font-size: var(--hero-title-size);
+    line-height: var(--hero-title-line-height);
+    letter-spacing: -0.02em;
+    margin-bottom: clamp(24px, 3vw, 30px);
+  }
+
+  .refs-hero__lead {
+    max-width: 620px;
+    font-size: var(--lead-size);
+    line-height: 1.65;
+  }
+
+  .refs-page-kicker {
+    margin-top: 22px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.44);
+  }
+
+  .refs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(24px, 3vw, 32px);
+    margin-bottom: clamp(32px, 4vw, 40px);
+    align-items: start;
+  }
+
+  .refs-intro {
+    max-width: 940px;
+    margin-bottom: clamp(60px, 7vw, 76px);
+  }
+
+  .ref-main-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(10, 10, 12, 0.75);
+    background-clip: padding-box;
+    overflow: hidden;
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+                border-color 0.4s ease,
+                box-shadow 0.4s ease;
+  }
+
+  .ref-main-card.is-hidden-ref {
+    display: none;
+  }
+
+  @media (hover: hover) {
+    .ref-main-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.16);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.05),
+        0 28px 60px rgba(0, 0, 0, 0.32);
+    }
+    .ref-main-card:hover .ref-main-card-img img {
+      transform: scale(1.04);
+    }
+  }
+
+  .ref-main-card-img {
+    position: relative;
+    aspect-ratio: 16 / 8.4;
+    overflow: hidden;
+    flex-shrink: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .ref-main-card-img--purple {
+    background: radial-gradient(ellipse at 25% 35%, rgba(166,77,255,0.45) 0%, transparent 55%), #0c0814;
+  }
+
+  .ref-main-card-img--cyan {
+    background: radial-gradient(ellipse at 25% 35%, rgba(0,210,255,0.35) 0%, transparent 55%), #030d14;
+  }
+
+  .ref-main-card-img--coral {
+    background: radial-gradient(ellipse at 25% 35%, rgba(255,92,168,0.36) 0%, transparent 55%), #140812;
+  }
+
+  .ref-main-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .ref-main-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 1;
+  }
+
+  .ref-main-card-body {
+    padding: clamp(24px, 2.4vw, 32px) clamp(22px, 2.6vw, 28px);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .ref-main-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .ref-main-card-year {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.3);
+    white-space: nowrap;
+    padding-top: 4px;
+  }
+
+  .ref-main-card-title {
+    font-size: 1.22rem;
+    font-weight: 700;
+    margin: 0;
+    color: #fff;
+  }
+
+  .ref-main-card-sub {
+    font-size: 0.85rem;
+    color: var(--secondary-accent);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  .ref-main-card-desc {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.58;
+    margin: 0;
+    flex: 1;
+  }
+
+  .ref-main-card-footer {
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .ref-main-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: color 0.3s ease, gap 0.3s ease;
+  }
+
+  .ref-main-card:hover .ref-main-link {
+    color: #fff;
+    gap: 12px;
+  }
+
+  .refs-actions {
+    display: flex;
+    justify-content: center;
+    margin-bottom: clamp(34px, 5vw, 48px);
+  }
+
+  .refs-more-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 2px 7px;
+    border: 0;
+    background: none;
+    color: rgba(255, 255, 255, 0.74);
+    font: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.015em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.22s ease;
+  }
+
+  .refs-more-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255,199,0,0.78), rgba(255,77,128,0.78), rgba(0,210,255,0.72));
+    opacity: 0.72;
+    transform: scaleX(0.72);
+    transform-origin: center;
+    transition: transform 0.22s ease, opacity 0.22s ease;
+  }
+
+  .refs-more-link:hover {
+    color: #fff;
+  }
+
+  .refs-more-link:hover::after {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
+  .refs-more-link:focus-visible {
+    outline: 2px solid var(--secondary-accent);
+    outline-offset: 4px;
+  }
+
+  .refs-more-link[hidden] {
+    display: none;
+  }
+
+  .refs-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: clamp(36px, 5vw, 56px);
+  }
+
+  .refs-page-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .refs-page-link {
+    min-width: 44px;
+    height: 44px;
+    padding: 0 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.03);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.78);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .refs-page-link.is-current {
+    background: rgba(166, 77, 255, 0.16);
+    border-color: rgba(166, 77, 255, 0.45);
+    color: #fff;
+  }
+
+  .refs-page-link.is-disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  .refs-page-link--edge {
+    min-width: 96px;
+  }
+
+  .refs-final-section {
+    padding-top: clamp(48px, 6vw, 72px);
+    padding-bottom: clamp(92px, 9vw, 128px);
+  }
+
+  .refs-final-cta {
+    max-width: 660px;
+  }
+
+  .refs-final-cta .cta-label {
+    color: rgba(255, 255, 255, 0.42);
+  }
+
+  .refs-final-cta h2 {
+    color: #f5f5f7;
+    font-size: clamp(2.25rem, 4.5vw, 3.7rem);
+    line-height: 1.04;
+    letter-spacing: 0;
+    margin-bottom: 0;
+  }
+
+  .refs-final-cta h2 span {
+    color: rgba(255, 255, 255, 0.62);
+  }
+
+  .refs-final-cta .hero-cta-group {
+    margin-top: 34px;
+  }
+
+  .refs-final-cta .btn-ghost {
+    background-image:
+      linear-gradient(#050505, #050505),
+      linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+  }
+
+  .refs-final-cta .btn-ghost:hover {
+    animation: none;
+    transform: translateY(-2px);
+    background-image:
+      linear-gradient(#0a0a0c, #0a0a0c),
+      linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
+    box-shadow: 0 10px 26px rgba(255, 255, 255, 0.08);
+  }
+
+  .refs-final-cta .btn-primary:hover {
+    box-shadow:
+      inset 0 2px 4px rgba(255, 255, 255, 1),
+      0 10px 26px rgba(255, 255, 255, 0.14);
+  }
+
+  @media (max-width: 860px) {
+    .refs-hero {
+      min-height: auto;
+      padding-top: var(--hero-offset-top-mobile);
+      padding-bottom: 50px;
+    }
+
+    .refs-hero__title {
+      font-size: var(--hero-title-size-tablet);
+      line-height: var(--hero-title-line-height-mobile);
+    }
+
+    .refs-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .refs-intro {
+      margin-bottom: 52px;
+    }
+
+    .refs-pagination {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .refs-page-link--edge {
+      min-width: 0;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .refs-hero__lead {
+      font-size: var(--lead-size-mobile);
+      line-height: 1.6;
+    }
+
+    .refs-hero__title {
+      font-size: var(--hero-title-size-mobile);
+      line-height: var(--hero-title-line-height-mobile);
+    }
+
+    .refs-intro {
+      margin-bottom: 42px;
+    }
+
+    .refs-actions {
+      justify-content: stretch;
+    }
+
+    .refs-final-section {
+      padding-top: 40px;
+      padding-bottom: 92px;
+    }
+
+    .refs-final-cta h2 {
+      font-size: clamp(1.8rem, 11vw, 2.5rem);
+    }
+  }
+</style>

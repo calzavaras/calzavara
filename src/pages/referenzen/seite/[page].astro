@@ -1,0 +1,74 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import ReferencesArchiveSection from '../../../components/ReferencesArchiveSection.astro';
+import { getReferencePage, getReferencePageCount, getReferencePageHref } from '../../../data/references';
+
+export function getStaticPaths() {
+  const pageCount = getReferencePageCount();
+  return Array.from({ length: Math.max(0, pageCount - 1) }, (_, index) => {
+    const pageNumber = index + 2;
+    return {
+      params: { page: String(pageNumber) },
+      props: {
+        pageNumber,
+        pageItems: getReferencePage(pageNumber),
+      },
+    };
+  });
+}
+
+const { pageNumber, pageItems } = Astro.props;
+const pageCount = getReferencePageCount();
+
+const schema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `https://www.nigredo.ch${getReferencePageHref(pageNumber)}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Start', item: 'https://www.nigredo.ch/' },
+        { '@type': 'ListItem', position: 2, name: 'Referenzen', item: 'https://www.nigredo.ch/referenzen' },
+        { '@type': 'ListItem', position: 3, name: `Seite ${pageNumber}`, item: `https://www.nigredo.ch${getReferencePageHref(pageNumber)}` },
+      ],
+    },
+    {
+      '@type': 'CollectionPage',
+      '@id': `https://www.nigredo.ch${getReferencePageHref(pageNumber)}#webpage`,
+      url: `https://www.nigredo.ch${getReferencePageHref(pageNumber)}`,
+      name: `Referenzprojekte – Seite ${pageNumber} | Nigredo`,
+      description: 'Weitere Referenzprojekte von Nigredo. KI, Websites und Software für Schweizer KMU und Verwaltungen.',
+      inLanguage: 'de-CH',
+      datePublished: '2025-06-01',
+      dateModified: '2026-05-03',
+      isPartOf: { '@id': 'https://www.nigredo.ch/#website' },
+      breadcrumb: { '@id': `https://www.nigredo.ch${getReferencePageHref(pageNumber)}#breadcrumb` },
+      isAccessibleForFree: true,
+      mainEntity: {
+        '@type': 'ItemList',
+        itemListElement: pageItems.map((item, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          url: `https://www.nigredo.ch${item.href}`,
+          name: item.listTitle,
+        })),
+      },
+    },
+  ],
+});
+---
+
+<Layout
+  title={`Referenzprojekte – Seite ${pageNumber} | Nigredo`}
+  description="Weitere Referenzprojekte von Nigredo. KI, Websites und Software für Schweizer KMU und Verwaltungen."
+  keywords="Referenzen Nigredo, Projektarchiv Nigredo, KI Projekte Schweiz, Websites Schweiz, Software Referenzen"
+  canonical={`https://www.nigredo.ch${getReferencePageHref(pageNumber)}`}
+  ogTitle={`Referenzen – Seite ${pageNumber} | Nigredo`}
+  ogDescription="Weitere Referenzen von Nigredo."
+  ogImageAlt="Nigredo Referenzen – weitere Projekte"
+  twitterTitle={`Referenzen – Seite ${pageNumber} | Nigredo`}
+  twitterDescription="Weitere Referenzen von Nigredo."
+  schema={schema}
+>
+  <ReferencesArchiveSection pageNumber={pageNumber} pageCount={pageCount} pageItems={pageItems} />
+</Layout>

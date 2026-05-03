@@ -64,7 +64,7 @@ const schema = JSON.stringify({
                 Wildeggstrasse 37<br>
                 9000 St. Gallen, Schweiz
               </div>
-              <a class="btn btn-ghost legal-btn" href="/kontakt">Kontaktformular öffnen</a>
+              <a class="btn btn-ghost legal-btn" href="/kontakt/">Kontaktformular öffnen</a>
             </div>
           </section>
 
@@ -114,8 +114,8 @@ const schema = JSON.stringify({
 
 <style>
   .legal-page {
-    padding-top: 150px;
-    padding-bottom: 108px;
+    padding-top: var(--hero-offset-top);
+    padding-bottom: clamp(92px, 9vw, 120px);
   }
 
   .legal-page__container {
@@ -131,26 +131,26 @@ const schema = JSON.stringify({
   }
 
   .legal-hero .badge {
-    margin-bottom: 1rem;
+    margin-bottom: 1.15rem;
   }
 
   .legal-hero__title {
     max-width: 940px;
-    font-size: clamp(2.9rem, 5.35vw, 4.85rem);
+    font-size: var(--hero-title-size);
     line-height: var(--hero-title-line-height);
     letter-spacing: -0.02em;
-    margin-bottom: 24px;
+    margin-bottom: clamp(24px, 3vw, 30px);
   }
 
   .legal-hero__lead {
     max-width: 620px;
-    font-size: clamp(1.03rem, 1.15vw, 1.2rem);
+    font-size: var(--lead-size);
     line-height: 1.65;
   }
 
   .legal-text-block {
     max-width: 880px;
-    margin-top: 72px;
+    margin-top: clamp(62px, 7vw, 80px);
   }
 
   .legal-text-block p {
@@ -229,7 +229,7 @@ const schema = JSON.stringify({
 
   @media (max-width: 860px) {
     .legal-page {
-      padding-top: 132px;
+      padding-top: var(--hero-offset-top-mobile);
       padding-bottom: 88px;
     }
 
@@ -238,7 +238,7 @@ const schema = JSON.stringify({
     }
 
     .legal-hero__title {
-      font-size: clamp(2.55rem, 10vw, 3.8rem);
+      font-size: var(--hero-title-size-tablet);
       line-height: var(--hero-title-line-height-mobile);
     }
   }
@@ -249,7 +249,7 @@ const schema = JSON.stringify({
     }
 
     .legal-hero__title {
-      font-size: clamp(2.35rem, 13vw, 3.25rem);
+      font-size: var(--hero-title-size-mobile);
     }
 
     .legal-item {

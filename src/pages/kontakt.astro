@@ -124,8 +124,8 @@ const schema = JSON.stringify({
 
 <style>
   .contact-hero {
-    padding-top: 150px;
-    padding-bottom: 118px;
+    padding-top: var(--hero-offset-top);
+    padding-bottom: clamp(92px, 9vw, 128px);
   }
 
   .contact-hero :global(.breadcrumb) {
@@ -133,7 +133,7 @@ const schema = JSON.stringify({
   }
 
   .contact-hero .badge {
-    margin-bottom: 1rem;
+    margin-bottom: 1.15rem;
   }
 
   .kontakt-grid {
@@ -149,15 +149,15 @@ const schema = JSON.stringify({
 
   .contact-hero__title {
     max-width: 940px;
-    font-size: clamp(2.9rem, 5.35vw, 4.85rem);
+    font-size: var(--hero-title-size);
     line-height: var(--hero-title-line-height);
     letter-spacing: -0.02em;
-    margin-bottom: 24px;
+    margin-bottom: clamp(24px, 3vw, 30px);
   }
 
   .contact-hero__lead {
     max-width: 620px;
-    font-size: clamp(1.03rem, 1.15vw, 1.2rem);
+    font-size: var(--lead-size);
     line-height: 1.65;
   }
 
@@ -279,8 +279,8 @@ const schema = JSON.stringify({
 
   @media (max-width: 860px) {
     .contact-hero {
-      padding-top: 118px;
-      padding-bottom: 76px;
+      padding-top: var(--hero-offset-top-mobile);
+      padding-bottom: 82px;
     }
 
     .kontakt-grid {
@@ -289,7 +289,7 @@ const schema = JSON.stringify({
     }
 
     .contact-hero__title {
-      font-size: clamp(2.45rem, 8.2vw, 3.55rem);
+      font-size: var(--hero-title-size-tablet);
       line-height: var(--hero-title-line-height-mobile);
       letter-spacing: 0;
     }
@@ -297,18 +297,18 @@ const schema = JSON.stringify({
 
   @media (max-width: 520px) {
     .contact-hero {
-      padding-top: 112px;
-      padding-bottom: 58px;
+      padding-top: var(--hero-offset-top-mobile);
+      padding-bottom: 68px;
     }
 
     .contact-hero__title {
-      font-size: clamp(2.25rem, 11.6vw, 3.05rem);
+      font-size: var(--hero-title-size-mobile);
       line-height: var(--hero-title-line-height-mobile);
       letter-spacing: 0;
     }
 
     .contact-hero__lead {
-      font-size: 1.02rem;
+      font-size: var(--lead-size-mobile);
       line-height: 1.6;
     }
 

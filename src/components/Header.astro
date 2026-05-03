@@ -3,14 +3,15 @@ const pathname = Astro.url.pathname;
 
 const navLinks = [
   { href: '/', label: 'Start' },
-  { href: '/loesungen', label: 'Lösungen' },
-  { href: '/referenzen', label: 'Referenzen' },
-  { href: '/ueber-uns', label: 'Über mich' },
+  { href: '/loesungen/', label: 'Lösungen' },
+  { href: '/referenzen/', label: 'Referenzen' },
+  { href: '/ueber-uns/', label: 'Über mich' },
 ];
 
 function isActive(href: string): boolean {
-  if (href === '/') return pathname === '/' || pathname === '';
-  return pathname === href || pathname.startsWith(href + '/');
+  const normalizedPath = pathname === '/' ? '/' : pathname.replace(/\/?$/, '/');
+  if (href === '/') return normalizedPath === '/';
+  return normalizedPath === href || normalizedPath.startsWith(href);
 }
 ---
 
@@ -33,10 +34,10 @@ function isActive(href: string): boolean {
             {link.label}
           </a>
         ))}
-        <a href="/kontakt" class:list={['mobile-cta', { active: isActive('/kontakt') }]}>Kontakt</a>
+        <a href="/kontakt/" class:list={['mobile-cta', { active: isActive('/kontakt/') }]}>Kontakt</a>
       </div>
       <div class="header-actions">
-        <a href="/kontakt" class="btn btn-primary header-cta">Kontakt</a>
+        <a href="/kontakt/" class="btn btn-primary header-cta">Kontakt</a>
         <button class="menu-toggle" aria-label="Menü öffnen" aria-controls="primary-navigation" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>

@@ -1,6 +1,9 @@
-export const references = [
+export const REFERENCES_INITIAL_VISIBLE = 2;
+export const REFERENCES_PER_PAGE = 4;
+
+const referenceEntries = [
   {
-    href: '/referenzen/ki-voice-agent',
+    href: '/referenzen/ki-voice-agent/',
     imgSrc: '/referenzen/ki-voice-agent/ki-voice-agent-ahv-hilfsmittel-sprachassistent.svg',
     imgAlt: 'KI Voice Agent für IV-Stellen - AHV Hilfsmittel Sprachassistent von Nigredo',
     listImgCls: 'ref-main-card-img--purple',
@@ -8,6 +11,7 @@ export const references = [
     badge: { text: 'KI-Agent', cls: 'accent-purple' },
     linkCls: 'ref-main-link--ki',
     year: 'Feb 2026',
+    sortDate: '2026-02-01',
     listTitle: 'KI Agent für IV-Stellen',
     moreTitle: 'KI Voice Agent für IV-Stellen',
     sub: 'Sprachassistent für AHV-Hilfsmittel',
@@ -16,7 +20,7 @@ export const references = [
     ariaLabel: 'KI Agent für IV-Stellen - Details ansehen',
   },
   {
-    href: '/referenzen/dashboard-kantonsverwaltung',
+    href: '/referenzen/dashboard-kantonsverwaltung/',
     imgSrc: '/referenzen/dashboard-kantonsverwaltung/dashboard-kantonsverwaltung-excel-kpi-browser.svg',
     imgAlt: 'Dashboard für Verwaltung - Excel KPI-Auswertung im Browser ohne Cloud',
     listImgCls: 'ref-main-card-img--cyan',
@@ -24,6 +28,7 @@ export const references = [
     badge: { text: 'App', cls: 'accent-cyan' },
     linkCls: '',
     year: 'Jun 2025',
+    sortDate: '2025-06-01',
     listTitle: 'Dashboard für Verwaltung',
     moreTitle: 'Dashboard für Verwaltung',
     sub: 'Excel KPI-Auswertung im Browser, ohne Cloud',
@@ -32,7 +37,7 @@ export const references = [
     ariaLabel: 'Dashboard für Verwaltung - Details ansehen',
   },
   {
-    href: '/referenzen/therapie-ost',
+    href: '/referenzen/therapie-ost/',
     imgSrc: '/referenzen/therapie-ost/therapie-ost-website-illustration.svg',
     imgAlt: 'Website für Therapie Ost - dunkle illustrativ nachgebaute Startseite',
     listImgCls: 'ref-main-card-img--coral',
@@ -40,6 +45,7 @@ export const references = [
     badge: { text: 'Website', cls: 'accent-coral' },
     linkCls: '',
     year: 'Apr 2026',
+    sortDate: '2026-04-01',
     listTitle: 'Website für Therapie Ost',
     moreTitle: 'Website für Therapie Ost',
     sub: 'Praxisauftritt mit Vertrauen, Struktur und Online-Buchung',
@@ -48,3 +54,22 @@ export const references = [
     ariaLabel: 'Website für Therapie Ost - Details ansehen',
   },
 ] as const;
+
+export type ReferenceEntry = (typeof referenceEntries)[number];
+
+export const references = [...referenceEntries].sort((a, b) => (
+  new Date(b.sortDate).getTime() - new Date(a.sortDate).getTime()
+));
+
+export function getReferencePageCount() {
+  return Math.max(1, Math.ceil(references.length / REFERENCES_PER_PAGE));
+}
+
+export function getReferencePage(pageNumber: number) {
+  const start = (pageNumber - 1) * REFERENCES_PER_PAGE;
+  return references.slice(start, start + REFERENCES_PER_PAGE);
+}
+
+export function getReferencePageHref(pageNumber: number) {
+  return pageNumber <= 1 ? '/referenzen/' : `/referenzen/seite/${pageNumber}/`;
+}

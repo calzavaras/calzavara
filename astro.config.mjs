@@ -11,35 +11,38 @@ export default defineConfig({
       changefreq: 'monthly',
       priority: 0.7,
       serialize(item) {
+        const normalizedUrl = item.url !== 'https://www.nigredo.ch/' && item.url.endsWith('/')
+          ? item.url.slice(0, -1)
+          : item.url;
         // Hauptseiten
-        if (item.url === 'https://www.nigredo.ch/') {
+        if (normalizedUrl === 'https://www.nigredo.ch/') {
           item.priority = 1.0;
           item.lastmod = new Date('2026-05-03');
         }
         // Kern-Seiten
-        else if (item.url === 'https://www.nigredo.ch/loesungen' || item.url === 'https://www.nigredo.ch/referenzen') {
+        else if (normalizedUrl === 'https://www.nigredo.ch/loesungen' || normalizedUrl === 'https://www.nigredo.ch/referenzen') {
           item.priority = 0.9;
           item.lastmod = new Date('2026-05-03');
         }
         // Individuelle Referenzseiten
-        else if (item.url === 'https://www.nigredo.ch/referenzen/ki-voice-agent') {
+        else if (normalizedUrl === 'https://www.nigredo.ch/referenzen/ki-voice-agent') {
           item.priority = 0.8;
           item.lastmod = new Date('2026-05-03');
         }
-        else if (item.url === 'https://www.nigredo.ch/referenzen/dashboard-kantonsverwaltung') {
+        else if (normalizedUrl === 'https://www.nigredo.ch/referenzen/dashboard-kantonsverwaltung') {
           item.priority = 0.8;
           item.lastmod = new Date('2026-05-03');
         }
-        else if (item.url === 'https://www.nigredo.ch/referenzen/therapie-ost') {
+        else if (normalizedUrl === 'https://www.nigredo.ch/referenzen/therapie-ost') {
           item.priority = 0.8;
           item.lastmod = new Date('2026-05-03');
         }
         // Sekundärseiten
-        else if (item.url === 'https://www.nigredo.ch/ueber-uns') {
+        else if (normalizedUrl === 'https://www.nigredo.ch/ueber-uns') {
           item.priority = 0.8;
           item.lastmod = new Date('2026-05-03');
         }
-        else if (item.url === 'https://www.nigredo.ch/kontakt') {
+        else if (normalizedUrl === 'https://www.nigredo.ch/kontakt') {
           item.priority = 0.8;
           item.lastmod = new Date('2026-05-03');
         }
@@ -48,7 +51,7 @@ export default defineConfig({
       filter: (page) => !page.includes('/404') && !page.includes('/impressum') && !page.includes('/datenschutz'),
     }),
   ],
-  trailingSlash: 'never',
+  trailingSlash: 'always',
   build: {
     format: 'directory',
   },

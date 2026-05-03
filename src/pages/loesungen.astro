@@ -235,7 +235,7 @@ const schema = JSON.stringify({
         <h2 id="loesungen-cta-title">Weniger planen.<br><span>Einfach anfangen.</span></h2>
         <div class="hero-cta-group" style="justify-content: center;">
           <span class="reveal-mail btn btn-primary" role="button" tabindex="0" aria-label="Kontaktformular öffnen">Unverbindlich anfragen</span>
-          <a href="/referenzen" class="btn btn-ghost">Referenzprojekte ansehen</a>
+          <a href="/referenzen/" class="btn btn-ghost">Referenzprojekte ansehen</a>
         </div>
       </div>
     </div>
@@ -244,11 +244,11 @@ const schema = JSON.stringify({
 
 <style>
   .solutions-hero {
-    min-height: min(570px, 64vh);
+    min-height: min(620px, 68vh);
     display: flex;
     align-items: center;
-    padding-top: 150px;
-    padding-bottom: 48px;
+    padding-top: var(--hero-offset-top);
+    padding-bottom: var(--hero-offset-bottom);
   }
 
   .solutions-hero__container {
@@ -269,25 +269,25 @@ const schema = JSON.stringify({
   }
 
   .solutions-hero .badge {
-    margin-bottom: 1rem;
+    margin-bottom: 1.15rem;
   }
 
   .solutions-hero__title {
     max-width: 940px;
-    font-size: clamp(2.9rem, 5.35vw, 4.85rem);
+    font-size: var(--hero-title-size);
     line-height: var(--hero-title-line-height);
     letter-spacing: -0.02em;
-    margin-bottom: 24px;
+    margin-bottom: clamp(24px, 3vw, 30px);
   }
 
   .solutions-hero__lead {
     max-width: 620px;
-    font-size: clamp(1.03rem, 1.15vw, 1.2rem);
+    font-size: var(--lead-size);
     line-height: 1.65;
   }
 
   .solutions-accordion-wrap {
-    margin-top: 72px;
+    margin-top: clamp(64px, 7vw, 82px);
     max-width: 880px;
   }
 
@@ -429,8 +429,8 @@ const schema = JSON.stringify({
   }
 
   .solutions-final-section {
-    padding-top: 52px;
-    padding-bottom: 118px;
+    padding-top: clamp(48px, 6vw, 72px);
+    padding-bottom: clamp(92px, 9vw, 128px);
   }
 
   .solutions-final-cta {
@@ -481,17 +481,17 @@ const schema = JSON.stringify({
   @media (max-width: 860px) {
     .solutions-hero {
       min-height: auto;
-      padding-top: 132px;
-      padding-bottom: 42px;
+      padding-top: var(--hero-offset-top-mobile);
+      padding-bottom: 50px;
     }
 
     .solutions-hero__title {
-      font-size: clamp(2.55rem, 10vw, 3.8rem);
+      font-size: var(--hero-title-size-tablet);
       line-height: var(--hero-title-line-height-mobile);
     }
 
     .solutions-accordion-wrap {
-      margin-top: 52px;
+      margin-top: 58px;
       max-width: none;
     }
 
@@ -521,17 +521,17 @@ const schema = JSON.stringify({
 
   @media (max-width: 520px) {
     .solutions-hero__lead {
-      font-size: 1.02rem;
+      font-size: var(--lead-size-mobile);
       line-height: 1.6;
     }
 
     .solutions-hero__title {
-      font-size: clamp(2.35rem, 13vw, 3.25rem);
+      font-size: var(--hero-title-size-mobile);
       line-height: var(--hero-title-line-height-mobile);
     }
 
     .solutions-accordion-wrap {
-      margin-top: 42px;
+      margin-top: 46px;
     }
 
     .solutions-accordion :global(.accordion-header) {
@@ -565,7 +565,7 @@ const schema = JSON.stringify({
 
     .solutions-final-section {
       padding-top: 40px;
-      padding-bottom: 88px;
+      padding-bottom: 92px;
     }
 
     .solutions-final-cta h2 {

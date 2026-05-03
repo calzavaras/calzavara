@@ -10,15 +10,7 @@ const schema = JSON.stringify({
       "name": "Nigredo",
       "url": "https://www.nigredo.ch",
       "inLanguage": "de-CH",
-      "publisher": { "@id": "https://www.nigredo.ch/#organization" },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://www.nigredo.ch/referenzen?q={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
-      }
+      "publisher": { "@id": "https://www.nigredo.ch/#organization" }
     },
     {
       "@type": ["LocalBusiness", "ProfessionalService", "Organization"],
@@ -130,7 +122,7 @@ const schema = JSON.stringify({
 
       <div class="hero-cta-group">
         <button class="btn btn-primary open-contact" title="Projekt starten">Projekt starten</button>
-        <a href="/referenzen" class="btn btn-ghost">Arbeiten ansehen</a>
+        <a href="/referenzen/" class="btn btn-ghost">Arbeiten ansehen</a>
       </div>
     </div>
   </section>
@@ -172,7 +164,7 @@ const schema = JSON.stringify({
         <h2 id="cta-title">Erzähl mir kurz,<br><span>was du vorhast.</span></h2>
         <div class="hero-cta-group" style="justify-content: center;">
           <span class="reveal-mail btn btn-primary" role="button" tabindex="0" aria-label="E-Mail-Adresse anzeigen">Gespräch starten</span>
-          <a href="/referenzen" class="btn btn-ghost">Arbeiten ansehen</a>
+          <a href="/referenzen/" class="btn btn-ghost">Arbeiten ansehen</a>
         </div>
       </div>
     </div>
@@ -186,15 +178,15 @@ const schema = JSON.stringify({
   }
 
   .home-hero {
-    min-height: min(570px, 64vh);
+    min-height: auto;
     display: flex;
     align-items: center;
-    padding-top: 100px;
-    padding-bottom: 48px;
+    padding-top: var(--hero-offset-top);
+    padding-bottom: var(--hero-offset-bottom);
   }
 
   .home-hero .badge {
-    margin-bottom: 1rem;
+    margin-bottom: 1.15rem;
   }
 
   .home-hero__inner {
@@ -203,16 +195,16 @@ const schema = JSON.stringify({
 
   .home-hero__title {
     max-width: 940px;
-    font-size: clamp(2.9rem, 5.35vw, 4.85rem);
+    font-size: var(--hero-title-size);
     line-height: var(--hero-title-line-height);
     letter-spacing: -0.02em;
-    margin-bottom: 24px;
+    margin-bottom: clamp(24px, 3vw, 30px);
   }
 
 
   .home-hero .hero-lead {
     max-width: 620px;
-    font-size: clamp(1.03rem, 1.15vw, 1.2rem);
+    font-size: var(--lead-size);
     line-height: 1.65;
   }
 
@@ -234,8 +226,8 @@ const schema = JSON.stringify({
   }
 
   .home-values {
-    padding-top: 4px;
-    padding-bottom: 86px;
+    padding-top: clamp(18px, 3vw, 32px);
+    padding-bottom: clamp(82px, 8vw, 108px);
   }
 
   .card p {
@@ -287,7 +279,7 @@ const schema = JSON.stringify({
     align-items: center;
     justify-content: center;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease, background-color 0.35s ease, box-shadow 0.35s ease;
     background: rgba(255, 255, 255, 0.03);
     position: relative;
   }
@@ -363,29 +355,30 @@ const schema = JSON.stringify({
 
     .home-hero {
       min-height: auto;
-      padding-top: 96px;
-      padding-bottom: 42px;
+      padding-top: var(--hero-offset-top-mobile);
+      padding-bottom: 50px;
     }
 
     .home-hero__title {
-      font-size: clamp(2.55rem, 10vw, 3.8rem);
+      font-size: var(--hero-title-size-tablet);
       line-height: var(--hero-title-line-height-mobile);
     }
   }
 
   @media (max-width: 520px) {
     .home-hero__title {
-      font-size: clamp(2.35rem, 13vw, 3.25rem);
+      font-size: var(--hero-title-size-mobile);
       line-height: var(--hero-title-line-height-mobile);
     }
 
     .home-hero .hero-lead {
-      font-size: 1.02rem;
+      font-size: var(--lead-size-mobile);
       line-height: 1.6;
     }
 
     .home-values {
-      padding-bottom: 72px;
+      padding-top: 16px;
+      padding-bottom: 78px;
     }
 
     .home-final-section {

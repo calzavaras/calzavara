@@ -25,15 +25,15 @@ import Layout from '../layouts/Layout.astro';
 
       <div class="hero-cta-group">
         <a href="/" class="btn btn-primary">Zurück zum Start</a>
-        <a href="/kontakt" class="btn btn-ghost">Kontakt aufnehmen</a>
+        <a href="/kontakt/" class="btn btn-ghost">Kontakt aufnehmen</a>
       </div>
 
       <div class="not-found-page__links" aria-label="Weitere Seiten">
         <span class="cta-label">Vielleicht meintest du</span>
         <nav>
-          <a href="/loesungen">Lösungen</a>
-          <a href="/referenzen">Referenzen</a>
-          <a href="/ueber-uns">Über mich</a>
+          <a href="/loesungen/">Lösungen</a>
+          <a href="/referenzen/">Referenzen</a>
+          <a href="/ueber-uns/">Über mich</a>
         </nav>
       </div>
     </div>
@@ -42,11 +42,11 @@ import Layout from '../layouts/Layout.astro';
 
 <style>
   .not-found-page {
-    min-height: min(570px, 64vh);
+    min-height: min(620px, 68vh);
     display: flex;
     align-items: center;
-    padding-top: 150px;
-    padding-bottom: 118px;
+    padding-top: var(--hero-offset-top);
+    padding-bottom: clamp(92px, 9vw, 128px);
   }
 
   .not-found-page__inner {
@@ -54,20 +54,20 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .not-found-page .badge {
-    margin-bottom: 1rem;
+    margin-bottom: 1.15rem;
   }
 
   .not-found-page__title {
     max-width: 940px;
-    font-size: clamp(2.9rem, 5.35vw, 4.85rem);
+    font-size: var(--hero-title-size);
     line-height: var(--hero-title-line-height);
     letter-spacing: -0.02em;
-    margin-bottom: 24px;
+    margin-bottom: clamp(24px, 3vw, 30px);
   }
 
   .not-found-page__lead {
     max-width: 620px;
-    font-size: clamp(1.03rem, 1.15vw, 1.2rem);
+    font-size: var(--lead-size);
     line-height: 1.65;
   }
 
@@ -106,12 +106,12 @@ import Layout from '../layouts/Layout.astro';
   @media (max-width: 860px) {
     .not-found-page {
       min-height: auto;
-      padding-top: 132px;
+      padding-top: var(--hero-offset-top-mobile);
       padding-bottom: 88px;
     }
 
     .not-found-page__title {
-      font-size: clamp(2.55rem, 10vw, 3.8rem);
+      font-size: var(--hero-title-size-tablet);
       line-height: var(--hero-title-line-height-mobile);
     }
   }
@@ -122,12 +122,12 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .not-found-page__title {
-      font-size: clamp(2.35rem, 13vw, 3.25rem);
+      font-size: var(--hero-title-size-mobile);
       line-height: var(--hero-title-line-height-mobile);
     }
 
     .not-found-page__lead {
-      font-size: 1.02rem;
+      font-size: var(--lead-size-mobile);
       line-height: 1.6;
     }
 
