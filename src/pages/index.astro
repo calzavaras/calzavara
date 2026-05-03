@@ -12,11 +12,7 @@ const schema = JSON.stringify({
       "isPartOf": { "@id": "https://www.nigredo.ch/#website" },
       "about": { "@id": "https://www.nigredo.ch/#organization" },
       "description": "Websites, KI-Lösungen und digitale Tools zum Fixpreis. Nigredo entwickelt aus St. Gallen für Schweizer KMU.",
-      "inLanguage": "de-CH",
-      "speakable": {
-        "@type": "SpeakableSpecification",
-        "cssSelector": ["h1", ".hero-lead"]
-      }
+      "inLanguage": "de-CH"
     }
   ]
 });
@@ -40,13 +36,13 @@ const schema = JSON.stringify({
       <span class="badge badge--yellow">DIGITALE PRODUKTE. IM MASSANZUG.</span>
 
       <h1 id="hero-title" class="home-hero__title">
-        Websites, KI-Lösungen<br class="hidden-mobile">
-        <span class="gradient-text">und digitale Tools.</span>
+        Ich arbeite dort weiter,<br class="hidden-mobile">
+        <span class="gradient-text">wo andere aufhören.</span>
       </h1>
 
       <p class="hero-lead">
-        Aus St. Gallen für Schweizer KMU: Websites, Software, Tools und Texte mit Charakter. <br class="hidden-tablet">
-        Durchdacht bis ins Detail und gemacht, um langfristig zu tragen.
+        Websites, digitale Lösungen, Tools und Texte mit Charakter. <br class="hidden-tablet">
+        Durchdacht bis ins Detail und gemacht, um zu bleiben.
       </p>
 
       <div class="hero-cta-group">
@@ -89,8 +85,8 @@ const schema = JSON.stringify({
   <section class="section home-final-section" aria-labelledby="cta-title">
     <div class="container">
       <div class="section-cta home-final-cta fade-up">
-        <span class="cta-label">NÄCHSTER SCHRITT</span>
-        <h2 id="cta-title">Erzähl mir kurz,<br><span>was du vorhast.</span></h2>
+        <span class="cta-label">GENUG GELESEN?</span>
+        <h2 id="cta-title">Lass uns etwas bauen,<br><span>das bleibt.</span></h2>
         <div class="hero-cta-group" style="justify-content: center;">
           <a href="/kontakt" class="btn btn-primary">Gespräch starten</a>
           <a href="/referenzen" class="btn btn-ghost">Arbeiten ansehen</a>
@@ -140,7 +136,7 @@ const schema = JSON.stringify({
 
   .home-values {
     padding-top: 8px;
-    padding-bottom: 86px;
+    padding-bottom: 76px;
   }
 
   .card p {
@@ -227,8 +223,8 @@ const schema = JSON.stringify({
   }
 
   .home-final-section {
-    padding-top: 52px;
-    padding-bottom: 118px;
+    padding-top: 40px;
+    padding-bottom: 104px;
   }
 
   .home-final-cta {
@@ -273,8 +269,9 @@ const schema = JSON.stringify({
     }
 
     .home-hero__title {
-      font-size: clamp(2.55rem, 10vw, 3.8rem);
+      font-size: clamp(2.45rem, 8.2vw, 3.55rem);
       line-height: var(--hero-title-line-height-mobile);
+      letter-spacing: 0;
     }
   }
 
@@ -285,8 +282,9 @@ const schema = JSON.stringify({
     }
 
     .home-hero__title {
-      font-size: clamp(2.35rem, 13vw, 3.25rem);
+      font-size: clamp(2.25rem, 11.6vw, 3.05rem);
       line-height: var(--hero-title-line-height-mobile);
+      letter-spacing: 0;
       margin-bottom: 20px;
     }
 
@@ -296,16 +294,16 @@ const schema = JSON.stringify({
     }
 
     .home-values {
-      padding-top: 14px;
+      padding-top: 34px;
     }
 
     .home-values {
-      padding-bottom: 72px;
+      padding-bottom: 64px;
     }
 
     .home-final-section {
-      padding-top: 40px;
-      padding-bottom: 88px;
+      padding-top: 28px;
+      padding-bottom: 78px;
     }
 
     .home-final-cta h2 {
