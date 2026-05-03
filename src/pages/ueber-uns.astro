@@ -24,22 +24,19 @@ const schema = JSON.stringify({
       "familyName": "Calzavara",
       "jobTitle": "Gründer, Ideengeber und Teamleiter",
       "description": "Macher und Gründer aus St. Gallen. Führt ein Expertenteam in der Verwaltung, entwickelt Abteilungen weiter und bringt mit Nigredo, HappyPath GmbH, KI und einem starken IT-Netzwerk Ideen schnell in Ergebnisse.",
-      "mainEntityOfPage": "https://www.nigredo.ch/ueber-uns",
       "image": {
         "@type": "ImageObject",
-        "@id": "https://www.nigredo.ch/ueber-uns#primaryimage",
-        "url": "https://www.nigredo.ch/assets/marco-calzavara-portrait-nigredo-st-gallen.webp",
-        "width": 1254,
-        "height": 1254,
-        "caption": "Marco Calzavara, Gründer von Nigredo in St. Gallen"
+        "url": "https://www.nigredo.ch/assets/marco-calzavara-gruender-nigredo-st-gallen.webp",
+        "width": 768,
+        "height": 1024
       },
+      "url": "https://www.nigredo.ch/ueber-uns",
+      "worksFor": { "@id": "https://www.nigredo.ch/#organization" },
+      "knowsAbout": ["Abteilungsentwicklung", "Führung", "Content-Erstellung", "Bildgenerierung", "Software Development", "Web Development", "UX Design", "Datenaufbereitung", "KI-Lösungen"],
       "sameAs": [
         "https://ch.linkedin.com/in/calzavara-marco",
         "https://github.com/calza"
       ],
-      "url": "https://www.nigredo.ch/ueber-uns",
-      "worksFor": { "@id": "https://www.nigredo.ch/#organization" },
-      "knowsAbout": ["Abteilungsentwicklung", "Führung", "Content-Erstellung", "Bildgenerierung", "Software Development", "Web Development", "UX Design", "Datenaufbereitung", "KI-Lösungen"],
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "St. Gallen",
@@ -54,14 +51,13 @@ const schema = JSON.stringify({
       "url": "https://www.nigredo.ch/ueber-uns",
       "isPartOf": { "@id": "https://www.nigredo.ch/#website" },
       "breadcrumb": { "@id": "https://www.nigredo.ch/ueber-uns#breadcrumb" },
-      "primaryImageOfPage": { "@id": "https://www.nigredo.ch/ueber-uns#primaryimage" },
       "inLanguage": "de-CH",
       "datePublished": "2025-06-01",
-      "dateModified": "2026-05-03",
+      "dateModified": "2026-04-26",
       "isAccessibleForFree": true,
       "speakable": {
         "@type": "SpeakableSpecification",
-        "cssSelector": ["h1", ".au-name", ".au-role"]
+        "cssSelector": ["h1", ".pc-name", ".belief-title"]
       },
       "mainEntity": { "@id": "https://www.nigredo.ch/#person" }
     }
@@ -72,15 +68,16 @@ const schema = JSON.stringify({
 <Layout
   title="Über mich | Marco Calzavara | Nigredo"
   description={`Marco Calzavara – Macher, Ideengeber und Gründer aus St. Gallen. ${leadershipYears} Jahre Führung, mehrere Firmen, Verwaltungsexpertise, KI und ein starkes IT-Netzwerk.`}
+  keywords="Marco Calzavara, Nigredo Gründer, Website Freelancer St. Gallen, Webdesign Schweiz, KI-Lösungen Schweiz, persönliche Betreuung, Softwareentwicklung KMU"
   canonical="https://www.nigredo.ch/ueber-uns"
-  ogTitle="Marco Calzavara | Gründer von Nigredo"
+  ogTitle="Ein Mensch. 1001 Ideen."
   ogDescription="Macher, Ideengeber und Gründer aus St. Gallen. Verwaltungsexpertise, mehrere Firmen, KI und ein Netzwerk, das Ideen schnell in Ergebnisse bringt."
   ogType="profile"
-  ogImage="https://www.nigredo.ch/assets/marco-calzavara-portrait-nigredo-st-gallen.webp"
-  ogImageAlt="Marco Calzavara, Gründer von Nigredo in St. Gallen"
-  ogImageWidth="1254"
-  ogImageHeight="1254"
-  twitterTitle="Marco Calzavara | Gründer von Nigredo"
+  ogImage="https://www.nigredo.ch/assets/marco-calzavara-gruender-nigredo-st-gallen.webp"
+  ogImageAlt="Marco Calzavara - Gründer von Nigredo"
+  ogImageWidth="768"
+  ogImageHeight="1024"
+  twitterTitle="Ein Mensch. 1001 Ideen."
   twitterDescription="Macher, Ideengeber und Gründer aus St. Gallen. Verwaltungsexpertise, KI und ein starkes IT-Netzwerk."
   schema={schema}
 >
@@ -97,42 +94,27 @@ const schema = JSON.stringify({
       <div class="fade-up home-hero__inner about-hero__intro">
         <span class="badge badge--pink">PROFIL</span>
         <h1 id="about-title" class="home-hero__title about-hero__title">
-          Marco Calzavara,<br>
-          <span class="gradient-text">Gründer von Nigredo.</span>
+          Ein Mensch.<br>
+          <span class="gradient-text">1001 Ideen.</span>
         </h1>
       </div>
 
       <!-- Main Profile & Intro Grid -->
       <div class="au-main-grid mt-80">
         <div class="au-profile-column fade-up delay-100">
-            <div class="au-photo-container">
-              <div class="au-photo-aura"></div>
-              <div class="au-photo-circle-wrap">
-                <figure class="au-photo-frame">
-                  <picture>
-                    <source
-                      srcset="/assets/marco-calzavara-portrait-nigredo-st-gallen.avif"
-                      type="image/avif"
-                    >
-                    <source
-                      srcset="/assets/marco-calzavara-portrait-nigredo-st-gallen.webp"
-                      type="image/webp"
-                    >
-                    <img
-                      src="/assets/marco-calzavara-portrait-nigredo-st-gallen.webp"
-                      alt="Marco Calzavara, Gründer von Nigredo in St. Gallen"
-                      class="au-photo-circle"
-                      width="1254"
-                      height="1254"
-                      loading="eager"
-                      decoding="async"
-                      fetchpriority="high"
-                    >
-                  </picture>
-                  <figcaption class="visually-hidden">Portrait von Marco Calzavara, Gründer von Nigredo in St. Gallen.</figcaption>
-                </figure>
-              </div>
+          <div class="au-photo-container">
+            <div class="au-photo-aura"></div>
+            <div class="au-photo-circle-wrap">
+              <img
+                src="/assets/marco-calzavara-gruender-nigredo-st-gallen.webp"
+                alt="Marco Calzavara"
+                class="au-photo-circle lightbox-trigger"
+                width="768"
+                height="1024"
+                loading="lazy"
+              >
             </div>
+          </div>
           <div class="au-profile-info">
             <h2 class="au-name">Marco Calzavara</h2>
             <p class="au-role">Ideengeber. Gründer. Umsetzer.</p>
@@ -148,7 +130,7 @@ const schema = JSON.stringify({
           
           <div class="au-bio">
             <p class="au-bio-intro">
-              Ich bin ein Macher aus St. Gallen mit Ideenüberschuss: kreativ, neugierig, manchmal unkonventionell und ziemlich allergisch auf «Das haben wir schon immer so gemacht». Mich interessieren Möglichkeiten, bevor sie fertig sortiert sind. Und noch mehr interessiert mich, was daraus werden kann.
+              Ich bin ein Macher mit Ideenüberschuss: kreativ, neugierig, manchmal unkonventionell und ziemlich allergisch auf «Das haben wir schon immer so gemacht». Mich interessieren Möglichkeiten, bevor sie fertig sortiert sind. Und noch mehr interessiert mich, was daraus werden kann.
             </p>
 
             <div class="au-bio-more" data-bio-more>
@@ -380,62 +362,22 @@ const schema = JSON.stringify({
     border: 1px solid rgba(255, 255, 255, 0.12);
     background: #050505;
     z-index: 1;
-    transition:
-      border-color 0.3s ease,
-      box-shadow 0.35s ease;
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.04),
       0 18px 45px rgba(0, 0, 0, 0.28);
-  }
-
-  .au-photo-frame {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-
-  .au-photo-frame picture {
-    display: block;
-    width: 100%;
-    height: 100%;
   }
 
   .au-photo-circle {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 30%;
-    transform: scale(1.18);
-    transform-origin: center center;
+    object-position: center 35%;
     display: block;
-    filter: contrast(1.01) saturate(0.98);
-    transition: transform 0.4s ease, filter 0.3s ease;
+    cursor: zoom-in;
+    transition: transform 0.6s cubic-bezier(0.2, 0, 0.2, 1);
   }
 
-  .au-profile-column:hover .au-photo-circle-wrap {
-    border-color: rgba(255, 255, 255, 0.18);
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.05),
-      0 20px 48px rgba(0, 0, 0, 0.31);
-  }
-
-  .au-profile-column:hover .au-photo-circle {
-    transform: scale(1.195);
-    filter: contrast(1.02) saturate(1);
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .au-photo-circle-wrap,
-    .au-photo-circle {
-      transition: none;
-    }
-
-    .au-profile-column:hover .au-photo-circle-wrap,
-    .au-profile-column:hover .au-photo-circle {
-      transform: none;
-      filter: none;
-    }
-  }
+  .au-photo-circle:hover { transform: scale(1.055); }
 
   .au-name {
     font-size: clamp(1.28rem, 2vw, 1.5rem);
@@ -480,14 +422,14 @@ const schema = JSON.stringify({
   .au-bio p {
     max-width: 760px;
     font-size: clamp(1.03rem, 1.15vw, 1.2rem);
-    line-height: 1.68;
+    line-height: 1.65;
     color: var(--text-secondary);
     margin-bottom: 20px;
   }
 
   .au-bio-intro {
-    color: rgba(245, 245, 247, 0.78);
-    margin-bottom: 24px;
+    color: rgba(245, 245, 247, 0.76);
+    margin-bottom: 20px;
   }
 
   .au-bio strong {
@@ -552,7 +494,7 @@ const schema = JSON.stringify({
   .au-bio-more__content p {
     max-width: 760px;
     font-size: clamp(1.03rem, 1.15vw, 1.2rem);
-    line-height: 1.68;
+    line-height: 1.65;
     color: var(--text-secondary);
     margin-bottom: 20px;
   }
@@ -667,7 +609,6 @@ const schema = JSON.stringify({
   }
 
   .au-principle-card h3 {
-    color: #f5f5f7;
     font-size: clamp(1.23rem, 2.2vw, 1.48rem);
     line-height: 1.18;
     letter-spacing: -0.02em;
@@ -675,14 +616,12 @@ const schema = JSON.stringify({
   }
 
   .au-principle-card h3 span {
-    display: inline-block;
-    background: linear-gradient(135deg, #ff5d8b 0%, #d85cff 55%, #9b6bff 100%);
+    background: linear-gradient(135deg, #FF4D80 0%, #A64DFF 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
     font-style: normal;
-    filter: saturate(1.08);
   }
 
   .au-principle-text {
@@ -722,6 +661,21 @@ const schema = JSON.stringify({
     margin-top: 34px;
   }
 
+  .about-final-cta .btn-ghost {
+    background-image:
+      linear-gradient(#050505, #050505),
+      linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+  }
+
+  .about-final-cta .btn-ghost:hover {
+    animation: none;
+    transform: translateY(-2px);
+    background-image:
+      linear-gradient(#0a0a0c, #0a0a0c),
+      linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
+    box-shadow: 0 10px 26px rgba(255, 255, 255, 0.08);
+  }
+
   .about-final-cta .btn-primary:hover {
     box-shadow:
       inset 0 2px 4px rgba(255, 255, 255, 1),
@@ -742,8 +696,8 @@ const schema = JSON.stringify({
 
   @media (max-width: 860px) {
     .about-hero {
-      padding-top: 136px;
-      padding-bottom: 44px;
+      padding-top: 132px;
+      padding-bottom: 42px;
     }
 
     .about-hero__title {
@@ -765,40 +719,20 @@ const schema = JSON.stringify({
   }
 
   @media (max-width: 600px) {
-    .about-hero :global(.breadcrumb) {
-      margin-bottom: 22px;
-    }
-
     .about-hero__title {
       font-size: clamp(2.35rem, 13vw, 3.25rem);
       line-height: var(--hero-title-line-height-mobile);
     }
 
-    .au-main-grid {
-      gap: 36px;
-      margin-top: 44px;
-    }
-
     .au-photo-container {
       width: 204px;
       height: 204px;
-      margin-bottom: 22px;
     }
 
     .au-statement .about-statement__quote {
       padding: 24px;
       font-size: 1.02rem;
       line-height: 1.6;
-    }
-
-    .au-bio p,
-    .au-bio-more__content p {
-      font-size: 1rem;
-      line-height: 1.62;
-    }
-
-    .au-bio-intro {
-      margin-bottom: 22px;
     }
 
     .au-stat-value {

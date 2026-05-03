@@ -5,13 +5,93 @@ const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://www.nigredo.ch/#website",
+      "name": "Nigredo",
+      "url": "https://www.nigredo.ch",
+      "inLanguage": "de-CH",
+      "publisher": { "@id": "https://www.nigredo.ch/#organization" },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.nigredo.ch/referenzen?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": ["LocalBusiness", "ProfessionalService", "Organization"],
+      "@id": "https://www.nigredo.ch/#organization",
+      "name": "Nigredo | Marco Calzavara",
+      "url": "https://www.nigredo.ch",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.nigredo.ch/assets/nigredo-logo.png",
+        "width": 831,
+        "height": 265
+      },
+      "image": "https://www.nigredo.ch/assets/nigredo-logo.png",
+      "description": "Exklusive Websites, KI-Lösungen und Softwareentwicklung aus St. Gallen. Marco Calzavara entwickelt digitale Produkte mit Substanz – persönlich, zum Fixpreis, ohne Baukasten.",
+      "founder": { "@id": "https://www.nigredo.ch/#person" },
+      "foundingDate": "2025",
+      "knowsAbout": ["Webdesign", "Softwareentwicklung", "KI-Lösungen", "Branding", "User Experience Design", "Automatisierung"],
+      "numberOfEmployees": { "@type": "QuantitativeValue", "value": 1 },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Wildeggstrasse 37",
+        "addressLocality": "St. Gallen",
+        "postalCode": "9000",
+        "addressRegion": "SG",
+        "addressCountry": "CH"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "47.4245",
+        "longitude": "9.3767"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "calzavara3830@gmail.com",
+        "areaServed": "CH",
+        "availableLanguage": ["German", "English"]
+      },
+      "priceRange": "$$",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Digitale Dienstleistungen",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Website Erstellung (Individualentwicklung)" }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "KI-Integration & Automatisierung" }
+          }
+        ]
+      },
+      "sameAs": [
+        "https://ch.linkedin.com/in/calzavara-marco",
+        "https://github.com/calza"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.nigredo.ch/#person",
+      "name": "Marco Calzavara",
+      "jobTitle": "Full-Stack Developer & Gründer",
+      "worksFor": { "@id": "https://www.nigredo.ch/#organization" }
+    },
+    {
       "@type": "WebPage",
       "@id": "https://www.nigredo.ch/#webpage",
       "url": "https://www.nigredo.ch/",
-      "name": "Websites & KI-Lösungen aus St. Gallen | Nigredo",
+      "name": "Websites & Digitale Lösungen | Marco Calzavara – St. Gallen",
       "isPartOf": { "@id": "https://www.nigredo.ch/#website" },
       "about": { "@id": "https://www.nigredo.ch/#organization" },
-      "description": "Websites, KI-Lösungen und digitale Tools zum Fixpreis. Nigredo entwickelt aus St. Gallen für Schweizer KMU.",
+      "description": "Websites und digitale Lösungen zum Fixpreis. Marco Calzavara: Ihr Partner für Webentwicklung, KI-Integration und exklusives Design aus St. Gallen.",
       "inLanguage": "de-CH"
     }
   ]
@@ -19,14 +99,15 @@ const schema = JSON.stringify({
 ---
 
 <Layout
-  title="Websites & KI-Lösungen aus St. Gallen | Nigredo"
-  description="Websites, KI-Lösungen und digitale Tools zum Fixpreis. Nigredo entwickelt aus St. Gallen für Schweizer KMU: persönlich, klar, ohne Baukasten."
+  title="Websites & Digitale Lösungen | Nigredo"
+  description="Professionelle Websites & KI-Lösungen zum Fixpreis. Nigredo entwickelt digitale Produkte mit Substanz – persönlich, exklusiv, ohne Baukasten. Jetzt anfragen."
+  keywords="Website erstellen lassen Schweiz, Webseite erstellen St. Gallen, Webdesign Freelancer Schweiz, Softwareentwicklung St. Gallen, KI Lösungen KMU, digitale Lösungen, Website Fixpreis"
   canonical="https://www.nigredo.ch/"
-  ogTitle="Websites, KI-Lösungen und digitale Tools aus St. Gallen."
+  ogTitle="Websites & Digitale Lösungen, die wirklich zu dir passen."
   ogDescription="Kein Baukasten, keine Kompromisse. Nigredo entwickelt digitale Produkte mit Substanz. Persönlich. Fixpreis. Aus St. Gallen."
   ogImageAlt="Nigredo - Exklusive Websites & Digitale Lösungen"
-  twitterTitle="Websites & KI-Lösungen aus St. Gallen | Nigredo"
-  twitterDescription="Websites, KI-Lösungen und digitale Tools für Schweizer KMU. Persönlich, klar und zum Fixpreis."
+  twitterTitle="Websites & Digitale Lösungen | Nigredo"
+  twitterDescription="Was gut gemacht ist, braucht keine Erklärung. Websites und KI-Lösungen aus St. Gallen."
   schema={schema}
 >
   <section class="section pt-hero home-hero" aria-labelledby="hero-title">
@@ -36,17 +117,17 @@ const schema = JSON.stringify({
       <span class="badge badge--yellow">DIGITALE PRODUKTE. IM MASSANZUG.</span>
 
       <h1 id="hero-title" class="home-hero__title">
-        Ich arbeite dort weiter,<br class="hidden-mobile">
+        Ich arbeite dort weiter, <br class="hidden-mobile">
         <span class="gradient-text">wo andere aufhören.</span>
       </h1>
 
       <p class="hero-lead">
         Websites, digitale Lösungen, Tools und Texte mit Charakter. <br class="hidden-tablet">
-        Durchdacht bis ins Detail und gemacht, um zu bleiben.
+        Durchdacht bis ins Detail und gemacht, um langfristig zu tragen.
       </p>
 
       <div class="hero-cta-group">
-        <a href="/kontakt" class="btn btn-primary">Projekt starten</a>
+        <button class="btn btn-primary open-contact" title="Projekt starten">Projekt starten</button>
         <a href="/referenzen" class="btn btn-ghost">Arbeiten ansehen</a>
       </div>
     </div>
@@ -85,10 +166,10 @@ const schema = JSON.stringify({
   <section class="section home-final-section" aria-labelledby="cta-title">
     <div class="container">
       <div class="section-cta home-final-cta fade-up">
-        <span class="cta-label">GENUG GELESEN?</span>
-        <h2 id="cta-title">Lass uns etwas bauen,<br><span>das bleibt.</span></h2>
+        <span class="cta-label">NÄCHSTER SCHRITT</span>
+        <h2 id="cta-title">Erzähl mir kurz,<br><span>was du vorhast.</span></h2>
         <div class="hero-cta-group" style="justify-content: center;">
-          <a href="/kontakt" class="btn btn-primary">Gespräch starten</a>
+          <span class="reveal-mail btn btn-primary" role="button" tabindex="0" aria-label="E-Mail-Adresse anzeigen">Gespräch starten</span>
           <a href="/referenzen" class="btn btn-ghost">Arbeiten ansehen</a>
         </div>
       </div>
@@ -131,12 +212,28 @@ const schema = JSON.stringify({
     max-width: 620px;
     font-size: clamp(1.03rem, 1.15vw, 1.2rem);
     line-height: 1.65;
-    color: rgba(245, 245, 247, 0.68);
+  }
+
+  .home-hero .btn-ghost,
+  .home-final-cta .btn-ghost {
+    background-image:
+      linear-gradient(#050505, #050505),
+      linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+  }
+
+  .home-hero .btn-ghost:hover,
+  .home-final-cta .btn-ghost:hover {
+    animation: none;
+    transform: translateY(-2px);
+    background-image:
+      linear-gradient(#0a0a0c, #0a0a0c),
+      linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
+    box-shadow: 0 10px 26px rgba(255, 255, 255, 0.08);
   }
 
   .home-values {
-    padding-top: 8px;
-    padding-bottom: 76px;
+    padding-top: 4px;
+    padding-bottom: 86px;
   }
 
   .card p {
@@ -223,8 +320,8 @@ const schema = JSON.stringify({
   }
 
   .home-final-section {
-    padding-top: 40px;
-    padding-bottom: 104px;
+    padding-top: 52px;
+    padding-bottom: 118px;
   }
 
   .home-final-cta {
@@ -265,27 +362,19 @@ const schema = JSON.stringify({
     .home-hero {
       min-height: auto;
       padding-top: 96px;
-      padding-bottom: 46px;
+      padding-bottom: 42px;
     }
 
     .home-hero__title {
-      font-size: clamp(2.45rem, 8.2vw, 3.55rem);
+      font-size: clamp(2.55rem, 10vw, 3.8rem);
       line-height: var(--hero-title-line-height-mobile);
-      letter-spacing: 0;
     }
   }
 
   @media (max-width: 520px) {
-    .home-hero {
-      padding-top: 92px;
-      padding-bottom: 40px;
-    }
-
     .home-hero__title {
-      font-size: clamp(2.25rem, 11.6vw, 3.05rem);
+      font-size: clamp(2.35rem, 13vw, 3.25rem);
       line-height: var(--hero-title-line-height-mobile);
-      letter-spacing: 0;
-      margin-bottom: 20px;
     }
 
     .home-hero .hero-lead {
@@ -294,16 +383,12 @@ const schema = JSON.stringify({
     }
 
     .home-values {
-      padding-top: 34px;
-    }
-
-    .home-values {
-      padding-bottom: 64px;
+      padding-bottom: 72px;
     }
 
     .home-final-section {
-      padding-top: 28px;
-      padding-bottom: 78px;
+      padding-top: 40px;
+      padding-bottom: 88px;
     }
 
     .home-final-cta h2 {
@@ -311,4 +396,10 @@ const schema = JSON.stringify({
     }
   }
 
+  /* Utility Breakpoint Helpers */
+  .hidden-mobile { display: inline; }
+  @media (max-width: 640px) { .hidden-mobile { display: none; } }
+  
+  .hidden-tablet { display: inline; }
+  @media (max-width: 1024px) { .hidden-tablet { display: none; } }
 </style>

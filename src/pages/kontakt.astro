@@ -279,29 +279,32 @@ const schema = JSON.stringify({
 
   @media (max-width: 860px) {
     .contact-hero {
-      padding-top: 132px;
-      padding-bottom: 88px;
+      padding-top: 118px;
+      padding-bottom: 76px;
     }
 
     .kontakt-grid {
       grid-template-columns: 1fr;
-      gap: 52px;
+      gap: 38px;
     }
 
     .contact-hero__title {
-      font-size: clamp(2.55rem, 10vw, 3.8rem);
+      font-size: clamp(2.45rem, 8.2vw, 3.55rem);
       line-height: var(--hero-title-line-height-mobile);
+      letter-spacing: 0;
     }
   }
 
   @media (max-width: 520px) {
     .contact-hero {
-      padding-bottom: 72px;
+      padding-top: 112px;
+      padding-bottom: 58px;
     }
 
     .contact-hero__title {
-      font-size: clamp(2.35rem, 13vw, 3.25rem);
+      font-size: clamp(2.25rem, 11.6vw, 3.05rem);
       line-height: var(--hero-title-line-height-mobile);
+      letter-spacing: 0;
     }
 
     .contact-hero__lead {
@@ -312,10 +315,11 @@ const schema = JSON.stringify({
     .kontakt-sub {
       font-size: 0.96rem;
       line-height: 1.62;
+      margin-top: 18px;
     }
 
     .contact-panel {
-      padding: 34px 26px;
+      padding: 30px 24px;
     }
   }
 </style>
