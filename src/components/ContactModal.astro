@@ -64,22 +64,15 @@
       </form>
 
       <div id="cmodal-success" class="cmodal-success" aria-live="polite">
-        <div class="cmodal-success-glow"></div>
-        <div class="cmodal-success-icon-wrap">
+        <div class="cmodal-success-icon-wrap" aria-hidden="true">
           <svg class="cmodal-success-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <defs>
-              <linearGradient id="check-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#FFC700"/>
-                <stop offset="100%" stop-color="#FF4D80"/>
-              </linearGradient>
-            </defs>
-            <circle class="cmodal-check-circle" cx="32" cy="32" r="29" stroke="url(#check-grad)" stroke-width="1.5" fill="none"/>
-            <path class="cmodal-check-mark" d="M20 32l9 9 16-16" stroke="url(#check-grad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle class="cmodal-check-circle" cx="32" cy="32" r="29" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <path class="cmodal-check-mark" d="M20 32l9 9 16-16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
           </svg>
         </div>
-        <h3 class="cmodal-success-title"><span class="gradient-text">Nachricht gesendet.</span></h3>
-        <p class="cmodal-success-text">Deine Anfrage ist angekommen. Ich melde mich persönlich — meistens noch am selben Tag.</p>
-        <button class="btn btn-ghost cmodal-success-close">Schliessen</button>
+        <h3 class="cmodal-success-title">Nachricht gesendet.</h3>
+        <p class="cmodal-success-text">Deine Anfrage ist angekommen. Ich melde mich persönlich, meistens noch am selben Tag.</p>
+        <button class="cmodal-success-close" type="button">Schliessen</button>
       </div>
     </div>
   </div>

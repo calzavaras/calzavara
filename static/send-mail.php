@@ -135,50 +135,152 @@ $body = <<<HTML
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
+    <style>
+      :root {
+        color-scheme: light dark;
+        supported-color-schemes: light dark;
+      }
+
+      html,
+      body {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #050505 !important;
+        background-color: #050505 !important;
+        color: #f5f5f7 !important;
+      }
+
+      body,
+      table,
+      td,
+      div,
+      p,
+      a,
+      span {
+        font-family: Arial, sans-serif !important;
+      }
+
+      .nigredo-shell,
+      .nigredo-shell td,
+      .nigredo-card,
+      .nigredo-card td {
+        background: #050505 !important;
+        background-color: #050505 !important;
+      }
+
+      .nigredo-panel,
+      .nigredo-panel td {
+        background: #0b0b0d !important;
+        background-color: #0b0b0d !important;
+      }
+
+      .nigredo-meta,
+      .nigredo-meta td {
+        background: #111115 !important;
+        background-color: #111115 !important;
+      }
+
+      .nigredo-message,
+      .nigredo-message td {
+        background: #0f1013 !important;
+        background-color: #0f1013 !important;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        html,
+        body,
+        .nigredo-shell,
+        .nigredo-shell td,
+        .nigredo-card,
+        .nigredo-card td {
+          background: #050505 !important;
+          background-color: #050505 !important;
+          color: #f5f5f7 !important;
+        }
+
+        .nigredo-panel,
+        .nigredo-panel td {
+          background: #0b0b0d !important;
+          background-color: #0b0b0d !important;
+        }
+
+        .nigredo-meta,
+        .nigredo-meta td {
+          background: #111115 !important;
+          background-color: #111115 !important;
+        }
+
+        .nigredo-message,
+        .nigredo-message td {
+          background: #0f1013 !important;
+          background-color: #0f1013 !important;
+        }
+      }
+    </style>
     <title>{$subjectHtml}</title>
   </head>
-  <body style="margin:0; padding:0; background:#050505; color:#f5f5f7; font-family:Inter, Arial, sans-serif;">
-    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#050505; padding:28px 14px;">
+  <body bgcolor="#050505" style="margin:0; padding:0; background:#050505 !important; background-color:#050505 !important; color:#f5f5f7; font-family:Arial, sans-serif;">
+    <div style="display:none; max-height:0; overflow:hidden; opacity:0; mso-hide:all;">
+      Neue Kontaktanfrage von {$nameHtml} via Nigredo.
+    </div>
+    <table role="presentation" class="nigredo-shell" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#050505" style="width:100%; background:#050505 !important; background-color:#050505 !important; margin:0; padding:0;">
       <tr>
-        <td align="center">
-          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:640px; background:#0a0a0c; border:1px solid rgba(255,255,255,0.12); border-radius:16px; overflow:hidden;">
+        <td align="center" valign="top" bgcolor="#050505" style="padding:32px 14px; background:#050505 !important; background-color:#050505 !important;">
+          <table role="presentation" class="nigredo-card" width="680" cellspacing="0" cellpadding="0" border="0" bgcolor="#050505" style="width:100%; max-width:680px; background:#050505 !important; background-color:#050505 !important;">
             <tr>
-              <td style="height:3px; background:linear-gradient(90deg,#00D2FF,#A64DFF,#FF4D80); line-height:3px; font-size:0;">&nbsp;</td>
+              <td bgcolor="#050505" style="padding:0; background:#050505 !important; background-color:#050505 !important;">
+                <table role="presentation" class="nigredo-panel" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#0b0b0d" style="width:100%; background:#0b0b0d !important; background-color:#0b0b0d !important; border:1px solid #23232a;">
+            <tr>
+              <td bgcolor="#ffc700" style="height:4px; background-color:#ffc700; background-image:linear-gradient(90deg,#FFC700 0%,#FF4D80 48%,#A64DFF 76%,#00D2FF 100%); line-height:4px; font-size:0;">&nbsp;</td>
             </tr>
             <tr>
-              <td style="padding:34px 32px 12px;">
-                <div style="font-size:11px; line-height:1.4; font-weight:700; letter-spacing:1.6px; text-transform:uppercase; color:#00D2FF; margin-bottom:12px;">Neue Anfrage via Nigredo</div>
-                <h1 style="margin:0; color:#ffffff; font-size:28px; line-height:1.18; letter-spacing:-0.02em;">{$subjectHtml}</h1>
-                <p style="margin:14px 0 0; color:rgba(255,255,255,0.58); font-size:15px; line-height:1.6;">Diese Nachricht wurde über das Kontaktformular auf www.nigredo.ch gesendet.</p>
+              <td bgcolor="#0b0b0d" style="padding:38px 32px 22px; background:#0b0b0d !important; background-color:#0b0b0d !important;">
+                <div style="font-size:11px; line-height:1.4; font-weight:700; letter-spacing:1.9px; text-transform:uppercase; color:#FFC700; margin-bottom:14px;">Neue Anfrage via Nigredo</div>
+                <div style="margin:0 0 14px; color:#ffffff; font-size:30px; line-height:1.14; font-weight:700;">{$subjectHtml}</div>
+                <div style="color:#b3b3bc; font-size:15px; line-height:1.65;">Diese Nachricht wurde über das Kontaktformular auf <span style="color:#ffffff;">www.nigredo.ch</span> gesendet.</div>
               </td>
             </tr>
             <tr>
-              <td style="padding:18px 32px 4px;">
-                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:separate; border-spacing:0 10px;">
+              <td bgcolor="#0b0b0d" style="padding:0 32px 18px; background:#0b0b0d !important; background-color:#0b0b0d !important;">
+                <table role="presentation" class="nigredo-meta" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#111115" style="width:100%; background:#111115 !important; background-color:#111115 !important; border:1px solid #23232a;">
                   <tr>
-                    <td style="width:112px; color:rgba(255,255,255,0.44); font-size:13px; vertical-align:top;">Name</td>
-                    <td style="color:#ffffff; font-size:15px; font-weight:600;">{$nameHtml}</td>
+                    <td bgcolor="#111115" style="width:118px; padding:16px 18px; color:#8f8f98; font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; vertical-align:top; border-bottom:1px solid #23232a;">Name</td>
+                    <td bgcolor="#111115" style="padding:16px 18px; color:#ffffff; font-size:15px; font-weight:600; border-bottom:1px solid #23232a;">{$nameHtml}</td>
                   </tr>
                   <tr>
-                    <td style="width:112px; color:rgba(255,255,255,0.44); font-size:13px; vertical-align:top;">E-Mail</td>
-                    <td style="color:#ffffff; font-size:15px; font-weight:600;"><a href="mailto:{$emailHtml}" style="color:#00D2FF; text-decoration:none;">{$emailHtml}</a></td>
+                    <td bgcolor="#111115" style="width:118px; padding:16px 18px; color:#8f8f98; font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; vertical-align:top; border-bottom:1px solid #23232a;">E-Mail</td>
+                    <td bgcolor="#111115" style="padding:16px 18px; color:#ffffff; font-size:15px; font-weight:600; border-bottom:1px solid #23232a;"><a href="mailto:{$emailHtml}" style="color:#7fdfff; text-decoration:none;">{$emailHtml}</a></td>
                   </tr>
                   <tr>
-                    <td style="width:112px; color:rgba(255,255,255,0.44); font-size:13px; vertical-align:top;">Telefon</td>
-                    <td style="color:#ffffff; font-size:15px; font-weight:600;">{$phoneHtml}</td>
+                    <td bgcolor="#111115" style="width:118px; padding:16px 18px; color:#8f8f98; font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; vertical-align:top;">Telefon</td>
+                    <td bgcolor="#111115" style="padding:16px 18px; color:#ffffff; font-size:15px; font-weight:600;">{$phoneHtml}</td>
                   </tr>
                 </table>
               </td>
             </tr>
             <tr>
-              <td style="padding:18px 32px 34px;">
-                <div style="height:1px; background:linear-gradient(90deg,rgba(0,210,255,0.28),rgba(166,77,255,0.2),rgba(255,77,128,0.12),transparent); margin-bottom:22px;"></div>
-                <div style="color:rgba(255,255,255,0.44); font-size:13px; margin-bottom:10px;">Nachricht</div>
-                <div style="color:rgba(255,255,255,0.84); font-size:16px; line-height:1.7;">{$messageHtml}</div>
+              <td bgcolor="#0b0b0d" style="padding:0 32px 34px; background:#0b0b0d !important; background-color:#0b0b0d !important;">
+                <table role="presentation" class="nigredo-message" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#0f1013" style="width:100%; background:#0f1013 !important; background-color:#0f1013 !important; border:1px solid #23232a;">
+                  <tr>
+                    <td bgcolor="#0f1013" style="padding:18px 20px 12px; background:#0f1013 !important; background-color:#0f1013 !important; color:#8f8f98; font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; border-bottom:1px solid #23232a;">Nachricht</td>
+                  </tr>
+                  <tr>
+                    <td bgcolor="#0f1013" style="padding:18px 20px 20px; background:#0f1013 !important; background-color:#0f1013 !important; color:#e8e8ec; font-size:16px; line-height:1.75;">{$messageHtml}</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+                </table>
               </td>
             </tr>
           </table>
-          <div style="max-width:640px; color:rgba(255,255,255,0.35); font-size:12px; line-height:1.5; padding:16px 4px 0; text-align:left;">Antworten auf diese E-Mail gehen direkt an {$nameHtml}.</div>
+          <table role="presentation" width="680" cellspacing="0" cellpadding="0" border="0" bgcolor="#050505" style="width:100%; max-width:680px; background:#050505 !important; background-color:#050505 !important;">
+            <tr>
+              <td bgcolor="#050505" style="padding:18px 6px 0; background:#050505 !important; background-color:#050505 !important; color:#767680; font-size:12px; line-height:1.55; text-align:left;">Antworten auf diese E-Mail gehen direkt an {$nameHtml}. Gesendet via Nigredo Kontaktformular.</td>
+            </tr>
+          </table>
         </td>
       </tr>
     </table>
