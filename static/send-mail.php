@@ -190,16 +190,27 @@ HTML;
 $emailSafe = preg_replace('/[\r\n\t]/', '', $email);
 $nameSafe  = preg_replace('/[\r\n\t]/', '', $name);
 
+$boundary = bin2hex(random_bytes(16));
+
 $headers  = "MIME-Version: 1.0\r\n";
-$headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-$headers .= "Content-Transfer-Encoding: 8bit\r\n";
+$headers .= "Content-Type: multipart/alternative; boundary=\"{$boundary}\"\r\n";
 $headers .= "From: Nigredo Website <noreply@nigredo.ch>\r\n";
 $headers .= "Reply-To: =?UTF-8?B?" . base64_encode($nameSafe) . "?= <{$emailSafe}>\r\n";
 $headers .= "X-Mailer: Nigredo Contact\r\n";
 
 $encodedSubject = '=?UTF-8?B?' . base64_encode($msgSubject) . '?=';
 
-if (mail($emailTo, $encodedSubject, $body, $headers)) {
+$multipartBody  = "--{$boundary}\r\n";
+$multipartBody .= "Content-Type: text/plain; charset=UTF-8\r\n";
+$multipartBody .= "Content-Transfer-Encoding: 8bit\r\n\r\n";
+$multipartBody .= $plainBody . "\r\n";
+$multipartBody .= "--{$boundary}\r\n";
+$multipartBody .= "Content-Type: text/html; charset=UTF-8\r\n";
+$multipartBody .= "Content-Transfer-Encoding: 8bit\r\n\r\n";
+$multipartBody .= $body . "\r\n";
+$multipartBody .= "--{$boundary}--";
+
+if (mail($emailTo, $encodedSubject, $multipartBody, $headers)) {
     closeRateLimitHandle($rlHandle);
     echo json_encode([
         'success' => true,

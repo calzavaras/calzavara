@@ -21,6 +21,10 @@ interface Props {
   twitterTitle?: string;
   twitterDescription?: string;
   schema?: string;
+  preloadImage?: string;
+  preloadImageType?: string;
+  preloadImageSrcset?: string;
+  preloadImageSizes?: string;
 }
 
 const jsVersion = process.env.npm_package_version ?? '1';
@@ -34,14 +38,18 @@ const {
   ogTitle,
   ogDescription,
   ogType = 'website',
-  ogImage = 'https://www.nigredo.ch/assets/marco-calzavara-portrait-nigredo-st-gallen.webp',
+  ogImage = 'https://www.nigredo.ch/assets/marco-calzavara-portrait-nigredo-st-gallen.jpg',
   ogImageAlt = 'Marco Calzavara, Gründer von Nigredo in St. Gallen',
-  ogImageWidth = '1254',
-  ogImageHeight = '1254',
+  ogImageWidth = '768',
+  ogImageHeight = '1024',
   ogImageType,
   twitterTitle,
   twitterDescription,
   schema,
+  preloadImage,
+  preloadImageType,
+  preloadImageSrcset,
+  preloadImageSizes,
 } = Astro.props;
 
 function inferImageType(image: string | undefined): string | undefined {
@@ -188,6 +196,9 @@ const siteIdentitySchema = JSON.stringify({
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  {preloadImage && (
+    <link rel="preload" as="image" href={preloadImage} type={preloadImageType || undefined} imagesrcset={preloadImageSrcset || undefined} imagesizes={preloadImageSizes || undefined} />
+  )}
   <meta name="format-detection" content="telephone=no">
   <meta name="theme-color" content="#050505">
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -196,6 +207,7 @@ const siteIdentitySchema = JSON.stringify({
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
+  <link rel="dns-prefetch" href="https://cloud.umami.is">
   <meta name="msapplication-TileColor" content="#050505">
   <meta name="msapplication-TileImage" content="/mstile-150x150.png">
 
