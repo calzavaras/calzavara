@@ -26,9 +26,9 @@ html::-webkit-scrollbar {
   --section-py-lg: clamp(92px, 10vw, 144px);
   --section-py-md: clamp(72px, 8vw, 112px);
   --section-py-sm: clamp(52px, 6vw, 72px);
-  --container-width: 1100px;
-  --shell-width: 1100px;
-  --container-gutter: clamp(22px, 5vw, 40px);
+  --container-width: 960px;
+  --shell-width: 960px;
+  --container-gutter: clamp(20px, 5vw, 32px);
   --reading-width: 76ch;
   --hero-title-line-height: 1.06;
   --hero-title-line-height-mobile: 1.08;
@@ -45,7 +45,7 @@ html::-webkit-scrollbar {
 
 @media (max-width: 1024px) {
   :root {
-    --container-width: 1100px;
+    --container-width: 960px;
   }
 }
 
@@ -1157,12 +1157,7 @@ nav { display: flex; width: 100%; align-items: center; }
     linear-gradient(180deg, rgba(255, 255, 255, 0.028), rgba(255, 255, 255, 0.012)),
     rgba(10, 10, 12, 0.84);
 }
-.case-more-card-body .tech-badge {
-  color: color-mix(in srgb, var(--case-accent, #ffffff) 86%, #ffffff);
-  background: color-mix(in srgb, var(--case-accent, #ffffff) 14%, transparent);
-  border-color: color-mix(in srgb, var(--case-accent, #ffffff) 38%, transparent);
-  box-shadow: 0 0 14px color-mix(in srgb, var(--case-accent-glow, rgba(255,255,255,0.12)) 58%, transparent);
-}
+
 .case-more-card-title {
   margin: 0;
   max-width: 24ch;
@@ -1198,7 +1193,7 @@ nav { display: flex; width: 100%; align-items: center; }
 }
 .case-more-card:hover .case-more-card-arrow {
   gap: 10px;
-  color: color-mix(in srgb, var(--case-accent, #ffffff) 68%, #ffffff);
+  color: #ffffff;
   transform: translateX(1px);
 }
 .case-more-all-link {

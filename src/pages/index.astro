@@ -101,9 +101,6 @@ const schema = JSON.stringify({
 
 <style>
   /* Page specific overrides if any */
-  :global(.floating-header) {
-    padding-top: 48px;
-  }
 
   .home-hero {
     min-height: auto;
@@ -277,14 +274,14 @@ const schema = JSON.stringify({
   }
 
   @media (max-width: 860px) {
-    :global(.floating-header) {
-      padding-top: 28px;
-    }
-
     .home-hero {
       min-height: auto;
       padding-top: var(--hero-offset-top-mobile);
       padding-bottom: 50px;
+    }
+
+    .home-hero .badge {
+      margin-top: 10px;
     }
 
     .home-hero__title {
@@ -294,6 +291,10 @@ const schema = JSON.stringify({
   }
 
   @media (max-width: 520px) {
+    .home-hero .badge {
+      margin-top: 14px;
+    }
+
     .home-hero__title {
       font-size: var(--hero-title-size-mobile);
       line-height: var(--hero-title-line-height-mobile);
