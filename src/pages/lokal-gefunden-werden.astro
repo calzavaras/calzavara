@@ -1,0 +1,183 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const pageUrl = 'https://www.nigredo.ch/lokal-gefunden-werden/';
+const therapyCaseUrl = 'https://www.nigredo.ch/referenzen/therapie-ost/';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${pageUrl}#breadcrumb`,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.nigredo.ch/" },
+        { "@type": "ListItem", "position": 2, "name": "Lösungen", "item": "https://www.nigredo.ch/loesungen/" },
+        { "@type": "ListItem", "position": 3, "name": "Lokal gefunden werden", "item": pageUrl }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": `${pageUrl}#service`,
+      "name": "Lokale SEO für Praxen und Dienstleister",
+      "serviceType": "Lokale SEO, regionale Sichtbarkeit und Webdesign für Praxen und Dienstleister",
+      "description": "Lokale SEO und Webdesign für Praxen und Dienstleister in St. Gallen, der Ostschweiz und der Schweiz. Für mehr Sichtbarkeit, Vertrauen und Anfragen aus der Region.",
+      "provider": { "@id": "https://www.nigredo.ch/#organization" },
+      "areaServed": [
+        { "@type": "City", "name": "St. Gallen" },
+        { "@type": "AdministrativeArea", "name": "Ostschweiz" },
+        { "@type": "Country", "name": "Switzerland" }
+      ],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Praxen, Kanzleien, Beratungen und lokale Dienstleister"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${pageUrl}#webpage`,
+      "url": pageUrl,
+      "name": "Lokal gefunden werden | Lokale SEO für Praxen & Dienstleister | Nigredo",
+      "description": "Lokale SEO und Webdesign für Praxen und Dienstleister in St. Gallen und der Ostschweiz. Für mehr Sichtbarkeit und bessere Anfragen aus der Region.",
+      "isPartOf": { "@id": "https://www.nigredo.ch/#website" },
+      "about": { "@id": `${pageUrl}#service` },
+      "citation": therapyCaseUrl,
+      "breadcrumb": { "@id": `${pageUrl}#breadcrumb` },
+      "inLanguage": "de-CH",
+      "datePublished": "2026-05-05",
+      "dateModified": "2026-05-05",
+      "isAccessibleForFree": true,
+      "mainEntity": { "@id": `${pageUrl}#service` }
+    }
+  ]
+});
+---
+
+<Layout
+  title="Lokal gefunden werden | Lokale SEO für Praxen & Dienstleister | Nigredo"
+  description="Lokale SEO und Webdesign für Praxen und Dienstleister in St. Gallen und der Ostschweiz. Für mehr Sichtbarkeit und bessere Anfragen aus der Region."
+  keywords="lokal gefunden werden, lokale SEO, SEO für Praxen, SEO für Dienstleister, Webdesign St. Gallen"
+  canonical={pageUrl}
+  ogTitle="Lokal gefunden werden | Lokale SEO für Praxen & Dienstleister"
+  ogDescription="Lokale SEO und Webdesign für Praxen und Dienstleister: regional relevant, technisch sauber und auf Anfragen ausgerichtet."
+  ogImage="https://www.nigredo.ch/referenzen/therapie-ost/therapie-ost-website-screenshot-og.jpg"
+  ogImageAlt="Therapie Ost Website als Referenz für lokale Sichtbarkeit und professionellen Praxisauftritt"
+  ogImageWidth="1360"
+  ogImageHeight="823"
+  twitterTitle="Lokal gefunden werden | Nigredo"
+  twitterDescription="Lokale SEO und Webdesign für Praxen und Dienstleister."
+  schema={schema}
+  preloadImage="/referenzen/therapie-ost/therapie-ost-website-screenshot.avif"
+  preloadImageType="image/avif"
+>
+  <section class="section pt-sub seo-page seo-page--pink" aria-labelledby="lokal-title">
+    <div class="hero-glow"></div>
+    <div class="container seo-page__container">
+      <Breadcrumb items={[
+        { label: 'Start', href: '/' },
+        { label: 'Lösungen', href: '/loesungen/' },
+        { label: 'Lokal gefunden werden' }
+      ]} />
+
+      <div class="seo-hero fade-up">
+        <span class="badge badge--pink">LOKAL GEFUNDEN WERDEN</span>
+        <h1 id="lokal-title" class="home-hero__title seo-hero__title">
+          Lokal gefunden werden<br>
+          <span class="gradient-text">als Praxis oder Dienstleister.</span>
+        </h1>
+        <p class="hero-lead seo-hero__lead">
+          Wer in deiner Region sucht, soll dich sofort verstehen und direkt handeln können. Ich verbinde lokale SEO, klare Inhalte und saubere Technik zu einem Auftritt, der Anfragen erleichtert.
+        </p>
+        <div class="hero-cta-group">
+          <a href="/kontakt/" class="btn btn-primary">Lass mich ansehen, wie du dastehst</a>
+          <a href="/referenzen/therapie-ost/" class="btn btn-ghost">Referenz ansehen</a>
+        </div>
+      </div>
+
+      <div class="seo-split mt-80">
+        <div class="seo-copy fade-up delay-100">
+          <span class="cta-label">Relevanz statt Reichweite</span>
+          <h2>Lokale SEO braucht klare Signale.</h2>
+          <p>
+            Wer in deiner Region nach deiner Leistung sucht, googelt. Entscheidend ist nicht nur, ob du auftauchst. Entscheidend ist, ob dein Auftritt sofort zeigt: Hier bist du richtig.
+          </p>
+          <p>
+            Lokale Sichtbarkeit braucht keine lauten Kampagnen. Sie braucht Standortbezug, saubere Metadaten, strukturierte Daten und eine Website, die verständlich führt. Damit das technisch trägt, gehören auch <a href="/website-mit-cms-und-datenschutz/">CMS, technische SEO und Datenschutz</a> sauber zusammen gedacht.
+          </p>
+        </div>
+
+        <aside class="seo-note fade-up delay-150" aria-label="Kurz gesagt">
+          <span class="seo-note__label">Kurz gesagt</span>
+          <p>Gefunden werden reicht nicht. Der erste Klick muss auch Vertrauen auslösen.</p>
+        </aside>
+      </div>
+
+      <section class="seo-section fade-up" aria-labelledby="lokal-output">
+        <div class="seo-section__head">
+          <span class="cta-label">Was entsteht</span>
+          <h2 id="lokal-output">Was lokale Sichtbarkeit konkret besser macht.</h2>
+        </div>
+        <div class="seo-card-grid">
+          <article class="seo-card" style="--icon-gradient: linear-gradient(135deg, #00d2ff 0%, #a64dff 100%); --icon-shadow: rgba(0, 210, 255, 0.34);">
+            <div class="card-icon" aria-hidden="true"><div class="gradient-icon" style="-webkit-mask-image: url('/assets/icons/icon-local-seo-basis.svg'); mask-image: url('/assets/icons/icon-local-seo-basis.svg');"></div></div>
+            <span class="cta-label">Technik</span>
+            <h3>Saubere SEO-Basis</h3>
+            <p>Titles, Metadaten, strukturierte Daten und Ladezeiten sind von Anfang an richtig aufgesetzt.</p>
+          </article>
+          <article class="seo-card delay-100" style="--icon-gradient: linear-gradient(135deg, #ffc700 0%, #ff4d80 100%); --icon-shadow: rgba(196, 77, 255, 0.34);">
+            <div class="card-icon" aria-hidden="true"><div class="gradient-icon" style="-webkit-mask-image: url('/assets/icons/icon-local-standort.svg'); mask-image: url('/assets/icons/icon-local-standort.svg');"></div></div>
+            <span class="cta-label">Region</span>
+            <h3>Klare Standortsignale</h3>
+            <p>Google versteht, wo du arbeitest und für welche Region dein Angebot gedacht ist.</p>
+          </article>
+          <article class="seo-card delay-200" style="--icon-gradient: linear-gradient(135deg, #a64dff 0%, #ff4d80 100%); --icon-shadow: rgba(255, 77, 128, 0.32);">
+            <div class="card-icon" aria-hidden="true"><div class="gradient-icon" style="-webkit-mask-image: url('/assets/icons/icon-local-anfrage.svg'); mask-image: url('/assets/icons/icon-local-anfrage.svg');"></div></div>
+            <span class="cta-label">Wirkung</span>
+            <h3>Aus Suche wird Anfrage</h3>
+            <p>Wer klickt, findet sofort Leistungen, Ort, Vertrauen und den direkten nächsten Schritt.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="seo-section seo-band fade-up" aria-labelledby="lokal-region">
+        <div>
+          <span class="cta-label">Fokus</span>
+          <h2 id="lokal-region">Gefunden werden, wo deine Kunden suchen.</h2>
+        </div>
+        <p>
+          Es geht nicht darum, von allen gesehen zu werden. Es geht darum, dass genau die richtigen Menschen in St. Gallen und der Ostschweiz bei dir landen, wenn sie jetzt nach deiner Leistung suchen.
+        </p>
+      </section>
+
+      <section class="seo-reference fade-up" aria-labelledby="therapie-ost-proof">
+        <div class="seo-reference__media">
+          <picture>
+            <source srcset="/referenzen/therapie-ost/therapie-ost-website-screenshot.avif" type="image/avif">
+            <source srcset="/referenzen/therapie-ost/therapie-ost-website-screenshot.webp" type="image/webp">
+            <img src="/referenzen/therapie-ost/therapie-ost-website-screenshot.webp" alt="Screenshot der Therapie Ost Website mit ruhigem Hero-Bereich und direkter Terminbuchung" width="1360" height="823" loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <div class="seo-reference__body">
+          <span class="cta-label">Referenz</span>
+          <h2 id="therapie-ost-proof">Therapie Ost: lokal sichtbar, direkt buchbar.</h2>
+          <p>
+            Für Therapie Ost entstand eine Website, die in der Region sichtbar ist, Vertrauen schafft und den Weg zur Online-Terminbuchung kurz hält. Strukturierte Daten, ortsbezogene Inhalte und saubere Technik machen den Auftritt lokal wirksam. Die vollständige Umsetzung findest du in der <a href="/referenzen/therapie-ost/">Referenz von Therapie Ost</a>.
+          </p>
+          <a href="/referenzen/therapie-ost/" class="seo-text-link">Referenz ansehen</a>
+        </div>
+      </section>
+
+      <section class="section seo-final-section fade-up">
+        <div class="section-cta seo-final-cta">
+          <span class="cta-label">NÄCHSTER SCHRITT</span>
+          <h2>Deine Leistung ist gut.<br><span>Lass deine Region das wissen.</span></h2>
+          <div class="hero-cta-group" style="justify-content: center;">
+            <a href="/kontakt/" class="btn btn-primary">Lass mich ansehen, wie du dastehst</a>
+            <a href="/website-mit-cms-und-datenschutz/" class="btn btn-ghost">Mehr zu Technik, CMS & SEO</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+</Layout>

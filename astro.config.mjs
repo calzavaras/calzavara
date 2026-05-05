@@ -6,6 +6,9 @@ export default defineConfig({
   output: 'static',
   publicDir: './static',
   outDir: './public',
+  redirects: {
+    '/website-fuer-praxen-und-dienstleister/': '/lokal-gefunden-werden/',
+  },
   integrations: [
     sitemap({
       changefreq: 'monthly',
@@ -46,11 +49,22 @@ export default defineConfig({
           item.priority = 0.8;
           item.lastmod = new Date('2026-05-03');
         }
+        // SEO-Detailseiten
+        else if ([
+          'https://www.nigredo.ch/website-fuer-einzelunternehmen-kmu',
+          'https://www.nigredo.ch/lokal-gefunden-werden',
+          'https://www.nigredo.ch/website-mit-cms-und-datenschutz',
+          'https://www.nigredo.ch/haeufige-fragen-webdesign',
+        ].includes(normalizedUrl)) {
+          item.priority = 0.75;
+          item.lastmod = new Date('2026-05-05');
+        }
         return item;
       },
       filter: (page) => !page.includes('/404') && !page.includes('/impressum') && !page.includes('/datenschutz'),
     }),
   ],
+  // Astro empfiehlt bei build.format "directory" konsistente trailing slashes.
   trailingSlash: 'always',
   build: {
     format: 'directory',

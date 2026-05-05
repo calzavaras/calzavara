@@ -3,7 +3,7 @@
 > Diese Datei enthält den vollständigen Textinhalt aller Seiten von www.nigredo.ch in maschinenlesbarem Format. Erstellt für KI-Systeme, die nicht die gesamte Website crawlen möchten.
 
 Website: https://www.nigredo.ch
-Letzte Aktualisierung: 2026-05-03
+Letzte Aktualisierung: 2026-05-05
 Kurzversion: https://www.nigredo.ch/llms.txt
 
 ---
@@ -65,6 +65,72 @@ Je nach Projektgrösse in Tagen bis wenigen Wochen. Kurze Wege, direkte Kommunik
 
 **Setzt Nigredo KI-Tools ein?**
 Ja, KI-Tools werden gezielt eingesetzt – für Texte, Bilder, Code und Automatisierungen. Die Qualitätskontrolle und persönliche Betreuung liegen immer bei Marco Calzavara.
+
+---
+
+# Website für Einzelfirmen & KMU (https://www.nigredo.ch/website-fuer-einzelunternehmen-kmu/)
+
+## Grosse Wirkung. Ohne Agentur-Overhead.
+
+Eine Einzelfirma zu sein, heisst nicht, dass der Webauftritt nach Bastelarbeit aussehen muss. Nigredo baut digitale Visitenkarten, die professionell wirken, funktionieren und ins Budget passen.
+
+Baukästen wie Wix oder Jimdo wirken am Anfang bequem. Später zeigen sich oft starre Gestaltung, technische Grenzen, Zusatzkosten und ein Auftritt, der aussieht wie viele andere. Eine kleine Website darf reduziert sein. Aber sie muss sitzen: klare Texte, saubere Führung, schneller Kontakt und mobile Darstellung.
+
+Geeignet für Einzelfirmen, Beratungen, kleine Praxen, lokale Dienstleister, Handwerker, Garagen, kreative Selbständige und KMU mit begrenztem Budget.
+
+Highlights: professionelle Webvisitenkarte, klare Positionierung, direkter Kontaktweg, technische SEO-Grundlage, keine Baukasten-Optik.
+
+---
+
+# Website mit CMS, SEO & Datenschutz (https://www.nigredo.ch/website-mit-cms-und-datenschutz/)
+
+## Du kriegst den Schlüssel. Deine Website, deine Kontrolle.
+
+Du willst für ein neues Bild oder einen geänderten Satz nicht jedes Mal eine Agentur anrufen und bezahlen. Musst du auch nicht.
+
+Nigredo baut Websites mit CMS oder Adminbereich, wenn das für das Projekt sinnvoll ist. Texte, Bilder, Leistungen oder Hinweise können selbst gepflegt werden, ohne dass die Website schwerfällig wird.
+
+Die technische Grundlage umfasst responsive Umsetzung, saubere Titel und Beschreibungen, Canonicals, strukturierte Daten, Sitemap und schnelle Auslieferung. Für Tracking wird auf datenschutzfreundliche Lösungen wie Umami gesetzt: schlank, anonym und passend zum Schweizer DSG.
+
+Highlights: CMS, Website selbst verwalten, technische SEO, responsive Webdesign, Umami statt Google Analytics, DSG-freundliches Tracking.
+
+---
+
+# Lokal gefunden werden (https://www.nigredo.ch/lokal-gefunden-werden/)
+
+## Lokal gefunden werden als Praxis oder Dienstleister.
+
+Wenn das Telefon ständig klingelt, weil Kunden nach Öffnungszeiten, Leistungen oder Terminen fragen, arbeitet die Website nicht richtig. Wer lokal nach deiner Leistung sucht, soll dich sofort finden und direkt verstehen, ob er bei dir richtig ist.
+
+Für Praxen, Therapeuten, Handwerker, Garagen und Dienstleister zählt nicht der lauteste Auftritt. Es zählt, dass Besucher schnell verstehen, ob sie richtig sind und was sie als Nächstes tun sollen. Öffnungszeiten, Standort, Leistungen, Preise, Terminbuchung und Kontakt müssen klar erreichbar sein.
+
+Referenz: Für Therapie Ost entstand eine ruhige Praxiswebsite mit klarer Führung und direkter Online-Terminbuchung über Cituro. Die Website schafft Vertrauen und hält den Weg zum Termin kurz.
+
+Highlights: lokale SEO, Praxiswebsite, Dienstleister-Website, regionale Sichtbarkeit, Online-Terminbuchung, mobile Führung, klare Leistungen, Referenz Therapie Ost.
+
+---
+
+# Häufige Fragen zu Webdesign (https://www.nigredo.ch/haeufige-fragen-webdesign/)
+
+## Klare Antworten. Ohne Verkaufsnebel.
+
+**Was kostet eine kleine Webseite?**
+Das hängt vom Umfang ab. Bei Nigredo gibt es vor dem Start ein klares Angebot zum Fixpreis.
+
+**Ich habe nur ein kleines Budget. Baust du auch kleine Websites?**
+Ja. Gerade kleine Websites profitieren von Fokus: kein Overhead, keine unnötigen Seiten, keine Agenturmaschinerie.
+
+**Kann ich meine Website später selbst anpassen?**
+Ja, wenn das sinnvoll ist. Dann wird ein einfach bedienbarer Adminbereich oder ein passendes CMS eingebaut.
+
+**Ist meine Website auch auf dem Handy gut lesbar?**
+Ja. Jede Website wird responsive aufgebaut.
+
+**Was ist mit Datenschutz und Google Analytics?**
+Nigredo setzt auf datenschutzfreundliche Alternativen wie Umami: schlankes Tracking, keine unnötigen Cookies, keine Datenflut an Dritte.
+
+**Wie lange dauert es, bis meine Website fertig ist?**
+Das hängt von Inhalt und Umfang ab. Kleine Websites können schnell starten, wenn Inhalte und Ziel klar sind.
 
 ---
 

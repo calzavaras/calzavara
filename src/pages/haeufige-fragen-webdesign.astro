@@ -1,0 +1,168 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const pageUrl = 'https://www.nigredo.ch/haeufige-fragen-webdesign/';
+
+const faqs = [
+  {
+    question: 'Was kostet eine Website bei dir?',
+    answer: 'Der Preis richtet sich nach Umfang, Inhalt und technischer Tiefe. Eine fokussierte Website für eine Einzelfirma ist günstiger als ein System mit CMS, Schnittstellen oder Datenbank. Nach der Klärung des Scopes erhältst du ein transparentes Fixpreisangebot ohne versteckte Kosten.'
+  },
+  {
+    question: 'Baust du auch kleine Websites für Einzelfirmen und KMU?',
+    answer: 'Ja. Gerade für Einzelfirmen, Selbständige und kleinere KMU ist eine fokussierte Website oft die beste Lösung. Weniger Seiten, aber klar positioniert, mobil optimiert und technisch sauber umgesetzt.'
+  },
+  {
+    question: 'Kann ich meine Website später selbst anpassen?',
+    answer: 'Ja, wenn es für dein Projekt sinnvoll ist. Ich integriere auf Wunsch ein schlankes CMS. Damit änderst du Texte, Bilder und Leistungen eigenständig, ohne für jede Kleinigkeit auf externe Hilfe angewiesen zu sein.'
+  },
+  {
+    question: 'Ist die Website auch für Smartphone und Tablet optimiert?',
+    answer: 'Ja. Mobile First ist Standard. Jede Website wird so entwickelt, dass sie auf Smartphone, Tablet und Desktop klar lesbar, schnell und sauber bedienbar bleibt.'
+  },
+  {
+    question: 'Wie gehst du mit Datenschutz und Tracking um?',
+    answer: 'Ich bevorzuge datenschutzfreundliche Setups statt unnötig invasive Tracking-Pakete. Wenn Auswertungen sinnvoll sind, setze ich auf schlanke Alternativen wie Umami und richte die Website technisch so aus, dass Datenschutz und Nutzbarkeit zusammenpassen.'
+  },
+  {
+    question: 'Wie lange dauert die Umsetzung einer Website?',
+    answer: 'Schlanke Websites können in wenigen Wochen live gehen. Grössere Projekte mit CMS, Schnittstellen oder mehreren Entscheidungsrunden dauern entsprechend länger. Das Tempo hängt stark davon ab, wie schnell Inhalte, Feedback und Entscheide vorliegen.'
+  },
+  {
+    question: 'Brauche ich für meine Website zwingend ein CMS?',
+    answer: 'Nein. Wenn sich Inhalte selten ändern, ist eine statische Website oft schneller, sicherer und wartungsärmer. Wenn du regelmässig Inhalte aktualisierst, ist ein CMS die bessere Wahl.'
+  },
+  {
+    question: 'Kann die Website später erweitert werden?',
+    answer: 'Ja. Wir können klein und fokussiert starten und später Funktionen wie Buchungssysteme, Kundenbereiche, Formulare, Automationen oder Datenbanken ergänzen. Die Architektur wird so gewählt, dass Erweiterungen möglich bleiben.'
+  },
+  {
+    question: 'Hilfst du auch bei lokaler SEO in St. Gallen oder der Ostschweiz?',
+    answer: 'Ja. Wenn dein Geschäft lokal gefunden werden muss, berücksichtige ich regionale Suchintentionen, saubere Metadaten, strukturierte Daten, Standortbezug und eine klare Seitenstruktur. Ziel ist nicht irgendein Traffic, sondern relevante Anfragen aus deinem Einzugsgebiet.'
+  },
+  {
+    question: 'Wie läuft die Zusammenarbeit ab?',
+    answer: 'Wir starten mit einer sauberen Klärung von Ziel, Umfang und Prioritäten. Danach folgen Struktur, Inhalte, Design und Umsetzung in klaren Schritten. Du hast direkten Kontakt zum Entwickler und schnelle Entscheidungen ohne Agentur-Overhead.'
+  },
+  {
+    question: 'Arbeitest du nur lokal in St. Gallen?',
+    answer: 'Nein. Ich betreue Projekte in der ganzen Schweiz. Für lokale Unternehmen in St. Gallen und der Ostschweiz ist zusätzlich der regionale Suchfokus ein echter Vorteil.'
+  }
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${pageUrl}#breadcrumb`,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.nigredo.ch/" },
+        { "@type": "ListItem", "position": 2, "name": "Lösungen", "item": "https://www.nigredo.ch/loesungen/" },
+        { "@type": "ListItem", "position": 3, "name": "Häufige Fragen", "item": pageUrl }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${pageUrl}#faq`,
+      "mainEntity": faqs.map((faq) => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${pageUrl}#webpage`,
+      "url": pageUrl,
+      "name": "Webdesign FAQ | Kosten, CMS, SEO & Dauer | Nigredo",
+      "description": "Klare Antworten zu Website-Kosten, CMS, lokaler SEO, Datenschutz und Zusammenarbeit. Verständlich für Einzelfirmen, KMU und Dienstleister.",
+      "isPartOf": { "@id": "https://www.nigredo.ch/#website" },
+      "breadcrumb": { "@id": `${pageUrl}#breadcrumb` },
+      "mainEntity": { "@id": `${pageUrl}#faq` },
+      "inLanguage": "de-CH",
+      "datePublished": "2026-05-05",
+      "dateModified": "2026-05-05",
+      "isAccessibleForFree": true
+    }
+  ]
+});
+---
+
+<Layout
+  title="Webdesign FAQ | Kosten, CMS, SEO & Dauer | Nigredo"
+  description="Klare Antworten zu Website-Kosten, CMS, lokaler SEO, Datenschutz und Zusammenarbeit. Verständlich für Einzelfirmen, KMU und Dienstleister."
+  keywords="FAQ Webdesign, Website Kosten Schweiz, CMS Website Fragen, lokale SEO Fragen, Webdesign Dauer"
+  canonical={pageUrl}
+  ogTitle="Webdesign FAQ | Kosten, CMS, SEO & Dauer | Nigredo"
+  ogDescription="Klare Antworten zu Website-Kosten, CMS, SEO, Dauer und Datenschutz."
+  twitterTitle="FAQ Webdesign | Nigredo"
+  twitterDescription="Kurz und konkret: Antworten zu Kosten, CMS, SEO, Dauer und Datenschutz."
+  schema={schema}
+>
+  <section class="section pt-sub seo-page seo-page--purple" aria-labelledby="faq-title">
+    <div class="hero-glow"></div>
+    <div class="container seo-page__container">
+      <Breadcrumb items={[
+        { label: 'Start', href: '/' },
+        { label: 'Lösungen', href: '/loesungen/' },
+        { label: 'Häufige Fragen' }
+      ]} />
+
+      <div class="seo-hero fade-up">
+        <span class="badge badge--purple">FAQ</span>
+        <h1 id="faq-title" class="home-hero__title seo-hero__title">
+          Webdesign FAQ zu<br>
+          <span class="gradient-text">Kosten, CMS &amp; SEO.</span>
+        </h1>
+        <p class="hero-lead seo-hero__lead">
+          Was kostet eine Website? Brauchst du ein CMS? Wie läuft die Umsetzung ab? Hier findest du kurze, klare Antworten auf die Fragen, die vor dem Start wirklich zählen.
+        </p>
+        <div class="hero-cta-group">
+          <a href="/kontakt/" class="btn btn-primary">Frage direkt stellen</a>
+          <a href="/website-fuer-einzelunternehmen-kmu/" class="btn btn-ghost">Kleine Websites ansehen</a>
+        </div>
+      </div>
+
+      <section class="seo-section fade-up" aria-labelledby="faq-list-title">
+        <div class="seo-section__head">
+          <span class="cta-label">Antworten</span>
+          <h2 id="faq-list-title">Die Fragen, die vor dem Start zählen.</h2>
+        </div>
+        <div class="seo-faq-list">
+          {faqs.map((faq) => (
+            <article class="seo-faq-item">
+              <h3>{faq.question}</h3>
+              <p>{faq.answer}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="seo-section seo-band fade-up" aria-labelledby="faq-next">
+        <div>
+          <span class="cta-label">Weiterlesen</span>
+          <h2 id="faq-next">Mehr Details auf den passenden Unterseiten.</h2>
+        </div>
+        <p>
+          Geht es um den ersten professionellen Auftritt? Dann lies weiter auf <a href="/website-fuer-einzelunternehmen-kmu/">Einzelfirmen & KMU</a>. Willst du lokal besser gefunden werden? Das Thema steht auf <a href="/lokal-gefunden-werden/">Lokale Sichtbarkeit</a>. Alles rund um CMS und Datenschutz erklärt <a href="/website-mit-cms-und-datenschutz/">CMS, SEO & Datenschutz</a>.
+        </p>
+      </section>
+
+      <section class="section seo-final-section fade-up">
+        <div class="section-cta seo-final-cta">
+          <span class="cta-label">OFFENE FRAGE?</span>
+          <h2>Schreib kurz,<br><span>worum es geht.</span></h2>
+          <div class="hero-cta-group" style="justify-content: center;">
+            <a href="/kontakt/" class="btn btn-primary">Frage direkt stellen</a>
+            <a href="/loesungen/" class="btn btn-ghost">Lösungen ansehen</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+</Layout>

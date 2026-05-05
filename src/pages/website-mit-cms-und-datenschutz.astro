@@ -1,0 +1,165 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const pageUrl = 'https://www.nigredo.ch/website-mit-cms-und-datenschutz/';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${pageUrl}#breadcrumb`,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.nigredo.ch/" },
+        { "@type": "ListItem", "position": 2, "name": "Lösungen", "item": "https://www.nigredo.ch/loesungen/" },
+        { "@type": "ListItem", "position": 3, "name": "Technik, CMS & SEO", "item": pageUrl }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": `${pageUrl}#service`,
+      "name": "Website mit CMS, technischer SEO und Datenschutz",
+      "serviceType": "CMS-Website, technische SEO, Performance und datenschutzfreundliches Tracking",
+      "description": "Websites mit einfach bedienbarem CMS, technischer SEO-Grundlage, schneller Frontend-Architektur und datenschutzfreundlichem Tracking.",
+      "provider": { "@id": "https://www.nigredo.ch/#organization" },
+      "areaServed": [
+        { "@type": "City", "name": "St. Gallen" },
+        { "@type": "AdministrativeArea", "name": "Ostschweiz" },
+        { "@type": "Country", "name": "Switzerland" }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${pageUrl}#webpage`,
+      "url": pageUrl,
+      "name": "Website mit CMS, SEO & Datenschutz | Nigredo",
+      "description": "Website mit CMS, technischer SEO und datenschutzfreundlichem Tracking. Für Unternehmen, die Inhalte selbst pflegen und sauber wachsen wollen.",
+      "isPartOf": { "@id": "https://www.nigredo.ch/#website" },
+      "about": { "@id": `${pageUrl}#service` },
+      "breadcrumb": { "@id": `${pageUrl}#breadcrumb` },
+      "inLanguage": "de-CH",
+      "datePublished": "2026-05-05",
+      "dateModified": "2026-05-05",
+      "isAccessibleForFree": true,
+      "mainEntity": { "@id": `${pageUrl}#service` }
+    }
+  ]
+});
+---
+
+<Layout
+  title="Website mit CMS, SEO & Datenschutz | Nigredo"
+  description="Website mit CMS, technischer SEO und datenschutzfreundlichem Tracking. Für Unternehmen, die Inhalte selbst pflegen und sauber wachsen wollen."
+  keywords="Website mit CMS, Website selbst pflegen, technische SEO, datenschutzfreundliches Tracking, Umami Analytics Schweiz"
+  canonical={pageUrl}
+  ogTitle="Website mit CMS, SEO & Datenschutz | Nigredo"
+  ogDescription="CMS, saubere SEO-Basis und datenschutzfreundliches Tracking für unabhängige Websites."
+  twitterTitle="Website mit CMS, SEO & Datenschutz | Nigredo"
+  twitterDescription="CMS, SEO und datenschutzfreundliches Tracking für unabhängige Websites."
+  schema={schema}
+>
+  <section class="section pt-sub seo-page seo-page--cyan" aria-labelledby="cms-title">
+    <div class="hero-glow"></div>
+    <div class="container seo-page__container">
+      <Breadcrumb items={[
+        { label: 'Start', href: '/' },
+        { label: 'Lösungen', href: '/loesungen/' },
+        { label: 'Technik, CMS & SEO' }
+      ]} />
+
+      <div class="seo-hero fade-up">
+        <span class="badge badge--cyan">TECHNIK, DIE DICH NICHT BLOCKIERT</span>
+        <h1 id="cms-title" class="home-hero__title seo-hero__title">
+          Website mit CMS,<br>
+          <span class="gradient-text">SEO &amp; Datenschutz.</span>
+        </h1>
+        <p class="hero-lead seo-hero__lead">
+          Du willst Inhalte selbst pflegen, sauber gefunden werden und kein Tracking-Chaos. Genau dafür baue ich Websites mit klarem CMS und sauberer Technik.
+        </p>
+        <div class="hero-cta-group">
+          <a href="/kontakt/" class="btn btn-primary">Soll es dein eigenes System bleiben?</a>
+          <a href="/haeufige-fragen-webdesign/" class="btn btn-ghost">Offene Fragen ansehen</a>
+        </div>
+      </div>
+
+      <div class="seo-split mt-80">
+        <div class="seo-copy fade-up delay-100">
+          <span class="cta-label">Unabhängigkeit</span>
+          <h2>Inhalte selbst pflegen, ohne technisch abhängig zu sein.</h2>
+          <p>
+            Ein CMS ist kein Selbstzweck, sondern ein Werkzeug. Du tauschst Bilder aus, korrigierst Texte oder aktualisierst Leistungen, ohne jedes Mal jemanden anrufen zu müssen.
+          </p>
+          <p>
+            Der Adminbereich wird präzise auf deine Prozesse zugeschnitten. Keine überflüssigen Dashboards, keine versteckten Kosten. Du behältst die Kontrolle, während die Website schnell und sicher bleibt. Wenn du zuerst klären willst, ob du überhaupt ein CMS brauchst, findest du die wichtigsten Antworten auf der Seite <a href="/haeufige-fragen-webdesign/">Häufige Fragen zu Webdesign</a>.
+          </p>
+        </div>
+
+        <aside class="seo-note fade-up delay-150" aria-label="CMS Nutzen">
+          <span class="seo-note__label">Kernpunkt</span>
+          <p>Technik soll helfen, nicht blockieren. Ein gutes CMS spart Rückfragen und Abhängigkeit.</p>
+        </aside>
+      </div>
+
+      <section class="seo-section fade-up" aria-labelledby="cms-tech">
+        <div class="seo-section__head">
+          <span class="cta-label">Architektur</span>
+          <h2 id="cms-tech">Technische SEO beginnt nicht mit einem Plugin.</h2>
+        </div>
+        <div class="seo-card-grid">
+          <article class="seo-card" style="--icon-gradient: linear-gradient(135deg, #00d2ff 0%, #a64dff 100%); --icon-shadow: rgba(0, 210, 255, 0.34);">
+            <div class="card-icon" aria-hidden="true"><div class="gradient-icon" style="-webkit-mask-image: url('/assets/icons/icon-cms-pflege.svg'); mask-image: url('/assets/icons/icon-cms-pflege.svg');"></div></div>
+            <span class="cta-label">Pflege</span>
+            <h3>Einfach aktualisierbar</h3>
+            <p>Texte, Bilder und Leistungen lassen sich schnell anpassen, ohne bei jeder Kleinigkeit externen Support zu brauchen.</p>
+          </article>
+          <article class="seo-card delay-100" style="--icon-gradient: linear-gradient(135deg, #ffc700 0%, #ff4d80 100%); --icon-shadow: rgba(196, 77, 255, 0.34);">
+            <div class="card-icon" aria-hidden="true"><div class="gradient-icon" style="-webkit-mask-image: url('/assets/icons/icon-cms-struktur.svg'); mask-image: url('/assets/icons/icon-cms-struktur.svg');"></div></div>
+            <span class="cta-label">SEO</span>
+            <h3>Saubere technische Struktur</h3>
+            <p>Sauberes Markup, klare URLs und schnelle Auslieferung schaffen die Grundlage für nachhaltige Sichtbarkeit.</p>
+          </article>
+          <article class="seo-card delay-200" style="--icon-gradient: linear-gradient(135deg, #a64dff 0%, #ff4d80 100%); --icon-shadow: rgba(255, 77, 128, 0.32);">
+            <div class="card-icon" aria-hidden="true"><div class="gradient-icon" style="-webkit-mask-image: url('/assets/icons/icon-cms-erweiterbar.svg'); mask-image: url('/assets/icons/icon-cms-erweiterbar.svg');"></div></div>
+            <span class="cta-label">Wachstum</span>
+            <h3>Erweiterbar ohne Neubau</h3>
+            <p>Neue Bereiche, Formulare oder Prozesse lassen sich ergänzen, ohne die ganze Website neu denken zu müssen.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="seo-section seo-band fade-up" aria-labelledby="cms-privacy">
+        <div>
+          <span class="cta-label">Datenschutz</span>
+          <h2 id="cms-privacy">Messen, ohne Vertrauen zu verspielen.</h2>
+        </div>
+        <p>
+          Kein Google Analytics, kein unnötiger Datenhunger. Mit datenschutzfreundlichen Alternativen wie Umami lässt sich die Nutzung deiner Website auswerten, ohne den Auftritt mit Tracking-Ballast oder unnötigen Hürden zu beladen.
+        </p>
+      </section>
+
+      <section class="seo-section fade-up" aria-labelledby="cms-not">
+        <div class="seo-section__head">
+          <span class="cta-label">Zur Orientierung</span>
+          <h2 id="cms-not">Wann statisch reicht und wann ein CMS sinnvoll ist.</h2>
+        </div>
+        <div class="seo-steps">
+          <div><strong>1. Statische Präzision</strong><p>Deine Inhalte sind langlebig? Eine rein statische Seite ist performant, wartungsfrei und extrem sicher.</p></div>
+          <div><strong class="delay-100">2. CMS Integration</strong><p>Du willst unabhängig publizieren? Ein massgeschneidertes CMS macht Updates so einfach wie das Schreiben einer E-Mail und passt besonders gut zu <a href="/website-fuer-einzelunternehmen-kmu/">Websites für Einzelfirmen und KMU</a>, die intern gepflegt werden sollen.</p></div>
+          <div><strong class="delay-200">3. Digitale Produkte</strong><p>Buchungssysteme, Kundenportale oder komplexe Datenbanken? Dann wird die Website zu einem präzisen Werkzeug statt nur zu einer digitalen Broschüre.</p></div>
+        </div>
+      </section>
+
+      <section class="section seo-final-section fade-up">
+        <div class="section-cta seo-final-cta">
+          <span class="cta-label">NÄCHSTER SCHRITT</span>
+          <h2>Die Website soll dir gehören.<br><span>Nicht deinem Dienstleister.</span></h2>
+          <div class="hero-cta-group" style="justify-content: center;">
+            <a href="/kontakt/" class="btn btn-primary">Soll es dein eigenes System bleiben?</a>
+            <a href="/haeufige-fragen-webdesign/" class="btn btn-ghost">Häufige Fragen lesen</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+</Layout>

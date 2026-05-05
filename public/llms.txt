@@ -3,7 +3,7 @@
 Website: https://www.nigredo.ch
 Organization: Nigredo | Marco Calzavara
 Location: St. Gallen, Schweiz
-Last-Updated: 2026-05-03
+Last-Updated: 2026-05-05
 Full-Version: https://www.nigredo.ch/llms-full.txt
 
 ---
@@ -38,6 +38,22 @@ Blogtexte, Produktbeschreibungen, Newsletter, KI-generierte Bilder und Logodesig
 
 ### Software & Webseiten
 Individuelle Business-Software und moderne Firmenwebseiten für KMU. Kundenverwaltung, interne Dashboards, Auftragsabwicklung oder eine Webpräsenz, die auf Google sichtbar ist. Kein Baukastensystem, kein Abo. Alles aus einer Hand.
+
+#### Webdesign für Einzelfirmen & KMU
+Kleine professionelle Websites und Webvisitenkarten für Selbständige, Einzelfirmen und KMU. Klarer Auftritt, mobile Darstellung, direkte Kontaktmöglichkeit und keine Baukasten-Optik.
+- URL: https://www.nigredo.ch/website-fuer-einzelunternehmen-kmu/
+
+#### Website mit CMS, SEO & Datenschutz
+Websites mit selbst pflegbaren Inhalten, technischer SEO-Grundlage und datenschutzfreundlichem Tracking mit Umami statt Google Analytics.
+- URL: https://www.nigredo.ch/website-mit-cms-und-datenschutz/
+
+#### Lokal gefunden werden
+Lokale SEO und Webdesign für Praxen, Therapeuten, Handwerker, Garagen und Dienstleister. Fokus auf regionale Sichtbarkeit, Vertrauen, klare Informationen und direkte Termin- oder Kontaktwege.
+- URL: https://www.nigredo.ch/lokal-gefunden-werden/
+
+#### Häufige Fragen zu Webdesign
+Klare Antworten zu Kosten, Dauer, CMS, Mobile, Datenschutz und kleinen Websites.
+- URL: https://www.nigredo.ch/haeufige-fragen-webdesign/
 
 ### Tabellen, Daten & Dokumente
 Excel-Vorlagen, Datenaufbereitung, automatisierte Berichte. Ordnung in bestehenden Daten. Die Excel-Datei, die niemand mehr anfassen will – ich bringe sie in Form.
