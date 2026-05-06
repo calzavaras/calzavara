@@ -29,7 +29,7 @@ Fixpreise statt Stundenzählen. Du weisst vorher, was es kostet und wann es fert
 
 ---
 
-# Lösungen (https://www.nigredo.ch/loesungen/)
+# Lösungen (https://www.nigredo.ch/digitale-loesungen/)
 
 ## Was ich für dich liefere
 
@@ -68,7 +68,7 @@ Ja, KI-Tools werden gezielt eingesetzt – für Texte, Bilder, Code und Automati
 
 ---
 
-# Website für Selbständige, KMU & Vereine (https://www.nigredo.ch/website-fuer-selbststaendige-kmu-und-vereine/)
+# Website für Selbständige, KMU & Vereine (https://www.nigredo.ch/website-fuer-kmu-selbststaendige/)
 
 ## Grosse Wirkung. Ohne Agentur-Overhead.
 
@@ -82,7 +82,7 @@ Highlights: klare Positionierung, direkter Kontaktweg, technische SEO-Grundlage,
 
 ---
 
-# Technik & CMS für Websites (https://www.nigredo.ch/technik-und-cms/)
+# Technik & CMS für Websites (https://www.nigredo.ch/website-technik-cms/)
 
 ## Technik, die nicht im Weg steht.
 
@@ -96,7 +96,7 @@ Highlights: Technik & CMS, pflegbare Website, schlanke Architektur, Erweiterbark
 
 ---
 
-# Lokal gefunden werden (https://www.nigredo.ch/lokal-gefunden-werden/)
+# Lokal gefunden werden (https://www.nigredo.ch/lokale-seo/)
 
 ## Lokal gefunden werden als Praxis oder Dienstleister.
 
@@ -110,7 +110,7 @@ Highlights: lokale SEO, regionale Sichtbarkeit, klare Positionierung, verständl
 
 ---
 
-# Häufige Fragen zu Webdesign (https://www.nigredo.ch/haeufige-fragen-webdesign/)
+# Häufige Fragen zu Webdesign (https://www.nigredo.ch/faq-webdesign/)
 
 ## Klare Antworten. Ohne Verkaufsnebel.
 
@@ -207,7 +207,7 @@ Highlights: ruhiger Praxisauftritt, mobile Optimierung, direkte Online-Terminbuc
 
 ---
 
-# Über mich (https://www.nigredo.ch/ueber-uns/)
+# Über mich (https://www.nigredo.ch/marco-calzavara/)
 
 ## Wer ich bin
 

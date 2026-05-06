@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 
-const pageUrl = 'https://www.nigredo.ch/haeufige-fragen-webdesign/';
+const pageUrl = 'https://www.nigredo.ch/faq-webdesign/';
 
 const faqs = [
   {
@@ -51,7 +51,7 @@ const faqs = [
   },
   {
     question: 'Wird meine Website bei Google gefunden?',
-    answer: 'Eine seriöse Garantie gibt es nicht. Was ich tun kann: Die Grundlage sauber bauen. Mit klarer Struktur, verständlichen Seiten, sinnvollen Titeln, guten Inhalten, technischer Sauberkeit und passender Ausrichtung. Für lokale Sichtbarkeit gibt es eine eigene Seite: <a href="/lokal-gefunden-werden/">Lokal gefunden werden</a>.'
+    answer: 'Eine seriöse Garantie gibt es nicht. Was ich tun kann: Die Grundlage sauber bauen. Mit klarer Struktur, verständlichen Seiten, sinnvollen Titeln, guten Inhalten, technischer Sauberkeit und passender Ausrichtung. Für lokale Sichtbarkeit gibt es eine eigene Seite: <a href="/lokale-seo/">Lokal gefunden werden</a>.'
   },
   {
     question: 'Machst du lokale SEO für St. Gallen und die Ostschweiz?',
@@ -99,7 +99,7 @@ const schema = JSON.stringify({
       "@id": `${pageUrl}#breadcrumb`,
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.nigredo.ch/" },
-        { "@type": "ListItem", "position": 2, "name": "Lösungen", "item": "https://www.nigredo.ch/loesungen/" },
+        { "@type": "ListItem", "position": 2, "name": "Lösungen", "item": "https://www.nigredo.ch/digitale-loesungen/" },
         { "@type": "ListItem", "position": 3, "name": "Häufige Fragen", "item": pageUrl }
       ]
     },
@@ -134,12 +134,12 @@ const schema = JSON.stringify({
 ---
 
 <Layout
-  title="FAQ zu Websites, CMS und digitalen Lösungen | Nigredo"
+  title="Häufige Fragen zu Websites und CMS | Nigredo"
   description="Was kostet eine Website? Wann brauche ich ein CMS? Wie lange dauert die Umsetzung? Klare Antworten für KMU, Selbständige und Vereine."
   canonical={pageUrl}
-  ogTitle="FAQ zu Websites, CMS und digitalen Lösungen | Nigredo"
+  ogTitle="Häufige Fragen zu Websites und CMS | Nigredo"
   ogDescription="Klare Antworten zu Websites, CMS, Datenschutz, KI Helfern und lokaler Sichtbarkeit."
-  twitterTitle="FAQ zu Websites und CMS | Nigredo"
+  twitterTitle="Häufige Fragen zu Websites und CMS | Nigredo"
   twitterDescription="Antworten zu Kosten, CMS, digitalen Lösungen, KI Helfern und Zusammenarbeit."
   schema={schema}
 >
@@ -148,7 +148,7 @@ const schema = JSON.stringify({
     <div class="container sub-page-hero__container">
       <Breadcrumb items={[
         { label: 'Start', href: '/' },
-        { label: 'Lösungen', href: '/loesungen/' },
+        { label: 'Lösungen', href: '/digitale-loesungen/' },
         { label: 'Häufige Fragen' }
       ]} />
 
@@ -163,7 +163,7 @@ const schema = JSON.stringify({
         </p>
         <div class="hero-cta-group">
           <a href="/kontakt/" class="btn btn-primary">Frage direkt stellen</a>
-          <a href="/website-fuer-selbststaendige-kmu-und-vereine/" class="btn btn-ghost">Passende Websites ansehen</a>
+          <a href="/website-fuer-kmu-selbststaendige/" class="btn btn-ghost">Passende Websites ansehen</a>
         </div>
       </div>
     </div>
@@ -195,8 +195,8 @@ const schema = JSON.stringify({
         <span class="cta-label">OFFENE FRAGE?</span>
         <h2 id="cta-title">Schreib kurz,<br><span>worum es geht.</span></h2>
         <div class="hero-cta-group">
-          <a href="/kontakt/" class="btn btn-primary">Frage direkt stellen</a>
-          <a href="/loesungen/" class="btn btn-ghost">Lösungen ansehen</a>
+          <a href="/kontakt/" class="btn btn-primary">Antwort anfragen</a>
+          <a href="/digitale-loesungen/" class="btn btn-ghost">Lösungen ansehen</a>
         </div>
       </div>
     </div>

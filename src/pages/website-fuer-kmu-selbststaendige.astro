@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 
-const pageUrl = 'https://www.nigredo.ch/website-fuer-selbststaendige-kmu-und-vereine/';
+const pageUrl = 'https://www.nigredo.ch/website-fuer-kmu-selbststaendige/';
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
@@ -12,7 +12,7 @@ const schema = JSON.stringify({
       "@id": `${pageUrl}#breadcrumb`,
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.nigredo.ch/" },
-        { "@type": "ListItem", "position": 2, "name": "Lösungen", "item": "https://www.nigredo.ch/loesungen/" },
+        { "@type": "ListItem", "position": 2, "name": "Lösungen", "item": "https://www.nigredo.ch/digitale-loesungen/" },
         { "@type": "ListItem", "position": 3, "name": "Passende Websites", "item": pageUrl }
       ]
     },
@@ -67,7 +67,7 @@ const schema = JSON.stringify({
     <div class="container sub-page-hero__container">
       <Breadcrumb items={[
         { label: 'Start', href: '/' },
-        { label: 'Lösungen', href: '/loesungen/' },
+        { label: 'Lösungen', href: '/digitale-loesungen/' },
         { label: 'Passende Websites' }
       ]} />
 
@@ -82,7 +82,7 @@ const schema = JSON.stringify({
         </p>
         <div class="hero-cta-group">
           <a href="/kontakt/" class="btn btn-primary">Soll deine Website klarer werden?</a>
-          <a href="/loesungen/" class="btn btn-ghost">Lösungen ansehen</a>
+          <a href="/digitale-loesungen/" class="btn btn-ghost">Lösungen ansehen</a>
         </div>
       </div>
     </div>
@@ -97,7 +97,7 @@ const schema = JSON.stringify({
           Eine kleine Website darf schlank sein. Aber sie muss sitzen. Jede Seite hat eine Aufgabe: die richtige Person sofort verstehen zu lassen, dass sie hier richtig ist.
         </p>
         <p>
-          Klare Struktur, schnelle Ladezeit und ein Auftritt ohne Ballast. Das sind die Grundlagen, die immer gelten. Ob Handwerker, Beraterin, Praxis oder Verein: Wenn die Website sofort verständlich ist, tut sie ihren Job. Für lokale Suchanfragen gibt es eine eigene Seite: <a href="/lokal-gefunden-werden/">Lokal gefunden werden</a>.
+          Klare Struktur, schnelle Ladezeit und ein Auftritt ohne Ballast. Das sind die Grundlagen, die immer gelten. Ob Handwerker, Beraterin, Praxis oder Verein: Wenn die Website sofort verständlich ist, tut sie ihren Job. Für lokale Suchanfragen gibt es eine eigene Seite: <a href="/lokale-seo/">Lokal gefunden werden</a>.
         </p>
 
         <div class="seo-note fade-up delay-100 mt-10">
@@ -146,7 +146,7 @@ const schema = JSON.stringify({
         </div>
         <div class="text-content">
           <p>
-            Freiberufler, Berater, Praxen, Handwerksbetriebe, Vereine, Schulen und kleine Unternehmen. Überall dort, wo eine klare Onlinepräsenz den Unterschied macht und kein grosses Agentur-Budget vorhanden ist. Fragen zu Preis, CMS oder Ablauf: <a href="/haeufige-fragen-webdesign/">Häufige Fragen</a>.
+            Freiberufler, Berater, Praxen, Handwerksbetriebe, Vereine, Schulen und kleine Unternehmen. Überall dort, wo eine klare Onlinepräsenz den Unterschied macht und kein grosses Agentur-Budget vorhanden ist. Fragen zu Preis, CMS oder Ablauf: <a href="/faq-webdesign/">Häufige Fragen</a>.
           </p>
         </div>
       </div>
@@ -186,7 +186,7 @@ const schema = JSON.stringify({
         <h2 id="cta-title">Soll deine Website<br><span>einfacher werden?</span></h2>
         <div class="hero-cta-group">
           <a href="/kontakt/" class="btn btn-primary">Direkt anfragen</a>
-          <a href="/haeufige-fragen-webdesign/" class="btn btn-ghost">Häufige Fragen lesen</a>
+          <a href="/faq-webdesign/" class="btn btn-ghost">Häufige Fragen lesen</a>
         </div>
       </div>
     </div>

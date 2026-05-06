@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 
-const pageUrl = 'https://www.nigredo.ch/lokal-gefunden-werden/';
+const pageUrl = 'https://www.nigredo.ch/lokale-seo/';
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
@@ -11,7 +11,7 @@ const schema = JSON.stringify({
       "@id": `${pageUrl}#breadcrumb`,
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.nigredo.ch/" },
-        { "@type": "ListItem", "position": 2, "name": "Lösungen", "item": "https://www.nigredo.ch/loesungen/" },
+        { "@type": "ListItem", "position": 2, "name": "Lösungen", "item": "https://www.nigredo.ch/digitale-loesungen/" },
         { "@type": "ListItem", "position": 3, "name": "Lokal gefunden werden", "item": pageUrl }
       ]
     },
@@ -66,7 +66,7 @@ const schema = JSON.stringify({
     <div class="container sub-page-hero__container">
       <Breadcrumb items={[
         { label: 'Start', href: '/' },
-        { label: 'Lösungen', href: '/loesungen/' },
+        { label: 'Lösungen', href: '/digitale-loesungen/' },
         { label: 'Lokal gefunden werden' }
       ]} />
 
@@ -149,7 +149,7 @@ const schema = JSON.stringify({
         <h2 id="cta-title">Lass uns ansehen,<br><span>was lokal möglich ist.</span></h2>
         <div class="hero-cta-group">
           <a href="/kontakt/" class="btn btn-primary">Direkt anfragen</a>
-          <a href="/loesungen/" class="btn btn-ghost">Lösungen ansehen</a>
+          <a href="/digitale-loesungen/" class="btn btn-ghost">Lösungen ansehen</a>
         </div>
       </div>
     </div>

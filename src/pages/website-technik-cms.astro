@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 
-const pageUrl = 'https://www.nigredo.ch/technik-und-cms/';
+const pageUrl = 'https://www.nigredo.ch/website-technik-cms/';
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
@@ -12,7 +12,7 @@ const schema = JSON.stringify({
       "@id": `${pageUrl}#breadcrumb`,
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.nigredo.ch/" },
-        { "@type": "ListItem", "position": 2, "name": "Lösungen", "item": "https://www.nigredo.ch/loesungen/" },
+        { "@type": "ListItem", "position": 2, "name": "Lösungen", "item": "https://www.nigredo.ch/digitale-loesungen/" },
         { "@type": "ListItem", "position": 3, "name": "Technik & CMS", "item": pageUrl }
       ]
     },
@@ -63,7 +63,7 @@ const schema = JSON.stringify({
     <div class="container sub-page-hero__container">
       <Breadcrumb items={[
         { label: 'Start', href: '/' },
-        { label: 'Lösungen', href: '/loesungen/' },
+        { label: 'Lösungen', href: '/digitale-loesungen/' },
         { label: 'Technik & CMS' }
       ]} />
 
@@ -74,11 +74,11 @@ const schema = JSON.stringify({
           <span class="gradient-text">klar und pflegbar.</span>
         </h1>
         <p class="hero-lead sub-page-hero__lead">
-          Eine Website, die nach dem Launch schwieriger wird statt einfacher, ist das häufigste Problem. Ich baue technische Grundlagen, die schnell, schlank und pflegbar bleiben. Ohne Plugin Dschungel, ohne Overhead, ohne Abhängigkeiten, die du nicht brauchst.
+          Eine Website, die nach dem Launch schwieriger wird statt einfacher, ist das häufigste Problem. Ich baue technische Grundlagen, die schnell, schlank, klar und pflegbar bleiben. Ohne Plugin Dschungel, ohne Overhead, ohne Abhängigkeiten, die du nicht brauchst.
         </p>
         <div class="hero-cta-group">
           <a href="/kontakt/" class="btn btn-primary">Soll deine Website einfacher pflegbar werden?</a>
-          <a href="/haeufige-fragen-webdesign/" class="btn btn-ghost">Offene Fragen ansehen</a>
+          <a href="/faq-webdesign/" class="btn btn-ghost">Offene Fragen ansehen</a>
         </div>
       </div>
     </div>
@@ -187,8 +187,8 @@ const schema = JSON.stringify({
         <span class="cta-label">NÄCHSTER SCHRITT</span>
         <h2 id="cta-title">Weniger Abhängigkeit.<br><span>Mehr Ruhe im System.</span></h2>
         <div class="hero-cta-group">
-          <a href="/kontakt/" class="btn btn-primary">Soll deine Website einfacher pflegbar werden?</a>
-          <a href="/haeufige-fragen-webdesign/" class="btn btn-ghost">Häufige Fragen lesen</a>
+          <a href="/kontakt/" class="btn btn-primary">Technische Grundlage anfragen</a>
+          <a href="/faq-webdesign/" class="btn btn-ghost">Häufige Fragen lesen</a>
         </div>
       </div>
     </div>

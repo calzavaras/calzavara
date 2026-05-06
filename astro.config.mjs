@@ -7,7 +7,15 @@ export default defineConfig({
   publicDir: './static',
   outDir: './public',
   redirects: {
-    '/website-fuer-praxen-und-dienstleister/': '/lokal-gefunden-werden/',
+    '/website-fuer-praxen-und-dienstleister/': '/lokale-seo/',
+    '/ueber-uns/': '/marco-calzavara/',
+    '/loesungen/': '/digitale-loesungen/',
+    '/projektanfrage/': '/kontakt/',
+    '/website-fuer-selbststaendige-kmu-und-vereine/': '/website-fuer-kmu-selbststaendige/',
+    '/websites-fuer-kmu/': '/website-fuer-kmu-selbststaendige/',
+    '/lokal-gefunden-werden/': '/lokale-seo/',
+    '/technik-und-cms/': '/website-technik-cms/',
+    '/haeufige-fragen-webdesign/': '/faq-webdesign/',
   },
   integrations: [
     sitemap({
@@ -19,7 +27,7 @@ export default defineConfig({
           item.priority = 1.0;
           item.lastmod = new Date('2026-05-03');
         }
-        else if (url === 'https://www.nigredo.ch/loesungen/' || url === 'https://www.nigredo.ch/referenzen/') {
+        else if (url === 'https://www.nigredo.ch/digitale-loesungen/' || url === 'https://www.nigredo.ch/referenzen/') {
           item.priority = 0.9;
           item.lastmod = new Date('2026-05-03');
         }
@@ -35,7 +43,7 @@ export default defineConfig({
           item.priority = 0.8;
           item.lastmod = new Date('2026-05-03');
         }
-        else if (url === 'https://www.nigredo.ch/ueber-uns/') {
+        else if (url === 'https://www.nigredo.ch/marco-calzavara/') {
           item.priority = 0.8;
           item.lastmod = new Date('2026-05-03');
         }
@@ -44,10 +52,10 @@ export default defineConfig({
           item.lastmod = new Date('2026-05-03');
         }
         else if ([
-          'https://www.nigredo.ch/website-fuer-selbststaendige-kmu-und-vereine/',
-          'https://www.nigredo.ch/lokal-gefunden-werden/',
-          'https://www.nigredo.ch/technik-und-cms/',
-          'https://www.nigredo.ch/haeufige-fragen-webdesign/',
+          'https://www.nigredo.ch/website-fuer-kmu-selbststaendige/',
+          'https://www.nigredo.ch/lokale-seo/',
+          'https://www.nigredo.ch/website-technik-cms/',
+          'https://www.nigredo.ch/faq-webdesign/',
         ].includes(url)) {
           item.priority = 0.75;
           item.lastmod = new Date('2026-05-05');

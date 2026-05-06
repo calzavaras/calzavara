@@ -41,19 +41,19 @@ Individuelle Business-Software und moderne Firmenwebseiten für KMU. Kundenverwa
 
 #### Websites für Selbständige, KMU & Vereine
 Professionelle Websites für Selbständige, kleinere Unternehmen, Vereine und Privatpersonen. Klarer Auftritt, mobile Darstellung, direkte Kontaktmöglichkeit und keine Baukasten-Optik.
-- URL: https://www.nigredo.ch/website-fuer-selbststaendige-kmu-und-vereine/
+- URL: https://www.nigredo.ch/website-fuer-kmu-selbststaendige/
 
 #### Technik & CMS für Websites
 Technische Grundlagen und CMS für Websites, die pflegbar, schnell, schlank und erweiterbar bleiben. Ohne unnötigen Ballast und ohne Abhängigkeit bei jeder kleinen Änderung.
-- URL: https://www.nigredo.ch/technik-und-cms/
+- URL: https://www.nigredo.ch/website-technik-cms/
 
 #### Lokal gefunden werden
 Lokale Sichtbarkeit für Einzelfirmen, KMU, Praxen, Dienstleister, Vereine und Menschen mit klaren Vorhaben. Fokus auf regionale Relevanz, Vertrauen, klare Informationen und direkte nächste Schritte.
-- URL: https://www.nigredo.ch/lokal-gefunden-werden/
+- URL: https://www.nigredo.ch/lokale-seo/
 
 #### Häufige Fragen zu Webdesign
 Klare Antworten zu Kosten, Dauer, CMS, Mobile, Datenschutz und kleinen Websites.
-- URL: https://www.nigredo.ch/haeufige-fragen-webdesign/
+- URL: https://www.nigredo.ch/faq-webdesign/
 
 ### Tabellen, Daten & Dokumente
 Excel-Vorlagen, Datenaufbereitung, automatisierte Berichte. Ordnung in bestehenden Daten. Die Excel-Datei, die niemand mehr anfassen will – ich bringe sie in Form.
@@ -115,7 +115,7 @@ Ja, KI-Tools werden gezielt eingesetzt – für Texte, Bilder, Code und Automati
 
 Marco Calzavara ist Gründer von Nigredo, Mitgründer der HappyPath GmbH und Teamleiter in der kantonalen Verwaltung mit Verantwortung für Abteilungsentwicklung. Er verbindet Führungserfahrung, mehrere gegründete und teils verkaufte Firmen, KI-Interesse, Gestaltung und ein starkes Netzwerk erfahrener Informatikfachleute. Sein Fokus: Möglichkeiten erkennen, die richtigen Menschen verbinden und Ideen schnell, direkt und ohne Theater in Ergebnisse bringen.
 
-- Profil: https://www.nigredo.ch/ueber-uns/
+- Profil: https://www.nigredo.ch/marco-calzavara/
 - LinkedIn: https://ch.linkedin.com/in/calzavara-marco
 - GitHub: https://github.com/calza
 
