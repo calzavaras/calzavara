@@ -825,6 +825,7 @@ nav {
 .logo-picture {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .logo-img {
@@ -837,6 +838,20 @@ nav {
 .logo:hover .logo-img {
   transform: scale(1.04);
   filter: brightness(1.1) drop-shadow(0 0 15px rgba(255, 255, 255, 0.1));
+}
+
+.logo-blink-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.logo-picture--blink.is-blinking .logo-blink-overlay {
+  opacity: 1;
 }
 
 .nav-links {
@@ -2314,6 +2329,10 @@ nav {
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.001ms !important;
+  }
+
+  .logo-blink-overlay {
+    display: none;
   }
 }
 

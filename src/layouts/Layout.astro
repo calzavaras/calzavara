@@ -1,5 +1,9 @@
 ---
 import '../styles/global.css';
+import { readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ContactModal from '../components/ContactModal.astro';
@@ -26,7 +30,19 @@ interface Props {
   preloadImageSizes?: string;
 }
 
-const jsVersion = process.env.npm_package_version ?? '1';
+const layoutDir = dirname(fileURLToPath(import.meta.url));
+const mainScriptPath = resolve(layoutDir, '../../static/main.min.js');
+
+function getMainScriptVersion(): string {
+  try {
+    const script = readFileSync(mainScriptPath);
+    return createHash('sha256').update(script).digest('hex').slice(0, 12);
+  } catch {
+    return process.env.npm_package_version ?? '1';
+  }
+}
+
+const jsVersion = getMainScriptVersion();
 
 const {
   title,
