@@ -68,31 +68,31 @@ Ja, KI-Tools werden gezielt eingesetzt – für Texte, Bilder, Code und Automati
 
 ---
 
-# Website für Einzelfirmen & KMU (https://www.nigredo.ch/website-fuer-einzelunternehmen-kmu/)
+# Website für Selbständige, KMU & Vereine (https://www.nigredo.ch/website-fuer-selbststaendige-kmu-und-vereine/)
 
 ## Grosse Wirkung. Ohne Agentur-Overhead.
 
-Eine Einzelfirma zu sein, heisst nicht, dass der Webauftritt nach Bastelarbeit aussehen muss. Nigredo baut digitale Visitenkarten, die professionell wirken, funktionieren und ins Budget passen.
+Eine kleine Website muss nicht klein wirken. Nigredo baut klare Auftritte für Selbständige, KMU, Vereine und Privatpersonen, die professionell wirken, funktionieren und ins Budget passen.
 
 Baukästen wie Wix oder Jimdo wirken am Anfang bequem. Später zeigen sich oft starre Gestaltung, technische Grenzen, Zusatzkosten und ein Auftritt, der aussieht wie viele andere. Eine kleine Website darf reduziert sein. Aber sie muss sitzen: klare Texte, saubere Führung, schneller Kontakt und mobile Darstellung.
 
-Geeignet für Einzelfirmen, Beratungen, kleine Praxen, lokale Dienstleister, Handwerker, Garagen, kreative Selbständige und KMU mit begrenztem Budget.
+Geeignet für Selbständige, Beratungen, Vereine, kleine Praxen, lokale Dienstleister, Handwerker, kleinere Unternehmen und Privatpersonen mit einem klaren Anliegen.
 
-Highlights: professionelle Webvisitenkarte, klare Positionierung, direkter Kontaktweg, technische SEO-Grundlage, keine Baukasten-Optik.
+Highlights: klare Positionierung, direkter Kontaktweg, technische SEO-Grundlage, mobile Darstellung, keine Baukasten-Optik.
 
 ---
 
-# Website mit CMS, SEO & Datenschutz (https://www.nigredo.ch/website-mit-cms-und-datenschutz/)
+# Technik & CMS für Websites (https://www.nigredo.ch/technik-und-cms/)
 
-## Du kriegst den Schlüssel. Deine Website, deine Kontrolle.
+## Technik, die nicht im Weg steht.
 
-Du willst für ein neues Bild oder einen geänderten Satz nicht jedes Mal eine Agentur anrufen und bezahlen. Musst du auch nicht.
+Eine gute Website soll nicht kompliziert werden, sobald sie fertig ist. Inhalte ändern, Bilder ersetzen, Leistungen aktualisieren oder neue Bereiche ergänzen soll möglich sein, ohne jedes Mal abhängig zu sein.
 
-Nigredo baut Websites mit CMS oder Adminbereich, wenn das für das Projekt sinnvoll ist. Texte, Bilder, Leistungen oder Hinweise können selbst gepflegt werden, ohne dass die Website schwerfällig wird.
+Nigredo baut Websites mit einer technischen Grundlage, die ruhig bleibt: schnell, schlank, verständlich, pflegbar und bereit für das, was später dazukommt. Ein CMS ist nur dann sinnvoll, wenn es Arbeit abnimmt und Kontrolle gibt, statt neue Hürden zu schaffen.
 
-Die technische Grundlage umfasst responsive Umsetzung, saubere Titel und Beschreibungen, Canonicals, strukturierte Daten, Sitemap und schnelle Auslieferung. Für Tracking wird auf datenschutzfreundliche Lösungen wie Umami gesetzt: schlank, anonym und passend zum Schweizer DSG.
+Wenn Inhalte ruhig bleiben, reicht oft eine statische Website. Wenn regelmässig Inhalte gepflegt werden, lohnt sich ein CMS. Und wenn die Website mehr können soll, wird sie zu einem präzisen Werkzeug. Datenschutzfreundliches Tracking bleibt möglich, ohne Cookie-Chaos oder unnötigen Ballast.
 
-Highlights: CMS, Website selbst verwalten, technische SEO, responsive Webdesign, Umami statt Google Analytics, DSG-freundliches Tracking.
+Highlights: Technik & CMS, pflegbare Website, schlanke Architektur, Erweiterbarkeit, datenschutzfreundliches Tracking, saubere Systemlogik.
 
 ---
 
@@ -100,13 +100,13 @@ Highlights: CMS, Website selbst verwalten, technische SEO, responsive Webdesign,
 
 ## Lokal gefunden werden als Praxis oder Dienstleister.
 
-Wenn das Telefon ständig klingelt, weil Kunden nach Öffnungszeiten, Leistungen oder Terminen fragen, arbeitet die Website nicht richtig. Wer lokal nach deiner Leistung sucht, soll dich sofort finden und direkt verstehen, ob er bei dir richtig ist.
+Wer in deiner Region sucht, soll nicht raten müssen. Er soll verstehen, was du machst, wo du tätig bist, für wen dein Angebot gedacht ist und warum er bei dir richtig ist.
 
-Für Praxen, Therapeuten, Handwerker, Garagen und Dienstleister zählt nicht der lauteste Auftritt. Es zählt, dass Besucher schnell verstehen, ob sie richtig sind und was sie als Nächstes tun sollen. Öffnungszeiten, Standort, Leistungen, Preise, Terminbuchung und Kontakt müssen klar erreichbar sein.
+Lokal sichtbar werden heisst nicht, überall aufzutauchen. Es heisst, in St. Gallen, der Ostschweiz, im Thurgau, in Appenzell, im Rheintal oder im Bodenseeraum dort verständlich zu sein, wo Menschen wirklich suchen, vergleichen und entscheiden.
 
-Referenz: Für Therapie Ost entstand eine ruhige Praxiswebsite mit klarer Führung und direkter Online-Terminbuchung über Cituro. Die Website schafft Vertrauen und hält den Weg zum Termin kurz.
+Eine gute lokale Website verbindet Region, Inhalt, Struktur und Vertrauen. Sie zeigt, was du anbietest, führt zum nächsten Schritt und verzichtet auf SEO-Theater. Referenz: Für Therapie Ost entstand eine Website, die regional sichtbar ist, Vertrauen schafft und den Weg zur Online-Terminbuchung kurz hält.
 
-Highlights: lokale SEO, Praxiswebsite, Dienstleister-Website, regionale Sichtbarkeit, Online-Terminbuchung, mobile Führung, klare Leistungen, Referenz Therapie Ost.
+Highlights: lokale SEO, regionale Sichtbarkeit, klare Positionierung, verständliche Inhalte, direkte Anfragewege, Vertrauen, Referenz Therapie Ost.
 
 ---
 

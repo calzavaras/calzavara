@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initScrollAnimations();
   if (document.querySelector('[data-refs-grid]')) initReferencesReveal();
-  if (document.querySelector('#mailBtn, .reveal-mail')) initSpamProtection();
+  if (document.querySelector('#mailBtn, .reveal-mail, .open-contact')) initSpamProtection();
   if (document.getElementById('contact-modal')) initContactModal();
   if (document.querySelector('.accordion-header')) initAccordions();
   if (document.querySelector('.lightbox-trigger')) setTimeout(initLightbox, TIMING.LIGHTBOX_INIT_DELAY);
@@ -199,7 +199,7 @@ function initCardSpotlight() {
 }
 
 function initSpamProtection() {
-  const triggers = document.querySelectorAll('#mailBtn, .reveal-mail');
+  const triggers = document.querySelectorAll('#mailBtn, .reveal-mail, .open-contact');
   triggers.forEach(el => {
     el.addEventListener('click', (e) => {
       e.preventDefault();

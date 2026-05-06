@@ -14,48 +14,41 @@ export default defineConfig({
       changefreq: 'monthly',
       priority: 0.7,
       serialize(item) {
-        const normalizedUrl = item.url !== 'https://www.nigredo.ch/' && item.url.endsWith('/')
-          ? item.url.slice(0, -1)
-          : item.url;
-        // Hauptseiten
-        if (normalizedUrl === 'https://www.nigredo.ch/') {
+        const url = item.url;
+        if (url === 'https://www.nigredo.ch/') {
           item.priority = 1.0;
           item.lastmod = new Date('2026-05-03');
         }
-        // Kern-Seiten
-        else if (normalizedUrl === 'https://www.nigredo.ch/loesungen' || normalizedUrl === 'https://www.nigredo.ch/referenzen') {
+        else if (url === 'https://www.nigredo.ch/loesungen/' || url === 'https://www.nigredo.ch/referenzen/') {
           item.priority = 0.9;
           item.lastmod = new Date('2026-05-03');
         }
-        // Individuelle Referenzseiten
-        else if (normalizedUrl === 'https://www.nigredo.ch/referenzen/ki-voice-agent') {
+        else if (url === 'https://www.nigredo.ch/referenzen/ki-voice-agent/') {
           item.priority = 0.8;
           item.lastmod = new Date('2026-05-03');
         }
-        else if (normalizedUrl === 'https://www.nigredo.ch/referenzen/dashboard-kantonsverwaltung') {
+        else if (url === 'https://www.nigredo.ch/referenzen/dashboard-kantonsverwaltung/') {
           item.priority = 0.8;
           item.lastmod = new Date('2026-05-03');
         }
-        else if (normalizedUrl === 'https://www.nigredo.ch/referenzen/therapie-ost') {
+        else if (url === 'https://www.nigredo.ch/referenzen/therapie-ost/') {
           item.priority = 0.8;
           item.lastmod = new Date('2026-05-03');
         }
-        // Sekundärseiten
-        else if (normalizedUrl === 'https://www.nigredo.ch/ueber-uns') {
+        else if (url === 'https://www.nigredo.ch/ueber-uns/') {
           item.priority = 0.8;
           item.lastmod = new Date('2026-05-03');
         }
-        else if (normalizedUrl === 'https://www.nigredo.ch/kontakt') {
+        else if (url === 'https://www.nigredo.ch/kontakt/') {
           item.priority = 0.8;
           item.lastmod = new Date('2026-05-03');
         }
-        // SEO-Detailseiten
         else if ([
-          'https://www.nigredo.ch/website-fuer-einzelunternehmen-kmu',
-          'https://www.nigredo.ch/lokal-gefunden-werden',
-          'https://www.nigredo.ch/website-mit-cms-und-datenschutz',
-          'https://www.nigredo.ch/haeufige-fragen-webdesign',
-        ].includes(normalizedUrl)) {
+          'https://www.nigredo.ch/website-fuer-selbststaendige-kmu-und-vereine/',
+          'https://www.nigredo.ch/lokal-gefunden-werden/',
+          'https://www.nigredo.ch/technik-und-cms/',
+          'https://www.nigredo.ch/haeufige-fragen-webdesign/',
+        ].includes(url)) {
           item.priority = 0.75;
           item.lastmod = new Date('2026-05-05');
         }
@@ -64,9 +57,13 @@ export default defineConfig({
       filter: (page) => !page.includes('/404') && !page.includes('/impressum') && !page.includes('/datenschutz'),
     }),
   ],
-  // Astro empfiehlt bei build.format "directory" konsistente trailing slashes.
   trailingSlash: 'always',
   build: {
     format: 'directory',
+    inlineStylesheets: 'auto',
   },
+  image: {
+    service: { entrypoint: 'astro/assets/services/sharp' },
+  },
+  compressHTML: true,
 });

@@ -6,29 +6,30 @@ import { getReferencePage, getReferencePageCount } from '../../data/references';
 const pageNumber = 1;
 const pageCount = getReferencePageCount();
 const pageItems = getReferencePage(pageNumber);
+const pageUrl = 'https://www.nigredo.ch/referenzen/';
 
 const schema = JSON.stringify({
   '@context': 'https://schema.org',
   '@graph': [
     {
       '@type': 'BreadcrumbList',
-      '@id': 'https://www.nigredo.ch/referenzen#breadcrumb',
+      '@id': `${pageUrl}#breadcrumb`,
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Start', item: 'https://www.nigredo.ch/' },
-        { '@type': 'ListItem', position: 2, name: 'Referenzen', item: 'https://www.nigredo.ch/referenzen' },
+        { '@type': 'ListItem', position: 2, name: 'Referenzen', item: pageUrl },
       ],
     },
     {
       '@type': 'CollectionPage',
-      '@id': 'https://www.nigredo.ch/referenzen#webpage',
-      url: 'https://www.nigredo.ch/referenzen',
-      name: 'Referenzprojekte – KI, Websites & Software für Schweizer KMU | Nigredo',
+      '@id': `${pageUrl}#webpage`,
+      url: pageUrl,
+      name: 'Referenzprojekte für Schweizer KMU | Nigredo',
       description: 'Echte Projekte: KI Voice Agent für IV-Stellen, lokales Excel-Dashboard für Verwaltung und die Website von Therapie Ost. Massgeschneiderte digitale Lösungen von Nigredo, St. Gallen.',
       inLanguage: 'de-CH',
       datePublished: '2025-06-01',
       dateModified: '2026-05-03',
       isPartOf: { '@id': 'https://www.nigredo.ch/#website' },
-      breadcrumb: { '@id': 'https://www.nigredo.ch/referenzen#breadcrumb' },
+      breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
       isAccessibleForFree: true,
       mainEntity: {
         '@type': 'ItemList',
@@ -45,10 +46,9 @@ const schema = JSON.stringify({
 ---
 
 <Layout
-  title="Referenzprojekte – KI, Websites & Software für Schweizer KMU | Nigredo"
+  title="Referenzprojekte für Schweizer KMU | Nigredo"
   description="Echte Projekte: KI Voice Agent für IV-Stellen, lokales Excel-Dashboard für Verwaltung und die Website von Therapie Ost. Massgeschneiderte digitale Lösungen von Nigredo, St. Gallen."
-  keywords="Referenzen Nigredo, KI Voice Agent Schweiz, Excel Dashboard Verwaltung, Praxis Website Referenz, digitale Lösungen Schweiz, Softwareentwicklung Referenzen, KI-Projekte St. Gallen, Website Referenzen KMU"
-  canonical="https://www.nigredo.ch/referenzen"
+  canonical={pageUrl}
   ogTitle="Gebaut. Nicht versprochen. | Nigredo"
   ogDescription="Keine Demos, keine Konzeptpapiere. Projekte, die raus sind und arbeiten. KI Voice Agent, Excel-Dashboard und mehr."
   ogImageAlt="Nigredo Referenzen – Echte Projekte, keine Demos"

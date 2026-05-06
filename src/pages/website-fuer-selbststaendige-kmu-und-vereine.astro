@@ -2,7 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 
-const pageUrl = 'https://www.nigredo.ch/lokal-gefunden-werden/';
+const pageUrl = 'https://www.nigredo.ch/website-fuer-selbststaendige-kmu-und-vereine/';
+
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
@@ -12,15 +13,15 @@ const schema = JSON.stringify({
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.nigredo.ch/" },
         { "@type": "ListItem", "position": 2, "name": "Lösungen", "item": "https://www.nigredo.ch/loesungen/" },
-        { "@type": "ListItem", "position": 3, "name": "Lokal gefunden werden", "item": pageUrl }
+        { "@type": "ListItem", "position": 3, "name": "Passende Websites", "item": pageUrl }
       ]
     },
     {
       "@type": "Service",
       "@id": `${pageUrl}#service`,
-      "name": "Lokale Sichtbarkeit für Selbständige, KMU, Praxen, Dienstleister und Vereine",
-      "serviceType": "Lokale SEO, regionale Sichtbarkeit und klare Websites für lokale Angebote",
-      "description": "Lokale Sichtbarkeit für Selbständige, KMU, Praxen, Dienstleister, Vereine und Menschen mit klaren Vorhaben. Für mehr Verständnis, Vertrauen und passende Anfragen aus der Region.",
+      "name": "Websites für Selbständige, KMU und Vereine",
+      "serviceType": "Webdesign, Webentwicklung, SEO und digitale Lösungen für kleine Unternehmen",
+      "description": "Individuelle Websites für Selbständige, KMU, Praxen, Vereine und Menschen mit klaren Vorhaben. Für mehr Sichtbarkeit, Verständnis und passende Anfragen.",
       "provider": { "@id": "https://www.nigredo.ch/#organization" },
       "areaServed": [
         { "@type": "City", "name": "St. Gallen" },
@@ -29,15 +30,15 @@ const schema = JSON.stringify({
       ],
       "audience": {
         "@type": "Audience",
-        "audienceType": "Einzelfirmen, KMU, Praxen, Dienstleister, Vereine und Privatpersonen mit öffentlichem Vorhaben"
+        "audienceType": "Selbständige, KMU, Praxen, Vereine und Schulen"
       }
     },
     {
       "@type": "WebPage",
       "@id": `${pageUrl}#webpage`,
       "url": pageUrl,
-      "name": "Lokal sichtbar werden | Nigredo",
-      "description": "Lokale Sichtbarkeit für Selbständige, KMU, Praxen, Dienstleister, Vereine und Menschen mit klaren Vorhaben. Für mehr Verständnis, Vertrauen und passende Anfragen aus der Region.",
+      "name": "Website für Selbständige, KMU & Vereine | Nigredo",
+      "description": "Ich baue Websites für Menschen mit klaren Vorhaben. Ohne Ballast, dafür mit viel Fokus auf das, was zählt.",
       "isPartOf": { "@id": "https://www.nigredo.ch/#website" },
       "about": { "@id": `${pageUrl}#service` },
       "breadcrumb": { "@id": `${pageUrl}#breadcrumb` },
@@ -52,36 +53,36 @@ const schema = JSON.stringify({
 ---
 
 <Layout
-  title="Lokal sichtbar werden | Nigredo"
-  description="Lokal gefunden werden in St. Gallen, Ostschweiz und der Schweiz. Website, Inhalte und Google-Präsenz ausrichten – damit die richtigen Menschen in deiner Region auf dich stossen."
+  title="Website für Selbständige, KMU & Vereine | Nigredo"
+  description="Ich baue Websites für Menschen mit klaren Vorhaben. Ohne Ballast, dafür mit viel Fokus auf das, was zählt: Klarheit, Geschwindigkeit und passende Anfragen."
   canonical={pageUrl}
-  ogTitle="Lokal sichtbar werden | Nigredo"
-  ogDescription="Für Selbständige, KMU, Praxen, Dienstleister, Vereine und klare Vorhaben: lokal besser gefunden und schneller verstanden werden."
-  twitterTitle="Lokal sichtbar werden | Nigredo"
-  twitterDescription="Lokal besser gefunden und schneller verstanden werden."
+  ogTitle="Website für Selbständige, KMU & Vereine | Nigredo"
+  ogDescription="Ich baue Websites für Menschen mit klaren Vorhaben. Ohne Ballast, dafür mit viel Fokus auf das, was zählt."
+  twitterTitle="Website für Selbständige, KMU & Vereine | Nigredo"
+  twitterDescription="Websites für Selbständige, KMU, Vereine und Menschen mit klaren Vorhaben."
   schema={schema}
 >
-  <section class="section sub-page-hero" aria-labelledby="lokal-title">
+  <section class="section sub-page-hero" aria-labelledby="passende-websites-title">
     <div class="hero-glow"></div>
     <div class="container sub-page-hero__container">
       <Breadcrumb items={[
         { label: 'Start', href: '/' },
         { label: 'Lösungen', href: '/loesungen/' },
-        { label: 'Lokal gefunden werden' }
+        { label: 'Passende Websites' }
       ]} />
 
       <div class="fade-up sub-page-hero__content">
-        <span class="badge badge--pink">LOKAL GEFUNDEN WERDEN</span>
-        <h1 id="lokal-title" class="sub-page-hero__title">
-          Lokal sichtbar werden.<br class="hidden-mobile">
-          <span class="gradient-text">Gefunden von den Richtigen. In deiner Region.</span>
+        <span class="badge badge--cyan">LÖSUNGEN FÜR KMU & SELBSTÄNDIGE</span>
+        <h1 id="passende-websites-title" class="sub-page-hero__title">
+          Websites, die passen.<br class="hidden-mobile">
+          <span class="gradient-text">Klar, schnell und ohne Ballast.</span>
         </h1>
         <p class="hero-lead sub-page-hero__lead">
-          Wenn jemand in St. Gallen, der Ostschweiz oder deiner Region nach deinem Angebot sucht – ist deine Website klar und vertrauenswürdig genug, damit er bleibt? Ich sorge dafür, dass du regional auffindbar bist und sofort richtig verstanden wirst.
+          Ich baue Websites für Menschen, die ein klares Ziel haben. Ohne Plugin-Dschungel, ohne unnötige Abos und ohne Technik, die im Weg steht. Für Projekte, die verständlich informieren und einfach zu pflegen sind.
         </p>
         <div class="hero-cta-group">
-          <a href="/kontakt/" class="btn btn-primary">Lass mich ansehen, wie du lokal dastehst</a>
-          <a href="/referenzen/" class="btn btn-ghost">Referenzen ansehen</a>
+          <a href="/kontakt/" class="btn btn-primary">Soll deine Website klarer werden?</a>
+          <a href="/loesungen/" class="btn btn-ghost">Lösungen ansehen</a>
         </div>
       </div>
     </div>
@@ -90,53 +91,89 @@ const schema = JSON.stringify({
   <section class="section pt-compact" aria-labelledby="intro-title">
     <div class="container">
       <div class="fade-up max-w-copy">
-        <span class="cta-label">Relevanz statt Reichweite</span>
-        <h2 id="intro-title" class="mb-4">Nicht überall sichtbar. Sondern dort, wo es zählt.</h2>
+        <span class="cta-label">Was eine Website wirklich leisten muss.</span>
+        <h2 id="intro-title" class="mb-4">Eine gute Website ist klar, schnell und glaubwürdig.</h2>
         <p>
-          Lokale Sichtbarkeit bedeutet nicht, überall zu erscheinen. Es bedeutet, von den richtigen Menschen gefunden zu werden – von jemandem in St. Gallen, Thurgau, Appenzell oder Rheintal, der gerade genau das sucht, was du anbietest.
+          Eine kleine Website darf schlank sein. Aber sie muss sitzen. Jede Seite hat eine Aufgabe: die richtige Person sofort verstehen zu lassen, dass sie hier richtig ist.
         </p>
         <p>
-          Eine gute lokale Website zeigt klar, was du tust, wo du tätig bist und wie man zu dir kommt. Google versteht das. Und Menschen, die sich für dein Angebot entscheiden wollen, auch.
+          Klare Struktur, schnelle Ladezeit, ein Auftritt ohne Ballast – das sind die Grundlagen, die immer gelten. Ob Handwerker, Beraterin, Praxis oder Verein: Wenn die Website sofort verständlich ist, tut sie ihren Job. Für lokale Suchanfragen gibt es eine eigene Seite: <a href="/lokal-gefunden-werden/">Lokal gefunden werden</a>.
         </p>
 
         <div class="seo-note fade-up delay-100 mt-10">
           <span class="seo-note__label">Kurz gesagt</span>
-          <p>Gefunden werden reicht nicht. Entscheidend ist, was nach dem Klick passiert.</p>
+          <p>Eine gute Website braucht keine zwanzig Seiten. Sie braucht drei Dinge: Klarheit, Geschwindigkeit und einen direkten Weg zur Anfrage.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section home-values" aria-labelledby="lokal-output">
+  <section class="section home-values" aria-labelledby="passende-websites-output">
     <div class="container">
       <div class="fade-up mb-10">
-        <span class="cta-label">Was besser wird</span>
-        <h2 id="lokal-output">Was lokale Sichtbarkeit konkret besser macht.</h2>
+        <span class="cta-label">Was entsteht</span>
+        <h2 id="passende-websites-output">Was Besucher in den ersten Sekunden verstehen müssen.</h2>
       </div>
       <div class="grid-3">
         <article class="card value-card fade-up" style="--icon-gradient: linear-gradient(135deg, #00d2ff 0%, #a64dff 100%); --icon-shadow: rgba(0, 210, 255, 0.34);">
-          <div class="card-icon" aria-hidden="true"><div class="gradient-icon" style="-webkit-mask-image: url('/assets/icons/icon-local-seo-basis.svg'); mask-image: url('/assets/icons/icon-local-seo-basis.svg');"></div></div>
-          <span class="cta-label">Region</span>
-          <h3>Dein Ort wird Teil der Aussage.</h3>
-          <p>St. Gallen, Thurgau, Appenzell, Rheintal oder ein klar definiertes Einzugsgebiet: Region wird dort eingebunden, wo sie echten Kontext gibt – nicht als Dekoration. Einschliesslich Google Business Profil, wenn das für dein Angebot relevant ist.</p>
+          <div class="card-icon" aria-hidden="true"><div class="gradient-icon" style="-webkit-mask-image: url('/assets/icons/icon-kmu-kompass.svg'); mask-image: url('/assets/icons/icon-kmu-kompass.svg');"></div></div>
+          <span class="cta-label">Positionierung</span>
+          <h3>Worum es geht – sofort.</h3>
+          <p>Wer auf die Website kommt, muss in Sekunden verstehen: Was bietest du an, für wen und wo bist du erreichbar. Kein Scrollen. Kein Rätseln.</p>
         </article>
         <article class="card value-card fade-up delay-100" style="--icon-gradient: linear-gradient(135deg, #ffc700 0%, #ff4d80 100%); --icon-shadow: rgba(196, 77, 255, 0.34);">
-          <div class="card-icon" aria-hidden="true"><div class="gradient-icon" style="-webkit-mask-image: url('/assets/icons/icon-local-standort.svg'); mask-image: url('/assets/icons/icon-local-standort.svg');"></div></div>
-          <span class="cta-label">Inhalt</span>
-          <h3>Deine Website sagt klarer, wofür du stehst.</h3>
-          <p>Viele Websites bleiben zu allgemein. Sie klingen austauschbar, erklären zu wenig oder verwenden Begriffe, nach denen niemand sucht. Ich schärfe Inhalte so, dass dein Angebot verständlicher wird. Für Besucher, für Google und für Menschen, die eine Entscheidung treffen wollen.</p>
+          <div class="card-icon" aria-hidden="true"><div class="gradient-icon" style="-webkit-mask-image: url('/assets/icons/icon-kmu-kontaktweg.svg'); mask-image: url('/assets/icons/icon-kmu-kontaktweg.svg');"></div></div>
+          <span class="cta-label">Kontakt</span>
+          <h3>Kurzer Weg zum nächsten Schritt</h3>
+          <p>Telefon, Formular oder Termin: Der nächste Schritt ist klar sichtbar und auf jedem Gerät leicht erreichbar.</p>
         </article>
         <article class="card value-card fade-up delay-200" style="--icon-gradient: linear-gradient(135deg, #a64dff 0%, #ff4d80 100%); --icon-shadow: rgba(255, 77, 128, 0.32);">
-          <div class="card-icon" aria-hidden="true"><div class="gradient-icon" style="-webkit-mask-image: url('/assets/icons/icon-local-anfrage.svg'); mask-image: url('/assets/icons/icon-local-anfrage.svg');"></div></div>
-          <span class="cta-label">Struktur</span>
-          <h3>Besucher finden schneller den nächsten Schritt.</h3>
-          <p>Eine lokale Website muss führen: zu deiner Leistung, zu deinem Standort, zu einem Termin, zu einer Anfrage oder zu einem ersten Gespräch. Je klarer dieser Weg ist, desto weniger Menschen springen ab.</p>
-        </article>
-        <article class="card value-card fade-up delay-300" style="--icon-gradient: linear-gradient(135deg, #00d2ff 0%, #ffc700 100%); --icon-shadow: rgba(255, 199, 0, 0.30);">
           <div class="card-icon" aria-hidden="true"><div class="gradient-icon" style="-webkit-mask-image: url('/assets/icons/icon-kmu-vertrauen.svg'); mask-image: url('/assets/icons/icon-kmu-vertrauen.svg');"></div></div>
-          <span class="cta-label">Vertrauen</span>
-          <h3>Der erste Eindruck bekommt Gewicht.</h3>
-          <p>Wer lokal sucht, vergleicht oft mehrere Anbieter. Darum muss deine Website nicht nur auffindbar sein, sondern glaubwürdig wirken: mit klarer Sprache, echten Informationen, passenden Nachweisen und einem Auftritt, der so sorgfältig ist wie deine Arbeit.</p>
+          <span class="cta-label">Eindruck</span>
+          <h3>Schnell, sauber, eigenständig.</h3>
+          <p>Keine Plugins, die sich aufblasen. Kein Design von der Stange. Ein Auftritt, der so wirkt, wie du arbeitest.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section pt-compact" aria-labelledby="passende-websites-fit">
+    <div class="container">
+      <div class="fade-up split-layout">
+        <div>
+          <span class="cta-label">Für wen</span>
+          <h2 id="passende-websites-fit" class="mb-4">Für alle, die mit einer Website etwas Konkretes erreichen wollen.</h2>
+        </div>
+        <div class="text-content">
+          <p>
+            Freiberufler, Berater, Praxen, Handwerksbetriebe, Vereine, Schulen und kleine Unternehmen. Überall dort, wo eine klare Onlinepräsenz den Unterschied macht und kein grosses Agentur-Budget vorhanden ist. Fragen zu Preis, CMS oder Ablauf: <a href="/haeufige-fragen-webdesign/">Häufige Fragen</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section pt-compact" aria-labelledby="passende-websites-process">
+    <div class="container">
+      <div class="fade-up mb-10" style="margin-top: 40px;">
+        <span class="cta-label">Vorgehen</span>
+        <h2 id="passende-websites-process">So läuft die Umsetzung ab.</h2>
+      </div>
+      <div class="grid-3 process-grid">
+        <article class="process-card fade-up">
+          <span class="process-number gradient-text">1.</span>
+          <h3>Verstehen</h3>
+          <p>Wir klären, worum es geht, wen du erreichen willst und was auf die Website gehört.</p>
+        </article>
+        <article class="process-card fade-up delay-100">
+          <span class="process-number gradient-text">2.</span>
+          <h3>Verdichten</h3>
+          <p>Ich reduziere auf das Wesentliche: klare Struktur, klare Aussagen, klarer nächster Schritt.</p>
+        </article>
+        <article class="process-card fade-up delay-200">
+          <span class="process-number gradient-text">3.</span>
+          <h3>Umsetzen</h3>
+          <p>Entwicklung, Testing, Veröffentlichung – sauber abgeschlossen. Nichts bleibt halb fertig.</p>
         </article>
       </div>
     </div>
@@ -145,11 +182,11 @@ const schema = JSON.stringify({
   <section class="section final-cta-section" aria-labelledby="cta-title">
     <div class="container">
       <div class="final-cta-content fade-up">
-        <span class="cta-label">FRAGE?</span>
-        <h2 id="cta-title">Lass uns ansehen,<br><span>was lokal möglich ist.</span></h2>
+        <span class="cta-label">NÄCHSTER SCHRITT</span>
+        <h2 id="cta-title">Soll deine Website<br><span>einfacher werden?</span></h2>
         <div class="hero-cta-group">
           <a href="/kontakt/" class="btn btn-primary">Direkt anfragen</a>
-          <a href="/loesungen/" class="btn btn-ghost">Lösungen ansehen</a>
+          <a href="/haeufige-fragen-webdesign/" class="btn btn-ghost">Häufige Fragen lesen</a>
         </div>
       </div>
     </div>
@@ -393,6 +430,89 @@ const schema = JSON.stringify({
     margin-bottom: 0;
   }
 
+  .split-layout {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.55fr) minmax(0, 1fr);
+    gap: clamp(28px, 5vw, 62px);
+    align-items: start;
+    padding-top: 34px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  
+  .split-layout h2 {
+    font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+    line-height: 1.08;
+    letter-spacing: -0.012em;
+    margin: 0;
+  }
+
+  .text-content p {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.8;
+    font-size: 1.05rem;
+  }
+  
+  .text-content p a {
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.3);
+    text-underline-offset: 4px;
+    transition: text-decoration-color 0.2s ease;
+  }
+  
+  .text-content p a:hover {
+    text-decoration-color: #fff;
+  }
+
+  .process-grid {
+    gap: 2rem;
+  }
+
+  .process-card {
+    padding: 32px 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .process-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 1rem;
+    background-image: linear-gradient(135deg, #00d2ff 0%, #a64dff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .process-card h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  .process-card p {
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  @media (max-width: 860px) {
+    .split-layout {
+      grid-template-columns: 1fr;
+      padding-top: 24px;
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .home-values {
+      padding-top: 16px;
+      padding-bottom: 78px;
+    }
+    
+    .process-card {
+      padding: 24px 16px;
+    }
+  }
+  
   /* Utility Breakpoint Helpers */
   .hidden-mobile { display: inline; }
   @media (max-width: 640px) { .hidden-mobile { display: none; } }

@@ -3,23 +3,24 @@ import Layout from '../../../layouts/Layout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 import CaseMoreReferences from '../../../components/CaseMoreReferences.astro';
 
+const pageUrl = 'https://www.nigredo.ch/referenzen/dashboard-kantonsverwaltung/';
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "BreadcrumbList",
-      "@id": "https://www.nigredo.ch/referenzen/dashboard-kantonsverwaltung#breadcrumb",
+      "@id": `${pageUrl}#breadcrumb`,
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.nigredo.ch/" },
-        { "@type": "ListItem", "position": 2, "name": "Referenzen", "item": "https://www.nigredo.ch/referenzen" },
-        { "@type": "ListItem", "position": 3, "name": "Dashboard für Verwaltung", "item": "https://www.nigredo.ch/referenzen/dashboard-kantonsverwaltung" }
+        { "@type": "ListItem", "position": 2, "name": "Referenzen", "item": "https://www.nigredo.ch/referenzen/" },
+        { "@type": "ListItem", "position": 3, "name": "Dashboard für Verwaltung", "item": pageUrl }
       ]
     },
     {
       "@type": "SoftwareApplication",
-      "@id": "https://www.nigredo.ch/referenzen/dashboard-kantonsverwaltung#software",
+      "@id": `${pageUrl}#software`,
       "name": "Dashboard für Verwaltung",
-      "url": "https://www.nigredo.ch/referenzen/dashboard-kantonsverwaltung",
+      "url": pageUrl,
       "description": "Lokales Excel-Analyse-Dashboard für eine Schweizer Kantonsverwaltung. Drag & Drop Import, KPIs, Diagramme, Anonymisierung und PDF-Export. 100% lokal – keine Daten verlassen den Rechner.",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Web Browser",
@@ -45,15 +46,15 @@ const schema = JSON.stringify({
     },
     {
       "@type": "WebPage",
-      "@id": "https://www.nigredo.ch/referenzen/dashboard-kantonsverwaltung#webpage",
+      "@id": `${pageUrl}#webpage`,
       "name": "Dashboard für Verwaltung | Nigredo Referenzen",
-      "url": "https://www.nigredo.ch/referenzen/dashboard-kantonsverwaltung",
+      "url": pageUrl,
       "isPartOf": { "@id": "https://www.nigredo.ch/#website" },
       "inLanguage": "de-CH",
       "datePublished": "2025-06-01",
       "dateModified": "2026-05-03",
-      "about": { "@id": "https://www.nigredo.ch/referenzen/dashboard-kantonsverwaltung#software" },
-      "breadcrumb": { "@id": "https://www.nigredo.ch/referenzen/dashboard-kantonsverwaltung#breadcrumb" },
+      "about": { "@id": `${pageUrl}#software` },
+      "breadcrumb": { "@id": `${pageUrl}#breadcrumb` },
       "isAccessibleForFree": true,
       "speakable": {
         "@type": "SpeakableSpecification",
@@ -67,7 +68,7 @@ const schema = JSON.stringify({
 <Layout
   title="Dashboard für Verwaltung | Nigredo Referenzen"
   description="Lokales Excel-Analyse-Dashboard für eine Schweizer Kantonsverwaltung: Drag & Drop Import, KPIs, Diagramme, Anonymisierung, PDF-Export. Sensible Personaldaten bleiben 100% lokal im Browser. Von Nigredo, St. Gallen."
-  canonical="https://www.nigredo.ch/referenzen/dashboard-kantonsverwaltung"
+  canonical={pageUrl}
   ogTitle="Dashboard für Verwaltung"
   ogDescription="Drag & Drop Excel-Import, KPIs, Diagramme, Anonymisierung, PDF-Export. Sensible Personaldaten 100% lokal im Browser. Keine Cloud, keine Kompromisse."
   ogImage="https://www.nigredo.ch/referenzen/dashboard-kantonsverwaltung/dashboard-kantonsverwaltung-excel-kpi-browser.png"

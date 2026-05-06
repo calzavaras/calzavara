@@ -6,9 +6,32 @@ interface BreadcrumbItem {
 
 interface Props {
   items: BreadcrumbItem[];
+  /** Wenn true, wird zusätzlich BreadcrumbList JSON-LD gerendert. Default: false (wenn die Seite bereits einen eigenen Graph mit BreadcrumbList besitzt). */
+  emitSchema?: boolean;
 }
 
-const { items } = Astro.props;
+const { items, emitSchema = false } = Astro.props;
+
+const SITE = 'https://www.nigredo.ch';
+
+const schema = emitSchema
+  ? JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: items.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.label,
+        ...(item.href
+          ? {
+              item: item.href.startsWith('http')
+                ? item.href
+                : `${SITE}${item.href.endsWith('/') ? item.href : `${item.href}/`}`,
+            }
+          : {}),
+      })),
+    })
+  : null;
 ---
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -24,6 +47,8 @@ const { items } = Astro.props;
     ))}
   </ol>
 </nav>
+
+{schema && <script type="application/ld+json" set:html={schema} />}
 
 <style>
   .breadcrumb {

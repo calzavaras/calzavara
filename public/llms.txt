@@ -39,16 +39,16 @@ Blogtexte, Produktbeschreibungen, Newsletter, KI-generierte Bilder und Logodesig
 ### Software & Webseiten
 Individuelle Business-Software und moderne Firmenwebseiten für KMU. Kundenverwaltung, interne Dashboards, Auftragsabwicklung oder eine Webpräsenz, die auf Google sichtbar ist. Kein Baukastensystem, kein Abo. Alles aus einer Hand.
 
-#### Webdesign für Einzelfirmen & KMU
-Kleine professionelle Websites und Webvisitenkarten für Selbständige, Einzelfirmen und KMU. Klarer Auftritt, mobile Darstellung, direkte Kontaktmöglichkeit und keine Baukasten-Optik.
-- URL: https://www.nigredo.ch/website-fuer-einzelunternehmen-kmu/
+#### Websites für Selbständige, KMU & Vereine
+Professionelle Websites für Selbständige, kleinere Unternehmen, Vereine und Privatpersonen. Klarer Auftritt, mobile Darstellung, direkte Kontaktmöglichkeit und keine Baukasten-Optik.
+- URL: https://www.nigredo.ch/website-fuer-selbststaendige-kmu-und-vereine/
 
-#### Website mit CMS, SEO & Datenschutz
-Websites mit selbst pflegbaren Inhalten, technischer SEO-Grundlage und datenschutzfreundlichem Tracking mit Umami statt Google Analytics.
-- URL: https://www.nigredo.ch/website-mit-cms-und-datenschutz/
+#### Technik & CMS für Websites
+Technische Grundlagen und CMS für Websites, die pflegbar, schnell, schlank und erweiterbar bleiben. Ohne unnötigen Ballast und ohne Abhängigkeit bei jeder kleinen Änderung.
+- URL: https://www.nigredo.ch/technik-und-cms/
 
 #### Lokal gefunden werden
-Lokale SEO und Webdesign für Praxen, Therapeuten, Handwerker, Garagen und Dienstleister. Fokus auf regionale Sichtbarkeit, Vertrauen, klare Informationen und direkte Termin- oder Kontaktwege.
+Lokale Sichtbarkeit für Einzelfirmen, KMU, Praxen, Dienstleister, Vereine und Menschen mit klaren Vorhaben. Fokus auf regionale Relevanz, Vertrauen, klare Informationen und direkte nächste Schritte.
 - URL: https://www.nigredo.ch/lokal-gefunden-werden/
 
 #### Häufige Fragen zu Webdesign

@@ -32,7 +32,7 @@ npx esbuild src/scripts/main.js --minify --target=es2017 --outfile=static/main.m
 - Deploy folder: `public/`
 - Production URL: `https://www.nigredo.ch`
 - Language: German (Swiss), `lang="de-CH"`, `og:locale="de_CH"`
-- No trailing slashes (`trailingSlash: 'never'`)
+- Trailing slashes are intentional (`trailingSlash: 'always'`) because `build.format: 'directory'` emits folder-style URLs.
 
 ### Layout & SEO
 `src/layouts/Layout.astro` is the single shared layout. It handles all SEO meta tags, Open Graph, Twitter cards, JSON-LD schema.org markup, font loading, Umami analytics, and shared page chrome. Every page passes `title`, `description`, and `canonical` as required props, plus optional `schema` (JSON string) for page-specific structured data.

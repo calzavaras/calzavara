@@ -20,29 +20,33 @@ export function getStaticPaths() {
 const { pageNumber, pageItems } = Astro.props;
 const pageCount = getReferencePageCount();
 
+const rawHref = getReferencePageHref(pageNumber);
+const pageHref = rawHref.endsWith('/') ? rawHref : `${rawHref}/`;
+const pageUrl = `https://www.nigredo.ch${pageHref}`;
+
 const schema = JSON.stringify({
   '@context': 'https://schema.org',
   '@graph': [
     {
       '@type': 'BreadcrumbList',
-      '@id': `https://www.nigredo.ch${getReferencePageHref(pageNumber)}#breadcrumb`,
+      '@id': `${pageUrl}#breadcrumb`,
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Start', item: 'https://www.nigredo.ch/' },
-        { '@type': 'ListItem', position: 2, name: 'Referenzen', item: 'https://www.nigredo.ch/referenzen' },
-        { '@type': 'ListItem', position: 3, name: `Seite ${pageNumber}`, item: `https://www.nigredo.ch${getReferencePageHref(pageNumber)}` },
+        { '@type': 'ListItem', position: 2, name: 'Referenzen', item: 'https://www.nigredo.ch/referenzen/' },
+        { '@type': 'ListItem', position: 3, name: `Seite ${pageNumber}`, item: pageUrl },
       ],
     },
     {
       '@type': 'CollectionPage',
-      '@id': `https://www.nigredo.ch${getReferencePageHref(pageNumber)}#webpage`,
-      url: `https://www.nigredo.ch${getReferencePageHref(pageNumber)}`,
+      '@id': `${pageUrl}#webpage`,
+      url: pageUrl,
       name: `Referenzprojekte – Seite ${pageNumber} | Nigredo`,
       description: 'Weitere Referenzprojekte von Nigredo. KI, Websites und Software für Schweizer KMU und Verwaltungen.',
       inLanguage: 'de-CH',
       datePublished: '2025-06-01',
       dateModified: '2026-05-03',
       isPartOf: { '@id': 'https://www.nigredo.ch/#website' },
-      breadcrumb: { '@id': `https://www.nigredo.ch${getReferencePageHref(pageNumber)}#breadcrumb` },
+      breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
       isAccessibleForFree: true,
       mainEntity: {
         '@type': 'ItemList',
@@ -61,8 +65,7 @@ const schema = JSON.stringify({
 <Layout
   title={`Referenzprojekte – Seite ${pageNumber} | Nigredo`}
   description="Weitere Referenzprojekte von Nigredo. KI, Websites und Software für Schweizer KMU und Verwaltungen."
-  keywords="Referenzen Nigredo, Projektarchiv Nigredo, KI Projekte Schweiz, Websites Schweiz, Software Referenzen"
-  canonical={`https://www.nigredo.ch${getReferencePageHref(pageNumber)}`}
+  canonical={pageUrl}
   ogTitle={`Referenzen – Seite ${pageNumber} | Nigredo`}
   ogDescription="Weitere Referenzen von Nigredo."
   ogImageAlt="Nigredo Referenzen – weitere Projekte"

@@ -2,55 +2,35 @@
 import Layout from '../layouts/Layout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 
+const pageUrl = 'https://www.nigredo.ch/kontakt/';
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "BreadcrumbList",
-      "@id": "https://www.nigredo.ch/kontakt#breadcrumb",
+      "@id": `${pageUrl}#breadcrumb`,
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.nigredo.ch/" },
-        { "@type": "ListItem", "position": 2, "name": "Kontakt", "item": "https://www.nigredo.ch/kontakt" }
+        { "@type": "ListItem", "position": 2, "name": "Kontakt", "item": pageUrl }
       ]
     },
     {
       "@type": "ContactPage",
-      "@id": "https://www.nigredo.ch/kontakt#webpage",
+      "@id": `${pageUrl}#webpage`,
       "name": "Kontakt & Projektanfrage | Nigredo St. Gallen",
-      "url": "https://www.nigredo.ch/kontakt",
+      "url": pageUrl,
       "description": "Direkter Kontakt zu Marco Calzavara, Nigredo St. Gallen. Projektanfragen für Software, Webseiten, Texte, Bilder und KI-Lösungen.",
       "inLanguage": "de-CH",
       "datePublished": "2025-06-01",
       "dateModified": "2026-05-03",
       "isPartOf": { "@id": "https://www.nigredo.ch/#website" },
-      "breadcrumb": { "@id": "https://www.nigredo.ch/kontakt#breadcrumb" },
+      "breadcrumb": { "@id": `${pageUrl}#breadcrumb` },
       "isAccessibleForFree": true,
       "speakable": {
         "@type": "SpeakableSpecification",
         "cssSelector": ["h1", ".contact-text"]
       },
-      "mainEntity": {
-        "@type": "Organization",
-        "@id": "https://www.nigredo.ch/#organization",
-        "name": "Nigredo",
-        "email": "calzavara3830@gmail.com",
-        "url": "https://www.nigredo.ch",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Wildeggstrasse 37",
-          "addressLocality": "St. Gallen",
-          "postalCode": "9000",
-          "addressRegion": "SG",
-          "addressCountry": "CH"
-        },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "customer service",
-          "email": "calzavara3830@gmail.com",
-          "areaServed": "CH",
-          "availableLanguage": ["German", "English"]
-        }
-      }
+      "mainEntity": { "@id": "https://www.nigredo.ch/#organization" }
     }
   ]
 });
@@ -59,7 +39,7 @@ const schema = JSON.stringify({
 <Layout
   title="Kontakt & Projektanfrage | Nigredo St. Gallen"
   description="Ob erste Idee, konkreter Auftrag oder offene Frage: Direkter Kontakt zu Marco Calzavara. Ich sortiere mit dir, was sinnvoll ist und welcher nächste Schritt wirklich weiterbringt."
-  canonical="https://www.nigredo.ch/kontakt"
+  canonical={pageUrl}
   ogTitle="Erzähl mir kurz, was du vorhast."
   ogDescription="Direkter Kontakt zu Marco Calzavara. Keine Umwege, kein Ticketsystem, kein Agenturtheater."
   ogImageAlt="Nigredo Kontakt - Direkter Draht zu Marco Calzavara"
@@ -124,7 +104,7 @@ const schema = JSON.stringify({
 
 <style>
   .contact-hero {
-    padding-top: var(--hero-offset-top);
+    padding-top: var(--hero-offset-top-breadcrumb);
     padding-bottom: clamp(92px, 9vw, 128px);
   }
 
@@ -279,7 +259,7 @@ const schema = JSON.stringify({
 
   @media (max-width: 860px) {
     .contact-hero {
-      padding-top: var(--hero-offset-top-mobile);
+      padding-top: var(--hero-offset-top-breadcrumb-mobile);
       padding-bottom: 82px;
     }
 
@@ -297,7 +277,7 @@ const schema = JSON.stringify({
 
   @media (max-width: 520px) {
     .contact-hero {
-      padding-top: var(--hero-offset-top-mobile);
+      padding-top: var(--hero-offset-top-breadcrumb-mobile);
       padding-bottom: 68px;
     }
 

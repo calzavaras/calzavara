@@ -5,52 +5,25 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 const leadershipSinceYear = 2011;
 const leadershipYears = new Date().getFullYear() - leadershipSinceYear;
 
+const pageUrl = 'https://www.nigredo.ch/ueber-uns/';
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "BreadcrumbList",
-      "@id": "https://www.nigredo.ch/ueber-uns#breadcrumb",
+      "@id": `${pageUrl}#breadcrumb`,
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.nigredo.ch/" },
-        { "@type": "ListItem", "position": 2, "name": "Über mich", "item": "https://www.nigredo.ch/ueber-uns" }
+        { "@type": "ListItem", "position": 2, "name": "Über mich", "item": pageUrl }
       ]
     },
     {
-      "@type": "Person",
-      "@id": "https://www.nigredo.ch/#person",
-      "name": "Marco Calzavara",
-      "givenName": "Marco",
-      "familyName": "Calzavara",
-      "jobTitle": "Gründer, Ideengeber und Teamleiter",
-      "description": "Macher und Gründer aus St. Gallen. Führt ein Expertenteam in der Verwaltung, entwickelt Abteilungen weiter und bringt mit Nigredo, HappyPath GmbH, KI und einem starken IT-Netzwerk Ideen schnell in Ergebnisse.",
-      "image": {
-        "@type": "ImageObject",
-        "url": "https://www.nigredo.ch/assets/marco-calzavara-nigredo-st-gallen.jpg",
-        "width": 1086,
-        "height": 1086
-      },
-      "url": "https://www.nigredo.ch/ueber-uns",
-      "worksFor": { "@id": "https://www.nigredo.ch/#organization" },
-      "knowsAbout": ["Abteilungsentwicklung", "Führung", "Content-Erstellung", "Bildgenerierung", "Software Development", "Web Development", "UX Design", "Datenaufbereitung", "KI-Lösungen"],
-      "sameAs": [
-        "https://ch.linkedin.com/in/calzavara-marco",
-        "https://github.com/calza"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "St. Gallen",
-        "postalCode": "9000",
-        "addressCountry": "CH"
-      }
-    },
-    {
       "@type": "AboutPage",
-      "@id": "https://www.nigredo.ch/ueber-uns#webpage",
+      "@id": `${pageUrl}#webpage`,
       "name": "Über mich | Marco Calzavara | Nigredo",
-      "url": "https://www.nigredo.ch/ueber-uns",
+      "url": pageUrl,
       "isPartOf": { "@id": "https://www.nigredo.ch/#website" },
-      "breadcrumb": { "@id": "https://www.nigredo.ch/ueber-uns#breadcrumb" },
+      "breadcrumb": { "@id": `${pageUrl}#breadcrumb` },
       "inLanguage": "de-CH",
       "datePublished": "2025-06-01",
       "dateModified": "2026-05-03",
@@ -68,8 +41,7 @@ const schema = JSON.stringify({
 <Layout
   title="Über mich | Marco Calzavara | Nigredo"
   description={`Marco Calzavara – ${leadershipYears} Jahre Führung, 3 Firmen gegründet und verkauft. Baut mit KI-Agenten, liefert was sonst Teams brauchen. Direkt, persönlich, aus St. Gallen.`}
-  keywords="Marco Calzavara, Nigredo Gründer, Website Freelancer St. Gallen, Webdesign Schweiz, KI-Lösungen Schweiz, persönliche Betreuung, Softwareentwicklung KMU"
-  canonical="https://www.nigredo.ch/ueber-uns"
+  canonical={pageUrl}
   ogTitle="Ein Mensch. 1001 Ideen."
   ogDescription="15 Jahre Führung. 3 Firmen gegründet & verkauft. Baut mit KI-Agenten, liefert was sonst Teams brauchen. Direkt, persönlich, aus St. Gallen."
   ogType="profile"
@@ -282,7 +254,7 @@ const schema = JSON.stringify({
 
 <style>
   .about-hero {
-    padding-top: var(--hero-offset-top);
+    padding-top: var(--hero-offset-top-breadcrumb);
     padding-bottom: var(--hero-offset-bottom);
   }
 
@@ -706,7 +678,7 @@ const schema = JSON.stringify({
 
   @media (max-width: 860px) {
     .about-hero {
-      padding-top: var(--hero-offset-top-mobile);
+      padding-top: var(--hero-offset-top-breadcrumb-mobile);
       padding-bottom: 50px;
     }
 

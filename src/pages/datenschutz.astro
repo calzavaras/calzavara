@@ -7,21 +7,21 @@ const schema = JSON.stringify({
   "@graph": [
     {
       "@type": "BreadcrumbList",
-      "@id": "https://www.nigredo.ch/datenschutz#breadcrumb",
+      "@id": "https://www.nigredo.ch/datenschutz/#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.nigredo.ch/" },
-        { "@type": "ListItem", "position": 2, "name": "Datenschutz", "item": "https://www.nigredo.ch/datenschutz" }
+        { "@type": "ListItem", "position": 2, "name": "Datenschutz", "item": "https://www.nigredo.ch/datenschutz/" }
       ]
     },
     {
       "@type": "WebPage",
-      "@id": "https://www.nigredo.ch/datenschutz#webpage",
+      "@id": "https://www.nigredo.ch/datenschutz/#webpage",
       "name": "Datenschutz | Nigredo",
       "description": "Datenschutzerklärung von Nigredo – transparente Information über Datenerhebung und -nutzung.",
-      "url": "https://www.nigredo.ch/datenschutz",
+      "url": "https://www.nigredo.ch/datenschutz/",
       "isPartOf": { "@id": "https://www.nigredo.ch/#website" },
-      "breadcrumb": { "@id": "https://www.nigredo.ch/datenschutz#breadcrumb" },
-      "publisher": { "@type": "Organization", "name": "Nigredo", "url": "https://www.nigredo.ch" },
+      "breadcrumb": { "@id": "https://www.nigredo.ch/datenschutz/#breadcrumb" },
+      "publisher": { "@id": "https://www.nigredo.ch/#organization" },
       "inLanguage": "de-CH",
       "datePublished": "2025-06-01",
       "dateModified": "2026-04-28"
@@ -33,7 +33,7 @@ const schema = JSON.stringify({
 <Layout
   title="Datenschutz | Nigredo"
   description="Datenschutzerklärung von Nigredo. Transparente Information über die Erhebung und Nutzung deiner Daten."
-  canonical="https://www.nigredo.ch/datenschutz"
+  canonical="https://www.nigredo.ch/datenschutz/"
   robots="noindex, follow"
   schema={schema}
 >
@@ -114,7 +114,7 @@ const schema = JSON.stringify({
 
 <style>
   .legal-page {
-    padding-top: var(--hero-offset-top);
+    padding-top: var(--hero-offset-top-breadcrumb);
     padding-bottom: clamp(92px, 9vw, 120px);
   }
 
@@ -229,7 +229,7 @@ const schema = JSON.stringify({
 
   @media (max-width: 860px) {
     .legal-page {
-      padding-top: var(--hero-offset-top-mobile);
+      padding-top: var(--hero-offset-top-breadcrumb-mobile);
       padding-bottom: 88px;
     }
 

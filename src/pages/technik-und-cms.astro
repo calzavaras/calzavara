@@ -1,0 +1,524 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const pageUrl = 'https://www.nigredo.ch/technik-und-cms/';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${pageUrl}#breadcrumb`,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.nigredo.ch/" },
+        { "@type": "ListItem", "position": 2, "name": "Lösungen", "item": "https://www.nigredo.ch/loesungen/" },
+        { "@type": "ListItem", "position": 3, "name": "Technik & CMS", "item": pageUrl }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": `${pageUrl}#service`,
+      "name": "Technik und CMS für Websites",
+      "serviceType": "Website-Technik, CMS, Performance, Datenschutz und erweiterbare Architektur",
+      "description": "Technik und CMS für Websites, die pflegbar, schnell, schlank und erweiterbar bleiben. Für Projekte, die sauber funktionieren und nicht im Weg stehen sollen.",
+      "provider": { "@id": "https://www.nigredo.ch/#organization" },
+      "areaServed": [
+        { "@type": "City", "name": "St. Gallen" },
+        { "@type": "AdministrativeArea", "name": "Ostschweiz" },
+        { "@type": "Country", "name": "Switzerland" }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${pageUrl}#webpage`,
+      "url": pageUrl,
+      "name": "Technik & CMS für Websites | Nigredo",
+      "description": "Technik und CMS für Websites, die dir gehören: pflegbar, schnell, schlank und bereit für spätere Erweiterungen.",
+      "isPartOf": { "@id": "https://www.nigredo.ch/#website" },
+      "about": { "@id": `${pageUrl}#service` },
+      "breadcrumb": { "@id": `${pageUrl}#breadcrumb` },
+      "inLanguage": "de-CH",
+      "datePublished": "2026-05-05",
+      "dateModified": "2026-05-06",
+      "isAccessibleForFree": true,
+      "mainEntity": { "@id": `${pageUrl}#service` }
+    }
+  ]
+});
+---
+
+<Layout
+  title="Technik & CMS für Websites | Nigredo"
+  description="Statische Website oder CMS? Ich baue die richtige Grundlage – pflegbar, schnell, sicher und ohne WordPress-Overhead. Für Projekte in der Schweiz, die nicht im Weg stehen sollen."
+  canonical={pageUrl}
+  ogTitle="Technik & CMS für Websites | Nigredo"
+  ogDescription="Technik und CMS, damit deine Website dir gehört und später nicht im Weg steht."
+  twitterTitle="Technik & CMS für Websites | Nigredo"
+  twitterDescription="Pflegbar, schnell, schlank und bereit für spätere Erweiterungen."
+  schema={schema}
+>
+  <section class="section sub-page-hero" aria-labelledby="cms-title">
+    <div class="hero-glow"></div>
+    <div class="container sub-page-hero__container">
+      <Breadcrumb items={[
+        { label: 'Start', href: '/' },
+        { label: 'Lösungen', href: '/loesungen/' },
+        { label: 'Technik & CMS' }
+      ]} />
+
+      <div class="fade-up sub-page-hero__content">
+        <span class="badge badge--cyan">TECHNIK, DIE NICHT IM WEG STEHT</span>
+        <h1 id="cms-title" class="sub-page-hero__title">
+          Technik &amp; CMS<br class="hidden-mobile">
+          <span class="gradient-text">damit deine Website dir gehört.</span>
+        </h1>
+        <p class="hero-lead sub-page-hero__lead">
+          Eine Website, die nach dem Launch schwieriger wird statt einfacher – das ist das häufigste Problem. Ich baue technische Grundlagen, die schnell, schlank und pflegbar bleiben. Ohne Plugin-Dschungel, ohne Overhead, ohne Abhängigkeiten, die du nicht brauchst.
+        </p>
+        <div class="hero-cta-group">
+          <a href="/kontakt/" class="btn btn-primary">Soll deine Website einfacher pflegbar werden?</a>
+          <a href="/haeufige-fragen-webdesign/" class="btn btn-ghost">Offene Fragen ansehen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section pt-compact" aria-labelledby="intro-title">
+    <div class="container">
+      <div class="fade-up max-w-copy">
+        <span class="cta-label">Grundlage</span>
+        <h2 id="intro-title" class="mb-4">Was sauber gebaut ist, macht später weniger Arbeit.</h2>
+        <p>
+          Technik merkt man oft erst, wenn sie schlecht ist. Wenn eine kleine Änderung kompliziert wird. Wenn ein Plugin das nächste braucht. Wenn Seiten langsam laden. Wenn Inhalte doppelt gepflegt werden müssen. Wenn niemand mehr weiss, was wo passiert.
+        </p>
+        <p>
+          Gute Technik ist unsichtbar. Sie tut ihren Job, bleibt im Hintergrund und wird nicht zur zusätzlichen Aufgabe.
+        </p>
+
+        <div class="seo-note fade-up delay-100 mt-10">
+          <span class="seo-note__label">Kernpunkt</span>
+          <p>Ein CMS ist nur dann sinnvoll, wenn es dir Arbeit abnimmt und dir Kontrolle gibt statt neue Hürden.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section home-values" aria-labelledby="cms-tech">
+    <div class="container">
+      <div class="fade-up mb-10">
+        <span class="cta-label">Was entsteht</span>
+        <h2 id="cms-tech">Eine technische Basis, die mitdenkt.</h2>
+      </div>
+      <div class="grid-3">
+        <article class="card value-card fade-up" style="--icon-gradient: linear-gradient(135deg, #00d2ff 0%, #a64dff 100%); --icon-shadow: rgba(0, 210, 255, 0.34);">
+          <div class="card-icon" aria-hidden="true"><div class="gradient-icon" style="-webkit-mask-image: url('/assets/icons/icon-cms-pflege.svg'); mask-image: url('/assets/icons/icon-cms-pflege.svg');"></div></div>
+          <span class="cta-label">Pflege</span>
+          <h3>Inhalte ändern, ohne Umwege.</h3>
+          <p>Texte, Bilder, Leistungen, Personen, Projekte oder Termine lassen sich dort pflegen, wo es Sinn ergibt. Klar geführt, auf dein Projekt zugeschnitten und ohne für jede Kleinigkeit über einen Dienstleister gehen zu müssen.</p>
+        </article>
+        <article class="card value-card fade-up delay-100" style="--icon-gradient: linear-gradient(135deg, #ffc700 0%, #ff4d80 100%); --icon-shadow: rgba(196, 77, 255, 0.34);">
+          <div class="card-icon" aria-hidden="true"><div class="gradient-icon" style="-webkit-mask-image: url('/assets/icons/icon-cms-struktur.svg'); mask-image: url('/assets/icons/icon-cms-struktur.svg');"></div></div>
+          <span class="cta-label">Struktur</span>
+          <h3>Ordnung statt Flickwerk.</h3>
+          <p>Eine Website braucht innere Logik. Welche Inhalte gehören zusammen, was kommt mehrfach vor und was soll später einfach ergänzt werden können? Wenn diese Struktur stimmt, bleibt die Website ruhig. Auch wenn sie wächst.</p>
+        </article>
+        <article class="card value-card fade-up delay-200" style="--icon-gradient: linear-gradient(135deg, #a64dff 0%, #ff4d80 100%); --icon-shadow: rgba(255, 77, 128, 0.32);">
+          <div class="card-icon" aria-hidden="true"><div class="gradient-icon" style="-webkit-mask-image: url('/assets/icons/icon-cms-erweiterbar.svg'); mask-image: url('/assets/icons/icon-cms-erweiterbar.svg');"></div></div>
+          <span class="cta-label">Geschwindigkeit</span>
+          <h3>Schnell, weil nichts unnötig mitläuft.</h3>
+          <p>Viele Websites laden langsam, weil sie zu viel mitschleppen: Plugins, Tracker, Skripte von gestern. Ich baue so schlank wie möglich – und so flexibel wie nötig. Das merkt man im Ladeverhalten und in den Google-Signalen.</p>
+        </article>
+        <article class="card value-card fade-up delay-300" style="--icon-gradient: linear-gradient(135deg, #00d2ff 0%, #ffc700 100%); --icon-shadow: rgba(255, 199, 0, 0.30);">
+          <div class="card-icon" aria-hidden="true"><div class="gradient-icon" style="-webkit-mask-image: url('/assets/icons/icon-cms-erweiterbar.svg'); mask-image: url('/assets/icons/icon-cms-erweiterbar.svg');"></div></div>
+          <span class="cta-label">Erweiterung</span>
+          <h3>Bereit für das, was später kommt.</h3>
+          <p>Eine Website ist selten endgültig. Vielleicht kommt später ein Formular dazu, ein geschützter Bereich, eine Buchung, ein kleines Tool oder eine andere Sprache. Wenn die Grundlage sauber ist, muss nicht jedes Mal alles neu gedacht werden.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section pt-compact" aria-labelledby="cms-privacy">
+    <div class="container">
+      <div class="fade-up split-layout">
+        <div>
+          <span class="cta-label">Datenschutz</span>
+          <h2 id="cms-privacy" class="mb-4">Messen, ohne Vertrauen zu verspielen.</h2>
+        </div>
+        <div class="text-content">
+          <p>
+            Ich bevorzuge datenschutzfreundliches Tracking – ohne Cookie-Banner-Chaos. Du siehst, was auf deiner Website passiert, ohne unnötige Daten zu sammeln oder Besucher mit Popups zu belasten.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section pt-compact" aria-labelledby="cms-not">
+    <div class="container">
+      <div class="fade-up mb-10" style="margin-top: 40px;">
+        <span class="cta-label">Wie ich entscheide</span>
+        <h2 id="cms-not">Wann statisch reicht. Und wann ein CMS Sinn macht.</h2>
+      </div>
+      <div class="grid-3 process-grid">
+        <article class="process-card fade-up">
+          <span class="process-number gradient-text">1.</span>
+          <h3>Statisch</h3>
+          <p>Inhalte ändern sich selten? Eine statische Website ist schneller als WordPress, sicherer als die meisten CMS und ohne laufende Wartungsaufwände. Sie passt für Auftritte, die vor allem klar, stabil und schnell sein sollen.</p>
+        </article>
+        <article class="process-card fade-up delay-100">
+          <span class="process-number gradient-text">2.</span>
+          <h3>Mit CMS</h3>
+          <p>Wenn du selbst pflegen willst. Ein CMS lohnt sich, wenn Inhalte regelmässig angepasst werden, etwa bei Angeboten, News, Projekten, Teamseiten, Vereinsinhalten oder Referenzen.</p>
+        </article>
+        <article class="process-card fade-up delay-200">
+          <span class="process-number gradient-text">3.</span>
+          <h3>Als Werkzeug</h3>
+          <p>Wenn die Website mehr können soll. Dann wird sie nicht nur zum Auftritt, sondern zu einem präzisen Werkzeug für Anfragen, Abläufe oder wiederkehrende Aufgaben.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section final-cta-section" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="final-cta-content fade-up">
+        <span class="cta-label">NÄCHSTER SCHRITT</span>
+        <h2 id="cta-title">Weniger Abhängigkeit.<br><span>Mehr Ruhe im System.</span></h2>
+        <div class="hero-cta-group">
+          <a href="/kontakt/" class="btn btn-primary">Soll deine Website einfacher pflegbar werden?</a>
+          <a href="/haeufige-fragen-webdesign/" class="btn btn-ghost">Häufige Fragen lesen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .sub-page-hero {
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    padding-top: var(--hero-offset-top-breadcrumb);
+    padding-bottom: var(--hero-offset-bottom);
+  }
+
+  .sub-page-hero .badge {
+    margin-bottom: 1.15rem;
+  }
+
+  .sub-page-hero__container {
+    position: relative;
+    width: 100%;
+  }
+
+  .sub-page-hero__content {
+    max-width: 940px;
+  }
+
+  .sub-page-hero__title {
+    max-width: 940px;
+    font-size: var(--hero-title-size);
+    line-height: var(--hero-title-line-height);
+    letter-spacing: -0.015em;
+    margin-bottom: clamp(24px, 3vw, 30px);
+  }
+
+  .sub-page-hero__lead {
+    max-width: 620px;
+    font-size: var(--lead-size);
+    line-height: 1.65;
+  }
+
+  .final-cta-section {
+    padding-top: clamp(48px, 6vw, 72px);
+    padding-bottom: clamp(92px, 9vw, 128px);
+  }
+
+  .final-cta-content {
+    max-width: 660px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .final-cta-content .cta-label {
+    color: rgba(255, 255, 255, 0.42);
+  }
+
+  .final-cta-content h2 {
+    color: #f5f5f7;
+    font-size: clamp(2.25rem, 4.5vw, 3.7rem);
+    line-height: 1.04;
+    letter-spacing: 0;
+    margin-bottom: 0;
+  }
+
+  .final-cta-content h2 span {
+    color: rgba(255, 255, 255, 0.62);
+  }
+
+  .final-cta-content .hero-cta-group {
+    margin-top: 34px;
+    justify-content: center;
+  }
+
+  .sub-page-hero .btn-ghost,
+  .final-cta-content .btn-ghost {
+    background-image:
+      linear-gradient(#050505, #050505),
+      linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+  }
+
+  .sub-page-hero .btn-ghost:hover,
+  .final-cta-content .btn-ghost:hover {
+    animation: none;
+    transform: translateY(-2px);
+    background-image:
+      linear-gradient(#0a0a0c, #0a0a0c),
+      linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
+    box-shadow: 0 10px 26px rgba(255, 255, 255, 0.08);
+  }
+
+  .sub-page-hero .btn-primary:hover,
+  .final-cta-content .btn-primary:hover {
+    box-shadow:
+      inset 0 2px 4px rgba(255, 255, 255, 1),
+      0 10px 26px rgba(255, 255, 255, 0.14);
+  }
+
+  .value-card {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.018)),
+      #0a0a0c;
+    isolation: isolate;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.035),
+      0 18px 45px rgba(0, 0, 0, 0.22);
+  }
+
+  .value-card::before {
+    display: none;
+  }
+
+  .value-card::after,
+  .value-card:hover::after {
+    opacity: 0;
+  }
+
+  .value-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.16);
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.045),
+        rgba(255, 255, 255, 0.022)
+      ),
+      #0b0b0d;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.05),
+      0 28px 60px rgba(0, 0, 0, 0.32);
+  }
+
+  .value-card .card-icon {
+    width: 3.15rem;
+    height: 3.15rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease, background-color 0.35s ease, box-shadow 0.35s ease;
+    background: rgba(255, 255, 255, 0.03);
+    position: relative;
+    margin-bottom: 24px;
+  }
+
+  .value-card:hover .card-icon {
+    border-color: rgba(255, 255, 255, 0.16);
+    background: color-mix(in srgb, var(--icon-shadow) 18%, rgba(255, 255, 255, 0.045));
+    box-shadow:
+      0 0 22px color-mix(in srgb, var(--icon-shadow) 76%, transparent),
+      0 0 48px color-mix(in srgb, var(--icon-shadow) 46%, transparent),
+      inset 0 0 18px rgba(255, 255, 255, 0.06);
+    transform: translateY(-1px);
+  }
+
+  .value-card .gradient-icon {
+    width: 1.95rem;
+    height: 1.95rem;
+    opacity: 1;
+    background: var(--icon-gradient);
+    filter: brightness(1.18) saturate(1.28) drop-shadow(0 0 12px var(--icon-shadow));
+  }
+
+  .value-card:hover .gradient-icon {
+    opacity: 1;
+    background: var(--icon-gradient);
+    filter:
+      brightness(1.7)
+      saturate(2.1)
+      contrast(1.08)
+      drop-shadow(0 0 12px var(--icon-shadow))
+      drop-shadow(0 0 28px var(--icon-shadow));
+  }
+
+  @media (max-width: 860px) {
+    .sub-page-hero {
+      padding-top: var(--hero-offset-top-breadcrumb-mobile);
+      padding-bottom: 50px;
+    }
+
+    .sub-page-hero__title {
+      font-size: var(--hero-title-size-tablet);
+      line-height: var(--hero-title-line-height-mobile);
+    }
+  }
+
+  @media (max-width: 520px) {
+    .sub-page-hero__lead {
+      font-size: var(--lead-size-mobile);
+      line-height: 1.6;
+    }
+
+    .sub-page-hero__title {
+      font-size: var(--hero-title-size-mobile);
+      line-height: var(--hero-title-line-height-mobile);
+    }
+
+    .final-cta-section {
+      padding-top: 40px;
+      padding-bottom: 92px;
+    }
+
+    .final-cta-content h2 {
+      font-size: clamp(1.8rem, 11vw, 2.5rem);
+    }
+  }
+
+  .mb-4 { margin-bottom: 1rem; }
+  .mb-10 { margin-bottom: 2.5rem; }
+  .mt-10 { margin-top: 2.5rem; }
+
+  .max-w-copy p {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .max-w-copy p a {
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.3);
+    text-underline-offset: 4px;
+    transition: text-decoration-color 0.2s ease;
+  }
+  
+  .max-w-copy p a:hover {
+    text-decoration-color: #fff;
+  }
+
+  .home-values {
+    padding-top: clamp(40px, 6vw, 60px);
+    padding-bottom: clamp(60px, 8vw, 80px);
+  }
+
+  .card p {
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+
+  .split-layout {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.55fr) minmax(0, 1fr);
+    gap: clamp(28px, 5vw, 62px);
+    align-items: start;
+    padding-top: 34px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  
+  .split-layout h2 {
+    font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+    line-height: 1.08;
+    letter-spacing: -0.012em;
+    margin: 0;
+  }
+
+  .text-content p {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.8;
+    font-size: 1.05rem;
+  }
+  
+  .text-content p a {
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.3);
+    text-underline-offset: 4px;
+    transition: text-decoration-color 0.2s ease;
+  }
+  
+  .text-content p a:hover {
+    text-decoration-color: #fff;
+  }
+
+  .process-grid {
+    gap: 2rem;
+  }
+
+  .process-card {
+    padding: 32px 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .process-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 1rem;
+    background-image: linear-gradient(135deg, #00d2ff 0%, #a64dff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .process-card h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  .process-card p {
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  @media (max-width: 860px) {
+    .split-layout {
+      grid-template-columns: 1fr;
+      padding-top: 24px;
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .home-values {
+      padding-top: 16px;
+      padding-bottom: 78px;
+    }
+    
+    .process-card {
+      padding: 24px 16px;
+    }
+  }
+  
+  /* Utility Breakpoint Helpers */
+  .hidden-mobile { display: inline; }
+  @media (max-width: 640px) { .hidden-mobile { display: none; } }
+  
+  .hidden-tablet { display: inline; }
+  @media (max-width: 1024px) { .hidden-tablet { display: none; } }
+</style>

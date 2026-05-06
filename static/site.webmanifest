@@ -1,6 +1,17 @@
 {
-  "name": "Nigredo",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "name": "Nigredo – Websites & KI-Lösungen",
   "short_name": "Nigredo",
+  "description": "Websites, KI-Lösungen und Softwareentwicklung aus St. Gallen.",
+  "lang": "de-CH",
+  "dir": "ltr",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "categories": ["business", "design", "productivity"],
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -13,9 +24,12 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
-  ],
-  "theme_color": "#050505",
-  "background_color": "#050505",
-  "display": "standalone"
+  ]
 }

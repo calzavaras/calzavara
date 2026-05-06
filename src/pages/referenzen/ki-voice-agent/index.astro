@@ -3,23 +3,24 @@ import Layout from '../../../layouts/Layout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 import CaseMoreReferences from '../../../components/CaseMoreReferences.astro';
 
+const pageUrl = 'https://www.nigredo.ch/referenzen/ki-voice-agent/';
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "BreadcrumbList",
-      "@id": "https://www.nigredo.ch/referenzen/ki-voice-agent#breadcrumb",
+      "@id": `${pageUrl}#breadcrumb`,
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.nigredo.ch/" },
-        { "@type": "ListItem", "position": 2, "name": "Referenzen", "item": "https://www.nigredo.ch/referenzen" },
-        { "@type": "ListItem", "position": 3, "name": "KI Voice Agent für IV-Stellen", "item": "https://www.nigredo.ch/referenzen/ki-voice-agent" }
+        { "@type": "ListItem", "position": 2, "name": "Referenzen", "item": "https://www.nigredo.ch/referenzen/" },
+        { "@type": "ListItem", "position": 3, "name": "KI Voice Agent für IV-Stellen", "item": pageUrl }
       ]
     },
     {
       "@type": "SoftwareApplication",
-      "@id": "https://www.nigredo.ch/referenzen/ki-voice-agent#software",
+      "@id": `${pageUrl}#software`,
       "name": "KI Voice Agent für IV-Stellen",
-      "url": "https://www.nigredo.ch/referenzen/ki-voice-agent",
+      "url": pageUrl,
       "description": "KI-gestützter Sprachassistent, der autonom Anrufe zu AHV-Hilfsmitteln beantwortet. Echtzeit-Sprachverarbeitung mit Google Gemini 2.5 Flash, vier Sprachen, 24/7 verfügbar.",
       "applicationCategory": "BusinessApplication",
       "applicationSubCategory": "Artificial Intelligence",
@@ -46,15 +47,15 @@ const schema = JSON.stringify({
     },
     {
       "@type": "WebPage",
-      "@id": "https://www.nigredo.ch/referenzen/ki-voice-agent#webpage",
+      "@id": `${pageUrl}#webpage`,
       "name": "KI Voice Agent für IV-Stellen | Nigredo Referenzen",
-      "url": "https://www.nigredo.ch/referenzen/ki-voice-agent",
+      "url": pageUrl,
       "isPartOf": { "@id": "https://www.nigredo.ch/#website" },
       "inLanguage": "de-CH",
       "datePublished": "2026-02-28",
       "dateModified": "2026-05-03",
-      "about": { "@id": "https://www.nigredo.ch/referenzen/ki-voice-agent#software" },
-      "breadcrumb": { "@id": "https://www.nigredo.ch/referenzen/ki-voice-agent#breadcrumb" },
+      "about": { "@id": `${pageUrl}#software` },
+      "breadcrumb": { "@id": `${pageUrl}#breadcrumb` },
       "isAccessibleForFree": true,
       "speakable": {
         "@type": "SpeakableSpecification",
@@ -68,7 +69,7 @@ const schema = JSON.stringify({
 <Layout
   title="KI Voice Agent für IV-Stellen | Nigredo Referenzen"
   description="KI-gestützter Sprachassistent für AHV-Hilfsmittel: Echtzeit-Sprachverarbeitung mit Google Gemini 2.5 Flash, vier Sprachen (DE/FR/IT/EN), 24/7 autonom erreichbar. Prototyp für Schweizer IV-Stellen von Nigredo."
-  canonical="https://www.nigredo.ch/referenzen/ki-voice-agent"
+  canonical={pageUrl}
   ogTitle="KI Voice Agent für IV-Stellen"
   ogDescription="Sprachassistent mit Google Gemini 2.5 Flash: 24/7 autonom, vier Sprachen (DE/FR/IT/EN), echtes Fachwissen zu AHV-Hilfsmitteln. Prototyp für Schweizer IV-Stellen."
   ogImage="https://www.nigredo.ch/referenzen/ki-voice-agent/ki-voice-agent-ahv-hilfsmittel-sprachassistent-og.jpg"

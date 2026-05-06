@@ -4,22 +4,23 @@ import Breadcrumb from '../../../components/Breadcrumb.astro';
 import CaseMoreReferences from '../../../components/CaseMoreReferences.astro';
 
 const liveUrl = 'https://www.therapie-ost.ch';
+const pageUrl = 'https://www.nigredo.ch/referenzen/therapie-ost/';
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "BreadcrumbList",
-      "@id": "https://www.nigredo.ch/referenzen/therapie-ost#breadcrumb",
+      "@id": `${pageUrl}#breadcrumb`,
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.nigredo.ch/" },
-        { "@type": "ListItem", "position": 2, "name": "Referenzen", "item": "https://www.nigredo.ch/referenzen" },
-        { "@type": "ListItem", "position": 3, "name": "Website für Therapie Ost", "item": "https://www.nigredo.ch/referenzen/therapie-ost" }
+        { "@type": "ListItem", "position": 2, "name": "Referenzen", "item": "https://www.nigredo.ch/referenzen/" },
+        { "@type": "ListItem", "position": 3, "name": "Website für Therapie Ost", "item": pageUrl }
       ]
     },
     {
       "@type": "WebSite",
-      "@id": "https://www.nigredo.ch/referenzen/therapie-ost#website-project",
+      "@id": `${pageUrl}#website-project`,
       "name": "Therapie Ost",
       "url": liveUrl,
       "description": "Website für Therapie Ost in St. Gallen mit klarer Positionierung, ruhiger Bildsprache, mobiler Optimierung und direkter Online-Terminbuchung.",
@@ -30,15 +31,15 @@ const schema = JSON.stringify({
     },
     {
       "@type": "WebPage",
-      "@id": "https://www.nigredo.ch/referenzen/therapie-ost#webpage",
+      "@id": `${pageUrl}#webpage`,
       "name": "Website für Therapie Ost | Nigredo Referenzen",
-      "url": "https://www.nigredo.ch/referenzen/therapie-ost",
+      "url": pageUrl,
       "isPartOf": { "@id": "https://www.nigredo.ch/#website" },
       "inLanguage": "de-CH",
       "datePublished": "2026-04-27",
       "dateModified": "2026-05-03",
-      "about": { "@id": "https://www.nigredo.ch/referenzen/therapie-ost#website-project" },
-      "breadcrumb": { "@id": "https://www.nigredo.ch/referenzen/therapie-ost#breadcrumb" },
+      "about": { "@id": `${pageUrl}#website-project` },
+      "breadcrumb": { "@id": `${pageUrl}#breadcrumb` },
       "isAccessibleForFree": true,
       "speakable": {
         "@type": "SpeakableSpecification",
@@ -52,7 +53,7 @@ const schema = JSON.stringify({
 <Layout
   title="Website für Therapie Ost | Nigredo Referenzen"
   description="Ruhige, vertrauenswürdige Website für Therapie Ost in St. Gallen: klare Positionierung, mobile Optimierung, starke Bildsprache und direkte Online-Terminbuchung."
-  canonical="https://www.nigredo.ch/referenzen/therapie-ost"
+  canonical={pageUrl}
   ogTitle="Website für Therapie Ost"
   ogDescription="Eine ruhige, klare Website für Therapie Ost mit starker Bildsprache und direkter Online-Terminbuchung."
   ogImage="https://www.nigredo.ch/referenzen/therapie-ost/therapie-ost-website-screenshot-og.jpg"

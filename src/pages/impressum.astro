@@ -7,10 +7,10 @@ const schema = JSON.stringify({
   "@graph": [
     {
       "@type": "BreadcrumbList",
-      "@id": "https://www.nigredo.ch/impressum#breadcrumb",
+      "@id": "https://www.nigredo.ch/impressum/#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.nigredo.ch/" },
-        { "@type": "ListItem", "position": 2, "name": "Impressum", "item": "https://www.nigredo.ch/impressum" }
+        { "@type": "ListItem", "position": 2, "name": "Impressum", "item": "https://www.nigredo.ch/impressum/" }
       ]
     }
   ]
@@ -20,7 +20,7 @@ const schema = JSON.stringify({
 <Layout
   title="Impressum | Nigredo"
   description="Rechtliche Informationen, Kontaktangaben und Haftungsausschluss der Firma Nigredo, St. Gallen."
-  canonical="https://www.nigredo.ch/impressum"
+  canonical="https://www.nigredo.ch/impressum/"
   robots="noindex, follow"
   schema={schema}
 >
@@ -83,7 +83,7 @@ const schema = JSON.stringify({
 
 <style>
   .legal-page {
-    padding-top: var(--hero-offset-top);
+    padding-top: var(--hero-offset-top-breadcrumb);
     padding-bottom: clamp(92px, 9vw, 120px);
   }
 
@@ -213,7 +213,7 @@ const schema = JSON.stringify({
 
   @media (max-width: 860px) {
     .legal-page {
-      padding-top: var(--hero-offset-top-mobile);
+      padding-top: var(--hero-offset-top-breadcrumb-mobile);
       padding-bottom: 88px;
     }
 
