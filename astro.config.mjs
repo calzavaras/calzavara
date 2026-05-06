@@ -6,17 +6,6 @@ export default defineConfig({
   output: 'static',
   publicDir: './static',
   outDir: './public',
-  redirects: {
-    '/website-fuer-praxen-und-dienstleister/': '/lokale-seo/',
-    '/ueber-uns/': '/marco-calzavara/',
-    '/loesungen/': '/digitale-loesungen/',
-    '/projektanfrage/': '/kontakt/',
-    '/website-fuer-selbststaendige-kmu-und-vereine/': '/website-fuer-kmu-selbststaendige/',
-    '/websites-fuer-kmu/': '/website-fuer-kmu-selbststaendige/',
-    '/lokal-gefunden-werden/': '/lokale-seo/',
-    '/technik-und-cms/': '/website-technik-cms/',
-    '/haeufige-fragen-webdesign/': '/faq-webdesign/',
-  },
   integrations: [
     sitemap({
       changefreq: 'monthly',

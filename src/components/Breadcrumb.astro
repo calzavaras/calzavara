@@ -69,13 +69,24 @@ const schema = emitSchema
   .breadcrumb li {
     display: flex;
     align-items: center;
+    line-height: 1;
   }
 
   .breadcrumb li:not(:last-child)::after {
     content: '›';
+    display: inline-flex;
+    align-items: center;
     margin: 0 10px;
     color: rgba(255, 255, 255, 0.2);
     font-size: 0.95rem;
+  }
+
+  .breadcrumb a,
+  .breadcrumb span[aria-current] {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1em;
+    line-height: 1.2;
   }
 
   .breadcrumb a {
@@ -90,5 +101,15 @@ const schema = emitSchema
 
   .breadcrumb span[aria-current] {
     color: rgba(255, 255, 255, 0.5);
+  }
+
+  @media (max-width: 520px) {
+    .breadcrumb ol {
+      row-gap: 6px;
+    }
+
+    .breadcrumb li:not(:last-child)::after {
+      margin: 0 8px;
+    }
   }
 </style>

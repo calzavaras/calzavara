@@ -48,7 +48,6 @@ const _modalBackground = [];
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initScrollAnimations();
-  initLogoBlink();
   if (document.querySelector('[data-refs-grid]')) initReferencesReveal();
   if (document.querySelector('#mailBtn, .reveal-mail, .open-contact')) initSpamProtection();
   if (document.getElementById('contact-modal')) initContactModal();
@@ -91,44 +90,6 @@ function runWhenIdle(callback, timeout = TIMING.IDLE_TIMEOUT, fallbackDelay = TI
     return;
   }
   setTimeout(callback, Math.min(timeout, fallbackDelay));
-}
-
-function initLogoBlink() {
-  const logo = document.querySelector('[data-logo-blink]');
-  if (!logo) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  let blinkTimer = 0;
-
-  function setBlinkState(active) {
-    logo.classList.toggle('is-blinking', active);
-  }
-
-  function quickBlink(duration = 220) {
-    setBlinkState(true);
-    window.setTimeout(() => setBlinkState(false), duration);
-  }
-
-  function scheduleNextBlink() {
-    const nextDelay = 3500 + Math.random() * 5500;
-    blinkTimer = window.setTimeout(() => {
-      quickBlink();
-
-      // Gelegentliche Doppelblinzler wirken natürlicher als fixe Intervalle.
-      if (Math.random() < 0.24) {
-        window.setTimeout(() => quickBlink(170), 240 + Math.random() * 140);
-      }
-
-      scheduleNextBlink();
-    }, nextDelay);
-  }
-
-  scheduleNextBlink();
-
-  window.addEventListener('pagehide', () => {
-    window.clearTimeout(blinkTimer);
-    setBlinkState(false);
-  }, { once: true });
 }
 
 function initNavigation() {
