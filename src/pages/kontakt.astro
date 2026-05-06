@@ -38,7 +38,7 @@ const schema = JSON.stringify({
 
 <Layout
   title="Kontakt & Projektanfrage | Nigredo St. Gallen"
-  description="Ob erste Idee, konkreter Auftrag oder offene Frage: Direkter Kontakt zu Marco Calzavara. Ich sortiere mit dir, was sinnvoll ist und welcher nächste Schritt wirklich weiterbringt."
+  description="Direkter Kontakt zu Marco Calzavara. Ich sortiere mit dir, was sinnvoll ist und welcher nächste Schritt wirklich weiterbringt."
   canonical={pageUrl}
   ogTitle="Erzähl mir kurz, was du vorhast."
   ogDescription="Direkter Kontakt zu Marco Calzavara. Keine Umwege, kein Ticketsystem, kein Agenturtheater."
@@ -76,7 +76,7 @@ const schema = JSON.stringify({
           <div class="contact-top-stripe"></div>
 
           <div class="card-icon">
-            <svg width="48" height="48" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+            <svg width="48" height="48" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
               <defs>
                 <linearGradient id="mailGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stop-color="#00D2FF"/>
@@ -90,7 +90,7 @@ const schema = JSON.stringify({
           </div>
 
           <span class="cta-label">Direkter Kontakt</span>
-          <h3>Persönlich statt Prozess.</h3>
+          <h2>Persönlich statt Prozess.</h2>
           <p class="contact-text">Deine Anfrage landet ohne Umweg bei mir. Ich lese sie selbst und melde mich mit einer ehrlichen Einschätzung zurück. Kein Formularlabyrinth, kein Verkaufsritual. Einfach ein sinnvoller nächster Schritt.</p>
 
           <button id="mailBtn" class="btn btn-primary">Jetzt schreiben</button>
@@ -192,7 +192,7 @@ const schema = JSON.stringify({
     color: rgba(255, 255, 255, 0.42);
   }
 
-  .contact-panel h3 {
+  .contact-panel h2 {
     font-size: clamp(1.45rem, 2.4vw, 1.72rem);
     line-height: 1.14;
     letter-spacing: -0.02em;

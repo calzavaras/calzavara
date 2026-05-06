@@ -36,10 +36,10 @@ const {
   ogTitle,
   ogDescription,
   ogType = 'website',
-  ogImage = 'https://www.nigredo.ch/assets/marco-calzavara-portrait-nigredo-st-gallen.webp',
+  ogImage = 'https://www.nigredo.ch/referenzen/therapie-ost/therapie-ost-website-screenshot-og.jpg',
   ogImageAlt = 'Marco Calzavara, Gründer von Nigredo in St. Gallen',
-  ogImageWidth = '768',
-  ogImageHeight = '1024',
+  ogImageWidth = '1360',
+  ogImageHeight = '823',
   ogImageType,
   twitterTitle,
   twitterDescription,
@@ -75,21 +75,14 @@ const siteIdentitySchema = JSON.stringify({
       "name": "Nigredo",
       "url": "https://www.nigredo.ch/",
       "inLanguage": "de-CH",
-      "publisher": { "@id": "https://www.nigredo.ch/#organization" },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://www.nigredo.ch/?q={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
-      }
+      "publisher": { "@id": "https://www.nigredo.ch/#organization" }
     },
     {
       "@type": ["LocalBusiness", "ProfessionalService", "Organization"],
       "@id": "https://www.nigredo.ch/#organization",
       "name": "Nigredo | Marco Calzavara",
       "url": "https://www.nigredo.ch/",
+      "email": "calzavara3830@gmail.com",
       "logo": {
         "@type": "ImageObject",
         "@id": "https://www.nigredo.ch/#logo",
@@ -105,6 +98,11 @@ const siteIdentitySchema = JSON.stringify({
       "foundingDate": "2025",
       "knowsAbout": ["Webdesign", "Softwareentwicklung", "KI-Lösungen", "Branding", "User Experience Design", "Automatisierung"],
       "numberOfEmployees": { "@type": "QuantitativeValue", "value": 1 },
+      "areaServed": [
+        { "@type": "Country", "name": "Schweiz" },
+        { "@type": "AdministrativeArea", "name": "St. Gallen" },
+        { "@type": "AdministrativeArea", "name": "Ostschweiz" }
+      ],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Wildeggstrasse 37",
@@ -126,6 +124,12 @@ const siteIdentitySchema = JSON.stringify({
         "availableLanguage": ["German", "English"]
       },
       "priceRange": "$$",
+      "makesOffer": [
+        { "@type": "Offer", "itemOffered": { "@id": "https://www.nigredo.ch/website-fuer-selbststaendige-kmu-und-vereine/#service" } },
+        { "@type": "Offer", "itemOffered": { "@id": "https://www.nigredo.ch/technik-und-cms/#service" } },
+        { "@type": "Offer", "itemOffered": { "@id": "https://www.nigredo.ch/lokal-gefunden-werden/#service" } },
+        { "@type": "Offer", "itemOffered": { "@id": "https://www.nigredo.ch/loesungen/#ki" } }
+      ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Digitale Dienstleistungen",
@@ -210,6 +214,7 @@ const siteIdentitySchema = JSON.stringify({
 
   <link rel="preconnect" href="https://cloud.umami.is" crossorigin>
   <link rel="dns-prefetch" href="https://cloud.umami.is">
+  <link rel="preload" as="image" href="/assets/nigredo-logo-header.webp" type="image/webp">
 
   {preloadImage && (
     <link rel="preload" as="image" href={preloadImage} type={preloadImageType || undefined} imagesrcset={preloadImageSrcset || undefined} imagesizes={preloadImageSizes || undefined} />

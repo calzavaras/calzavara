@@ -1,10 +1,12 @@
 {
   "name": "nigredo-astro",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "npx esbuild src/scripts/main.js --minify --target=es2017 --outfile=static/main.min.js && astro build && node scripts/update-csp.mjs",
+    "build:assets": "npx esbuild src/scripts/main.js --minify --target=es2017 --outfile=static/main.min.js",
+    "validate:site": "node scripts/validate-site.mjs",
+    "build": "npm run build:assets && astro build && npm run validate:site && node scripts/update-csp.mjs",
     "preview": "astro preview"
   },
   "dependencies": {

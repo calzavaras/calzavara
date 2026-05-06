@@ -29,7 +29,7 @@ Fixpreise statt Stundenzählen. Du weisst vorher, was es kostet und wann es fert
 
 ---
 
-# Lösungen (https://www.nigredo.ch/loesungen)
+# Lösungen (https://www.nigredo.ch/loesungen/)
 
 ## Was ich für dich liefere
 
@@ -134,7 +134,7 @@ Das hängt von Inhalt und Umfang ab. Kleine Websites können schnell starten, we
 
 ---
 
-# Referenzen – Übersicht (https://www.nigredo.ch/referenzen)
+# Referenzen – Übersicht (https://www.nigredo.ch/referenzen/)
 
 ## Projekte aus der Praxis
 
@@ -144,7 +144,7 @@ Keine aufgeblähten Case-Studies, kein Buzzword-Bingo. Echte Projekte, die heute
 
 ---
 
-# KI Voice Agent für IV-Stellen (https://www.nigredo.ch/referenzen/ki-voice-agent)
+# KI Voice Agent für IV-Stellen (https://www.nigredo.ch/referenzen/ki-voice-agent/)
 
 Kategorie: KI
 Projektabschluss: Februar 2026
@@ -165,7 +165,7 @@ Highlights: Echtzeit-Sprachverarbeitung, Google Gemini 2.5 Flash, DE / FR / IT /
 
 ---
 
-# Dashboard für Kantonsverwaltung (https://www.nigredo.ch/referenzen/dashboard-kantonsverwaltung)
+# Dashboard für Kantonsverwaltung (https://www.nigredo.ch/referenzen/dashboard-kantonsverwaltung/)
 
 Kategorie: Tool
 Projektabschluss: Juni 2025
@@ -185,7 +185,7 @@ Highlights: 100% lokal, Drag & Drop, Anonymisierung, PDF-Export
 
 ---
 
-# Website für Therapie Ost (https://www.nigredo.ch/referenzen/therapie-ost)
+# Website für Therapie Ost (https://www.nigredo.ch/referenzen/therapie-ost/)
 
 Kategorie: Website
 Projektabschluss: April 2026
@@ -207,7 +207,7 @@ Highlights: ruhiger Praxisauftritt, mobile Optimierung, direkte Online-Terminbuc
 
 ---
 
-# Über mich (https://www.nigredo.ch/ueber-uns)
+# Über mich (https://www.nigredo.ch/ueber-uns/)
 
 ## Wer ich bin
 
@@ -227,7 +227,7 @@ Marco ist ein Macher mit Ideenüberschuss: kreativ, neugierig, manchmal unkonven
 
 ---
 
-# Kontakt (https://www.nigredo.ch/kontakt)
+# Kontakt (https://www.nigredo.ch/kontakt/)
 
 ## Projektstart
 
@@ -242,7 +242,7 @@ Adresse: Wildeggstrasse 37, 9000 St. Gallen, Schweiz
 
 ---
 
-# Impressum (https://www.nigredo.ch/impressum)
+# Impressum (https://www.nigredo.ch/impressum/)
 
 ## Kontaktadresse
 Nigredo
@@ -255,7 +255,7 @@ Verantwortliche Person: Marco Calzavara
 
 ---
 
-# Datenschutz (https://www.nigredo.ch/datenschutz)
+# Datenschutz (https://www.nigredo.ch/datenschutz/)
 
 Verantwortlich: Nigredo, Marco Calzavara, Wildeggstrasse 37, 9000 St. Gallen, Schweiz.
 Hosting bei Hosttech in der Schweiz. SSL-Verschlüsselung aktiv.

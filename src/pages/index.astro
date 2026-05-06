@@ -22,7 +22,7 @@ const schema = JSON.stringify({
 
 <Layout
   title="Websites & KI-Lösungen aus St. Gallen | Nigredo"
-  description="Websites, digitale Lösungen, Tools und Texte mit Charakter. Durchdacht bis ins Detail und gemacht, um langfristig zu bleiben. Persönlich, zum Fixpreis, ohne Baukasten."
+  description="Websites, digitale Lösungen, Tools und Texte mit Charakter. Durchdacht bis ins Detail, persönlich, zum Fixpreis und ohne Baukasten."
   canonical="https://www.nigredo.ch/"
   ogTitle="Websites & Digitale Lösungen, die wirklich zu dir passen."
   ogDescription="Kein Baukasten, keine Kompromisse. Nigredo entwickelt digitale Produkte mit Substanz. Persönlich. Fixpreis. Aus St. Gallen."
@@ -160,83 +160,6 @@ const schema = JSON.stringify({
     margin-bottom: 0;
   }
 
-  .value-card {
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.018)),
-      #0a0a0c;
-    isolation: isolate;
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.035),
-      0 18px 45px rgba(0, 0, 0, 0.22);
-  }
-
-  .value-card::before {
-    display: none;
-  }
-
-  .value-card::after,
-  .value-card:hover::after {
-    opacity: 0;
-  }
-
-  .value-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(255, 255, 255, 0.16);
-    background:
-      linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.045),
-        rgba(255, 255, 255, 0.022)
-      ),
-      #0b0b0d;
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.05),
-      0 28px 60px rgba(0, 0, 0, 0.32);
-  }
-
-  .value-card .card-icon {
-    width: 3.15rem;
-    height: 3.15rem;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease, background-color 0.35s ease, box-shadow 0.35s ease;
-    background: rgba(255, 255, 255, 0.03);
-    position: relative;
-  }
-
-  .value-card:hover .card-icon {
-    border-color: rgba(255, 255, 255, 0.16);
-    background: color-mix(in srgb, var(--icon-shadow) 18%, rgba(255, 255, 255, 0.045));
-    box-shadow:
-      0 0 22px color-mix(in srgb, var(--icon-shadow) 76%, transparent),
-      0 0 48px color-mix(in srgb, var(--icon-shadow) 46%, transparent),
-      inset 0 0 18px rgba(255, 255, 255, 0.06);
-    transform: translateY(-1px);
-  }
-
-  .value-card .gradient-icon {
-    width: 1.95rem;
-    height: 1.95rem;
-    opacity: 1;
-    background: var(--icon-gradient);
-    filter: brightness(1.18) saturate(1.28) drop-shadow(0 0 12px var(--icon-shadow));
-  }
-
-  .value-card:hover .gradient-icon {
-    opacity: 1;
-    background: var(--icon-gradient);
-    filter:
-      brightness(1.7)
-      saturate(2.1)
-      contrast(1.08)
-      drop-shadow(0 0 12px var(--icon-shadow))
-      drop-shadow(0 0 28px var(--icon-shadow));
-  }
-
   .home-final-section {
     padding-top: 52px;
     padding-bottom: 118px;
@@ -319,10 +242,4 @@ const schema = JSON.stringify({
     }
   }
 
-  /* Utility Breakpoint Helpers */
-  .hidden-mobile { display: inline; }
-  @media (max-width: 640px) { .hidden-mobile { display: none; } }
-  
-  .hidden-tablet { display: inline; }
-  @media (max-width: 1024px) { .hidden-tablet { display: none; } }
 </style>

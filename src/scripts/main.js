@@ -99,20 +99,27 @@ function initNavigation() {
   const desktopNavQuery = window.matchMedia('(min-width: 981px)');
 
   if (menuBtn && navLinks && header) {
+    function syncMenuButtonState(expanded) {
+      menuBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      menuBtn.setAttribute('aria-label', expanded ? 'Menü schliessen' : 'Menü öffnen');
+    }
+
     function closeNav() {
       const wasOpen = navLinks.classList.contains('mobile-active');
       navLinks.classList.remove('mobile-active');
-      menuBtn.setAttribute('aria-expanded', 'false');
+      syncMenuButtonState(false);
       if (wasOpen) unlockScroll();
       header.classList.remove('menu-open');
     }
 
     function openNav() {
       navLinks.classList.add('mobile-active');
-      menuBtn.setAttribute('aria-expanded', 'true');
+      syncMenuButtonState(true);
       lockScroll();
       header.classList.add('menu-open');
     }
+
+    syncMenuButtonState(false);
 
     menuBtn.addEventListener('click', () => {
       if (navLinks.classList.contains('mobile-active')) {
@@ -467,7 +474,7 @@ function initLightbox() {
       <button class="lightbox-nav lightbox-prev" aria-label="Vorheriges Bild">&lsaquo;</button>
       <button class="lightbox-nav lightbox-next" aria-label="Nächstes Bild">&rsaquo;</button>
       <div class="lightbox-image-container">
-        <img class="lightbox-content" id="lightbox-img" src="" alt="Bild in Grossansicht">
+        <img class="lightbox-content" id="lightbox-img" src="" alt="Bild in Grossansicht" decoding="async">
         <div class="lightbox-counter" id="lightbox-counter"></div>
       </div>
     `;

@@ -7,7 +7,7 @@ const pageUrl = 'https://www.nigredo.ch/haeufige-fragen-webdesign/';
 const faqs = [
   {
     question: 'Was kostet eine Website bei Nigredo?',
-    answer: 'Das hängt vom Umfang ab. Eine schlanke Website mit wenigen Seiten kostet weniger als ein Auftritt mit CMS, individuellen Funktionen, Formularen, Buchung, Datenbank oder KI-Unterstützung. Nach einer kurzen Klärung bekommst du ein transparentes Angebot. Kein verstecktes Abo. Keine Funktionen, die du nicht brauchst. Du weisst vorher, was es kostet.'
+    answer: 'Das hängt vom Umfang ab. Eine schlanke Website mit wenigen Seiten kostet weniger als ein Auftritt mit CMS, individuellen Funktionen, Formularen, Buchung, Datenbank oder KI Unterstützung. Nach einer kurzen Klärung bekommst du ein transparentes Angebot. Kein verstecktes Abo. Keine Funktionen, die du nicht brauchst. Du weisst vorher, was es kostet.'
   },
   {
     question: 'Gibt es einen Fixpreis?',
@@ -39,11 +39,11 @@ const faqs = [
   },
   {
     question: 'Muss ich die Texte selbst schreiben?',
-    answer: 'Nicht zwingend. Du kannst bestehende Texte, Stichworte oder grobe Gedanken liefern – ich entwickle daraus klare Struktur und saubere Website-Texte. Wenn noch wenig vorhanden ist, erarbeiten wir die Inhalte gemeinsam.'
+    answer: 'Nicht zwingend. Du kannst bestehende Texte, Stichworte oder grobe Gedanken liefern. Ich entwickle daraus klare Struktur und saubere Website Texte. Wenn noch wenig vorhanden ist, erarbeiten wir die Inhalte gemeinsam.'
   },
   {
     question: 'Wann brauche ich ein CMS?',
-    answer: 'Wenn du Inhalte regelmässig selbst aktualisieren willst – Angebote, News, Projekte, Termine. Dann baue ich ein CMS ein, das genau auf dein Projekt zugeschnitten ist. Wenn Inhalte kaum ändern, ist eine statische Website oft schneller, sicherer und wartungsärmer. Mehr dazu steht auf Technik & CMS.'
+    answer: 'Wenn du Inhalte regelmässig selbst aktualisieren willst, zum Beispiel Angebote, News, Projekte oder Termine. Dann baue ich ein CMS ein, das genau auf dein Projekt zugeschnitten ist. Wenn Inhalte kaum ändern, ist eine statische Website oft schneller, sicherer und wartungsärmer. Mehr dazu steht auf Technik & CMS.'
   },
   {
     question: 'Ist die Website für Smartphone und Tablet optimiert?',
@@ -67,7 +67,7 @@ const faqs = [
   },
   {
     question: 'Wann lohnt sich ein KI-Helfer?',
-    answer: 'Wenn eine Aufgabe regelmässig wiederkehrt: ähnliche Anfragen beantworten, Texte vorbereiten, Informationen sortieren, Formularverarbeitung. Ich entwickle kleine Assistenten nur dann, wenn der Nutzen klar ist – nicht um Eindruck zu machen, sondern um Arbeit abzunehmen.'
+    answer: 'Wenn eine Aufgabe regelmässig wiederkehrt: ähnliche Anfragen beantworten, Texte vorbereiten, Informationen sortieren, Formularverarbeitung. Ich entwickle kleine Assistenten nur dann, wenn der Nutzen klar ist, nicht um Eindruck zu machen, sondern um Arbeit abzunehmen.'
   },
   {
     question: 'Wie lange dauert eine Website?',
@@ -135,7 +135,7 @@ const schema = JSON.stringify({
 
 <Layout
   title="FAQ zu Websites, CMS und digitalen Lösungen | Nigredo"
-  description="Was kostet eine Website in der Schweiz? Wann brauche ich ein CMS? Wie lange dauert die Umsetzung? Klare Antworten vor dem Start – für KMU, Selbständige und Vereine."
+  description="Was kostet eine Website? Wann brauche ich ein CMS? Wie lange dauert die Umsetzung? Klare Antworten für KMU, Selbständige und Vereine."
   canonical={pageUrl}
   ogTitle="FAQ zu Websites, CMS und digitalen Lösungen | Nigredo"
   ogDescription="Klare Antworten zu Websites, CMS, Datenschutz, KI Helfern und lokaler Sichtbarkeit."
@@ -156,7 +156,7 @@ const schema = JSON.stringify({
         <span class="badge badge--purple">FAQ</span>
         <h1 id="faq-title" class="home-hero__title sub-page-hero__title">
           Häufige Fragen<br class="hidden-mobile">
-          <span class="gradient-text">zu Websites und CMS.</span>
+          <span class="gradient-text">zu Websites.</span>
         </h1>
         <p class="hero-lead sub-page-hero__lead">
           Was kostet eine Website? Brauchst du ein CMS? Wie läuft die Umsetzung ab? Und wann lohnt sich ein kleiner KI Helfer? Hier findest du klare Antworten auf die Fragen, die vor dem Start wirklich zählen.
@@ -204,127 +204,6 @@ const schema = JSON.stringify({
 </Layout>
 
 <style>
-  .sub-page-hero {
-    min-height: auto;
-    display: flex;
-    align-items: center;
-    padding-top: var(--hero-offset-top-breadcrumb);
-    padding-bottom: var(--hero-offset-bottom);
-  }
-
-  .sub-page-hero .badge {
-    margin-bottom: 1.15rem;
-  }
-
-  .sub-page-hero__container {
-    position: relative;
-    width: 100%;
-  }
-
-  .sub-page-hero__content {
-    max-width: 940px;
-  }
-
-  .sub-page-hero__title {
-    max-width: 940px;
-    font-size: var(--hero-title-size);
-    line-height: var(--hero-title-line-height);
-    letter-spacing: -0.015em;
-    margin-bottom: clamp(24px, 3vw, 30px);
-  }
-
-  .sub-page-hero__lead {
-    max-width: 620px;
-    font-size: var(--lead-size);
-    line-height: 1.65;
-  }
-
-  .final-cta-section {
-    padding-top: clamp(48px, 6vw, 72px);
-    padding-bottom: clamp(92px, 9vw, 128px);
-  }
-
-  .final-cta-content {
-    max-width: 660px;
-  }
-
-  .final-cta-content .cta-label {
-    color: rgba(255, 255, 255, 0.42);
-  }
-
-  .final-cta-content h2 {
-    color: #f5f5f7;
-    font-size: clamp(2.25rem, 4.5vw, 3.7rem);
-    line-height: 1.04;
-    letter-spacing: 0;
-    margin-bottom: 0;
-  }
-
-  .final-cta-content h2 span {
-    color: rgba(255, 255, 255, 0.62);
-  }
-
-  .final-cta-content .hero-cta-group {
-    margin-top: 34px;
-  }
-
-  .sub-page-hero .btn-ghost,
-  .final-cta-content .btn-ghost {
-    background-image:
-      linear-gradient(#050505, #050505),
-      linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
-  }
-
-  .sub-page-hero .btn-ghost:hover,
-  .final-cta-content .btn-ghost:hover {
-    animation: none;
-    transform: translateY(-2px);
-    background-image:
-      linear-gradient(#0a0a0c, #0a0a0c),
-      linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
-    box-shadow: 0 10px 26px rgba(255, 255, 255, 0.08);
-  }
-
-  .sub-page-hero .btn-primary:hover,
-  .final-cta-content .btn-primary:hover {
-    box-shadow:
-      inset 0 2px 4px rgba(255, 255, 255, 1),
-      0 10px 26px rgba(255, 255, 255, 0.14);
-  }
-
-  @media (max-width: 860px) {
-    .sub-page-hero {
-      padding-top: var(--hero-offset-top-breadcrumb-mobile);
-      padding-bottom: 50px;
-    }
-
-    .sub-page-hero__title {
-      font-size: var(--hero-title-size-tablet);
-      line-height: var(--hero-title-line-height-mobile);
-    }
-  }
-
-  @media (max-width: 520px) {
-    .sub-page-hero__lead {
-      font-size: var(--lead-size-mobile);
-      line-height: 1.6;
-    }
-
-    .sub-page-hero__title {
-      font-size: var(--hero-title-size-mobile);
-      line-height: var(--hero-title-line-height-mobile);
-    }
-
-    .final-cta-section {
-      padding-top: 40px;
-      padding-bottom: 92px;
-    }
-
-    .final-cta-content h2 {
-      font-size: clamp(1.8rem, 11vw, 2.5rem);
-    }
-  }
-
   .faq-section-intro {
     max-width: 760px;
     margin-top: 40px;
@@ -435,10 +314,4 @@ const schema = JSON.stringify({
     }
   }
 
-  /* Utility Breakpoint Helpers */
-  .hidden-mobile { display: inline; }
-  @media (max-width: 640px) { .hidden-mobile { display: none; } }
-  
-  .hidden-tablet { display: inline; }
-  @media (max-width: 1024px) { .hidden-tablet { display: none; } }
 </style>

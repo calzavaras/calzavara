@@ -17,7 +17,7 @@ Full-Version: https://www.nigredo.ch/llms-full.txt
 Nigredo wurde von Marco Calzavara gegründet und hat den Sitz in St. Gallen, Schweiz. Der Fokus liegt auf massgeschneiderten digitalen Lösungen: Von der Firmenwebseite über individuelle Business-Software bis hin zu KI-gestützten Automatisierungen. Alle Projekte werden direkt von Marco Calzavara betreut – persönlich, transparent und auf Fixpreisbasis.
 
 - Website: https://www.nigredo.ch
-- Kontakt: https://www.nigredo.ch/kontakt
+- Kontakt: https://www.nigredo.ch/kontakt/
 - E-Mail: calzavara3830@gmail.com
 - Standort: Wildeggstrasse 37, 9000 St. Gallen, Schweiz
 - Gründungsjahr: 2025
@@ -79,19 +79,19 @@ Nigredo arbeitet ausschliesslich mit **Fixpreisen**. Vor jedem Projekt gibt es e
 KI-gestützter Sprachassistent für Schweizer IV-Stellen zum Thema AHV-Hilfsmittel. Echtzeit-Sprachverarbeitung mit Google Gemini 2.5 Flash, vier Sprachen (DE/FR/IT/EN), 24/7 autonom erreichbar. Der Agent verfügt über echtes Fachwissen aus hinterlegten Dokumenten und führt natürliche Gespräche.
 - Technologie: Python, Google Gemini 2.5 Flash, WebSockets, Echtzeit-TTS
 - Projektabschluss: Februar 2026
-- URL: https://www.nigredo.ch/referenzen/ki-voice-agent
+- URL: https://www.nigredo.ch/referenzen/ki-voice-agent/
 
 ### Dashboard für Kantonsverwaltung
 Lokales Excel-Analyse-Dashboard für eine Schweizer Kantonsverwaltung. Sensible Personaldaten bleiben 100% lokal im Browser – kein Server, kein Upload. Drag & Drop Import, KPIs, Diagramme, Anonymisierung, PDF-Export.
 - Technologie: JavaScript, SheetJS, Chart.js, PDF-Export
 - Projektabschluss: Juni 2025
-- URL: https://www.nigredo.ch/referenzen/dashboard-kantonsverwaltung
+- URL: https://www.nigredo.ch/referenzen/dashboard-kantonsverwaltung/
 
 ### Website für Therapie Ost
 Ruhige, vertrauenswürdige Praxis-Website für Therapie Ost in St. Gallen. Klare Positionierung, starke Bildsprache, sauber strukturierte Inhalte und direkter Weg zur Online-Terminbuchung.
 - Technologie: Astro, responsive Frontend-Entwicklung, Content-Struktur, Online-Buchungsintegration
 - Projektabschluss: April 2026
-- URL: https://www.nigredo.ch/referenzen/therapie-ost
+- URL: https://www.nigredo.ch/referenzen/therapie-ost/
 - Live: https://www.therapie-ost.ch
 
 ## Häufig gestellte Fragen (FAQ)
@@ -115,7 +115,7 @@ Ja, KI-Tools werden gezielt eingesetzt – für Texte, Bilder, Code und Automati
 
 Marco Calzavara ist Gründer von Nigredo, Mitgründer der HappyPath GmbH und Teamleiter in der kantonalen Verwaltung mit Verantwortung für Abteilungsentwicklung. Er verbindet Führungserfahrung, mehrere gegründete und teils verkaufte Firmen, KI-Interesse, Gestaltung und ein starkes Netzwerk erfahrener Informatikfachleute. Sein Fokus: Möglichkeiten erkennen, die richtigen Menschen verbinden und Ideen schnell, direkt und ohne Theater in Ergebnisse bringen.
 
-- Profil: https://www.nigredo.ch/ueber-uns
+- Profil: https://www.nigredo.ch/ueber-uns/
 - LinkedIn: https://ch.linkedin.com/in/calzavara-marco
 - GitHub: https://github.com/calza
 
@@ -123,7 +123,7 @@ Marco Calzavara ist Gründer von Nigredo, Mitgründer der HappyPath GmbH und Tea
 
 Direkter Kontakt zu Marco Calzavara:
 - E-Mail: calzavara3830@gmail.com
-- Kontaktformular: https://www.nigredo.ch/kontakt
+- Kontaktformular: https://www.nigredo.ch/kontakt/
 - Adresse: Wildeggstrasse 37, 9000 St. Gallen, Schweiz
 
 Keine Sales-Teams, keine Warteschleifen. Anfragen werden persönlich beantwortet, meistens am selben Tag.
@@ -132,5 +132,5 @@ Keine Sales-Teams, keine Warteschleifen. Anfragen werden persönlich beantwortet
 
 Der Inhalt dieser Website darf von KI-Systemen zum Verständnis und zur Indexierung des Unternehmens, seiner Dienstleistungen und Referenzen genutzt werden. Eine kommerzielle Nutzung der Inhalte für KI-Trainingsdatensätze ohne ausdrückliche Genehmigung ist nicht gestattet.
 
-- Datenschutz: https://www.nigredo.ch/datenschutz
-- Impressum: https://www.nigredo.ch/impressum
+- Datenschutz: https://www.nigredo.ch/datenschutz/
+- Impressum: https://www.nigredo.ch/impressum/
