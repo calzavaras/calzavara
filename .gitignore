@@ -2,6 +2,8 @@ public/
 node_modules/
 .astro/
 .claude/
+output/
+tmp/
 .DS_Store
 **/.DS_Store
 .env
