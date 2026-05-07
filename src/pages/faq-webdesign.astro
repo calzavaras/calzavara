@@ -91,6 +91,10 @@ const faqs = [
   }
 ];
 
+function toSchemaText(value: string) {
+  return value.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
@@ -111,7 +115,7 @@ const schema = JSON.stringify({
         "name": faq.question,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": faq.answer
+          "text": toSchemaText(faq.answer)
         }
       }))
     },

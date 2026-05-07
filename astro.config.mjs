@@ -44,14 +44,22 @@ export default defineConfig({
           'https://www.nigredo.ch/website-fuer-kmu-selbststaendige/',
           'https://www.nigredo.ch/lokale-seo/',
           'https://www.nigredo.ch/website-technik-cms/',
-          'https://www.nigredo.ch/faq-webdesign/',
         ].includes(url)) {
           item.priority = 0.75;
           item.lastmod = new Date('2026-05-05');
         }
+        else if (url === 'https://www.nigredo.ch/faq-webdesign/') {
+          item.priority = 0.75;
+          item.lastmod = new Date('2026-05-06');
+        }
+        else if (url === 'https://www.nigredo.ch/impressum/' || url === 'https://www.nigredo.ch/datenschutz/') {
+          item.priority = 0.3;
+          item.changefreq = 'yearly';
+          item.lastmod = new Date('2026-04-28');
+        }
         return item;
       },
-      filter: (page) => !page.includes('/404') && !page.includes('/impressum') && !page.includes('/datenschutz'),
+      filter: (page) => !page.includes('/404'),
     }),
   ],
   trailingSlash: 'always',

@@ -1,7 +1,9 @@
 import { readdir, readFile } from 'fs/promises';
+import { existsSync } from 'fs';
 import { join } from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import sharp from 'sharp';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -10,6 +12,7 @@ const STATIC_DIR = join(ROOT, 'static');
 
 const errors = [];
 const warnings = [];
+const noindexCanonicals = [];
 
 async function* walk(dir) {
   const entries = await readdir(dir, { withFileTypes: true });
@@ -35,7 +38,97 @@ function stripTags(value) {
   return value.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
-function validateHtml(html, relativePath) {
+function getLocalPublicPath(url) {
+  if (!url) return undefined;
+
+  if (url.startsWith('/')) {
+    return join(PUBLIC_DIR, url.split('?')[0].split('#')[0]);
+  }
+
+  try {
+    const parsed = new URL(url);
+    if (parsed.origin !== 'https://www.nigredo.ch') return undefined;
+    return join(PUBLIC_DIR, parsed.pathname);
+  } catch {
+    return undefined;
+  }
+}
+
+function findSchemaNodesByType(node, type, results = []) {
+  if (!node || typeof node !== 'object') return results;
+
+  const nodeType = node['@type'];
+  if (nodeType === type || (Array.isArray(nodeType) && nodeType.includes(type))) {
+    results.push(node);
+  }
+
+  for (const value of Object.values(node)) {
+    if (Array.isArray(value)) {
+      for (const item of value) findSchemaNodesByType(item, type, results);
+    } else {
+      findSchemaNodesByType(value, type, results);
+    }
+  }
+
+  return results;
+}
+
+function validateJsonLd(html, relativePath) {
+  let jsonLdCount = 0;
+
+  for (const match of html.matchAll(/<script[^>]+type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)) {
+    jsonLdCount += 1;
+
+    let parsed;
+    try {
+      parsed = JSON.parse(match[1]);
+    } catch (error) {
+      addError(`${relativePath}: invalid JSON-LD block #${jsonLdCount} (${error.message})`);
+      continue;
+    }
+
+    for (const faqPage of findSchemaNodesByType(parsed, 'FAQPage')) {
+      const questions = Array.isArray(faqPage.mainEntity) ? faqPage.mainEntity : [];
+      for (const question of questions) {
+        const answerText = question?.acceptedAnswer?.text;
+        if (typeof answerText === 'string' && /<[^>]+>/.test(answerText)) {
+          addError(`${relativePath}: FAQPage answer JSON-LD must be plain text`);
+        }
+      }
+    }
+  }
+
+  if (jsonLdCount === 0) {
+    addError(`${relativePath}: missing JSON-LD`);
+  }
+}
+
+async function validateOpenGraphImage(html, relativePath) {
+  const ogImage = html.match(/<meta[^>]+property="og:image"[^>]+content="([^"]+)"/i)?.[1];
+  if (!ogImage) return;
+
+  const localPath = getLocalPublicPath(ogImage);
+  if (!localPath) return;
+
+  if (!existsSync(localPath)) {
+    addError(`${relativePath}: local Open Graph image does not exist (${ogImage})`);
+    return;
+  }
+
+  const expectedWidth = Number(html.match(/<meta[^>]+property="og:image:width"[^>]+content="([^"]+)"/i)?.[1]);
+  const expectedHeight = Number(html.match(/<meta[^>]+property="og:image:height"[^>]+content="([^"]+)"/i)?.[1]);
+  if (!expectedWidth || !expectedHeight) {
+    addError(`${relativePath}: Open Graph image is missing width or height`);
+    return;
+  }
+
+  const metadata = await sharp(localPath).metadata();
+  if (metadata.width !== expectedWidth || metadata.height !== expectedHeight) {
+    addError(`${relativePath}: Open Graph image dimensions are ${metadata.width}x${metadata.height}, metadata says ${expectedWidth}x${expectedHeight}`);
+  }
+}
+
+async function validateHtml(html, relativePath) {
   const isRedirectStub = /http-equiv=["']refresh["']/i.test(html);
 
   if (isRedirectStub) {
@@ -85,6 +178,11 @@ function validateHtml(html, relativePath) {
     addError(`${relativePath}: canonical must end with a trailing slash (${canonical})`);
   }
 
+  const robots = html.match(/<meta[^>]+name="robots"[^>]+content="([^"]+)"/i)?.[1] ?? '';
+  if (/noindex/i.test(robots) && canonical && relativePath !== 'public/404.html') {
+    noindexCanonicals.push(canonical);
+  }
+
   const hreflangDe = html.match(/<link[^>]+rel="alternate"[^>]+hreflang="de-CH"[^>]+href="([^"]+)"/i)?.[1];
   const hreflangDefault = html.match(/<link[^>]+rel="alternate"[^>]+hreflang="x-default"[^>]+href="([^"]+)"/i)?.[1];
   if (!hreflangDe || !hreflangDefault) {
@@ -110,10 +208,8 @@ function validateHtml(html, relativePath) {
     addError(`${relativePath}: expected exactly one <h1>, found ${h1Count}`);
   }
 
-  const jsonLdCount = [...html.matchAll(/<script[^>]+type="application\/ld\+json"/gi)].length;
-  if (jsonLdCount === 0) {
-    addError(`${relativePath}: missing JSON-LD`);
-  }
+  validateJsonLd(html, relativePath);
+  await validateOpenGraphImage(html, relativePath);
 
   if (/SearchAction/i.test(html) || /urlTemplate":"https:\/\/www\.nigredo\.ch\/\?q=/.test(html)) {
     addError(`${relativePath}: SearchAction schema should not be present`);
@@ -169,13 +265,38 @@ function validateTrailingSlashes(text, relativePath) {
   }
 }
 
+async function validateSitemap() {
+  const sitemap = await readFile(join(PUBLIC_DIR, 'sitemap-0.xml'), 'utf8');
+
+  for (const url of [
+    'https://www.nigredo.ch/impressum/',
+    'https://www.nigredo.ch/datenschutz/',
+  ]) {
+    if (!sitemap.includes(`<loc>${url}</loc>`)) {
+      addError(`public/sitemap-0.xml: missing expected legal page -> ${url}`);
+    }
+  }
+
+  if (sitemap.includes('/404')) {
+    addError('public/sitemap-0.xml: 404 page must not be included');
+  }
+
+  for (const canonical of noindexCanonicals) {
+    if (sitemap.includes(`<loc>${canonical}</loc>`)) {
+      addError(`public/sitemap-0.xml: noindex URL must not be included -> ${canonical}`);
+    }
+  }
+}
+
 async function main() {
   for await (const file of walk(PUBLIC_DIR)) {
     if (!file.endsWith('.html')) continue;
     const html = await readFile(file, 'utf8');
     const relativePath = file.replace(`${ROOT}/`, '');
-    validateHtml(html, relativePath);
+    await validateHtml(html, relativePath);
   }
+
+  await validateSitemap();
 
   for (const file of ['llms.txt', 'llms-full.txt']) {
     const fullPath = join(STATIC_DIR, file);

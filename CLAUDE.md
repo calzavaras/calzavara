@@ -47,7 +47,7 @@ The contact modal UI is in `src/components/ContactModal.astro`. Form submissions
 Single file: `src/styles/global.css` ("Nigredo Design System v9.9"). Dark theme (`--bg-body: #050505`). Brand gradient: yellow `#FFC700` → pink `#FF4D80` → purple `#A64DFF` → cyan `#00D2FF`. Key variables: `--container-width: 1100px`, `--header-height: 80px`.
 
 ### Sitemap
-`/404` is filtered out from the sitemap. `impressum` and `datenschutz` are included with low priority (0.3, `changefreq: yearly`) and are marked `noindex` via meta robots tag. Priority and `lastmod` for all pages are set manually in `astro.config.mjs`.
+`/404` is filtered out from the sitemap. `impressum` and `datenschutz` are included with low priority (0.3, `changefreq: yearly`) and are indexable. Priority and `lastmod` for all pages are set manually in `astro.config.mjs`.
 
 ### Pages
 - `/referenzen/*` — individual case study pages, each using `Breadcrumb.astro`

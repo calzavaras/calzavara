@@ -12,6 +12,19 @@ const schema = JSON.stringify({
         { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.nigredo.ch/" },
         { "@type": "ListItem", "position": 2, "name": "Impressum", "item": "https://www.nigredo.ch/impressum/" }
       ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nigredo.ch/impressum/#webpage",
+      "name": "Impressum | Nigredo",
+      "description": "Rechtliche Informationen, Kontaktangaben und Haftungsausschluss der Firma Nigredo, St. Gallen.",
+      "url": "https://www.nigredo.ch/impressum/",
+      "isPartOf": { "@id": "https://www.nigredo.ch/#website" },
+      "breadcrumb": { "@id": "https://www.nigredo.ch/impressum/#breadcrumb" },
+      "publisher": { "@id": "https://www.nigredo.ch/#organization" },
+      "inLanguage": "de-CH",
+      "datePublished": "2025-06-01",
+      "dateModified": "2026-04-28"
     }
   ]
 });
@@ -21,7 +34,6 @@ const schema = JSON.stringify({
   title="Impressum | Nigredo"
   description="Rechtliche Informationen, Kontaktangaben und Haftungsausschluss der Firma Nigredo, St. Gallen."
   canonical="https://www.nigredo.ch/impressum/"
-  robots="noindex, follow"
   schema={schema}
 >
   <section class="section pt-sub legal-page legal-page--impressum" aria-labelledby="impressum-title">
