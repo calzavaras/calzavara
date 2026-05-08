@@ -303,6 +303,10 @@ const schema = JSON.stringify({
     margin-top: clamp(64px, 7vw, 82px);
   }
 
+  .au-content-column {
+    --au-copy-max-width: 690px;
+  }
+
   /* Profile Column */
   .au-profile-column {
     position: sticky;
@@ -380,16 +384,18 @@ const schema = JSON.stringify({
 
   /* Content Column */
   .au-statement {
+    max-width: var(--au-copy-max-width);
     margin-bottom: 32px;
   }
 
   .au-statement .about-statement__quote {
-    max-width: 760px;
+    max-width: calc(100% + 32px);
+    box-sizing: border-box;
     font-size: var(--lead-size);
     line-height: 1.65;
     color: rgba(245, 245, 247, 0.92);
     font-style: italic;
-    margin: 0;
+    margin: 0 0 0 -32px;
     padding: 28px 32px;
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -402,7 +408,7 @@ const schema = JSON.stringify({
   }
 
   .au-bio p {
-    max-width: 760px;
+    max-width: var(--au-copy-max-width);
     font-size: var(--lead-size);
     line-height: 1.65;
     color: var(--text-secondary);
@@ -420,7 +426,7 @@ const schema = JSON.stringify({
   }
 
   .au-bio-more {
-    max-width: 760px;
+    max-width: var(--au-copy-max-width);
     margin-top: 0;
   }
 
@@ -701,6 +707,22 @@ const schema = JSON.stringify({
   }
 
   @media (max-width: 600px) {
+    .au-main-grid {
+      margin-top: 40px;
+      gap: 28px;
+    }
+
+    .au-content-column {
+      order: 1;
+      --au-copy-max-width: 100%;
+    }
+
+    .au-profile-column {
+      order: 2;
+      align-items: flex-start;
+      text-align: left;
+    }
+
     .about-hero__title {
       font-size: var(--hero-title-size-mobile);
       line-height: var(--hero-title-line-height-mobile);
@@ -709,9 +731,12 @@ const schema = JSON.stringify({
     .au-photo-container {
       width: 204px;
       height: 204px;
+      margin-bottom: 18px;
     }
 
     .au-statement .about-statement__quote {
+      max-width: 100%;
+      margin-left: 0;
       padding: 24px;
       font-size: var(--lead-size-mobile);
       line-height: 1.6;
