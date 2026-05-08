@@ -3,6 +3,23 @@ export const REFERENCES_PER_PAGE = 4;
 
 const referenceEntries = [
   {
+    href: '/referenzen/thinktank/',
+    imgSrc: '/referenzen/thinktank/thinktank-wissensdatenbank-kmu-referenzbild.webp',
+    imgAlt: 'ThinkTank Wissensplattform für ein KMU als reduzierte App-Visual mit cyanfarbenen Modulen und dunkler Oberfläche',
+    listImgCls: 'ref-main-card-img--cyan',
+    moreImgCls: 'case-more-card-img--cyan',
+    badge: { text: 'App', cls: 'accent-cyan' },
+    linkCls: '',
+    year: 'Mai 2026',
+    sortDate: '2026-05-01',
+    listTitle: 'ThinkTank Wissensplattform',
+    moreTitle: 'ThinkTank Wissensplattform',
+    sub: 'Interne Wissensplattform mit Themenwelten, Reviews und Anhängen',
+    listDesc: 'Eine interne Wissensplattform für ein KMU: sauber strukturierte Themenwelten, schnelle Suche, Verantwortlichkeiten, Reviews und Anhänge in einer Oberfläche, die im Alltag tatsächlich benutzt wird.',
+    moreDesc: 'Bringt Struktur, Suche, Reviews und Verantwortlichkeiten in eine klar geführte Wissensplattform.',
+    ariaLabel: 'ThinkTank Wissensplattform - Details ansehen',
+  },
+  {
     href: '/referenzen/ki-voice-agent/',
     imgSrc: '/referenzen/ki-voice-agent/ki-voice-agent-ahv-hilfsmittel-sprachassistent.svg',
     imgAlt: 'KI Voice Agent für IV-Stellen - AHV Hilfsmittel Sprachassistent von Nigredo',

@@ -1,0 +1,279 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import CaseMoreReferences from '../../../components/CaseMoreReferences.astro';
+
+const pageUrl = 'https://www.nigredo.ch/referenzen/thinktank/';
+const detailImage = '/referenzen/thinktank/thinktank-wissensdatenbank-kmu-detailansicht.webp';
+const detailImageAvif = '/referenzen/thinktank/thinktank-wissensdatenbank-kmu-detailansicht.avif';
+const ogImage = 'https://www.nigredo.ch/referenzen/thinktank/thinktank-wissensdatenbank-kmu-detailansicht-og.jpg';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${pageUrl}#breadcrumb`,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.nigredo.ch/" },
+        { "@type": "ListItem", "position": 2, "name": "Referenzen", "item": "https://www.nigredo.ch/referenzen/" },
+        { "@type": "ListItem", "position": 3, "name": "ThinkTank Wissensplattform", "item": pageUrl }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": `${pageUrl}#software`,
+      "name": "ThinkTank Wissensplattform",
+      "url": pageUrl,
+      "description": "Interne Wissensplattform für ein KMU mit Themenwelten, zentraler Suche, Reviews, Verantwortlichkeiten und Historie auf Basis eines statischen Frontends, einer schlanken PHP API und MySQL.",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Knowledge Management",
+      "operatingSystem": "Web Browser",
+      "inLanguage": "de-CH",
+      "dateCreated": "2026-05-01",
+      "datePublished": "2026-05-08",
+      "featureList": [
+        "Themenwelten mit bis zu vier Ebenen",
+        "Zentrale Suche über Einträge, Tags und Anhänge",
+        "Reviews, Verantwortlichkeiten und Status",
+        "Historie, Dashboard und Wissenspflege im Workflow",
+        "Schlanker Betrieb mit statischem Frontend, PHP API und MySQL"
+      ],
+      "screenshot": [
+        {
+          "@type": "ImageObject",
+          "url": ogImage,
+          "caption": "ThinkTank Wissensplattform mit Themenwelten, Wissenseinträgen, Statusdetails und klarer Bedienoberfläche"
+        }
+      ],
+      "creator": { "@id": "https://www.nigredo.ch/#organization" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${pageUrl}#webpage`,
+      "name": "ThinkTank Wissensplattform für ein KMU | Nigredo Referenzen",
+      "url": pageUrl,
+      "isPartOf": { "@id": "https://www.nigredo.ch/#website" },
+      "inLanguage": "de-CH",
+      "datePublished": "2026-05-08",
+      "dateModified": "2026-05-08",
+      "about": { "@id": `${pageUrl}#software` },
+      "breadcrumb": { "@id": `${pageUrl}#breadcrumb` },
+      "isAccessibleForFree": true,
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", ".case-hero-lead", ".case-feature-body h3"]
+      }
+    }
+  ]
+});
+---
+
+<Layout
+  title="ThinkTank Wissensplattform für ein KMU | Nigredo Referenzen"
+  description="Interne Wissensplattform für ein KMU mit Themenwelten, zentraler Suche, Reviews, Verantwortlichkeiten und schlankem Betrieb mit PHP und MySQL."
+  canonical={pageUrl}
+  ogTitle="ThinkTank Wissensplattform für ein KMU"
+  ogDescription="Themenwelten, zentrale Suche, Reviews und Verantwortlichkeiten in einer klar geführten Wissensplattform für den produktiven Alltag."
+  ogImage={ogImage}
+  ogImageAlt="ThinkTank Wissensplattform für ein KMU mit Themenwelten, Wissenseinträgen und Statusdetails"
+  ogImageWidth="1672"
+  ogImageHeight="941"
+  twitterTitle="ThinkTank Wissensplattform für ein KMU"
+  twitterDescription="Zentrale Suche, Reviews und klare Themenwelten in einer internen Wissensplattform für den produktiven Alltag."
+  schema={schema}
+  preloadImage={detailImageAvif}
+  preloadImageType="image/avif"
+>
+  <section class="section pt-sub case-page case-page--thinktank" aria-labelledby="thinktank-title">
+    <div class="hero-glow"></div>
+    <div class="container case-page__container">
+      <Breadcrumb items={[
+        { label: 'Start', href: '/' },
+        { label: 'Referenzen', href: '/referenzen/' },
+        { label: 'ThinkTank' }
+      ]} />
+
+      <a href="/referenzen/" class="case-back">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        Alle Referenzen
+      </a>
+
+      <div class="case-hero fade-up">
+        <div class="case-hero-content">
+          <span class="tech-badge accent-cyan case-hero-badge">App</span>
+          <h1 id="thinktank-title" class="home-hero__title case-hero-title">ThinkTank <span class="gradient-text">für ein KMU</span></h1>
+          <p class="hero-lead case-hero-lead">
+            Wissen entsteht jeden Tag. In Gesprächen, Projekten, Dokumenten und Entscheidungen. Doch ohne klare Struktur verschwindet es genauso schnell wieder. Für dieses KMU entstand mit ThinkTank eine zentrale Wissensplattform, die Informationen ordnet, Verantwortlichkeiten sichtbar macht und Wissen im Alltag genau dort verfügbar macht, wo es gebraucht wird.
+          </p>
+        </div>
+
+        <div class="case-hero-visual">
+          <div class="case-hero-canvas case-hero-canvas--blue">
+            <button
+              type="button"
+              class="case-hero-float case-hero-float--wide lightbox-trigger"
+              data-gallery={`["${detailImage}"]`}
+              data-gallery-index="0"
+              aria-label="ThinkTank Screenshot vergrössern"
+            >
+              <picture>
+                <source
+                  srcset={detailImageAvif}
+                  type="image/avif"
+                >
+                <img
+                  src={detailImage}
+                  alt="ThinkTank Wissensplattform für ein KMU als veredeltes Produktbild mit Themenwelten, Wissenseinträgen, Statusdetails und klarer Bedienoberfläche"
+                  width="1672"
+                  height="941"
+                  loading="eager"
+                  decoding="async"
+                  fetchpriority="high"
+                >
+              </picture>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-stats fade-up delay-100" style="--stats-cols: 4;">
+        <div class="case-stat">
+          <strong class="stat-cyan-aqua">Struktur</strong>
+          <span>Vier Ebenen</span>
+        </div>
+        <div class="case-stat">
+          <strong class="stat-cyan-aqua">Suche</strong>
+          <span>Alles auffindbar</span>
+        </div>
+        <div class="case-stat">
+          <strong class="stat-cyan-aqua">Reviews</strong>
+          <span>Bleibt aktuell</span>
+        </div>
+        <div class="case-stat">
+          <strong class="stat-cyan-aqua">Betrieb</strong>
+          <span>PHP + MySQL</span>
+        </div>
+      </div>
+
+      <div class="case-section fade-up delay-100">
+        <div class="case-section-hd">
+          <span class="case-eyebrow">Was wurde gebaut</span>
+          <h2 class="case-section-title">Wissensplattform für den produktiven Alltag</h2>
+        </div>
+        <div class="case-features">
+          <div class="case-feature">
+            <div class="case-feature-body">
+              <div class="case-feature-icon case-feature-icon--cyan">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="url(#thinktank-feature-grad-1)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><defs><linearGradient id="thinktank-feature-grad-1" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#00D2FF"/><stop offset="1" stop-color="#2FE8B4"/></linearGradient></defs><path d="M4 5.5h6"/><path d="M4 10.5h6"/><path d="M4 15.5h6"/><path d="M14 4h6v6h-6z"/><path d="M14 14h6v6h-6z"/></svg>
+              </div>
+              <div class="case-feature-text">
+                <h3>Themenwelten statt Dateichaos</h3>
+                <p>ThinkTank bündelt Wissen nicht in verstreuten Ordnern, Chats oder PDFs, sondern in klar aufgebauten Themenwelten mit bis zu vier Ebenen. Dadurch entsteht eine Struktur, die mit dem Unternehmen mitwächst, Orientierung schafft und Wissen nicht von einzelnen Personen abhängig macht.</p>
+              </div>
+            </div>
+          </div>
+          <div class="case-feature">
+            <div class="case-feature-body">
+              <div class="case-feature-icon case-feature-icon--cyan">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="url(#thinktank-feature-grad-2)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><defs><linearGradient id="thinktank-feature-grad-2" x1="4" y1="2" x2="20" y2="22" gradientUnits="userSpaceOnUse"><stop stop-color="#00D2FF"/><stop offset="1" stop-color="#2FE8B4"/></linearGradient></defs><circle cx="11" cy="11" r="6"/><path d="m20 20-3.5-3.5"/><path d="M8.5 11h5"/><path d="M11 8.5v5"/></svg>
+              </div>
+              <div class="case-feature-text">
+                <h3>Schnell finden statt lange suchen</h3>
+                <p>Einträge, Tags, Anhänge und Verantwortlichkeiten lassen sich zentral durchsuchen. Die Oberfläche ist bewusst klar gehalten, damit relevante Informationen ohne Umwege auffindbar sind. Nicht irgendwann. Sondern genau dann, wenn sie gebraucht werden.</p>
+              </div>
+            </div>
+          </div>
+          <div class="case-feature">
+            <div class="case-feature-body">
+              <div class="case-feature-icon case-feature-icon--cyan">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="url(#thinktank-feature-grad-3)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><defs><linearGradient id="thinktank-feature-grad-3" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#00D2FF"/><stop offset="1" stop-color="#2FE8B4"/></linearGradient></defs><path d="M12 3v4"/><path d="M12 17v4"/><path d="M5 8h14"/><path d="M5 16h14"/><path d="M7 12h4"/><path d="M15 12h2"/><circle cx="18" cy="12" r="3"/></svg>
+              </div>
+              <div class="case-feature-text">
+                <h3>Reviews, Besitzer und Historie eingebaut</h3>
+                <p>Wissen bleibt nur wertvoll, wenn es aktuell bleibt. Deshalb sind Review Daten, verantwortliche Personen, Status, Änderungsverlauf und Dashboard Kennzahlen direkt in die Anwendung integriert. So wird Wissenspflege nicht zur Zusatzaufgabe, sondern Teil eines sauberen Arbeitsflusses.</p>
+              </div>
+            </div>
+          </div>
+          <div class="case-feature">
+            <div class="case-feature-body">
+              <div class="case-feature-icon case-feature-icon--cyan">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="url(#thinktank-feature-grad-4)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><defs><linearGradient id="thinktank-feature-grad-4" x1="4" y1="2" x2="20" y2="22" gradientUnits="userSpaceOnUse"><stop stop-color="#00D2FF"/><stop offset="1" stop-color="#2FE8B4"/></linearGradient></defs><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8"/><path d="M8 17h5"/></svg>
+              </div>
+              <div class="case-feature-text">
+                <h3>Pragmatisch umgesetzt und sauber betreibbar</h3>
+                <p>ThinkTank setzt auf ein statisches Frontend, eine schlanke PHP API und MySQL im Hintergrund. Bewusst einfach, robust und wartbar. Keine überladene Plattform, kein unnötiger Overhead, sondern eine Lösung, die zur Realität eines KMU passt und langfristig sinnvoll betrieben werden kann.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <span class="case-date fade-up">Abgeschlossen: Mai 2026</span>
+
+      <div class="fade-up case-more-section">
+        <span class="case-more-label">Weitere Projekte</span>
+        <CaseMoreReferences />
+      </div>
+
+      <div class="section case-final-section fade-up">
+        <div class="section-cta case-final-cta">
+          <span class="cta-label">Der nächste Schritt</span>
+          <h2>Braucht dein Team<br><span>mehr Ordnung im Wissen?</span></h2>
+          <div class="hero-cta-group" style="justify-content: center;">
+            <a href="/kontakt/" class="btn btn-primary">Kontakt aufnehmen</a>
+            <a href="/referenzen/" class="btn btn-ghost">Alle Projekte</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style is:global>
+  .case-page--thinktank {
+    --case-accent: #00d2ff;
+    --case-accent-2: #2fe8b4;
+    --case-accent-soft: rgba(47, 232, 180, 0.14);
+    --case-accent-glow: rgba(0, 210, 255, 0.26);
+  }
+
+  .case-page--thinktank .gradient-text {
+    background: linear-gradient(to right, #00d2ff, #2fe8b4, #00d2ff);
+    background-size: 200% auto;
+    animation: gradientPan 24s linear infinite;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .stat-cyan-aqua {
+    background: linear-gradient(135deg, var(--case-accent) 0%, var(--case-accent-2) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .case-page--thinktank .case-hero-canvas--blue {
+    background:
+      radial-gradient(ellipse at 45% 45%, rgba(0, 210, 255, 0.24) 0%, rgba(47, 232, 180, 0.07) 48%, rgba(255, 255, 255, 0.02) 100%),
+      #0a0a0c;
+    border-color: rgba(0, 210, 255, 0.16);
+  }
+
+  .case-page--thinktank .case-feature:hover {
+    border-color: rgba(255, 255, 255, 0.16);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.05),
+      0 28px 60px rgba(0, 0, 0, 0.32),
+      0 0 28px rgba(0, 210, 255, 0.08);
+  }
+
+  .case-page--thinktank .case-feature-icon svg {
+    filter:
+      brightness(1.14)
+      saturate(1.18)
+      drop-shadow(0 0 8px rgba(0, 210, 255, 0.18));
+  }
+ </style>

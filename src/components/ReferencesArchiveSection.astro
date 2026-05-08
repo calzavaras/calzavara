@@ -180,7 +180,7 @@ if (pageNumber > 1) {
     grid-template-columns: 1fr 1fr;
     gap: clamp(24px, 3vw, 32px);
     margin-bottom: clamp(32px, 4vw, 40px);
-    align-items: start;
+    align-items: stretch;
   }
 
   .refs-intro {
@@ -191,6 +191,7 @@ if (pageNumber > 1) {
   .ref-main-card {
     display: flex;
     flex-direction: column;
+    height: 100%;
     border-radius: var(--radius-lg);
     border: 1px solid rgba(255,255,255,0.08);
     background: rgba(10, 10, 12, 0.75);
@@ -262,6 +263,7 @@ if (pageNumber > 1) {
     display: flex;
     flex-direction: column;
     flex: 1;
+    min-height: 0;
   }
 
   .ref-main-card-header {

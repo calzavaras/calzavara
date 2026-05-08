@@ -32,6 +32,10 @@ export default defineConfig({
           item.priority = 0.8;
           item.lastmod = new Date('2026-05-03');
         }
+        else if (url === 'https://www.nigredo.ch/referenzen/thinktank/') {
+          item.priority = 0.8;
+          item.lastmod = new Date('2026-05-08');
+        }
         else if (url === 'https://www.nigredo.ch/marco-calzavara/') {
           item.priority = 0.8;
           item.lastmod = new Date('2026-05-03');

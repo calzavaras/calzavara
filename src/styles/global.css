@@ -585,6 +585,12 @@ a:focus:not(:focus-visible),
   border: 1px solid rgba(0, 210, 255, 0.3);
 }
 
+.accent-blue {
+  color: #3B82F6;
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
 .accent-coral {
   color: #FF5CA8;
   background: rgba(255, 92, 168, 0.15);
@@ -2258,6 +2264,8 @@ nav {
   position: absolute;
   top: 24px;
   right: 24px;
+  appearance: none;
+  -webkit-appearance: none;
   background: none;
   border: none;
   color: #fff;
@@ -2265,6 +2273,15 @@ nav {
   cursor: pointer;
   line-height: 1;
   padding: 10px;
+  outline: none;
+  box-shadow: none;
+}
+
+.lightbox-close:focus,
+.lightbox-close:focus-visible {
+  outline: none;
+  box-shadow: none;
+  border: none;
 }
 
 .lightbox-nav {
@@ -3001,6 +3018,10 @@ nav {
 
 .case-more-card-img--cyan {
   background: linear-gradient(135deg, rgba(0, 210, 255, 0.18), rgba(166, 77, 255, 0.12));
+}
+
+.case-more-card-img--blue {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(20, 184, 166, 0.12));
 }
 
 .case-more-card-img--coral {

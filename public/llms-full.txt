@@ -3,7 +3,7 @@
 > Diese Datei enthält den vollständigen Textinhalt aller Seiten von www.nigredo.ch in maschinenlesbarem Format. Erstellt für KI-Systeme, die nicht die gesamte Website crawlen möchten.
 
 Website: https://www.nigredo.ch
-Letzte Aktualisierung: 2026-05-05
+Letzte Aktualisierung: 2026-05-08
 Kurzversion: https://www.nigredo.ch/llms.txt
 
 ---
@@ -204,6 +204,27 @@ Highlights: ruhiger Praxisauftritt, mobile Optimierung, direkte Online-Terminbuc
 - **Saubere Führung auf allen Geräten**: Leistungen, Team, Preise und Kontakt sind klar aufgebaut. Die Navigation bleibt leicht verständlich und die Inhalte funktionieren auch mobil ohne Reibung.
 - **Kurzer Weg zur Handlung**: Online-Terminbuchung und Call-to-Actions sind sichtbar integriert. Die Seite informiert nicht nur, sie bringt Interessierte direkt zum nächsten Schritt.
 - **Klare inhaltliche Positionierung**: Beschwerden, Nutzen und Rahmenbedingungen werden konkret benannt. Dadurch wird schnell verständlich, was Therapie Ost anbietet und warum die Praxis relevant ist.
+
+---
+
+# ThinkTank Wissensplattform für ein KMU (https://www.nigredo.ch/referenzen/thinktank/)
+
+Kategorie: App
+Projektabschluss: Mai 2026
+Technologie: Statisches Frontend, PHP API, MySQL
+
+## ThinkTank für ein KMU
+
+Wissen entsteht jeden Tag. In Gesprächen, Projekten, Dokumenten und Entscheidungen. Doch ohne klare Struktur verschwindet es genauso schnell wieder. Für dieses KMU entstand mit ThinkTank eine zentrale Wissensplattform, die Informationen ordnet, Verantwortlichkeiten sichtbar macht und Wissen im Alltag genau dort verfügbar macht, wo es gebraucht wird.
+
+Highlights: Themenwelten, zentrale Suche, Reviews, schlanker Betrieb
+
+### Die Lösung
+
+- **Themenwelten statt Dateichaos**: ThinkTank bündelt Wissen nicht in verstreuten Ordnern, Chats oder PDFs, sondern in klar aufgebauten Themenwelten mit bis zu vier Ebenen. Dadurch entsteht eine Struktur, die mit dem Unternehmen mitwächst, Orientierung schafft und Wissen nicht von einzelnen Personen abhängig macht.
+- **Schnell finden statt lange suchen**: Einträge, Tags, Anhänge und Verantwortlichkeiten lassen sich zentral durchsuchen. Die Oberfläche ist bewusst klar gehalten, damit relevante Informationen ohne Umwege auffindbar sind. Nicht irgendwann. Sondern genau dann, wenn sie gebraucht werden.
+- **Reviews, Besitzer und Historie eingebaut**: Wissen bleibt nur wertvoll, wenn es aktuell bleibt. Deshalb sind Review Daten, verantwortliche Personen, Status, Änderungsverlauf und Dashboard Kennzahlen direkt in die Anwendung integriert. So wird Wissenspflege nicht zur Zusatzaufgabe, sondern Teil eines sauberen Arbeitsflusses.
+- **Pragmatisch umgesetzt und sauber betreibbar**: ThinkTank setzt auf ein statisches Frontend, eine schlanke PHP API und MySQL im Hintergrund. Bewusst einfach, robust und wartbar. Keine überladene Plattform, kein unnötiger Overhead, sondern eine Lösung, die zur Realität eines KMU passt und langfristig sinnvoll betrieben werden kann.
 
 ---
 
