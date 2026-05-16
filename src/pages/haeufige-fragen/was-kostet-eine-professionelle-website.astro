@@ -145,15 +145,19 @@ const schema = JSON.stringify({
   }
 
   .faq-article__header .badge {
-    margin-bottom: 1.15rem;
+    min-height: 28px;
+    margin-bottom: 1rem;
+    padding: 4px 11px;
+    font-size: 0.58rem;
+    letter-spacing: 0.14em;
   }
 
   .faq-article__header h1 {
     max-width: 920px;
     margin: 0 0 clamp(24px, 3vw, 32px);
     color: #f5f5f7;
-    font-size: var(--hero-title-size);
-    line-height: var(--hero-title-line-height);
+    font-size: clamp(3.35rem, 6.1vw, 5.35rem);
+    line-height: 0.99;
     letter-spacing: 0;
   }
 
@@ -228,14 +232,14 @@ const schema = JSON.stringify({
     }
 
     .faq-article__header h1 {
-      font-size: var(--hero-title-size-tablet);
+      font-size: clamp(2.75rem, 9.6vw, 4.05rem);
       line-height: var(--hero-title-line-height-mobile);
     }
   }
 
   @media (max-width: 520px) {
     .faq-article__header h1 {
-      font-size: var(--hero-title-size-mobile);
+      font-size: clamp(2.45rem, 12.8vw, 3.2rem);
     }
 
     .faq-article__header p {
