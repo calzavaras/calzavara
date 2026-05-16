@@ -32,7 +32,7 @@ if (pageNumber > 1) {
     <Breadcrumb items={breadcrumbItems} />
 
     <div class="fade-up home-hero__inner refs-intro">
-      <span class="badge badge--purple">GEBAUT. NICHT VERSPROCHEN.</span>
+      <span class="badge badge--yellow">GEBAUT. NICHT VERSPROCHEN.</span>
 
       <h1 id="referenzen-title" class="home-hero__title refs-hero__title">
         Echte Aufgaben.<br>
@@ -150,6 +150,14 @@ if (pageNumber > 1) {
 
   .refs-hero .badge {
     margin-bottom: 1.15rem;
+    color: #fff0b3;
+    border-color: rgba(255, 184, 0, 0.42);
+    background:
+      linear-gradient(135deg, rgba(255, 200, 0, 0.18), rgba(255, 126, 38, 0.18), rgba(255, 68, 171, 0.12));
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.03),
+      0 0 0 1px rgba(255, 184, 0, 0.16),
+      0 0 32px rgba(255, 145, 0, 0.14);
   }
 
   .refs-hero__title {
@@ -160,10 +168,28 @@ if (pageNumber > 1) {
     margin-bottom: clamp(24px, 3vw, 30px);
   }
 
+  .refs-hero .gradient-text {
+    background: linear-gradient(90deg, #ffd400 0%, #ff8a1f 38%, #ff44ab 76%, #ffd400 100%);
+    background-size: 260% auto;
+    animation: gradientPan 46s linear infinite;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    filter: drop-shadow(0 0 16px rgba(255, 145, 0, 0.2));
+  }
+
   .refs-hero__lead {
     max-width: 620px;
     font-size: var(--lead-size);
     line-height: 1.65;
+  }
+
+  .refs-hero .hero-glow {
+    background:
+      radial-gradient(circle at 20% 36%, rgba(255, 212, 0, 0.12) 0%, transparent 40%),
+      radial-gradient(circle at 56% 46%, rgba(255, 138, 31, 0.12) 0%, transparent 34%),
+      radial-gradient(circle at 84% 30%, rgba(255, 68, 171, 0.1) 0%, transparent 28%);
   }
 
   .refs-page-kicker {
@@ -231,15 +257,15 @@ if (pageNumber > 1) {
   }
 
   .ref-main-card-img--purple {
-    background: radial-gradient(ellipse at 25% 35%, rgba(166,77,255,0.45) 0%, transparent 55%), #0c0814;
+    background: radial-gradient(ellipse at 25% 35%, rgba(255, 138, 31, 0.5) 0%, transparent 56%), #140b06;
   }
 
   .ref-main-card-img--cyan {
-    background: radial-gradient(ellipse at 25% 35%, rgba(0,210,255,0.35) 0%, transparent 55%), #030d14;
+    background: radial-gradient(ellipse at 25% 35%, rgba(255, 212, 0, 0.46) 0%, transparent 56%), #141006;
   }
 
   .ref-main-card-img--coral {
-    background: radial-gradient(ellipse at 25% 35%, rgba(255,92,168,0.36) 0%, transparent 55%), #140812;
+    background: radial-gradient(ellipse at 25% 35%, rgba(255, 68, 171, 0.5) 0%, transparent 56%), #16070f;
   }
 
   .ref-main-card-img img {
@@ -403,8 +429,8 @@ if (pageNumber > 1) {
   }
 
   .refs-page-link.is-current {
-    background: rgba(166, 77, 255, 0.16);
-    border-color: rgba(166, 77, 255, 0.45);
+    background: rgba(255, 138, 31, 0.18);
+    border-color: rgba(255, 138, 31, 0.42);
     color: #fff;
   }
 

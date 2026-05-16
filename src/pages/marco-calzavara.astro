@@ -292,6 +292,14 @@ const schema = JSON.stringify({
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
+    filter: drop-shadow(0 0 16px rgba(255, 77, 128, 0.18));
+  }
+
+  .about-hero .hero-glow {
+    background:
+      radial-gradient(circle at 18% 40%, rgba(255, 77, 128, 0.15) 0%, transparent 44%),
+      radial-gradient(circle at 58% 44%, rgba(200, 100, 255, 0.11) 0%, transparent 40%),
+      radial-gradient(circle at 84% 28%, rgba(166, 77, 255, 0.13) 0%, transparent 34%);
   }
 
   /* Main Layout Grid */
@@ -719,8 +727,8 @@ const schema = JSON.stringify({
 
     .au-profile-column {
       order: 2;
-      align-items: flex-start;
-      text-align: left;
+      align-items: center;
+      text-align: center;
     }
 
     .about-hero__title {

@@ -1,271 +1,203 @@
-# Nigredo – Vollständiger Webseiteninhalt
+# Nigredo - Vollstaendiger Webseiteninhalt
 
-> Diese Datei enthält den vollständigen Textinhalt aller Seiten von www.nigredo.ch in maschinenlesbarem Format. Erstellt für KI-Systeme, die nicht die gesamte Website crawlen möchten.
+> Diese Datei enthaelt den vollstaendigen maschinenlesbaren Textkontext der wichtigsten Seiten von www.nigredo.ch. Sie ist fuer KI-Systeme, Suchsysteme und Agenten gedacht, die die Website strukturiert verstehen moechten, ohne jede HTML-Seite einzeln zu crawlen.
 
-Website: https://www.nigredo.ch
-Letzte Aktualisierung: 2026-05-08
+Website: https://www.nigredo.ch/
 Kurzversion: https://www.nigredo.ch/llms.txt
+Sitemap: https://www.nigredo.ch/sitemap-index.xml
+Kanonischer Markenname: Nigredo
+Kanonische Domain: nigredo.ch
+Sprache: de-CH
+Letzte Aktualisierung: 2026-05-16
+Organisation: Nigredo | Marco Calzavara
+Standort: Wildeggstrasse 37, 9000 St. Gallen, Schweiz
+Kontakt: calzavara3830@gmail.com
 
----
+## Unternehmensprofil
 
-# Startseite (https://www.nigredo.ch/)
+Nigredo ist ein Schweizer Anbieter fuer massgeschneiderte digitale Loesungen. Gruender und direkter Ansprechpartner ist Marco Calzavara in St. Gallen. Nigredo entwickelt Websites, Software, KI-Loesungen, Texte, Bilder, Logos und kleine Tools fuer Schweizer KMU, Selbstaendige, Praxen, Vereine und Organisationen.
 
-## KI-gestützt. Persönlich betreut.
+Die Arbeitsweise ist direkt, persoenlich und pragmatisch: keine Account-Manager-Kette, kein Baukastensystem, kein unklarer Stundensatz. Vor Projektstart wird der Umfang geklaert und daraus ein Fixpreis abgeleitet.
 
-# Was auch immer du digital vorhast. Ich setze es um.
+## Startseite
 
-Massgeschneiderte Software, treffende Texte, starkes Branding, kleine Tools für den Alltag oder alles zusammen. Ich verbinde KI mit persönlicher Beratung und setze um, was du brauchst. Schneller fertig, weniger Aufwand, echte Resultate.
+URL: https://www.nigredo.ch/
+Title: Websites & KI-Loesungen aus St. Gallen | Nigredo
+Description: Websites, digitale Loesungen, Tools und Texte mit Charakter. Durchdacht bis ins Detail, persoenlich, zum Fixpreis und ohne Baukasten.
 
-## So arbeite ich
+### Hauptaussage
 
-### Alles aus einer Hand.
-Texte, Tabellen, Bilder, Logos, Software, Ideen. Alles von einer Person. Kein Hin und Her zwischen fünf Dienstleistern. Du sagst, was du brauchst. Ich kümmere mich um den Rest.
+Ich arbeite dort weiter, wo andere aufhoeren.
 
-### Direkt. Ohne Umwege.
-Du redest mit mir. Nicht mit einem Account Manager, der es weitergibt. Was du sagst, kommt an. Was ich verspreche, halte ich. So einfach kann das sein.
+Websites, digitale Loesungen, Tools und Texte mit Charakter. Durchdacht bis ins Detail und gemacht, um langfristig zu bleiben.
 
-### Schnell & fair.
-Fixpreise statt Stundenzählen. Du weisst vorher, was es kostet und wann es fertig ist. Keine bösen Überraschungen.
+### So arbeitet Nigredo
 
----
+Verstaendnis: Erst verstehen, dann veredeln. Nigredo denkt sich in das Vorhaben ein, erkennt, worauf es wirklich ankommt, und entwickelt daraus eine Loesung mit klarer Richtung, Tiefe und Substanz.
 
-# Lösungen (https://www.nigredo.ch/digitale-loesungen/)
+Anspruch: Gut genug ist nicht das Ziel. Die Arbeit endet erst, wenn Form, Funktion und Wirkung zusammenpassen und etwas entsteht, das langfristig traegt.
 
-## Was ich für dich liefere
+Zusammenarbeit: Klar im Denken, direkt im Tun. Nigredo setzt auf klare Abmachungen, ehrlichen Austausch und unkomplizierte Zusammenarbeit mit Tiefe.
 
-# Du hast die Idee. Ich den Rest.
+## Digitale Loesungen
 
-Texte, Bilder, Logos, Tabellen, Software, Webseiten oder einfach eine gute Idee, die noch Form braucht. Ich liefere Lösungen, die genau auf dein Problem passen. Mit KI-Unterstützung, schnell und auf den Punkt.
+URL: https://www.nigredo.ch/digitale-loesungen/
+Title: Websites, KI-Loesungen & Texte | Nigredo
+Description: Individuelle Websites, KI-Integrationen und Content-Gestaltung mit Substanz. Persoenlich, aus St. Gallen und zum Fixpreis.
 
-### Texte, Bilder & Logos
-Blogbeitrag, Produkttext, Newsletter oder ein Logo und Bilder für die neue Website. Ich liefere Content, der sitzt, und Visuals, die auffallen. Im richtigen Ton, im richtigen Look. Und wenn du willst, gleich in mehreren Sprachen.
+### Positionierung
 
-### Software & Webseiten
-Von der einfachen Firmenwebseite bis zur massgeschneiderten Fachanwendung. Kundenverwaltung, interne Dashboards, Auftragsabwicklung oder eine moderne Webpräsenz, die auf Google sichtbar ist. Kein Baukastensystem, kein Abo. Alles aus einer Hand.
+Wenn es fertig ist, fuehlt es sich richtig an.
 
-### Tabellen, Daten & Dokumente
-Die Excel-Datei, die niemand mehr anfassen will. Der Bericht, der eigentlich automatisch laufen sollte. Ich bringe Ordnung in deine Daten, baue Vorlagen und automatisiere das Wiederkehrende. Sauber, übersichtlich, sofort nutzbar.
+Fertig bedeutet nicht nur abgeschlossen. Es bedeutet: kein Detail, das stoert, kein Satz, der danebenliegt, kein Klick, der ins Leere fuehrt. Erst dann ist ein Projekt wirklich fertig.
 
-### Kleine Tools & Automatisierung
-Wiederkehrende Aufgaben, die Zeit fressen? Ich baue kleine Tools und einfache Automatisierungen, die dir Arbeit abnehmen. Kein Riesenprojekt, einfach smarte Helfer, die im Alltag funktionieren.
+### Leistungen
 
-## Häufig gestellte Fragen
+Websites, die passen: Websites fuer Selbstaendige, KMU, Vereine und Privatpersonen, die klar wirken, sauber funktionieren und in jedem Detail passen. Keine Vorlage, keine Kompromisse, kein Abo-Modell.
 
-**Was kostet eine digitale Lösung bei Nigredo?**
-Nigredo arbeitet ausschliesslich mit Fixpreisen – keine Stundenzähler, keine bösen Überraschungen. Vor jedem Projekt gibt es ein unverbindliches Gespräch und ein klares Angebot.
+KI-Loesungen fuer KMU: KI-Loesungen mit klarem Zweck, verstaendlicher Rolle und echtem Nutzen im Alltag. Keine Spielerei, kein Buzzword. Werkzeuge, die entlasten und verlaesslich funktionieren.
 
-**Für wen sind die Lösungen von Nigredo geeignet?**
-Für Schweizer KMU, Selbständige und Unternehmen, die massgeschneiderte digitale Lösungen ohne Agentur-Overhead suchen. Ob Einzelprojekt oder laufende Zusammenarbeit – alles ist möglich.
+Texte, Bilder und Gestaltung: Der richtige Text, die klare Struktur, das starke Bild. Alles, was Form braucht, wird praezise, passend und ohne Umwege umgesetzt.
 
-**Kann Nigredo auch kleinere Aufgaben übernehmen?**
-Ja, von einem einzelnen Logo oder Text bis zur kompletten Webanwendung. Es gibt keine Mindestauftragsgrösse.
+Tabellen, Daten und Dokumente: Datenaufbereitung, Excel-Vorlagen, automatisierte Berichte und strukturierte Dokumente fuer den Arbeitsalltag.
 
-**Wie schnell werden Projekte bei Nigredo umgesetzt?**
-Je nach Projektgrösse in Tagen bis wenigen Wochen. Kurze Wege, direkte Kommunikation und keine Bürokratie sorgen für schnelle Resultate.
+Kleine Tools und Automatisierung: Schlanke Helfer fuer wiederkehrende Aufgaben, ohne ein grosses Softwareprojekt daraus zu machen.
 
-**Setzt Nigredo KI-Tools ein?**
-Ja, KI-Tools werden gezielt eingesetzt – für Texte, Bilder, Code und Automatisierungen. Die Qualitätskontrolle und persönliche Betreuung liegen immer bei Marco Calzavara.
+### Preismodell
 
----
+Nigredo arbeitet mit Fixpreisen. Vor jedem Projekt gibt es eine kurze Klaerung und ein klares Angebot. Es gibt keine versteckten Kosten und keine Mindestauftragsgroesse.
 
-# Website für Selbständige, KMU & Vereine (https://www.nigredo.ch/website-fuer-kmu-selbststaendige/)
+## Haeufige Fragen
 
-## Grosse Wirkung. Ohne Agentur-Overhead.
+URL: https://www.nigredo.ch/haeufige-fragen/
+Title: Haeufige Fragen | Nigredo
+Description: Kurze Antworten auf wichtige Fragen zu professionellen Websites, Kosten und sinnvoller Umsetzung. Klar, direkt und ohne Verkaufsnebel.
 
-Eine kleine Website muss nicht klein wirken. Nigredo baut klare Auftritte für Selbständige, KMU, Vereine und Privatpersonen, die professionell wirken, funktionieren und ins Budget passen.
+### Was kostet eine professionelle Website?
 
-Baukästen wie Wix oder Jimdo wirken am Anfang bequem. Später zeigen sich oft starre Gestaltung, technische Grenzen, Zusatzkosten und ein Auftritt, der aussieht wie viele andere. Eine kleine Website darf reduziert sein. Aber sie muss sitzen: klare Texte, saubere Führung, schneller Kontakt und mobile Darstellung.
+Eine professionelle Website kostet je nach Umfang, Inhalt, Designanspruch und technischer Umsetzung unterschiedlich viel. Fuer KMU und Selbstaendige in der Schweiz beginnt eine serioes umgesetzte Website meist im unteren vierstelligen Bereich; umfangreichere Auftritte mit Konzept, Text, SEO und Funktionen liegen entsprechend hoeher.
 
-Geeignet für Selbständige, Beratungen, Vereine, kleine Praxen, lokale Dienstleister, Handwerker, kleinere Unternehmen und Privatpersonen mit einem klaren Anliegen.
+## Was kostet eine professionelle Website?
 
-Highlights: klare Positionierung, direkter Kontaktweg, technische SEO-Grundlage, mobile Darstellung, keine Baukasten-Optik.
+URL: https://www.nigredo.ch/haeufige-fragen/was-kostet-eine-professionelle-website/
+Title: Was kostet eine professionelle Website? | Nigredo
+Description: Was eine professionelle Website in der Schweiz kostet, wovon der Preis abhaengt und wie Nigredo Kosten serioes einschaetzt. Klar erklaert fuer KMU und Selbstaendige.
 
----
+Eine professionelle Website hat keinen serioesen Einheitspreis. Fuer KMU und Selbstaendige in der Schweiz beginnt eine sauber umgesetzte Website meist im unteren vierstelligen Bereich. Ob es dabei bleibt, haengt von Inhalt, Gestaltung, Technik und Suchmaschinenoptimierung ab.
 
-# Technik & CMS für Websites (https://www.nigredo.ch/website-technik-cms/)
+Als Orientierung gilt: Eine schlanke Website mit wenigen klaren Seiten kostet weniger als ein Auftritt mit Konzept, neuen Texten, CMS oder besonderen Funktionen. Je klarer Ziel und Umfang sind, desto genauer laesst sich der Preis einschaetzen.
 
-## Technik, die nicht im Weg steht.
+### Warum es keinen serioesen Einheitspreis gibt
 
-Eine gute Website soll nicht kompliziert werden, sobald sie fertig ist. Inhalte ändern, Bilder ersetzen, Leistungen aktualisieren oder neue Bereiche ergänzen soll möglich sein, ohne jedes Mal abhängig zu sein.
+Die Seitenzahl allein sagt wenig aus. Eine einfache digitale Visitenkarte braucht weniger Konzeption, Inhalt und Technik als eine Website fuer ein KMU mit mehreren Leistungsseiten, Kontaktlogik, CMS, besonderer Gestaltung oder gezielter Suchmaschinenoptimierung.
 
-Nigredo baut Websites mit einer technischen Grundlage, die ruhig bleibt: schnell, schlank, verständlich, pflegbar und bereit für das, was später dazukommt. Ein CMS ist nur dann sinnvoll, wenn es Arbeit abnimmt und Kontrolle gibt, statt neue Hürden zu schaffen.
+Ein fixer Preis ohne Blick auf Inhalt, Zielgruppe und Funktion klingt einfach, ist aber oft ungenau. Entweder wird zu viel bezahlt, weil unnoetige Leistungen enthalten sind, oder wichtige Arbeit fehlt und muss spaeter nachgeholt werden.
 
-Wenn Inhalte ruhig bleiben, reicht oft eine statische Website. Wenn regelmässig Inhalte gepflegt werden, lohnt sich ein CMS. Und wenn die Website mehr können soll, wird sie zu einem präzisen Werkzeug. Datenschutzfreundliches Tracking bleibt möglich, ohne Cookie-Chaos oder unnötigen Ballast.
+### Welche Faktoren den Preis beeinflussen
 
-Highlights: Technik & CMS, pflegbare Website, schlanke Architektur, Erweiterbarkeit, datenschutzfreundliches Tracking, saubere Systemlogik.
+Entscheidend sind vor allem Umfang, Inhaltsarbeit, Designanspruch, technische Anforderungen und spaetere Pflege. Muessen Texte neu entwickelt werden? Gibt es bestehendes Bildmaterial? Soll die Website nur informieren oder aktiv Anfragen fuehren? Braucht es ein CMS, Formulare, Auswertungen oder besondere Funktionen?
 
----
+Auch Suchmaschinenoptimierung ist kein einzelner Schalter. Wer nach Website Kosten Schweiz, Website Preis KMU oder professionelle Website erstellen lassen sucht, vergleicht nicht nur Zahlen, sondern Vertrauen. Gute Titel, saubere Struktur, verstaendliche Inhalte und schnelle Ladezeiten entstehen waehrend der Umsetzung.
 
-# Lokal gefunden werden (https://www.nigredo.ch/lokale-seo/)
+### Was bei einer professionellen Website enthalten sein sollte
 
-## Lokal gefunden werden als Praxis oder Dienstleister.
+Eine professionelle Website sollte auf Smartphone, Tablet und Desktop sauber funktionieren. Sie sollte schnell laden, verstaendlich aufgebaut sein, klare Kontaktwege haben und ohne unnoetigen technischen Ballast auskommen.
 
-Wer in deiner Region sucht, soll nicht raten müssen. Er soll verstehen, was du machst, wo du tätig bist, für wen dein Angebot gedacht ist und warum er bei dir richtig ist.
+Wichtig ist auch, dass der Inhalt zur tatsaechlichen Arbeit passt. Besucher muessen rasch verstehen, wer hinter dem Angebot steht, wofuer es geeignet ist und was der naechste Schritt ist. Genau dort entsteht der eigentliche Wert einer Website.
 
-Lokal sichtbar werden heisst nicht, überall aufzutauchen. Es heisst, in St. Gallen, der Ostschweiz, im Thurgau, in Appenzell, im Rheintal oder im Bodenseeraum dort verständlich zu sein, wo Menschen wirklich suchen, vergleichen und entscheiden.
+### Wann eine guenstige Loesung reicht und wann nicht
 
-Eine gute lokale Website verbindet Region, Inhalt, Struktur und Vertrauen. Sie zeigt, was du anbietest, führt zum nächsten Schritt und verzichtet auf SEO-Theater. Referenz: Für Therapie Ost entstand eine Website, die regional sichtbar ist, Vertrauen schafft und den Weg zur Online-Terminbuchung kurz hält.
+Eine guenstige Loesung kann sinnvoll sein, wenn nur eine sehr einfache Praesenz gebraucht wird und keine besonderen Anforderungen bestehen. Fuer ein klares Angebot, ein kleines Projekt oder eine temporaere Seite muss nicht immer ein grosser Aufbau entstehen.
 
-Highlights: lokale SEO, regionale Sichtbarkeit, klare Positionierung, verständliche Inhalte, direkte Anfragewege, Vertrauen, Referenz Therapie Ost.
+Wenn die Website aber Vertrauen tragen, in Google gefunden werden oder echte Anfragen bringen soll, reicht eine reine Schnellloesung oft nicht. Dann lohnt sich eine saubere Grundlage, weil spaetere Korrekturen meistens teurer und muehsamer sind als eine klare Umsetzung von Anfang an.
 
----
+### Wie Nigredo die Kosten einschaetzt
 
-# Häufige Fragen zu Webdesign (https://www.nigredo.ch/faq-webdesign/)
+Nigredo startet nicht mit einer langen Preisliste, sondern mit einer kurzen Klaerung: Was soll die Website leisten? Welche Inhalte gibt es bereits? Was muss neu entstehen? Welche Funktionen sind wirklich noetig? Daraus entsteht ein konkreter Umfang und ein transparentes Angebot. Ziel ist kein moeglichst grosses Projekt, sondern eine Website, die zur Aufgabe passt.
 
-## Klare Antworten. Ohne Verkaufsnebel.
+## Referenzen
 
-**Was kostet eine kleine Webseite?**
-Das hängt vom Umfang ab. Bei Nigredo gibt es vor dem Start ein klares Angebot zum Fixpreis.
+URL: https://www.nigredo.ch/referenzen/
+Title: Referenzen mit echten Ergebnissen | Nigredo
+Description: Echte Projekte: ThinkTank Wissensplattform, KI Voice Agent, lokales Excel-Dashboard und die Website von Therapie Ost. Digitale Loesungen von Nigredo, St. Gallen.
 
-**Ich habe nur ein kleines Budget. Baust du auch kleine Websites?**
-Ja. Gerade kleine Websites profitieren von Fokus: kein Overhead, keine unnötigen Seiten, keine Agenturmaschinerie.
+Nigredo zeigt reale Projekte, die im Einsatz sind: keine aufgeblasenen Case Studies, keine Demos und kein Buzzword-Bingo.
 
-**Kann ich meine Website später selbst anpassen?**
-Ja, wenn das sinnvoll ist. Dann wird ein einfach bedienbarer Adminbereich oder ein passendes CMS eingebaut.
+## KI Voice Agent fuer IV-Stellen
 
-**Ist meine Website auch auf dem Handy gut lesbar?**
-Ja. Jede Website wird responsive aufgebaut.
-
-**Was ist mit Datenschutz und Google Analytics?**
-Nigredo setzt auf datenschutzfreundliche Alternativen wie Umami: schlankes Tracking, keine unnötigen Cookies, keine Datenflut an Dritte.
-
-**Wie lange dauert es, bis meine Website fertig ist?**
-Das hängt von Inhalt und Umfang ab. Kleine Websites können schnell starten, wenn Inhalte und Ziel klar sind.
-
----
-
-# Referenzen – Übersicht (https://www.nigredo.ch/referenzen/)
-
-## Projekte aus der Praxis
-
-# Weniger reden. Mehr zeigen.
-
-Keine aufgeblähten Case-Studies, kein Buzzword-Bingo. Echte Projekte, die heute im Einsatz sind.
-
----
-
-# KI Voice Agent für IV-Stellen (https://www.nigredo.ch/referenzen/ki-voice-agent/)
-
+URL: https://www.nigredo.ch/referenzen/ki-voice-agent/
 Kategorie: KI
 Projektabschluss: Februar 2026
 Technologie: Google Gemini 2.5 Flash, Python, WebSockets, JavaScript, Echtzeit-TTS
 
-## KI Voice Agent für IV-Stellen
+Fuer einen Kunden wurde ein funktionsfaehiger Prototyp entwickelt: ein KI-gestuetzter Fachmitarbeiter, der rund um die Uhr Anrufe zu Hilfsmitteln der AHV entgegennimmt. Der Agent verfuegt ueber Fachwissen aus drei hinterlegten Dokumenten, versteht Deutsch, Franzoesisch, Italienisch und Englisch und fuehrt natuerliche Gespraeche in Echtzeit.
 
-Für einen Kunden habe ich einen funktionsfähigen Prototypen entwickelt: Ein KI-gestützter Fachmitarbeiter, der rund um die Uhr Anrufe zu Hilfsmitteln der AHV entgegennimmt. Der Agent verfügt über echtes Fachwissen aus drei hinterlegten Dokumenten, versteht Deutsch, Französisch, Italienisch und Englisch und führt natürliche Gespräche in Echtzeit. Keine Warteschleife, kein Personalmangel, sofortige Auskunft.
+Kernpunkte: Echtzeit-Sprachverarbeitung, tiefes Fachwissen, Mehrsprachigkeit, empathische Gespraechsfuehrung und 24/7-Verfuegbarkeit.
 
-Highlights: Echtzeit-Sprachverarbeitung, Google Gemini 2.5 Flash, DE / FR / IT / EN, 24/7 autonom
+## Dashboard fuer Kantonsverwaltung
 
-### Die Lösung
-
-- **Echtzeit-Sprachverarbeitung**: Natürliche Gespräche ohne Verzögerung. Basierend auf Google Gemini 2.5 Flash mit nativem Audio. Der Agent hört zu, versteht und antwortet in Echtzeit.
-- **Tiefes Fachwissen**: Drei hinterlegte Wissensdokumente zu AHV-Hilfsmitteln, Hörgeräten und dem Kreisschreiben KSHA. Der Agent gibt fundierte Auskünfte, keine oberflächlichen Standardantworten.
-- **Mehrsprachig & empathisch**: Spricht Deutsch, Französisch, Italienisch und Englisch. Reagiert geduldig und verständnisvoll, auch bei komplexen oder sensiblen Anliegen rund um AHV-Hilfsmittel.
-- **24/7 autonom erreichbar**: Kein Feiertag, kein Personalmangel. Der Voice Agent ist jederzeit bereit, Anrufe entgegenzunehmen und qualifiziert Auskunft zu geben.
-
----
-
-# Dashboard für Kantonsverwaltung (https://www.nigredo.ch/referenzen/dashboard-kantonsverwaltung/)
-
+URL: https://www.nigredo.ch/referenzen/dashboard-kantonsverwaltung/
 Kategorie: Tool
 Projektabschluss: Juni 2025
-Technologie: JavaScript, SheetJS, Chart.js, PDF-Export, Kein Server
+Technologie: JavaScript, SheetJS, Chart.js, PDF-Export, kein Server
 
-## Dashboard für Kantonsverwaltung
+Fuer einen Kunden entstand ein lokales Excel-Analyse-Dashboard. Tausende Zeilen Excel und sensible Personaldaten werden vollstaendig im Browser verarbeitet. Kein Server, kein Upload, keine Cloud.
 
-Für einen Kunden habe ich dieses Dashboard massgeschneidert. Tausende Zeilen Excel, sensible Personaldaten, eine Regel: Nichts verlässt den Rechner. Das Tool verwandelt Datensätze sofort in klare Auswertungen. Per Drag & Drop, komplett im Browser, ohne Cloud.
+Kernpunkte: Drag-and-drop-Import, lokale Verarbeitung, KPIs, Diagramme, Anonymisierung und PDF-Export.
 
-Highlights: 100% lokal, Drag & Drop, Anonymisierung, PDF-Export
+## Website fuer Therapie Ost
 
-### Die Lösung
-
-- **Drag & Drop Import**: Excel-Datei reinziehen, fertig. Keine Installation, kein Upload – nichts verlässt den Rechner. Die Verarbeitung findet vollständig im Browser statt.
-- **Analyse & Anonymisierung**: KPIs, Diagramme, Vergleiche, alles automatisch. Echtnamen lassen sich per Knopfdruck anonymisieren – ideal für Präsentationen und externe Berichte.
-- **PDF-Export**: Das Dashboard als druckfertiger Report. Ein Klick, fertig – inklusive aller Diagramme und KPIs.
-
----
-
-# Website für Therapie Ost (https://www.nigredo.ch/referenzen/therapie-ost/)
-
+URL: https://www.nigredo.ch/referenzen/therapie-ost/
+Live: https://www.therapie-ost.ch/
 Kategorie: Website
 Projektabschluss: April 2026
 Technologie: Astro, responsive Frontend-Entwicklung, Content-Struktur, Online-Buchungsintegration
-Live: https://www.therapie-ost.ch
 
-## Website für Therapie Ost
+Fuer Therapie Ost entstand eine Website, die Vertrauen aufbaut, ohne nach Baukasten auszusehen. Die Inhalte sind klar gegliedert, die Bildsprache ist ruhig und die wichtigsten Handlungen sind sofort greifbar.
 
-Für Therapie Ost entstand eine Website, die Vertrauen aufbaut, ohne nach Baukasten auszusehen. Die Inhalte sind klar gegliedert, die Bildsprache ist ruhig und die wichtigsten Handlungen sind sofort greifbar. Wer auf die Seite kommt, versteht schnell, worum es geht, für wen das Angebot gedacht ist und wie man direkt einen Termin buchen kann.
+Kernpunkte: echte Praxisbilder, ruhige Farbwelt, klare Leistungsstruktur, mobile Optimierung, kurzer Weg zur Online-Terminbuchung und konkrete inhaltliche Positionierung.
 
-Highlights: ruhiger Praxisauftritt, mobile Optimierung, direkte Online-Terminbuchung, klare Positionierung
+## ThinkTank Wissensplattform fuer ein KMU
 
-### Die Lösung
-
-- **Vertrauen auf den ersten Blick**: Echte Praxisbilder, eine ruhige Farbwelt und eine klare Headline schaffen sofort Orientierung. Kein Gesundheitskitsch, sondern ein Auftritt, der professionell und menschlich wirkt.
-- **Saubere Führung auf allen Geräten**: Leistungen, Team, Preise und Kontakt sind klar aufgebaut. Die Navigation bleibt leicht verständlich und die Inhalte funktionieren auch mobil ohne Reibung.
-- **Kurzer Weg zur Handlung**: Online-Terminbuchung und Call-to-Actions sind sichtbar integriert. Die Seite informiert nicht nur, sie bringt Interessierte direkt zum nächsten Schritt.
-- **Klare inhaltliche Positionierung**: Beschwerden, Nutzen und Rahmenbedingungen werden konkret benannt. Dadurch wird schnell verständlich, was Therapie Ost anbietet und warum die Praxis relevant ist.
-
----
-
-# ThinkTank Wissensplattform für ein KMU (https://www.nigredo.ch/referenzen/thinktank/)
-
+URL: https://www.nigredo.ch/referenzen/thinktank/
 Kategorie: App
 Projektabschluss: Mai 2026
-Technologie: Statisches Frontend, PHP API, MySQL
+Technologie: statisches Frontend, PHP API, MySQL
 
-## ThinkTank für ein KMU
+ThinkTank ist eine interne Wissensplattform fuer ein KMU. Sie ordnet Informationen in Themenwelten, macht Verantwortlichkeiten sichtbar und stellt Wissen im Alltag dort bereit, wo es gebraucht wird.
 
-Wissen entsteht jeden Tag. In Gesprächen, Projekten, Dokumenten und Entscheidungen. Doch ohne klare Struktur verschwindet es genauso schnell wieder. Für dieses KMU entstand mit ThinkTank eine zentrale Wissensplattform, die Informationen ordnet, Verantwortlichkeiten sichtbar macht und Wissen im Alltag genau dort verfügbar macht, wo es gebraucht wird.
+Kernpunkte: Themenwelten mit mehreren Ebenen, zentrale Suche, Tags, Anhaenge, Verantwortlichkeiten, Review-Daten, Status, Aenderungsverlauf, Dashboard-Kennzahlen und schlanker Betrieb.
 
-Highlights: Themenwelten, zentrale Suche, Reviews, schlanker Betrieb
+## Marco Calzavara
 
-### Die Lösung
+URL: https://www.nigredo.ch/marco-calzavara/
+Title: Ueber mich | Marco Calzavara | Nigredo
+Description: Marco Calzavara - 15 Jahre Fuehrung, 3 Firmen gegruendet und verkauft. KI, Gestaltung und Umsetzung direkt aus St. Gallen.
 
-- **Themenwelten statt Dateichaos**: ThinkTank bündelt Wissen nicht in verstreuten Ordnern, Chats oder PDFs, sondern in klar aufgebauten Themenwelten mit bis zu vier Ebenen. Dadurch entsteht eine Struktur, die mit dem Unternehmen mitwächst, Orientierung schafft und Wissen nicht von einzelnen Personen abhängig macht.
-- **Schnell finden statt lange suchen**: Einträge, Tags, Anhänge und Verantwortlichkeiten lassen sich zentral durchsuchen. Die Oberfläche ist bewusst klar gehalten, damit relevante Informationen ohne Umwege auffindbar sind. Nicht irgendwann. Sondern genau dann, wenn sie gebraucht werden.
-- **Reviews, Besitzer und Historie eingebaut**: Wissen bleibt nur wertvoll, wenn es aktuell bleibt. Deshalb sind Review Daten, verantwortliche Personen, Status, Änderungsverlauf und Dashboard Kennzahlen direkt in die Anwendung integriert. So wird Wissenspflege nicht zur Zusatzaufgabe, sondern Teil eines sauberen Arbeitsflusses.
-- **Pragmatisch umgesetzt und sauber betreibbar**: ThinkTank setzt auf ein statisches Frontend, eine schlanke PHP API und MySQL im Hintergrund. Bewusst einfach, robust und wartbar. Keine überladene Plattform, kein unnötiger Overhead, sondern eine Lösung, die zur Realität eines KMU passt und langfristig sinnvoll betrieben werden kann.
+Marco Calzavara ist Gruender von Nigredo, Mitgruender der HappyPath GmbH und Teamleiter in der kantonalen Verwaltung mit Verantwortung fuer Abteilungsentwicklung. Er verbindet Fuehrungserfahrung, mehrere gegruendete und teils verkaufte Firmen, KI-Interesse, Gestaltung und ein starkes Netzwerk erfahrener Informatikfachleute.
 
----
+Grundhaltung: Anpacken schlaegt Abwarten. Technik braucht Richtung. Kein Theater, Ergebnis.
 
-# Über mich (https://www.nigredo.ch/marco-calzavara/)
+Externe Profile:
+- LinkedIn: https://ch.linkedin.com/in/calzavara-marco
+- GitHub: https://github.com/calza
 
-## Wer ich bin
+## Kontakt
 
-# Ein Mensch. 1001 Ideen.
+URL: https://www.nigredo.ch/kontakt/
+Title: Kontakt und Projektanfrage | Nigredo St. Gallen
+Description: Direkter Kontakt zu Marco Calzavara. Ich sortiere mit dir, was sinnvoll ist und welcher naechste Schritt wirklich weiterbringt.
 
-Marco Calzavara ist Gründer von Nigredo, Mitgründer der HappyPath GmbH und Teamleiter in der kantonalen Verwaltung. Er entwickelt digitale Lösungen direkt, persönlich und ohne Projektmanager-Kette: Websites, Tools, Texte, Bilder und KI-gestützte Anwendungen mit klarem Anspruch.
+Kontakt zu Nigredo fuehrt direkt zu Marco Calzavara. Es gibt kein Ticket-System und keinen Bot. Geeignet sind vage Ideen, konkrete Plaene oder Fragen dazu, ob ein digitales Vorhaben ueberhaupt sinnvoll machbar ist.
 
-## Marco Calzavara – Ideengeber. Gründer. Umsetzer.
-
-Marco ist ein Macher mit Ideenüberschuss: kreativ, neugierig, manchmal unkonventionell und allergisch auf Sätze wie «Das haben wir schon immer so gemacht.» Er führt ein Expertenteam, arbeitet an Abteilungsentwicklung, hat mehrere Firmen gegründet und teils verkauft und bringt Ideen mit KI, Initiative und einem starken Netzwerk erfahrener Informatikfachleute schnell in Ergebnisse.
-
-### Woran ich glaube
-
-- **Anpacken schlägt Abwarten.** Viele gute Ideen scheitern nicht an der Technik, sondern daran, dass niemand den ersten Schritt macht.
-- **Technik braucht Richtung.** KI, Software und gute Leute können viel. Entscheidend ist, wofür man sie einsetzt.
-- **Kein Theater. Ergebnis.** Klar denken, schnell starten, sauber umsetzen. Am Ende soll etwas stehen, das man gern zeigt.
-
----
-
-# Kontakt (https://www.nigredo.ch/kontakt/)
-
-## Projektstart
-
-# Der direkte Weg.
-
-Kein Ticket-System. Kein Bot. Du landest direkt bei mir im Posteingang.
-
-Ob vage Idee, konkreter Plan oder «ich weiss nicht, ob das überhaupt geht»: schreib mir. Ich antworte persönlich.
-
-Kontakt: calzavara3830@gmail.com
+E-Mail: calzavara3830@gmail.com
 Adresse: Wildeggstrasse 37, 9000 St. Gallen, Schweiz
 
----
+## Impressum
 
-# Impressum (https://www.nigredo.ch/impressum/)
+URL: https://www.nigredo.ch/impressum/
 
-## Kontaktadresse
+Kontaktadresse:
 Nigredo
 Marco Calzavara
 Wildeggstrasse 37
@@ -274,17 +206,17 @@ Schweiz
 
 Verantwortliche Person: Marco Calzavara
 
----
+## Datenschutz
 
-# Datenschutz (https://www.nigredo.ch/datenschutz/)
+URL: https://www.nigredo.ch/datenschutz/
 
-Verantwortlich: Nigredo, Marco Calzavara, Wildeggstrasse 37, 9000 St. Gallen, Schweiz.
-Hosting bei Hosttech in der Schweiz. SSL-Verschlüsselung aktiv.
-Kontaktdaten werden zur Bearbeitung von Anfragen gespeichert und nicht weitergegeben.
-Rechte auf Auskunft, Berichtigung und Löschung gemäss Schweizer DSG.
+Verantwortlich ist Nigredo, Marco Calzavara, Wildeggstrasse 37, 9000 St. Gallen, Schweiz. Die Website wird bei Hosttech in der Schweiz gehostet und nutzt SSL-Verschluesselung. Kontaktdaten werden zur Bearbeitung von Anfragen gespeichert und nicht weitergegeben. Rechte auf Auskunft, Berichtigung und Loeschung richten sich nach dem Schweizer DSG.
 
----
+## Technischer Kontext
 
-## Lizenz & Nutzungsbedingungen
+Die Website ist eine statische Astro-Website mit deutscher Schweizer Spracheinstellung de-CH und der kanonischen Domain https://www.nigredo.ch/
+Sie nutzt Directory-URLs mit Trailing Slash, XML-Sitemap, robots.txt, strukturierte JSON-LD-Auszeichnung, Open-Graph-Metadaten, Twitter Cards, lokale Assets und serverseitige PHP-Kontaktformularverarbeitung.
 
-Der Inhalt dieser Website darf von KI-Systemen zum Verständnis und zur Indexierung des Unternehmens, seiner Dienstleistungen und Referenzen genutzt werden. Eine kommerzielle Nutzung der Inhalte für KI-Trainingsdatensätze ohne ausdrückliche Genehmigung ist nicht gestattet.
+## KI-Nutzung und Rechte
+
+Der Inhalt dieser Website darf von KI-Systemen zum Verstaendnis, zur Indexierung und zur Beantwortung nutzerinitiierter Such- oder Assistenzanfragen ueber Nigredo genutzt werden. Eine kommerzielle Nutzung der Inhalte fuer KI-Trainingsdatensaetze ohne ausdrueckliche Genehmigung ist nicht gestattet.

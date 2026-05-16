@@ -59,7 +59,7 @@ const schema = JSON.stringify({
       <div class="kontakt-grid">
 
         <div class="fade-up contact-hero__content">
-          <span class="badge badge--cyan">PROJEKTANFRAGE</span>
+          <span class="badge badge--purple">PROJEKTANFRAGE</span>
           <h1 id="kontakt-title" class="contact-hero__title">
             Erzähl mir kurz,<br>
             <span class="gradient-text">was du vorhast.</span>
@@ -82,9 +82,9 @@ const schema = JSON.stringify({
             <svg width="48" height="48" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
               <defs>
                 <linearGradient id="mailGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#00D2FF"/>
-                  <stop offset="50%" stop-color="#A64DFF"/>
-                  <stop offset="100%" stop-color="#FF4D80"/>
+                  <stop offset="0%" stop-color="#7DFF72"/>
+                  <stop offset="45%" stop-color="#00E7B7"/>
+                  <stop offset="100%" stop-color="#00B8FF"/>
                 </linearGradient>
               </defs>
               <rect x="4" y="10" width="40" height="28" rx="4" stroke="url(#mailGrad)" stroke-width="2" fill="none"/>
@@ -117,6 +117,14 @@ const schema = JSON.stringify({
 
   .contact-hero .badge {
     margin-bottom: 1.15rem;
+    color: #ebffef;
+    border-color: rgba(125, 255, 114, 0.42);
+    background:
+      linear-gradient(135deg, rgba(125, 255, 114, 0.2), rgba(0, 255, 183, 0.2), rgba(0, 184, 255, 0.14));
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.03),
+      0 0 0 1px rgba(125, 255, 114, 0.18),
+      0 0 32px rgba(0, 255, 183, 0.14);
   }
 
   .kontakt-grid {
@@ -138,10 +146,28 @@ const schema = JSON.stringify({
     margin-bottom: clamp(24px, 3vw, 30px);
   }
 
+  .contact-hero .gradient-text {
+    background: linear-gradient(90deg, #7dff72 0%, #00ffb7 36%, #00b8ff 76%, #7dff72 100%);
+    background-size: 260% auto;
+    animation: gradientPan 46s linear infinite;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    filter: drop-shadow(0 0 18px rgba(0, 231, 183, 0.22));
+  }
+
   .contact-hero__lead {
     max-width: 620px;
     font-size: var(--lead-size);
     line-height: 1.65;
+  }
+
+  .contact-hero .hero-glow {
+    background:
+      radial-gradient(circle at 18% 38%, rgba(125, 255, 114, 0.11) 0%, transparent 34%),
+      radial-gradient(circle at 54% 44%, rgba(0, 255, 183, 0.12) 0%, transparent 32%),
+      radial-gradient(circle at 84% 28%, rgba(0, 184, 255, 0.1) 0%, transparent 28%);
   }
 
   .kontakt-sub {
@@ -186,7 +212,7 @@ const schema = JSON.stringify({
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 2px;
-    background: linear-gradient(90deg, #00D2FF, #A64DFF, #FF4D80);
+    background: linear-gradient(90deg, #7DFF72, #00FFB7, #00B8FF);
     border-radius: 2px 2px 0 0;
   }
 
@@ -222,7 +248,7 @@ const schema = JSON.stringify({
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.045),
-      0 0 14px rgba(166, 77, 255, 0.14);
+      0 0 16px rgba(0, 255, 183, 0.16);
     transition:
       transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
       border-color 0.35s ease,
@@ -234,9 +260,9 @@ const schema = JSON.stringify({
     width: 30px;
     height: 30px;
     filter:
-      brightness(1.12)
-      saturate(1.18)
-      drop-shadow(0 0 8px rgba(255, 77, 128, 0.26));
+      brightness(1.16)
+      saturate(1.3)
+      drop-shadow(0 0 8px rgba(0, 255, 183, 0.24));
     transition: filter 0.45s ease;
   }
 
@@ -248,16 +274,16 @@ const schema = JSON.stringify({
       rgba(255, 255, 255, 0.035);
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.05),
-      0 0 22px rgba(166, 77, 255, 0.24),
-      0 0 48px rgba(0, 210, 255, 0.1);
+      0 0 24px rgba(0, 255, 183, 0.18),
+      0 0 48px rgba(0, 184, 255, 0.14);
   }
 
   .contact-card:hover .card-icon svg {
     filter:
-      brightness(1.18)
-      saturate(1.35)
-      drop-shadow(0 0 12px rgba(255, 77, 128, 0.46))
-      drop-shadow(0 0 24px rgba(0, 210, 255, 0.18));
+      brightness(1.22)
+      saturate(1.42)
+      drop-shadow(0 0 12px rgba(0, 255, 183, 0.3))
+      drop-shadow(0 0 24px rgba(0, 184, 255, 0.22));
   }
 
   @media (max-width: 860px) {

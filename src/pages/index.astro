@@ -5,16 +5,32 @@ const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebPage",
+      "@type": ["WebPage", "HomePage"],
       "@id": "https://www.nigredo.ch/#webpage",
       "url": "https://www.nigredo.ch/",
       "name": "Websites & Digitale Lösungen | Marco Calzavara – St. Gallen",
       "isPartOf": { "@id": "https://www.nigredo.ch/#website" },
       "about": { "@id": "https://www.nigredo.ch/#organization" },
+      "mainEntity": { "@id": "https://www.nigredo.ch/#organization" },
+      "primaryImageOfPage": { "@id": "https://www.nigredo.ch/#logo" },
+      "significantLink": [
+        "https://www.nigredo.ch/digitale-loesungen/",
+        "https://www.nigredo.ch/referenzen/",
+        "https://www.nigredo.ch/marco-calzavara/",
+        "https://www.nigredo.ch/kontakt/",
+        "https://www.nigredo.ch/haeufige-fragen/"
+      ],
       "description": "Websites und digitale Lösungen zum Fixpreis. Marco Calzavara: Ihr Partner für Webentwicklung, KI-Integration und exklusives Design aus St. Gallen.",
       "datePublished": "2025-06-01",
-      "dateModified": "2026-05-03",
+      "dateModified": "2026-05-16",
       "inLanguage": "de-CH"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.nigredo.ch/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.nigredo.ch/" }
+      ]
     }
   ]
 });
@@ -59,21 +75,21 @@ const schema = JSON.stringify({
       <h2 id="values-title" class="visually-hidden">So arbeite ich</h2>
       <div class="grid-3">
 
-        <article class="card value-card fade-up" style="--icon-gradient: linear-gradient(135deg, #00d2ff 0%, #a64dff 100%); --icon-shadow: rgba(0, 210, 255, 0.34);">
+        <article class="card value-card fade-up" style="--icon-gradient: linear-gradient(135deg, #00f0ff 0%, #2563ff 34%, #ff3dbd 100%); --icon-shadow: rgba(37, 99, 255, 0.4);">
           <div class="card-icon" aria-hidden="true"><div class="gradient-icon" style="-webkit-mask-image: url('/assets/icons/icon-verstaendnis.svg'); mask-image: url('/assets/icons/icon-verstaendnis.svg');"></div></div>
           <span class="cta-label">VERSTÄNDNIS</span>
           <h3>Erst verstehen. Dann veredeln.</h3>
           <p>Ich denke mich in dein Vorhaben ein, erkenne, worauf es wirklich ankommt, und entwickle daraus eine Lösung mit klarer Richtung, Tiefe und Substanz.</p>
         </article>
 
-        <article class="card value-card fade-up delay-100" style="--icon-gradient: linear-gradient(135deg, #ffc700 0%, #ff4d80 100%); --icon-shadow: rgba(196, 77, 255, 0.34);">
+        <article class="card value-card fade-up delay-100" style="--icon-gradient: linear-gradient(135deg, #00e7ff 0%, #5b57ff 40%, #ff3dbd 100%); --icon-shadow: rgba(91, 87, 255, 0.4);">
           <div class="card-icon" aria-hidden="true"><div class="gradient-icon" style="-webkit-mask-image: url('/assets/icons/icon-anspruch.svg'); mask-image: url('/assets/icons/icon-anspruch.svg');"></div></div>
           <span class="cta-label">ANSPRUCH</span>
           <h3>Gut genug ist nicht das Ziel.</h3>
           <p>Ich arbeite nicht für halbe Ergebnisse. Ich arbeite, bis Form, Funktion und Wirkung zusammenpassen und etwas entsteht, das langfristig trägt.</p>
         </article>
 
-        <article class="card value-card fade-up delay-200" style="--icon-gradient: linear-gradient(135deg, #a64dff 0%, #ff4d80 100%); --icon-shadow: rgba(255, 77, 128, 0.32);">
+        <article class="card value-card fade-up delay-200" style="--icon-gradient: linear-gradient(135deg, #2563ff 0%, #b21fff 46%, #ff3dbd 100%); --icon-shadow: rgba(178, 31, 255, 0.38);">
           <div class="card-icon" aria-hidden="true"><div class="gradient-icon" style="-webkit-mask-image: url('/assets/icons/icon-zusammenarbeit.svg'); mask-image: url('/assets/icons/icon-zusammenarbeit.svg');"></div></div>
           <span class="cta-label">ZUSAMMENARBEIT</span>
           <h3>Klar im Denken. Direkt im Tun.</h3>
@@ -111,6 +127,14 @@ const schema = JSON.stringify({
 
   .home-hero .badge {
     margin-bottom: 1.15rem;
+    color: #e6fbff;
+    border-color: rgba(47, 123, 255, 0.42);
+    background:
+      linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(47, 123, 255, 0.22), rgba(255, 61, 189, 0.16));
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.03),
+      0 0 0 1px rgba(47, 123, 255, 0.18),
+      0 0 36px rgba(47, 123, 255, 0.16);
   }
 
   .home-hero__inner {
@@ -123,6 +147,17 @@ const schema = JSON.stringify({
     line-height: var(--hero-title-line-height);
     letter-spacing: -0.015em;
     margin-bottom: clamp(24px, 3vw, 30px);
+  }
+
+  .home-hero .gradient-text {
+    background: linear-gradient(90deg, #00e8ff 0%, #2f7bff 42%, #ff42c8 78%, #00e8ff 100%);
+    background-size: 260% auto;
+    animation: gradientPan 46s linear infinite;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    filter: drop-shadow(0 0 18px rgba(47, 123, 255, 0.24));
   }
 
 
@@ -152,6 +187,13 @@ const schema = JSON.stringify({
   .home-values {
     padding-top: clamp(18px, 3vw, 32px);
     padding-bottom: clamp(82px, 8vw, 108px);
+  }
+
+  .home-hero .hero-glow {
+    background:
+      radial-gradient(circle at 16% 42%, rgba(0, 232, 255, 0.11) 0%, transparent 40%),
+      radial-gradient(circle at 48% 44%, rgba(47, 123, 255, 0.13) 0%, transparent 36%),
+      radial-gradient(circle at 82% 28%, rgba(255, 66, 200, 0.11) 0%, transparent 30%);
   }
 
   .card p {

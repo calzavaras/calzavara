@@ -53,7 +53,7 @@ const {
   ogDescription,
   ogType = 'website',
   ogImage = 'https://www.nigredo.ch/referenzen/therapie-ost/therapie-ost-website-screenshot-og.jpg',
-  ogImageAlt = 'Marco Calzavara, Gründer von Nigredo in St. Gallen',
+  ogImageAlt = 'Nigredo - Websites, KI-Lösungen und Software aus St. Gallen',
   ogImageWidth = '1360',
   ogImageHeight = '823',
   ogImageType,
@@ -89,18 +89,39 @@ const siteIdentitySchema = JSON.stringify({
       "@type": "WebSite",
       "@id": "https://www.nigredo.ch/#website",
       "name": "Nigredo",
-      "alternateName": ["nigredo.ch", "Nigredo Schweiz"],
+      "alternateName": ["nigredo.ch", "Nigredo Schweiz", "Nigredo St. Gallen", "Marco Calzavara Nigredo"],
       "url": "https://www.nigredo.ch/",
       "inLanguage": "de-CH",
-      "publisher": { "@id": "https://www.nigredo.ch/#organization" }
+      "publisher": { "@id": "https://www.nigredo.ch/#organization" },
+      "about": { "@id": "https://www.nigredo.ch/#organization" },
+      "hasPart": [
+        { "@id": "https://www.nigredo.ch/#webpage" },
+        { "@id": "https://www.nigredo.ch/digitale-loesungen/#webpage" },
+        { "@id": "https://www.nigredo.ch/referenzen/#webpage" },
+        { "@id": "https://www.nigredo.ch/marco-calzavara/#webpage" },
+        { "@id": "https://www.nigredo.ch/kontakt/#webpage" },
+        { "@id": "https://www.nigredo.ch/haeufige-fragen/#webpage" }
+      ]
     },
     {
       "@type": ["LocalBusiness", "ProfessionalService", "Organization"],
       "@id": "https://www.nigredo.ch/#organization",
       "name": "Nigredo | Marco Calzavara",
-      "alternateName": ["Nigredo", "nigredo.ch"],
+      "legalName": "Nigredo",
+      "alternateName": ["Nigredo", "nigredo.ch", "Nigredo Schweiz", "Nigredo St. Gallen", "Marco Calzavara Nigredo"],
       "url": "https://www.nigredo.ch/",
       "email": "calzavara3830@gmail.com",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "domain",
+        "value": "nigredo.ch"
+      },
+      "brand": {
+        "@type": "Brand",
+        "@id": "https://www.nigredo.ch/#brand",
+        "name": "Nigredo",
+        "alternateName": ["nigredo.ch", "Nigredo Schweiz"]
+      },
       "logo": {
         "@type": "ImageObject",
         "@id": "https://www.nigredo.ch/#logo",
@@ -114,6 +135,16 @@ const siteIdentitySchema = JSON.stringify({
       "description": "Websites, KI-Lösungen und Softwareentwicklung aus St. Gallen. Marco Calzavara entwickelt digitale Produkte mit Substanz – persönlich, zum Fixpreis, ohne Baukasten.",
       "founder": { "@id": "https://www.nigredo.ch/#person" },
       "foundingDate": "2025",
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "St. Gallen, Schweiz",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "St. Gallen",
+          "addressRegion": "SG",
+          "addressCountry": "CH"
+        }
+      },
       "knowsAbout": ["Webdesign", "Softwareentwicklung", "KI-Lösungen", "Branding", "User Experience Design", "Automatisierung"],
       "numberOfEmployees": { "@type": "QuantitativeValue", "value": 1 },
       "areaServed": [
@@ -143,9 +174,7 @@ const siteIdentitySchema = JSON.stringify({
       },
       "priceRange": "$$",
       "makesOffer": [
-        { "@type": "Offer", "itemOffered": { "@id": "https://www.nigredo.ch/website-fuer-kmu-selbststaendige/#service" } },
-        { "@type": "Offer", "itemOffered": { "@id": "https://www.nigredo.ch/website-technik-cms/#service" } },
-        { "@type": "Offer", "itemOffered": { "@id": "https://www.nigredo.ch/lokale-seo/#service" } },
+        { "@type": "Offer", "itemOffered": { "@id": "https://www.nigredo.ch/digitale-loesungen/#website" } },
         { "@type": "Offer", "itemOffered": { "@id": "https://www.nigredo.ch/digitale-loesungen/#ki" } }
       ],
       "hasOfferCatalog": {
@@ -193,7 +222,21 @@ const siteIdentitySchema = JSON.stringify({
       ]
     },
     {
+      "@type": "ItemList",
+      "@id": "https://www.nigredo.ch/#main-navigation",
+      "name": "Hauptnavigation",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "url": "https://www.nigredo.ch/" },
+        { "@type": "ListItem", "position": 2, "name": "Lösungen", "url": "https://www.nigredo.ch/digitale-loesungen/" },
+        { "@type": "ListItem", "position": 3, "name": "Referenzen", "url": "https://www.nigredo.ch/referenzen/" },
+        { "@type": "ListItem", "position": 4, "name": "Über mich", "url": "https://www.nigredo.ch/marco-calzavara/" },
+        { "@type": "ListItem", "position": 5, "name": "Kontakt", "url": "https://www.nigredo.ch/kontakt/" },
+        { "@type": "ListItem", "position": 6, "name": "Häufige Fragen", "url": "https://www.nigredo.ch/haeufige-fragen/" }
+      ]
+    },
+    {
       "@type": "SiteNavigationElement",
+      "@id": "https://www.nigredo.ch/digitale-loesungen/#nav",
       "position": 1,
       "name": "Lösungen",
       "description": "Texte, Bilder, Logos, Software, Webseiten – KI-Lösungen aus einer Hand",
@@ -201,6 +244,7 @@ const siteIdentitySchema = JSON.stringify({
     },
     {
       "@type": "SiteNavigationElement",
+      "@id": "https://www.nigredo.ch/referenzen/#nav",
       "position": 2,
       "name": "Referenzen",
       "description": "Echte Projekte: KI Voice Agent, Wissensdatenbanken, Design-Tools, Dashboards",
@@ -208,6 +252,7 @@ const siteIdentitySchema = JSON.stringify({
     },
     {
       "@type": "SiteNavigationElement",
+      "@id": "https://www.nigredo.ch/marco-calzavara/#nav",
       "position": 3,
       "name": "Über mich",
       "description": "Marco Calzavara – Gründer und Macher von Nigredo, St. Gallen",
@@ -215,10 +260,19 @@ const siteIdentitySchema = JSON.stringify({
     },
     {
       "@type": "SiteNavigationElement",
+      "@id": "https://www.nigredo.ch/kontakt/#nav",
       "position": 4,
       "name": "Kontakt",
       "description": "Direkter Kontakt zu Marco Calzavara – Projektanfragen und Ideen",
       "url": "https://www.nigredo.ch/kontakt/"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "@id": "https://www.nigredo.ch/haeufige-fragen/#nav",
+      "position": 5,
+      "name": "Häufige Fragen",
+      "description": "Antworten auf wichtige Fragen zu professionellen Websites, Kosten und sinnvoller Umsetzung",
+      "url": "https://www.nigredo.ch/haeufige-fragen/"
     }
   ]
 });
@@ -240,6 +294,8 @@ const siteIdentitySchema = JSON.stringify({
   <meta name="format-detection" content="telephone=no">
   <meta name="theme-color" content="#050505">
   <meta name="color-scheme" content="dark">
+  <meta name="application-name" content="Nigredo">
+  <meta name="apple-mobile-web-app-title" content="Nigredo">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">

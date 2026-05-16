@@ -1,0 +1,260 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const pageUrl = 'https://www.nigredo.ch/haeufige-fragen/was-kostet-eine-professionelle-website/';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${pageUrl}#breadcrumb`,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.nigredo.ch/" },
+        { "@type": "ListItem", "position": 2, "name": "Häufige Fragen", "item": "https://www.nigredo.ch/haeufige-fragen/" },
+        { "@type": "ListItem", "position": 3, "name": "Was kostet eine professionelle Website?", "item": pageUrl }
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": `${pageUrl}#article`,
+      "headline": "Was kostet eine professionelle Website?",
+      "description": "Eine klare Antwort darauf, wovon die Kosten einer professionellen Website für KMU und Selbständige in der Schweiz abhängen.",
+      "author": { "@id": "https://www.nigredo.ch/#person" },
+      "publisher": { "@id": "https://www.nigredo.ch/#organization" },
+      "mainEntityOfPage": { "@id": `${pageUrl}#webpage` },
+      "inLanguage": "de-CH",
+      "datePublished": "2026-05-16",
+      "dateModified": "2026-05-16"
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${pageUrl}#webpage`,
+      "url": pageUrl,
+      "name": "Was kostet eine professionelle Website? | Nigredo",
+      "description": "Was eine professionelle Website in der Schweiz kostet, wovon der Preis abhängt und wie Nigredo Kosten seriös einschätzt.",
+      "isPartOf": { "@id": "https://www.nigredo.ch/#website" },
+      "breadcrumb": { "@id": `${pageUrl}#breadcrumb` },
+      "mainEntity": { "@id": `${pageUrl}#article` },
+      "inLanguage": "de-CH",
+      "datePublished": "2026-05-16",
+      "dateModified": "2026-05-16",
+      "isAccessibleForFree": true
+    }
+  ]
+});
+---
+
+<Layout
+  title="Was kostet eine professionelle Website? | Nigredo"
+  description="Was eine professionelle Website in der Schweiz kostet, wovon der Preis abhängt und wie Nigredo Kosten seriös einschätzt. Klar erklärt für KMU und Selbständige."
+  canonical={pageUrl}
+  ogTitle="Was kostet eine professionelle Website? | Nigredo"
+  ogDescription="Eine klare Antwort darauf, wovon Website-Kosten für KMU und Selbständige in der Schweiz abhängen."
+  twitterTitle="Was kostet eine professionelle Website? | Nigredo"
+  twitterDescription="Was eine professionelle Website kostet und wie Nigredo Kosten seriös einschätzt."
+  schema={schema}
+>
+  <article class="section faq-article" aria-labelledby="article-title">
+    <div class="hero-glow"></div>
+    <div class="container faq-article__container">
+      <Breadcrumb items={[
+        { label: 'Start', href: '/' },
+        { label: 'Häufige Fragen', href: '/haeufige-fragen/' },
+        { label: 'Website-Kosten' }
+      ]} />
+
+      <header class="faq-article__header fade-up">
+        <span class="badge badge--purple">Website-Kosten</span>
+        <h1 id="article-title">Was kostet eine professionelle Website?</h1>
+        <p>
+          Eine professionelle Website hat keinen seriösen Einheitspreis. Für KMU und Selbständige in der Schweiz beginnt eine sauber umgesetzte Website meist im unteren vierstelligen Bereich. Ob es dabei bleibt, hängt von Inhalt, Gestaltung, Technik und Suchmaschinenoptimierung ab.
+        </p>
+      </header>
+
+      <div class="faq-article__content fade-up delay-100">
+        <p class="lead-answer">
+          Als Orientierung gilt: Eine schlanke Website mit wenigen klaren Seiten kostet weniger als ein Auftritt mit Konzept, neuen Texten, CMS oder besonderen Funktionen. Je klarer Ziel und Umfang sind, desto genauer lässt sich der Preis einschätzen.
+        </p>
+
+        <h2>Warum es keinen seriösen Einheitspreis gibt</h2>
+        <p>
+          Die Seitenzahl allein sagt wenig aus. Eine einfache digitale Visitenkarte braucht weniger Konzeption, Inhalt und Technik als eine Website für ein KMU mit mehreren Leistungsseiten, Kontaktlogik, CMS, besonderer Gestaltung oder gezielter Suchmaschinenoptimierung.
+        </p>
+        <p>
+          Ein fixer Preis ohne Blick auf Inhalt, Zielgruppe und Funktion klingt einfach, ist aber oft ungenau. Entweder wird zu viel bezahlt, weil unnötige Leistungen enthalten sind, oder wichtige Arbeit fehlt und muss später nachgeholt werden.
+        </p>
+
+        <h2>Welche Faktoren den Preis beeinflussen</h2>
+        <p>
+          Entscheidend sind vor allem Umfang, Inhaltsarbeit, Designanspruch, technische Anforderungen und spätere Pflege. Müssen Texte neu entwickelt werden? Gibt es bestehendes Bildmaterial? Soll die Website nur informieren oder aktiv Anfragen führen? Braucht es ein CMS, Formulare, Auswertungen oder besondere Funktionen?
+        </p>
+        <p>
+          Auch Suchmaschinenoptimierung ist kein einzelner Schalter. Wer nach Website Kosten Schweiz, Website Preis KMU oder professionelle Website erstellen lassen sucht, vergleicht nicht nur Zahlen, sondern Vertrauen. Gute Titel, saubere Struktur, verständliche Inhalte und schnelle Ladezeiten entstehen während der Umsetzung.
+        </p>
+
+        <h2>Was bei einer professionellen Website enthalten sein sollte</h2>
+        <p>
+          Eine professionelle Website sollte auf Smartphone, Tablet und Desktop sauber funktionieren. Sie sollte schnell laden, verständlich aufgebaut sein, klare Kontaktwege haben und ohne unnötigen technischen Ballast auskommen.
+        </p>
+        <p>
+          Wichtig ist auch, dass der Inhalt zur tatsächlichen Arbeit passt. Besucher müssen rasch verstehen, wer hinter dem Angebot steht, wofür es geeignet ist und was der nächste Schritt ist. Genau dort entsteht der eigentliche Wert einer Website.
+        </p>
+
+        <h2>Wann eine günstige Lösung reicht und wann nicht</h2>
+        <p>
+          Eine günstige Lösung kann sinnvoll sein, wenn nur eine sehr einfache Präsenz gebraucht wird und keine besonderen Anforderungen bestehen. Für ein klares Angebot, ein kleines Projekt oder eine temporäre Seite muss nicht immer ein grosser Aufbau entstehen.
+        </p>
+        <p>
+          Wenn die Website aber Vertrauen tragen, in Google gefunden werden oder echte Anfragen bringen soll, reicht eine reine Schnelllösung oft nicht. Dann lohnt sich eine saubere Grundlage, weil spätere Korrekturen meistens teurer und mühsamer sind als eine klare Umsetzung von Anfang an.
+        </p>
+
+        <h2>Wie Nigredo die Kosten einschätzt</h2>
+        <p>
+          Nigredo startet nicht mit einer langen Preisliste, sondern mit einer kurzen Klärung: Was soll die Website leisten? Welche Inhalte gibt es bereits? Was muss neu entstehen? Welche Funktionen sind wirklich nötig? Daraus entsteht ein konkreter Umfang und ein transparentes Angebot. Ziel ist kein möglichst grosses Projekt, sondern eine Website, die zur Aufgabe passt.
+        </p>
+
+        <div class="article-links">
+          <a href="/haeufige-fragen/">Zurück zu den häufigen Fragen</a>
+          <a href="/kontakt/">Kosten für meine Website einschätzen lassen</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .faq-article {
+    position: relative;
+    padding-top: var(--hero-offset-top-breadcrumb);
+    padding-bottom: clamp(82px, 10vw, 128px);
+    overflow: hidden;
+  }
+
+  .faq-article__container {
+    position: relative;
+  }
+
+  .faq-article :global(.breadcrumb) {
+    margin-bottom: 28px;
+  }
+
+  .faq-article__header {
+    max-width: 880px;
+  }
+
+  .faq-article__header .badge {
+    margin-bottom: 1.15rem;
+  }
+
+  .faq-article__header h1 {
+    max-width: 920px;
+    margin: 0 0 clamp(24px, 3vw, 32px);
+    color: #f5f5f7;
+    font-size: var(--hero-title-size);
+    line-height: var(--hero-title-line-height);
+    letter-spacing: 0;
+  }
+
+  .faq-article__header p {
+    max-width: 700px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.68);
+    font-size: var(--lead-size);
+    line-height: 1.65;
+  }
+
+  .faq-article__content {
+    max-width: 760px;
+    margin-top: clamp(58px, 7vw, 86px);
+  }
+
+  .faq-article__content p {
+    margin: 0 0 1.25rem;
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 1.04rem;
+    line-height: 1.78;
+  }
+
+  .faq-article__content .lead-answer {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: clamp(1.12rem, 2vw, 1.28rem);
+    line-height: 1.72;
+    padding-bottom: clamp(22px, 4vw, 34px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .faq-article__content h2 {
+    margin: clamp(42px, 6vw, 62px) 0 1rem;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: clamp(1.46rem, 2.8vw, 2rem);
+    line-height: 1.16;
+    letter-spacing: 0;
+  }
+
+  .article-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: clamp(42px, 6vw, 62px);
+    padding-top: 28px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .article-links a {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 18px;
+    border-radius: 999px;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    background: rgba(255, 255, 255, 0.035);
+    transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  }
+
+  .article-links a:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.28);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 860px) {
+    .faq-article {
+      padding-top: var(--hero-offset-top-breadcrumb-mobile);
+    }
+
+    .faq-article__header h1 {
+      font-size: var(--hero-title-size-tablet);
+      line-height: var(--hero-title-line-height-mobile);
+    }
+  }
+
+  @media (max-width: 520px) {
+    .faq-article__header h1 {
+      font-size: var(--hero-title-size-mobile);
+    }
+
+    .faq-article__header p {
+      font-size: var(--lead-size-mobile);
+      line-height: 1.6;
+    }
+
+    .faq-article__content {
+      margin-top: 48px;
+    }
+
+    .faq-article__content p {
+      font-size: 1rem;
+      line-height: 1.72;
+    }
+
+    .article-links {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
